@@ -1,0 +1,85 @@
+@import "../mixins/variables";
+
+.product{
+    margin-top: 2rem;
+    &__carousel{
+        background-color: #053c5e;
+        padding-top: 20px;
+    }
+    &__img{
+        max-height: 200px;
+        width: auto;
+    }
+    &__name{
+        color: rgba(0, 0, 0, 0.692);
+        font-size: 1.7rem;
+        font-weight: 700;
+    }
+    &__details__img{
+        height: auto;
+        width: 100%;
+        border-radius: 10%;
+     
+        
+    }
+    &__discription{
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        text-align: justify;
+
+    }
+    &__details{
+        
+
+        &__feedback{
+
+            @include respond(phone){
+                margin-top: 2.5rem;
+                font-size: 1.8rem;
+            }
+        }
+        &__card{
+            @include respond(phone){
+                margin-top: 2.5rem;
+                font-size: 1.8rem;
+            }
+        }
+    }     
+    
+}
+
+.intro-caption{
+    background-color: #023758;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.checkout{
+    &__header{
+        font-size: 2.6rem;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.582);
+    }
+}
+
+.order{
+    &__details{
+        display:flex;
+        align-items: baseline;
+    }
+}
+// Search box modal styling
+.modal-content{
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    
+}
+.form-control{
+    background-color: rgba(233, 231, 231, 0.671);
+   
+}
+.modal-backdrop{
+    background-color: transparent;
+}

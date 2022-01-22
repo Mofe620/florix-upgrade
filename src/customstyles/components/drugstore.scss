@@ -1,0 +1,14 @@
+@import "../mixins/variables";
+
+.drugstore{
+    &__nav-link{
+        font-size: 1.6rem;
+        /*
+        background-color: $primary;
+        color: #fff !important;
+        border-radius: 20px;
+        width: 10rem;
+        text-align: center;
+       */
+    }
+}

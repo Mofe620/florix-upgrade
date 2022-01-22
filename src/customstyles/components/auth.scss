@@ -1,0 +1,58 @@
+@import "../mixins/variables";
+
+.auth{
+    max-width: 90%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.auth-container{
+  max-width: 50%;
+  margin-top: 16rem;
+  font-size: 1.6rem;
+
+    @include respond(tab-land) {
+      max-width: 75%;
+    }
+    @include respond(phone) {
+      max-width: 95%;
+    }
+  }
+
+.profile-container{
+  max-width: 50%;
+}
+  
+.auth-header > p{
+  color: #aeafb1;
+
+}
+
+.auth-header >h1{
+  font-weight: 800;
+  color: #bfbfbf;
+}
+.auth-form {
+
+}
+.auth-input{
+   border-radius: 50px;
+  /*  background-color: #f2f2f2;  */
+  font-size: 12px;
+}
+
+.auth-button{
+  float: right;
+  background-color: $primary;
+  width: 10rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  border-radius: 25rem;
+
+  &:focus{
+    outline: none;
+  }
+}
+.contact-input{
+  font-size: 1.4rem;
+}

@@ -1,0 +1,86 @@
+@import "../mixins/variables";
+
+
+.post{
+    &__img{
+            border-radius: 10px;
+    }
+
+    &__txt{
+        margin-top: 10px;
+
+        &__title{
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #000;
+            
+
+        }
+    }
+}
+
+.post-details{
+    &__img{
+        height: 25%;
+        width: auto;
+    }
+    &__title{
+        color: $primary !important;
+        font-size: 3rem;
+        font-weight: 700;
+    }
+    &__category{
+        font-style: italic;
+        font-size: 1.6rem;
+    }
+}
+.blog{
+    &__post{
+        @include respond(phone) {
+        
+          }
+      
+    }
+    &__content{
+        max-width: 95%;
+        @include respond(phone) {
+            max-width: 100%;
+        }
+    }
+    &__comments{
+   
+        background-color: rgba(226, 226, 226, 0.205);
+    }
+
+    &__comment{
+        width: 50%;
+        padding: 2rem 4rem;
+
+        &__name{
+        color: $primary;
+        font-size: 1.6rem;
+        font-weight: 700;
+        padding: 0;
+        margin: 0;
+        }
+        &__date{
+            font-size: 1rem;
+            padding: 0;
+            margin: 0;
+        }
+        &__comment{
+            margin-top: 1.3rem;
+        }
+        &__button{
+            height: 4rem;
+            width: 10rem;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+    }
+        
+    &__add-comment{
+        font-size: 2rem;
+        font-weight: 500;
+    }
+}

@@ -1,0 +1,55 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+
+  a{
+    text-decoration: none;
+  }
+ 
+  /* Navigation Start */
+ 
+  .fa-search{
+    color: #0065a3;
+    font-size: 20px;
+  }
+  .search-input{
+    border-radius: 50px;
+    font-size: 12px;
+    width: 350px;
+  }
+
+
+  .navbar{
+    background-color: #fff
+  }
+
+
+  /* Navigation End */
+  
+  /* Authentication */
+  
+
+
+  .auth-img{
+    margin-top: 100px;
+  }
+  /* Profile page */
+  .profile-header{
+    font-weight: 600;
+    color: #0065a3;;
+  }
+    
+  .profile-img{
+    width: 175px;
+  }
+
+
+.checkout__steps{
+  font-weight: 500;
+  border-radius: 20px;
+}
+

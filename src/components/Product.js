@@ -7,7 +7,12 @@ function Product({ product }) {
     return (
         <div className="">
             <Link to={`/product/${product.id}`}>
-                <Image className="product__img shadow-sm" src={`${process.env.REACT_APP_API_URL}${product.image}`} fluid/>
+                
+                <Image className="product__img shadow-sm" src={product.image} fluid/> 
+
+                {/*Adding ${process.env.REACT_APP_API_URL} to image src doesn't work in production 
+                <Image className="product__img shadow-sm" src={`${process.env.REACT_APP_API_URL}${product.image}`} fluid/> 
+                */}
             </Link>
             <div>
                 <Link to={`/product/${product.id}`}><h3 className='product__name'>{product.name}</h3></Link>

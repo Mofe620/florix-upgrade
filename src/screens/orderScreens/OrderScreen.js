@@ -136,7 +136,8 @@ function OrderScreen({ match, history, isAuthenticated }) {
                                                     <ListGroup.Item key={index}>
                                                         <Row>
                                                             <Col md={1}>
-                                                                <Image src={`${process.env.REACT_APP_API_URL}${item.image}`} alt={item.name} fluid rounded />
+                                                                {/* <Image src={`${process.env.REACT_APP_API_URL}${item.image}`} alt={item.name} fluid rounded /> */}
+                                                                <Image src={item.image} alt={item.name} fluid rounded />
                                                             </Col>
 
                                                             <Col>

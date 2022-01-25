@@ -59,7 +59,8 @@ function CartScreen({ match, history, isAuthenticated }) {
                                     {/* Item info */}
                                     <Row>
                                         <Col md={2}>
-                                            <Image src={`${process.env.REACT_APP_API_URL}${item.image}`} alt={item.name} fluid rounded />
+                                            {/* <Image src={`${process.env.REACT_APP_API_URL}${item.image}`} alt={item.name} fluid rounded /> */}
+                                            <Image src={item.image} alt={item.name} fluid rounded />
                                         </Col>
                                         <Col md={3}>
                                             <Link to={`/product/${item.product}`}>{item.name}</Link>

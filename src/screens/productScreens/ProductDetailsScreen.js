@@ -81,7 +81,7 @@ function ProductScreen({ match, history, isAuthenticated }) {
                         <div>
                             <Row>
                                 <Col md={4} className="">
-                                    <Image src={`${process.env.REACT_APP_API_URL}${product.image}`} alt={product.name} className="product__details__img" fluid />   
+                                    <Image src={product.image} alt={product.name} className="product__details__img" fluid />   
                                 </Col>
                                 <Col md={4}>
                                     <div>

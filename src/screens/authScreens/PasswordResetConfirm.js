@@ -34,7 +34,7 @@ const PasswordResetConfirm = ({ match, reset_password_confirm }) => {
                 <Form className="auth-form" onSubmit={e => submitHandler(e)}>
                     <Form.Group className="mb-3" controlId="formGroupPassword">
                         <Form.Control 
-                            className="auth-input" 
+                            className="auth-input search-ppty" 
                             type="password" 
                             placeholder="Password" 
                             value={new_password}
@@ -45,7 +45,7 @@ const PasswordResetConfirm = ({ match, reset_password_confirm }) => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupPassword">
                         <Form.Control 
-                            className="auth-input" 
+                            className="auth-input search-ppty" 
                             type="password" 
                             placeholder="Password" 
                             value={re_new_password}

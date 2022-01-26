@@ -31,7 +31,7 @@ const PasswordReset = ({ reset_password }) => {
             <Form className="auth-form" onSubmit={e => submitHandler(e)}>
                 <Form.Group className="mb-3" controlId="formGroupPassword">
                     <Form.Control 
-                        className="auth-input" 
+                        className="auth-input search-ppty" 
                         type="email" 
                         placeholder="example@email.com" 
                         name='email'

@@ -42,7 +42,8 @@ function LoginScreen({ isAuthenticated }) {
                 <Form className="auth-form px-4" onSubmit={submitHandler}>
                     <Form.Group className="mb-3" controlId="formGroupPassword">
                         <Form.Control 
-                            className="auth-input" 
+                            className="auth-input search-ppty" 
+                            variant="lg"
                             type="email" 
                             placeholder="Enter Email" 
                             value={email}
@@ -51,8 +52,9 @@ function LoginScreen({ isAuthenticated }) {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupPassword">
                         <Form.Control 
-                            className="auth-input" 
+                            className="auth-input search-ppty" 
                             type="password" 
+                            variant="lg"
                             placeholder="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}

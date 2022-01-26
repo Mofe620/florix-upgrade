@@ -51,7 +51,7 @@ function RegisterScreen({ signup, isAuthenticated }) {
                     <Form className="auth-form" onSubmit={submitHandler}>
                         <Form.Group className="mb-3" controlId='name'>
                             <Form.Control 
-                                className="auth-input" 
+                                className="auth-input search-ppty" 
                                 required
                                 minLength='6'
                                 type="name" 
@@ -63,7 +63,7 @@ function RegisterScreen({ signup, isAuthenticated }) {
                         <Form.Group className="mb-3" controlId='email'>
                             <Form.Control
                                 required 
-                                className="auth-input" 
+                                className="auth-input search-ppty" 
                                 type="email" 
                                 placeholder="Email" 
                                 value={email}
@@ -73,7 +73,7 @@ function RegisterScreen({ signup, isAuthenticated }) {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="password">
                             <Form.Control 
-                                className="auth-input" 
+                                className="auth-input search-ppty" 
                                 type="password" 
                                 placeholder="Password" 
                                 value={password}

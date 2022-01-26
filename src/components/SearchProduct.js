@@ -20,10 +20,12 @@ const SearchProduct = () => {
         <Form className="auth-form px-4" onSubmit={submitHandler}>
         <Form.Group controlId='searchbox' inline>
             <Form.Control
-                className="auth-input" 
+                variant="lg"
+                className="search-ppty"
                 type='text'
                 placeholder="Enter product..."
                 name='q'
+                style={{backgroundColor:"white"}}
                 onChange={(e) => { 
                     setKeyword(e.target.value)
                 }}

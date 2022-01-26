@@ -15,7 +15,7 @@ import SearchProduct from '../../components/SearchProduct'
 
 
 function HomeScreen({history, isAuthenticated}) {
-
+    
 
     const location = useLocation()
     const [lgShow, setLgShow] = useState(false);

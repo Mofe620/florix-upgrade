@@ -184,6 +184,7 @@ function ProductScreen({ match, history, isAuthenticated }) {
                                                         <Form.Label className="my-3">Leave Feedback on this Product</Form.Label>
                                                         <Form.Control
                                                             as='select'
+                                                            className="search-ppty"
                                                             value={rating}
                                                             onChange={(e) => setRating(e.target.value)}
                                                         >

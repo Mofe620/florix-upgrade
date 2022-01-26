@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
 import { Container, Row, Col, Button, Image} from 'react-bootstrap'
 import { getFeaturedBlog } from '../../redux/actions/blogActions'
 
 
 
-const Home = () => {
+const Home = ({isAuthenticated}) => {
 
     const featuredBlog = useSelector(state => state.featuredBlog)
     const { blog } = featuredBlog
@@ -18,6 +18,15 @@ const Home = () => {
 
     }, [dispatch])
 
+    const guestLinks = () => (
+        <Button className="home__intro__start"><Link to="/login">Sign In</Link></Button>
+    
+        );
+      
+        const authLinks = () => (
+            <p></p>
+        );
+
     return(
         <div className="home">
             <Container className='content'>
@@ -26,7 +35,7 @@ const Home = () => {
                         <div className="home__intro">
                             <h3 className='home__intro__header'>"Africa's No. 1 Healthcare Wholesale E-marketplace and Logistics Solution" </h3>
                             <p className='home__intro__par'>Get the best quality pharmaceuticals, nutriceucals and medical equipment at the best prices!</p>
-                            <Button className="home__intro__start"><Link to="/register">Sign Up</Link></Button>
+                            {isAuthenticated ? authLinks() : guestLinks()}
                         </div>
                     </Col>
                     <Col sm={12} xl={6} >
@@ -63,4 +72,8 @@ const Home = () => {
     )
 }
 
-export default Home
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+  });
+  
+export default connect(mapStateToProps)(Home);

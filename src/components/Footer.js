@@ -28,12 +28,12 @@ const Footer = () =>{
                     <Col xs={8} className="footer__subscription__form" >
                     <Form className="px-0">
                         <Form.Group  controlId="formGroupEmail">
-                            <Form.Control className="" type="email" placeholder="Enter your email" /> 
+                            <Form.Control className="search-ppty" type="email" placeholder="Enter your email" /> 
                         </Form.Group>
                     </Form>
                     </Col>
                     <Col xs={4} >
-                    <Button variant="danger" className="px-0">Subscribe</Button>
+                    <Button variant="danger" className="search-ppty px-0">Subscribe</Button>
                     </Col>
                 </Row>
             </Col>            

@@ -83,7 +83,7 @@ function RegisterScreen({ signup, isAuthenticated }) {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="passwordConfirm">
                             <Form.Control 
-                                className="auth-input" 
+                                className="auth-input search-ppty" 
                                 type="password" 
                                 placeholder="Confirm Password" 
                                 value={re_password}

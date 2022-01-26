@@ -16,10 +16,10 @@ const Footer = () =>{
         <Row className="">
             <Col md={8} className="px-0 footer">
                 <div className="footer__media">
-                    <span className="footer__media__icons"><a href="/"><i className="fab fa-facebook"></i></a></span>
+                    <span className="footer__media__icons"><a href="https://www.facebook.com/florixhealthcare" target="_blank"><i className="fab fa-facebook"></i></a></span>
+                    <span className="footer__media__icons"><a href="http://instagram.com/flo_log.hq" target="_blank"><i className="fab fa-instagram"></i></a></span>
+                    <span className="footer__media__icons"><a href="https://wa.me/message/T4FZA33RTZIPD1" target="_blank"><i className="fab fa-whatsapp"></i></a></span>
                     <span className="footer__media__icons"><a href="/"><i className="fab fa-twitter"></i></a></span>
-                    <span className="footer__media__icons"><a href="/"><i className="fab fa-instagram"></i></a></span>
-                    <span className="footer__media__icons"><a href="/"><i className="fab fa-whatsapp"></i></a></span>
                 </div>
             </Col>
             <Col md={4} className="footer__subscription px-0">

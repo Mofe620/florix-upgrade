@@ -77,6 +77,14 @@
 
 .about{
     text-align: center;
+    @include respond(tab-port) {
+    
+        margin-top: 8rem;   
+    }   
+    @include respond(phone) {
+        margin-top: 8rem;   
+    }   
+  
 
     &__header-one{
         font-size: 2rem;
@@ -126,11 +134,7 @@
             
         }
     }
-    @include respond(tab-port) {
-    
-        margin-top: 5rem;   
-    }   
-  
+ 
 }
 
 

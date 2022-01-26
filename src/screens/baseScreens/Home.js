@@ -61,7 +61,7 @@ const Home = ({isAuthenticated}) => {
                         
                     </Col>
                     <Col md={4} sm={12} className="my-4">
-                        <Image className="home__img mx-auto"  src="/assets/images/logistic_image.png"  fluid/>
+                     {/*   <Image className="home__img mx-auto"  src="/assets/images/logistic_image.png"  fluid/> */}
                     </Col>
                     <Col md={4} sm={12} className="my-4">
                         

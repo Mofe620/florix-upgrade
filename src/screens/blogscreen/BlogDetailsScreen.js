@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Card, Container, Form, Image } from 'react-bootstrap';
+import { Button, Card, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
 import { useDispatch, useSelector } from 'react-redux'
@@ -52,7 +52,9 @@ const BlogDetailsScreen = ({match}) => {
     
     return (
         <Container className="content post-details">
-            <div>
+            <Row>
+                <Col sm={8}>
+                <div>
                 <Image className="post-details__img" src={blog.image} />
                 <h3 className='display-2 post-details__title'>{blog.title}</h3>
                 <h4 className='text-muted post-details__category'>Category: {capitalizeFirstLetter(blog.category)}</h4>
@@ -92,6 +94,10 @@ const BlogDetailsScreen = ({match}) => {
                 <Button type='submit' variant='primary' className="blog__comment__button">Add Comment</Button>
                 </Form>
             </div>
+                </Col>
+                <Col sm={4}></Col>
+            </Row>
+            
         </Container>
         
     );

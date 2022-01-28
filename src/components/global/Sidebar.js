@@ -29,12 +29,14 @@ const guestLinks = () => (
     const authLinks = () => (
         <Fragment>
             <li className='sidebar__list__item' onClick={closeSidebar}>
-                <NavLink className='sidebar__link' to='/products'><img src="/assets/icons/Product_icon.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
+                <NavLink className='sidebar__link' to='/products'><img src="/assets/icons/Store.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
                     Drugstore
                 </NavLink>
             </li>
        <LinkContainer className='sidebar__link' to='/profile'>
-            <li className='sidebar__list__item' onClick={closeSidebar}>Profile</li>
+            <li className='sidebar__list__item' onClick={closeSidebar}><img src="/assets/icons/Profile.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
+                Profile
+            </li>
         </LinkContainer>
 
             <li className='sidebar__list__item sidebar__auth-link' onClick={closeSidebar} onClick={logout}>Logout</li>
@@ -66,7 +68,7 @@ const guestLinks = () => (
                         </NavLink>
                     </li>
                     <li className='sidebar__list__item' onClick={closeSidebar}>
-                        <NavLink className='sidebar__link' to='/posts'><img src="/assets/icons/Product_icon.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
+                        <NavLink className='sidebar__link' to='/posts'><img src="/assets/icons/Blog.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
                             Blog
                         </NavLink>
                     </li>

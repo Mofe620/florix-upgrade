@@ -10,6 +10,7 @@ import { login } from '../../redux/actions/authActions'
 function LoginScreen({ isAuthenticated }) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [message, setMessage] = useState('')
 
     const dispatch = useDispatch()
     const {state: {from = "/"} = {} } = useLocation();
@@ -33,12 +34,13 @@ function LoginScreen({ isAuthenticated }) {
             
                 <div className="">
             <div className=' auth-header text-center'>
+            {message && <Message variant='danger'>{message}</Message>}
+            {error && <Message variant='danger'>{error}</Message>}
+            {loading && <Loader />}
             
-                <h2>Welcome back!</h2>
+                <h2 className="auth-header">Welcome back!</h2>
                 <p className="auth-base"> Don't have an account?<Link to="/register"> Sign Up</Link></p>
             </div>
-              {error && <Message variant='danger'>{error}</Message>}
-            {loading && <Loader />}
                 <Form className="auth-form px-4" onSubmit={submitHandler}>
                     <Form.Group className="mb-3" controlId="formGroupPassword">
                         <Form.Control 

@@ -42,7 +42,7 @@ function RegisterScreen({ signup, isAuthenticated }) {
     return (
         <Container className='content auth-container'>
             <div className="auth-header text-center mb-4">
-                <h2>Sign Up</h2>
+                <h2 className>Sign Up</h2>
                 <p>Add your deatils to sign up</p>
             </div>
             {message && <Message variant='danger'>{message}</Message>}

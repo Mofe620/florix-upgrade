@@ -1,17 +1,17 @@
 import React, { useState} from 'react'
-import { Container, Row, Col, Form, Button, Image, Card} from 'react-bootstrap'
+import {Container, Row, Col, Form, Button} from 'react-bootstrap'
 import { Link, Redirect, useLocation } from 'react-router-dom'
 import { connect, useDispatch, useSelector } from 'react-redux'
+import swal from 'sweetalert';
 import {Helmet} from "react-helmet";
 import Loader from '../../components/Loader'
 import Message from '../../components/Message'
-//import FormContainer from '../components/FormContainer'
 import { login } from '../../redux/actions/authActions'
 
 function LoginScreen({ isAuthenticated }) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [message, setMessage] = useState('')
+    const [message, setMessage] = useState(false)
 
     const dispatch = useDispatch()
     const {state: {from = "/"} = {} } = useLocation();
@@ -23,6 +23,9 @@ function LoginScreen({ isAuthenticated }) {
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch(login(email, password))
+        setTimeout(() =>{
+            setMessage("Login was successful")
+        }, 2000)
     }
 
     if (isAuthenticated){
@@ -38,7 +41,7 @@ function LoginScreen({ isAuthenticated }) {
             </Helmet>
             <div className="">
             <div className=' auth-header text-center'>
-            {message && <Message variant='danger'>{message}</Message>}
+            {message && <Message variant='success'>{message}</Message>}
             {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader />}
             

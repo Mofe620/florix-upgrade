@@ -1,24 +1,30 @@
 import React, { useState } from 'react';
 import {Helmet} from "react-helmet";
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import {Container, Form, Button} from 'react-bootstrap'
 import { connect, useDispatch } from 'react-redux';
 import { verify } from '../../redux/actions/authActions';
+import swal from 'sweetalert';
 
 const ActivateAccount = ({ verify, match }) => {
-    const [verified, setVerified] = useState(false);
+    const [activated, setActivated] = useState(false);
     const dispatch = useDispatch()
 
 
-    const verify_account = e => {
+    const accountActivation = e => {
         const uid = match.params.uid;
         const token = match.params.token;
-
         dispatch(verify(uid, token));
-        setVerified(true);
+        swal({
+            title: "Welcome!",
+            text: "Your account has been activated successfully.",
+            icon: "success",
+            button: "Close",
+          });
+          setActivated(true);
     };
 
-    if (verified) {
+    if (activated) {
         return <Redirect to='/' />
     }
 
@@ -32,11 +38,14 @@ const ActivateAccount = ({ verify, match }) => {
                 <Button 
                     className="auth-button  btn btn-block w-100" 
                     type="submit"
-                    onClick={verify_account}
+                    onClick={accountActivation}
                     >
                         Activate Account
                     </Button>
             </Form>
+            <div className="account-activate">
+                <p>After clicking on the activation button, you will be redirected to the homepage of our website. If not, please use this <Link to="/">Link</Link></p>
+            </div>
     </Container>
     )
 }

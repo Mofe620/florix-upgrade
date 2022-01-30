@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import {Helmet} from "react-helmet";
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
-import { connect, useDispatch, useSelector } from 'react-redux'
+import { connect, useSelector } from 'react-redux'
 import Loader from '../../components/Loader'
 import Message from '../../components/Message'
-//import FormContainer from '../components/FormContainer'
 import { signup } from '../../redux/actions/authActions'
+import swal from 'sweetalert';
 
 function RegisterScreen({ signup, isAuthenticated }) {
 
@@ -17,20 +17,18 @@ function RegisterScreen({ signup, isAuthenticated }) {
     const [re_password, setRe_password] = useState([])
     const [message, setMessage] = useState('')
 
-
-    const dispatch = useDispatch()
     const auth = useSelector(state => state.auth)
     const { error, loading, userInfo } = auth
 
-    const submitHandler = (e) => {
+    const submitHandler = e => {
         e.preventDefault();
-        if (password !== re_password) {
-            setMessage('Both passwords must be the same')
-        } else {
-            dispatch(signup(username, email, password, re_password));
+
+        if (password === re_password) {
+            signup(username, email, password, re_password);
             setAccountCreated(true);
+            setMessage("Welcome! Click on the link sent to your email to activate your account")
         }
-    }
+    };
     
     
     if (accountCreated) {
@@ -50,7 +48,7 @@ function RegisterScreen({ signup, isAuthenticated }) {
                 <h2 className="auth-header">Sign Up</h2>
                 <p>Add your deatils to sign up</p>
             </div>
-            {message && <Message variant='danger'>{message}</Message>}
+            {message && <Message variant='success'>{message}</Message>}
             {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader />}
                     <Form className="auth-form" onSubmit={submitHandler}>

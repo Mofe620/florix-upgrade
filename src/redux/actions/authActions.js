@@ -42,12 +42,16 @@ export const load_user = () => async dispatch => {
             });
         } catch (err) {
             dispatch({
-                type: USER_LOADED_FAIL
+                type: USER_LOADED_FAIL,
+                payload: err.response && err.response.data.detail
+                ? err.response.data.detail
+                : err.message,
             });
         }
     } else {
         dispatch({
-            type: USER_LOADED_FAIL
+            type: USER_LOADED_FAIL,
+            
         });
     }
 };
@@ -74,12 +78,16 @@ export const load_user_profile = () => async dispatch => {
             });
         } catch (err) {
             dispatch({
-                type: LOAD_USER_PROFILE_FAIL
+                type: LOAD_USER_PROFILE_FAIL,
+                payload: err.response && err.response.data.detail
+                ? err.response.data.detail
+                : err.message,
             });
         }
     } else {
         dispatch({
-            type: LOAD_USER_PROFILE_FAIL
+            type: LOAD_USER_PROFILE_FAIL,
+            
         });
     }
 };
@@ -111,7 +119,10 @@ export const googleAuthenticate = (state, code) => async dispatch => {
             dispatch(load_user());
         } catch (err) {
             dispatch({
-                type: GOOGLE_AUTH_FAIL
+                type: GOOGLE_AUTH_FAIL,
+                payload: err.response && err.response.data.detail
+                ? err.response.data.detail
+                : err.message,
             });
         }
     }
@@ -143,7 +154,10 @@ export const facebookAuthenticate = (state, code) => async dispatch => {
             dispatch(load_user());
         } catch (err) {
             dispatch({
-                type: FACEBOOK_AUTH_FAIL
+                type: FACEBOOK_AUTH_FAIL,
+                payload: err.response && err.response.data.detail
+                ? err.response.data.detail
+                : err.message,
             });
         }
     }
@@ -175,7 +189,10 @@ export const checkAuthenticated = () => async dispatch => {
             }
         } catch (err) {
             dispatch({
-                type: AUTHENTICATED_FAIL
+                type: AUTHENTICATED_FAIL,
+                payload: err.response && err.response.data.detail
+                ? err.response.data.detail
+                : err.message,
             });
         }
 
@@ -209,7 +226,10 @@ export const login = (email, password) => async dispatch => {
         dispatch(load_user_profile());
     } catch (err) {
         dispatch({
-            type: LOGIN_FAIL
+            type: LOGIN_FAIL,
+            payload: err.response && err.response.data.detail
+                ? err.response.data.detail
+                : err.message
         })
     }
 };
@@ -232,12 +252,12 @@ export const signup = (username, email, password, re_password) => async dispatch
             type: SIGNUP_SUCCESS,
             payload: data
         });
-    } catch (error) {
+    } catch (err) {
         dispatch({
             type: SIGNUP_FAIL,
-            payload: error.response && error.response.data.detail
-                ? error.response.data.detail
-                : error.message,
+            payload: err.response && err.response.data.detail
+                ? err.response.data.detail
+                : err.message,
         })
     }
 };
@@ -261,7 +281,10 @@ export const verify = (uid, token) => async dispatch => {
         });
     } catch (err) {
         dispatch({
-            type: ACTIVATION_FAIL
+            type: ACTIVATION_FAIL,
+            payload: err.response && err.response.data.detail
+            ? err.response.data.detail
+            : err.message,
         })
     }
 };
@@ -283,7 +306,10 @@ export const reset_password = (email) => async dispatch => {
         });
     } catch (err) {
         dispatch({
-            type: PASSWORD_RESET_FAIL
+            type: PASSWORD_RESET_FAIL,
+            payload: err.response && err.response.data.detail
+            ? err.response.data.detail
+            : err.message,
         });
     }
 };
@@ -305,7 +331,10 @@ export const reset_password_confirm = (uid, token, new_password, re_new_password
         });
     } catch (err) {
         dispatch({
-            type: PASSWORD_RESET_CONFIRM_FAIL
+            type: PASSWORD_RESET_CONFIRM_FAIL,
+            payload: err.response && err.response.data.detail
+            ? err.response.data.detail
+            : err.message,
         });
     }
 };

@@ -57,6 +57,7 @@ function CartScreen({ match, history, isAuthenticated }) {
                     <Message variant='info'>
                         No Item in the Cart <Link to='/'>Go Back</Link>
                     </Message>
+                    
                 ) : (
                         <ListGroup variant='flush'>
                             {cartItems.map(item => (
@@ -119,9 +120,7 @@ function CartScreen({ match, history, isAuthenticated }) {
                             <h2>{cartItems.reduce((acc, item) => acc + item.qty, 0)} Product(s) Added</h2>
                             <p className="product__price"> Sub total: &#8358; {cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}</p>
                         </ListGroup.Item>
-                    </ListGroup>
-                    {cartItems.countInStock > 0 ? 
-                          <ListGroup.Item>
+                        <ListGroup.Item>
                             <div className="d-grid gap-2">
                                 <Button
                                     type='button'
@@ -133,8 +132,6 @@ function CartScreen({ match, history, isAuthenticated }) {
                                 </Button>
                             </div>
                         </ListGroup.Item>
-                    : <p className='product__oos'>Out of Stock</p>}
-              
                     <ListGroup.Item>
                         <div className="d-grid gap-2">
                             <Button
@@ -146,12 +143,8 @@ function CartScreen({ match, history, isAuthenticated }) {
                                 Add More Products?
                             </Button>
                         </div>
-                        
-
                     </ListGroup.Item>
-
-
-
+                    </ListGroup>
                 </Card>
             </Col>
         </Row>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Button, Col, Container } from 'react-bootstrap'
+import {Helmet} from "react-helmet";
 import { useDispatch, useSelector } from 'react-redux'
 import FormContainer from '../../components/FormContainer'
 import CheckoutSteps from '../../components/CheckoutSteps'
@@ -26,6 +27,11 @@ function PaymentScreen({ history }) {
 
     return (
         <Container className="content" >
+            <Helmet>
+                <meta charSet="utf-8" />
+                <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
+                <title>Payment method</title>
+            </Helmet>
             <CheckoutSteps step1 step2 step3 />
             <div className="d-flex justify-content-center checkout__header" style={{paddingTop:"15rem" }}>
             <Form onSubmit={submitHandler}>

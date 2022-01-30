@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import {Helmet} from "react-helmet";
 import { connect, useDispatch, useSelector } from 'react-redux'
 import { Container, Row, Col, Button, Image} from 'react-bootstrap'
 import { getFeaturedBlog } from '../../redux/actions/blogActions'
@@ -29,6 +30,11 @@ const Home = ({isAuthenticated}) => {
 
     return(
         <div className="home">
+               <Helmet>
+                <meta charSet="utf-8" />
+                <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
+                <title>Florix Healthcare</title>
+            </Helmet>
             <Container className='content'>
                 <Row class="row">
                     <Col sm={12} xl={6}>

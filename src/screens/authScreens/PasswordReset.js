@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import {Helmet} from "react-helmet";
 import { connect, useDispatch } from 'react-redux';
 import { Container, Form, Button } from 'react-bootstrap';
 import { reset_password } from '../../redux/actions/authActions';
@@ -25,6 +26,10 @@ const PasswordReset = ({ reset_password }) => {
 
     return (
         <Container className='auth-container '>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Reset Password</title>
+            </Helmet>
             <div className=' auth-header text-center'>
                 <p className="auth-base"> Reset password</p>
             </div>

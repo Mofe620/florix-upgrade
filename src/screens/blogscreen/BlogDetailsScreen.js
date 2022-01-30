@@ -3,6 +3,7 @@ import { Button, Card, Col, Container, Form, Image, Row } from 'react-bootstrap'
 import Message from '../../components/Message';
 import Loader from '../../components/Loader';
 import { useDispatch, useSelector } from 'react-redux'
+import {Helmet} from "react-helmet";
 import { Link } from 'react-router-dom';
 import { BLOG_COMMENT_RESET } from '../../redux/actions/types';
 import { listBlogDetails, getBlogComment } from '../../redux/actions/blogActions';
@@ -52,10 +53,15 @@ const BlogDetailsScreen = ({match}) => {
     
     return (
         <Container className="content post-details">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <meta name="description" content="Health related blog content" />
+                <title>{blog.title}</title>
+            </Helmet>
             <Row>
                 <Col sm={8}>
                 <div>
-                <Image className="post-details__img" src={blog.image} />
+                <Image className="post-details__img" src={blog.image} fluid/>
                 <h3 className='display-2 post-details__title'>{blog.title}</h3>
                 <h4 className='text-muted post-details__category'>Category: {capitalizeFirstLetter(blog.category)}</h4>
                 

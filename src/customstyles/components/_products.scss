@@ -44,9 +44,39 @@
                 font-size: 1.8rem;
             }
         }
-    }     
-    
+    } 
+    &__price{
+        font-size: 2rem;
+        font-weight: 600;
+    }    
+    &__trash{
+        background-color: red;
+        padding: 0.8rem;
+        color: #fff;
+        border-radius: 2rem;
+        font-size: 1.4rem;
+        @include respond(phone){
+            margin-top: 1rem;
+        }
+        
+    }
+    &__oos{
+        color: rgba(0, 0, 0, 0.589);
+        font-size: 1.6rem;
+        
+    }
 }
+.cart{
+    &__btn{
+        @include respond(phone){
+            margin-top: 1rem;
+        }
+    }
+    &__name{
+        font-size: 2rem;
+    }
+}
+
 
 .intro-caption{
     background-color: #023758;

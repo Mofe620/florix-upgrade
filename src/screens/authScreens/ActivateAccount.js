@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Helmet} from "react-helmet";
 import { Redirect } from 'react-router-dom';
 import {Container, Form, Button} from 'react-bootstrap'
 import { connect, useDispatch } from 'react-redux';
@@ -23,6 +24,10 @@ const ActivateAccount = ({ verify, match }) => {
 
     return (
         <Container className=' auth-container pt-4'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Activate your flolog Account</title>
+            </Helmet>
             <Form className="auth-form">
                 <Button 
                     className="auth-button  btn btn-block w-100" 

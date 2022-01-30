@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import {Helmet} from "react-helmet";
 import { Container, Form, Button } from 'react-bootstrap'
 import { connect, useDispatch } from 'react-redux';
 import { reset_password_confirm } from '../../redux/actions/authActions';
@@ -28,6 +29,10 @@ const PasswordResetConfirm = ({ match, reset_password_confirm }) => {
 
     return (
         <Container className=' auth-container pt-4'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Password Reset Confirm</title>
+            </Helmet>
                 <div className=' auth-header text-center'>
                     <p className="auth-base"> Enter a new password</p>
                 </div>

@@ -1,11 +1,15 @@
 import React from 'react'
 import { Button, Container, Form } from 'react-bootstrap'
+import {Helmet} from "react-helmet";
 
 const Contact = () => {
     return (
         <Container className="content auth-container">
-        
-                <div className="">
+               <Helmet>
+                <meta charSet="utf-8" />
+                <title>Contact Us</title>
+            </Helmet>
+                <div className="contact">
                     <Form classNam="auth-form">
                         <Form.Group className="mb-3" controlId="name">
                             <Form.Control 

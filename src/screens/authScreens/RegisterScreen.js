@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import {Helmet} from "react-helmet";
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { connect, useDispatch, useSelector } from 'react-redux'
 import Loader from '../../components/Loader'
@@ -41,8 +42,12 @@ function RegisterScreen({ signup, isAuthenticated }) {
         }
     return (
         <Container className='content auth-container'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Create your Flolog Account</title>
+            </Helmet>
             <div className="auth-header text-center mb-4">
-                <h2 className>Sign Up</h2>
+                <h2 className="auth-header">Sign Up</h2>
                 <p>Add your deatils to sign up</p>
             </div>
             {message && <Message variant='danger'>{message}</Message>}

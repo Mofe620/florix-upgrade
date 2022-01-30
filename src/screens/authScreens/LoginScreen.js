@@ -2,6 +2,7 @@ import React, { useState} from 'react'
 import { Container, Row, Col, Form, Button, Image, Card} from 'react-bootstrap'
 import { Link, Redirect, useLocation } from 'react-router-dom'
 import { connect, useDispatch, useSelector } from 'react-redux'
+import {Helmet} from "react-helmet";
 import Loader from '../../components/Loader'
 import Message from '../../components/Message'
 //import FormContainer from '../components/FormContainer'
@@ -31,8 +32,11 @@ function LoginScreen({ isAuthenticated }) {
 
     return (
         <Container className='content auth-container'>
-            
-                <div className="">
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Sign In</title>
+            </Helmet>
+            <div className="">
             <div className=' auth-header text-center'>
             {message && <Message variant='danger'>{message}</Message>}
             {error && <Message variant='danger'>{error}</Message>}
@@ -70,7 +74,7 @@ function LoginScreen({ isAuthenticated }) {
                         </div>
                     </Col>
                     <Col>
-                        <Button className="auth-button" type="submit">Login</Button>
+                        <Button className="auth-button" type="submit">Sign In</Button>
                     </Col>
                 </Row>
                 </Form>

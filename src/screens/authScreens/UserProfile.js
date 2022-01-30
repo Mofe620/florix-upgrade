@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react'
 import {useDispatch, useSelector, connect} from 'react-redux'
+import {Helmet} from "react-helmet";
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { LOAD_USER_PROFILE_RESET } from '../../redux/actions/types'
@@ -40,6 +41,10 @@ function UserProfile({location, history, isAuthenticated}) {
     }, [history, isAuthenticated, userInfo, user])
     return (
         <Container className='content'>
+               <Helmet>
+                <meta charSet="utf-8" />
+                <title>Profle</title>
+            </Helmet>
             <Row className="">
                 <h1 className="profile-header">{company} profile</h1>
                 <Col md={3} className="">

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Button, Row, Col, ListGroup, Image, Card, Container } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector, connect } from 'react-redux'
+import {Helmet} from "react-helmet";
 import { PayPalButton } from 'react-paypal-button-v2'
 import Message from '../../components/Message'
 import LoadingMain from '../../components/spinners/LoadingMain'
@@ -81,6 +82,11 @@ function OrderScreen({ match, history, isAuthenticated }) {
         <Message variant='danger'>{error}</Message>
     ) : (
                 <Container className="content">
+                    <Helmet>
+                     <meta charSet="utf-8" />
+                        <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
+                        <title>Order products</title>
+                    </Helmet>
                    {/* <h1>Order: {order.Id}</h1> */}
                     <Row>
                         <Col md={8}>
@@ -166,7 +172,7 @@ function OrderScreen({ match, history, isAuthenticated }) {
                                     </ListGroup.Item>
 
                                     <ListGroup.Item>
-                                        <Row>
+                                        <Row className="product__price">
                                             <Col><p>Sub total:</p></Col>
                                             <Col><p><strong>&#8358; {order.itemsPrice}</strong></p></Col>
                                         </Row>

@@ -16,9 +16,9 @@ function Product({ product }) {
             </Link>
             <div>
                 <Link to={`/product/${product.id}`}><h3 className='product__name'>{product.name}</h3></Link>
-                <p as="h3"> &#8358; {product.price}</p>
-                <p>{product.dosageForm}</p>
-                <p>{product.strength}</p>
+                <p as="h3" className="product__price"> &#8358; {product.price}</p>
+                <p>Dosage form: {product.dosageForm}</p>
+                <p>Strength: {product.strength}</p>
                 {/*
                 <div className="my-3">
                     <Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#f8e825'} />

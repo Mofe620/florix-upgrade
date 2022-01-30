@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector, connect } from 'react-redux'
 import Message from '../../components/Message'
 import CheckoutSteps from '../../components/CheckoutSteps'
+import {Helmet} from "react-helmet";
 import { createOrder } from '../../redux/actions/orderActions'
 import { ORDER_CREATE_RESET } from '../../constants/orderConstants'
 
@@ -51,6 +52,11 @@ function PlaceOrderScreen({ history, isAuthenticated }) {
     }
     return (
         <Container className="content">
+            <Helmet>
+             <meta charSet="utf-8" />
+                <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
+                <title>Place Order</title>
+            </Helmet>
             <Row>
                 <Col md={4}>
                      <div >
@@ -111,7 +117,7 @@ function PlaceOrderScreen({ history, isAuthenticated }) {
                                                 </Col>
 
                                                 <Col md={4}>
-                                                    <p>{item.qty} X &#8358; {item.price} = &#8358; {(item.qty * item.price).toFixed(2)}</p>
+                                                    <p className="product__price">{item.qty} X &#8358; {item.price} = &#8358; {(item.qty * item.price).toFixed(2)}</p>
                                                 </Col>
                                             </Row>
                                         </ListGroup.Item>

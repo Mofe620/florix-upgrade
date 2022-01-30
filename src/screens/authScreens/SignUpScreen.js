@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import { Container, Button } from 'react-bootstrap'
+import {Helmet} from "react-helmet";
 import { connect, useDispatch, useSelector } from 'react-redux'
 import Loader from '../../components/Loader'
 import Message from '../../components/Message'
@@ -59,6 +60,10 @@ const SignUpScreen = ({ signup, isAuthenticated }) => {
 
   return (
     <Container className="content auth-container">
+         <Helmet>
+                <meta charSet="utf-8" />
+                <title>Create your Flolog Account</title>
+            </Helmet>
       <Formik
         initialValues={{
           username: '',

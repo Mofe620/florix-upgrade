@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import {Helmet} from "react-helmet";
 import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap'
 import BlogCarousel from '../../components/blog/BlogCarousel'
 import Blog from '../../components/blog/Blog'
@@ -27,6 +28,11 @@ const BlogListScreen = () => {
     
     return (
         <Container className="content">
+             <meta charSet="utf-8" />
+                <Helmet>
+                <meta name="description" content="Health related blog content" />
+                <title>Blog posts</title>
+                </Helmet>
             <BlogCarousel />
             <div style={{marginTop:"20px"}}>
                 <div className="post">

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useHistory, useLocation } from 'react-router-dom'
+import {Helmet} from "react-helmet";
 import { useDispatch, useSelector, connect} from 'react-redux'
 import { Row, Col, Container, Button, Modal, Form } from 'react-bootstrap'
 import Product from '../../components/Product'
@@ -42,6 +43,11 @@ function HomeScreen({history, isAuthenticated}) {
 
     return (
         <div style={{marginTop:"50px"}}>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
+                <title>All products</title>
+            </Helmet>
             <div className="product__carousel">
                 <Container className="py-4">
                     {<ProductCarousel />}

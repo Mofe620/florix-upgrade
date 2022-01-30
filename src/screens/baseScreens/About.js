@@ -1,9 +1,14 @@
 import React from 'react'
+import {Helmet} from "react-helmet";
 import { Card, Col, Container, Image, ListGroup, Row } from 'react-bootstrap'
 
 const About = () => {
     return (
         <Container className="about content">
+               <Helmet>
+                <meta charSet="utf-8" />
+                <title>About Us</title>
+            </Helmet>
             <div>
                 <h2 style={{fontWeight: "bold", fontSize:"2.5rem",marginBottom:"10", color:""}}>Who are we?</h2>
                 <p className="about__paragraph" >
@@ -37,7 +42,7 @@ const About = () => {
                         <Card.Body>
                             <Card.Text>Trust</Card.Text>
                             <Card.Text>Innovation</Card.Text>
-                            <Card.Text>Exellent</Card.Text>
+                            <Card.Text>Excellence</Card.Text>
                         </Card.Body>
                     </Card>
                 </Col>

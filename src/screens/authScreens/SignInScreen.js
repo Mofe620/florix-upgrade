@@ -1,5 +1,6 @@
 import React, { useState} from 'react'
 import { Container, Button} from 'react-bootstrap'
+import {Helmet} from "react-helmet";
 import { Link, Redirect, useLocation } from 'react-router-dom'
 import { connect, useDispatch, useSelector } from 'react-redux'
 import Loader from '../../components/Loader'
@@ -39,6 +40,10 @@ const SignInScreen = ({ isAuthenticated }) => {
     })
     return (
         <Container className="content auth-container">
+               <Helmet>
+                <meta charSet="utf-8" />
+                <title>Sign In</title>
+            </Helmet>
         <Formik
             initialValues={{
             email: '',

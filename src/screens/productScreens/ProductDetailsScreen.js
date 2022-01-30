@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector, connect } from 'react-redux'
+import {Helmet} from "react-helmet";
 import { Link, useLocation } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Button, Card, Form, Container } from 'react-bootstrap'
 import Rating from '../../components/Rating'
@@ -72,6 +73,11 @@ function ProductScreen({ match, history, isAuthenticated }) {
 
     return (
         <div className="product mx-4" style={{marginTop:"70px"}}>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
+                <title>{product.name}</title>
+            </Helmet>
             <Container className=''>
             {loading ?
                 <LoadingMain />
@@ -87,7 +93,7 @@ function ProductScreen({ match, history, isAuthenticated }) {
                                     <div>
                                         <h4 className="product__name mt-3">Generic Name: {product.name}</h4>
                                         <p>Brand: {product.brand}  </p>
-                                        <p>Dosage Form: {product.dosageForm} </p>
+                                        <p>Dosage form: {product.dosageForm} </p>
                                         <p>Strength: {product.strength}</p>
                                         <p> Description: {product.description} </p>
                                     
@@ -101,7 +107,7 @@ function ProductScreen({ match, history, isAuthenticated }) {
                                                 <Row>
                                                     <Col>Price:</Col>
                                                     <Col>
-                                                        <strong>&#8358; {product.price}</strong>
+                                                        <p className="product__price">&#8358; {product.price}</p>
                                                     </Col>
                                                 </Row>
                                             </ListGroup.Item>
@@ -109,45 +115,55 @@ function ProductScreen({ match, history, isAuthenticated }) {
                                                 <Row>
                                                     <Col>Status:</Col>
                                                     <Col>
-                                                        {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
+                                                        {product.countInStock > 0 ? 'In Stock' 
+                                                        
+                                                        
+                                                        : <p className='product__oos'>Out of Stock</p>}
                                                     </Col>
                                                 </Row>
-                                            </ListGroup.Item>
+                                                 <ListGroup.Item>
+                                                {product.countInStock > 0 ? 
+                                                       <Form onSubmit ={handleSubmit}>
+                                                       <Form.Control
+                                                           style={{backgroundColor:"white", height:"3rem"}}
+                                                           type="number"
+                                                           min="1"
+                           
+                                                           placeholder='Enter quantity'
+                                                           max={product.countInStock} 
+                                                           onChange= {e=>setQty(e.target.value)}
+                                                         
+                                                       >
+                                                           
 
-                                        
-                                                <ListGroup.Item>
-                                                 
-                                                        <Form onSubmit ={handleSubmit}>
-                                                            <Form.Control
-                                                                style={{backgroundColor:"white"}}
-                                                                type="number"
-                                                                min="1"
-                                                                placeholder='Enter quantity'
-                                                                max={product.countInStock} 
-                                                                onChange= {e=>setQty(e.target.value)}
-                                                              
-                                                            >
-                                                                
-
-                                                            </Form.Control>
-                                                            
-                                                            <div className="d-grid gap-2 pt-2">
-                                                            <Button
-                                                            
-                                                            size="lg"
-                                                            disabled={product.countInStock === 0}
-                                                            type="submit">
-                                                            Add to Cart
-                                                        </Button>
-                                                            </div>
-                                                        </Form>
-                                                </ListGroup.Item>
-                                        
-
-
-                                            <ListGroup.Item>
+                                                       </Form.Control>
+                                                       
+                                                       <div className="d-grid gap-2 pt-2">
+                                                       <Button
+                                                       
+                                                       size="lg"
+                                                       disabled={product.countInStock === 0}
+                                                       type="submit">
+                                                       Add to Cart
+                                                   </Button>
+                                                       </div>
+                                                   </Form>
                                                 
+                                                    : <div className="d-grid gap-2 pt-2">
+                                                    <Button
+                                                        size="lg"
+                                                        disabled={product.countInStock === 0}
+                                                        type="submit">
+                                                        Add to Cart
+                                                    </Button>
+                                                    </div>}
+                                                 
+                                                </ListGroup.Item>
                                             </ListGroup.Item>
+
+                                        
+                                               
+            
                                         </ListGroup>
                                        
                                     </Card>

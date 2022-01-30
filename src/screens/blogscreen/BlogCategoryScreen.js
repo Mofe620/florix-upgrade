@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import {Helmet} from "react-helmet";
 import {Container, Image} from 'react-bootstrap'
 import { getBlogCategory } from '../../redux/actions/blogActions'
 
@@ -60,6 +61,11 @@ const BlogCategoryScreen = ({match}) => {
 
     return (
         <Container className='content'>
+            <Helmet>
+             <meta charSet="utf-8" />
+                <meta name="description" content="Health related blog content" />
+                <title>Blog categories</title>
+            </Helmet>
             {/*
             <div className='container mt-3'>
             <h3 className='display-4'>Category: {currentCategory} </h3>

@@ -1,5 +1,6 @@
 import React, { useState} from 'react'
 import { Container, Form, Button, Image, Card} from 'react-bootstrap'
+import {Helmet} from "react-helmet";
 import { Link, Redirect } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -28,6 +29,11 @@ function ShippingScreen({history}) {
 
     return (
         <Container className=' auth-container content'>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
+                <title>Billing address</title>
+            </Helmet>
         <Card className="p-5">
        <CheckoutSteps step1 step2 />
         <h2 className="text-center checkout__header">Shipping Address</h2>

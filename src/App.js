@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import {Helmet} from "react-helmet";
 import './customstyles/main.scss';
 import './App.css';
 import Header from './components/global/Header'
@@ -46,6 +47,10 @@ function App() {
     <Router>
       <Header />
       <main className="py-3">
+      <Helmet>
+        <title>Florix Healthcare</title>
+        <meta name="description" content="Providing tech driven logistics solution" />
+    </Helmet>
         <>
 
         <Route path='/signup' component={SignUpScreen} />

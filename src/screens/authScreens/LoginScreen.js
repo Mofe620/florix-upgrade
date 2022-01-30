@@ -23,9 +23,6 @@ function LoginScreen({ isAuthenticated }) {
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch(login(email, password))
-        setTimeout(() =>{
-            setMessage("Login was successful")
-        }, 2000)
     }
 
     if (isAuthenticated){
@@ -41,7 +38,6 @@ function LoginScreen({ isAuthenticated }) {
             </Helmet>
             <div className="">
             <div className=' auth-header text-center'>
-            {message && <Message variant='success'>{message}</Message>}
             {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader />}
             

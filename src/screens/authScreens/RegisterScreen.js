@@ -48,7 +48,7 @@ function RegisterScreen({ signup, isAuthenticated }) {
                 <h2 className="auth-header">Sign Up</h2>
                 <p>Add your deatils to sign up</p>
             </div>
-            {message && <Message variant='success'>{message}</Message>}
+            {/* {message && <Message variant='success'>{message}</Message>} */}
             {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader />}
                     <Form className="auth-form" onSubmit={submitHandler}>

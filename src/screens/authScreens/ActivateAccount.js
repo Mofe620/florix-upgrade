@@ -15,12 +15,6 @@ const ActivateAccount = ({ verify, match }) => {
         const uid = match.params.uid;
         const token = match.params.token;
         dispatch(verify(uid, token));
-        swal({
-            title: "Welcome!",
-            text: "Your account has been activated successfully.",
-            icon: "success",
-            button: "Close",
-          });
           setActivated(true);
     };
 

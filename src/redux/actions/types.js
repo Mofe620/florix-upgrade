@@ -24,6 +24,11 @@ export const FACEBOOK_AUTH_SUCCESS = 'FACEBOOK_AUTH_SUCCESS';
 export const FACEBOOK_AUTH_FAIL = 'FACEBOOK_AUTH_FAIL';
 export const LOGOUT = 'LOGOUT';
 
+// Contact 
+export const CONTACT_REQUEST = 'CONTACT_REQUEST'
+export const CONTACT_SUCCESS = 'CONTACT_SUCCESS'
+export const CONTACT_FAIL = 'CONTACT_FAIL'
+
 
 
 // Product types

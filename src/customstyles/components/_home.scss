@@ -75,14 +75,73 @@
     }
 }
 
+.services{
+    
+    @include respond(phone){
+       margin-top: 7rem;
+       
+    }
+
+    &__header{
+        display: flex;
+        justify-content: center;
+        color: $primary;
+        font-size: 3rem;
+        font-weight: 700;
+
+        @include respond(phone){
+            text-align: center;
+            font-size: 2.5rem;
+           
+        }
+    }
+    &__tab{
+        display: grid;
+        justify-content: center;
+        margin-top: 7rem;
+        justify-content: center;
+
+        @include respond(phone){
+            margin-top: 5rem;
+        }
+        &__icon{
+            color: $primary;
+            font-size: 3rem;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            cursor: pointer;
+        }
+        &__lead{
+            margin-top: 3rem;
+            color: $neutral;
+            padding: 1.5rem;
+            font-size: 2rem;
+            font-weight: 500;
+            border-radius: 5rem;
+            align-items:center ;
+            letter-spacing: 1px;
+        }
+
+    }
+    &__gradient3{
+        background-image: linear-gradient(to top, $primary, rgb(38, 170, 179) , rgb(22, 211, 132));
+    }
+    &__gradient2{
+        background-image: linear-gradient(to top, $primary, rgb(43, 231, 190));
+    }
+    &__gradient1{
+        background-color: $primary;
+    }
+}
+
 .about{
     text-align: center;
     @include respond(tab-port) {
     
-        margin-top: 8rem;   
+        margin-top: 7rem;   
     }   
     @include respond(phone) {
-        margin-top: 8rem;   
+        margin-top: 7rem;   
     }   
   
 

@@ -5,7 +5,7 @@ import { Card, Col, Container, Image, ListGroup, Row } from 'react-bootstrap'
 const About = () => {
     return (
         <Container className="about content">
-               <Helmet>
+            <Helmet>
                 <meta charSet="utf-8" />
                 <title>About Us</title>
             </Helmet>

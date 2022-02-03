@@ -61,12 +61,8 @@ const BlogListScreen = () => {
                                 </Row>
                                 */}
                             </div>
-                            <div><h2>Blog Categories</h2></div>
-                            <Row>
-                                <Col lg={4}> <h2><Link to="/blog/category/medications">Medications</Link></h2> </Col>
-                                <Col lg={4}> <h2><Link to="/blog/category/diseases">Diseases</Link></h2> </Col>
-                                <Col lg={4}> <h2><Link to="/blog/category/medical-equipment">Equipments</Link></h2> </Col>
-                            </Row>
+                            <div><h2>ADVERTS</h2></div>
+                         
                            
                         </Col>
                     </Row>

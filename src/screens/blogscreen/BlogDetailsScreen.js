@@ -61,9 +61,10 @@ const BlogDetailsScreen = ({match}) => {
             <Row>
                 <Col sm={8}>
                 <div>
-                <Image className="post-details__img" src={blog.image} fluid/>
-                <h3 className='display-2 post-details__title'>{blog.title}</h3>
                 <h4 className='text-muted post-details__category'>Category: {capitalizeFirstLetter(blog.category)}</h4>
+                <Image className="post-details__img" src={blog.image} fluid/>
+                <h3 className='display-2 post-details__title text-center'>{blog.title}</h3>
+                <p className="blog__comment__date"><i>{blog.dateCreated}</i></p>
                 
                 <div className='mt-5 mb-5' dangerouslySetInnerHTML={createBlog()} />
             </div>

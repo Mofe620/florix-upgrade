@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {Helmet} from "react-helmet";
-import {Container, Image} from 'react-bootstrap'
+import {Button, Container, Image} from 'react-bootstrap'
 import { getBlogCategory } from '../../redux/actions/blogActions'
 
 
@@ -29,15 +29,19 @@ const BlogCategoryScreen = ({match}) => {
 
         blogs.map(blog => {
             return list.push(
-                <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
-                    <div className="col p-4 d-flex flex-column position-static">
-                        <strong className="d-inline-block mb-2 text-primary">{blog.category}</strong>
-                        <h3 className="mb-0">{blog.title}</h3>
-                        <p className="card-text mb-auto">{blog.introduction}</p>
-                        <Link to={`/post/${blog.slug}`} className="stretched-link">Read More</Link>
-                    </div>
-                    <div className="col-auto d-none d-lg-block">
-                    <Image className="post__img" src={`${process.env.REACT_APP_API_URL}${blog.image}`} alt={blog.title} fluid/>
+                <div>
+                    <h2 className="blog__category__header"><span className="d-inline-block mb-2">Blog Category: <strong> {blog.category}</strong></span></h2>
+                    <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+                        
+                        <div className="col p-4 d-flex flex-column position-static">
+                           {/* <Image className="post__img" src={`${process.env.REACT_APP_API_URL}${blog.image}`} alt={blog.title} fluid/> */}
+                            <Image className="post__img" src={blog.image} alt={blog.title} fluid/>
+                            <h3 className="mb-0">{blog.title}</h3>
+                            <p className=" mb-auto">{blog.introduction}</p>
+                            <Link to={`/post/${blog.slug}`} className="stretched-link"><Button className="blog__category__btn">Read More</Button></Link>
+                        </div>
+                        <div className="col-auto d-none d-lg-block">
+                        </div>
                     </div>
                 </div>
             );

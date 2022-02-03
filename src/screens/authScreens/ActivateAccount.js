@@ -15,7 +15,7 @@ const ActivateAccount = ({ verify, match }) => {
         const uid = match.params.uid;
         const token = match.params.token;
         dispatch(verify(uid, token));
-          setActivated(true);
+        setActivated(true);
     };
 
     if (activated) {

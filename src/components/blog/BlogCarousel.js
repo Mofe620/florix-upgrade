@@ -3,6 +3,7 @@ import { Carousel } from 'react-bootstrap'
 const BlogCarousel = () => {
     return (
         <Carousel fade>
+           {/*
         <Carousel.Item interval={3000}>
         <img
             className="d-block w-100"
@@ -19,6 +20,7 @@ const BlogCarousel = () => {
             fluid
           />
         </Carousel.Item>
+          */}
         <Carousel.Item interval={3000}>
         <img
             className="d-block w-100"

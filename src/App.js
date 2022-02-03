@@ -20,6 +20,7 @@ import ActivateAccount from './screens/authScreens/ActivateAccount';
 
 //import Carousel from './components/Carousel';
 //import navbar from './components/global/_global/_navbar';
+import servicesScreen from './screens/baseScreens/servicesScreen';
 import DrugStore from './screens/productScreens/DrugStore';
 import ProductDetailsScreen from "./screens/productScreens/ProductDetailsScreen"
 import ProductsScreen from './screens/productScreens/ProductsScreen'
@@ -38,6 +39,7 @@ import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/orderScreens/OrderListScreen'
 */
+import BlogHomeScreen from './screens/blogscreen/BlogHomeScreen';
 import BlogListScreen from './screens/blogscreen/BlogListScreen';
 import BlogDetailsScreen from './screens/blogscreen/BlogDetailsScreen';
 import BlogCategoryScreen from './screens/blogscreen/BlogCategoryScreen';
@@ -63,6 +65,7 @@ function App() {
           <Route path='/' component={Home} exact />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
+          <Route path='/services' component={servicesScreen} />
           <Route path='/drugstore' component={DrugStore} />
           <Route path='/products' component={ProductsScreen} />
           <Route path='/login' component={LoginScreen} />
@@ -76,9 +79,9 @@ function App() {
           <Route path='/product/:id' component={ProductDetailsScreen} />
           <Route path='/cart/:id?' component={CartScreen} />
 
-          
-          <Route path='/posts' component={BlogListScreen} />
+          <Route path='/blog/posts' component={BlogListScreen} />
           <Route path='/post/:id' component={BlogDetailsScreen} />
+          <Route path='/blog/categories' component={BlogHomeScreen} />
           <Route path='/blog/category/:id' component={BlogCategoryScreen} />
 
           {/*<Route path='/navbar' component={navbar} exact/> 

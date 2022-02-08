@@ -84,6 +84,11 @@
         &__lead{
             display: flex;
             justify-content: center;
+            @include respond(phone){
+                display: grid;
+                justify-content: center;
+                text-align: center;
+            }
 
             &__tab{
                 background-color: rgb(9, 176, 206);
@@ -92,6 +97,7 @@
                 border-radius: 1.5rem;
                 letter-spacing: 2px;
                 font-weight: 600;
+                
               
                 & a{
                     color: #fff;

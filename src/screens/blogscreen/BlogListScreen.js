@@ -39,32 +39,11 @@ const BlogListScreen = () => {
                     <h3 className="m-0 p-0"><strong>Latest Posts</strong></h3>
                     <hr />
                     <Row>
-                        <Col md={8}>
                             {blogs.map(blog => (
-                                <Col key={blog.id} sm={12} md={6} lg={4} xl={3}>
+                                <Col key={blog.id} xs={12} sm={6} md={4} lg={4} xl={3}>
                                     <Blog blog={blog} />
                                 </Col>
                             ))}  
-                        </Col>
-                        <Col md={4}>
-                            <div>
-                                {/*
-                                <Row>
-                                    <Col md={4}><Image className="post__img" src="/assets/blog/post2.jpg" alt="" fluid/></Col>
-                                    <Col md={8}>
-                                        <div>
-                                            <p className="post__txt__title">University Create New Epidermiological Model to Study COVID-19</p>
-                                            <p>Dec 27th - 5m</p>
-                                        </div>
-                                        
-                                    </Col>
-                                </Row>
-                                */}
-                            </div>
-                            <div><h2>ADVERTS</h2></div>
-                         
-                           
-                        </Col>
                     </Row>
                 </div>
            

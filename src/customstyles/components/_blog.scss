@@ -4,8 +4,11 @@
 .post{
     &__img{
             border-radius: 10px;
+            height: 200px;
             @include respond(phone){
-                height: 10rem;
+             float: left;
+               width: 40%;
+        
             }
             @include respond(tab-port){
                 height: 10rem;
@@ -14,6 +17,13 @@
 
     &__txt{
         margin-top: 10px;
+        width: 200px;
+
+        @include respond(phone) {
+            float: left;
+            width: 50%;
+            margin-left: 3%;
+        }
 
         &__title{
             font-size: 1.6rem;
@@ -41,8 +51,11 @@
 }
 .blog{
     &__post{
+        :hover {
+            color: rgb(248, 205, 232);
+        }
         @include respond(phone) {
-           
+           margin-top: 15px;
           }
       
     }

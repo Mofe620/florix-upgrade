@@ -2,6 +2,7 @@ import React from 'react';
 import {Container} from 'react-bootstrap'
 import {Helmet} from "react-helmet";
 import { Link } from 'react-router-dom';
+import FloatingAction from '../../components/FloatingAction';
 
 const servicesScreen = () => {
   return (
@@ -27,7 +28,7 @@ const servicesScreen = () => {
                 </div>
             </div>
         </div>
-
+        <FloatingAction />
     </Container>
   )
 };

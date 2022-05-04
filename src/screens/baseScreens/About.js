@@ -1,6 +1,7 @@
 import React from 'react'
 import {Helmet} from "react-helmet";
 import { Card, Col, Container, Image, ListGroup, Row } from 'react-bootstrap'
+import FloatingAction from '../../components/FloatingAction';
 
 const About = () => {
     return (
@@ -97,6 +98,7 @@ const About = () => {
                 </Col>
             </Row>
             </div>
+            <FloatingAction />
         </Container>
     )
 }

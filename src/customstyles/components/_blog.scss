@@ -87,11 +87,20 @@
             display: flex;
             justify-content: center;
             color: $neutral;
-            background-color: $primary;
+            background-color: $neutral;
+            border: 1px $primary solid;
+            border-radius: 1.5rem;
             padding: 1rem;
-              
+            cursor: pointer;
+            a:hover{
+                color: $info;
+            }
             & a{
-                color: #fff;
+                color: $primary;
+                
+            }
+            &:hover{
+                color: gray;
             }
         }
         &__lead{

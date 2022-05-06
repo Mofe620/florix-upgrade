@@ -52,7 +52,7 @@ const About = () => {
                 <Col md={4} className="about__team-members">
                     <Row>
                         <Col md={4} lg={4}>
-                            <Image className='about__team__img' src='/assets/images/Andrew.jpg' roundedCircle fluid />
+                            <Image className='about__team__img' src='/assets/images/pharmAndrew.jpg' roundedCircle fluid />
                         </Col>
                         <Col md={8}>
                             <div className="mt-4">

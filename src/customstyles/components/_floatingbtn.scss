@@ -1,14 +1,15 @@
 
 .btn__floating{
     position: fixed;
-    bottom: 10rem;
-    right: 5rem;
+    bottom: 5rem;
+    right: 3rem;
     z-index: 9999;
 
     &__icon{
         font-size: 5rem;
         color: #25D366 !important;
         cursor: pointer;
+  
        
 
         &__link{
@@ -20,7 +21,7 @@
             }
 
             &__fa{
-                box-shadow: 1rem 1rem 1rem #bcf8d4;
+                height: 5rem;
             }
             
         }

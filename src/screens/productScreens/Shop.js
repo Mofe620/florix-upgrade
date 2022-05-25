@@ -31,7 +31,7 @@ const Shop = () =>{
                 <StoreSlider />
                 </div>
                 <div className='shop__introline d-flex'>
-                    <h2 className='introline__header'>Best Deals</h2>
+                    <h2 className='shop__introline__header'>Best Deals</h2>
                     <p className='shop__introline__allbtn ms-auto pt-4'><Link to="/drugstore" />view all</p>
                 </div>
                 <div className='m-5'>
@@ -58,7 +58,7 @@ const Shop = () =>{
                 </div>
             
                 <div className='shop__introline d-flex'>
-                    <h2 className='introline__header'>Multivitamins</h2>
+                    <h2 className='shop__introline__header'>Multivitamins</h2>
                     <p className='shop__introline__allbtn ms-auto pt-4'><Link to="/drugstore" />view all</p>
                 </div>
                 <div className='px-5 py-4'>

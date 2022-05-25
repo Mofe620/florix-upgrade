@@ -9,6 +9,11 @@
         & p{
             color: $danger;
         }
+
+        & h2{
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
     }
     &__bar{
       margin: 7rem 2rem;

@@ -12,12 +12,12 @@ import 'swiper/modules/pagination/pagination.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 
 const data = [
-  {id:1, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
-  {id:2, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
-  {id:3, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
-  {id:4, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
-  {id:6, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
-  {id:7, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"}
+  {id:1, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"},
+  {id:2, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"},
+  {id:3, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"},
+  {id:4, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"},
+  {id:6, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"},
+  {id:7, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"}
 ]
 
 // <SwiperSlide><Image src='assets/images/Image1.png' height={300}/></SwiperSlide>

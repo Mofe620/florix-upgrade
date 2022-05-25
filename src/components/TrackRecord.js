@@ -23,8 +23,8 @@ const TrackRecord = () => {
             <h2 className='trackrecord__introline__header'>What our clients are saying</h2>
            
         </div>
-        <div>
-            <p className='trackrecord__view'><Link to="/drugstore">view all</Link></p>
+        <div className=''>
+            <p className='trackrecord__view'><Link to="/">view all</Link></p>
             <Testimony />
         </div>
     </div>

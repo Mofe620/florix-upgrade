@@ -40,7 +40,7 @@ const Testimony= () => {
               <div>
                 <Image src={drug.image} className='testimony__slider__image' fluid/>
               </div>
-                <div className=''>
+                <div className='m-2 p-3'>
                     <p>{drug.brand}</p>
                     <p>{drug.name}</p>
                     <p>{drug.name}</p>

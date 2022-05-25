@@ -7,6 +7,8 @@ import {Helmet} from "react-helmet";
 import { Link } from 'react-router-dom';
 import { BLOG_COMMENT_RESET } from '../../redux/actions/types';
 import { listBlogDetails, getBlogComment } from '../../redux/actions/blogActions';
+import Header from '../../components/global/Header';
+import Footer from '../../components/Footer';
 
 
 const BlogDetailsScreen = ({match}) => {
@@ -52,6 +54,8 @@ const BlogDetailsScreen = ({match}) => {
     }
     
     return (
+        <>
+        <Header />
         <Container className="content post-details">
             <Helmet>
                 <meta charSet="utf-8" />
@@ -106,7 +110,9 @@ const BlogDetailsScreen = ({match}) => {
             </Row>
             
         </Container>
-        
+        <Footer />
+    </>   
+   
     );
 };
 

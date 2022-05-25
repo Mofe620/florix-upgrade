@@ -1,0 +1,114 @@
+@import "../mixins/variables";
+
+
+.emergency{
+    margin-top: 7rem;
+    &__header{
+        margin-top: 3rem;
+        & h2{
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        & p{
+            color: #666565;
+        }
+    }
+    &__formgroup{
+        margin: 1.5rem 0;
+        font-size: 1.8rem;
+        
+        &__option{
+            font-size: 1.8rem;
+            width: 700;
+        }
+   
+
+        &__first-half{
+            width: 49%;
+            margin-right: 1%;
+            font-size: 1.8rem;
+            @include respond(phone){
+                width: 100%;
+            }
+
+            &__label{
+                font-size: 1.8rem;
+            }
+            
+
+        }
+        &__second-half{
+            width: 49%;
+            margin-left: 1%;
+            font-size: 1.5rem;
+            @include respond(phone){
+                width: 100%;
+            }
+
+        }
+
+        &__wrapper{
+            display: flex;
+            width: 100%;
+            @include respond(phone){
+                display: grid;
+            }
+            
+
+        }
+        &__text{
+            width: 25%;
+            font-size: 1.8rem;
+            @include respond(phone){
+                width: 100%;
+            }
+        }
+        &__input{
+            width: 95%;
+        }
+    }
+    &__pickup{
+
+        &__container{
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            background-color: $secondary;
+        }
+    }
+    &__forminput{
+        height: 3.5rem;
+        font-size: 1.5rem;
+    }
+
+    &__checkbox{
+        font-size: 1.5rem;
+
+        &__label{
+            font-size: 1.8rem;
+        }
+    }
+
+    &__btn{
+        background-color: $neutral;
+        font-size: 1.8rem;
+        height: 5rem;
+        width: 15rem;
+        color: $neutral ;
+        margin-right: 3rem;
+        margin-bottom: 3rem;
+        border-radius: 2.5rem;
+        @include respond(phone){
+            width: 100%;
+        }
+
+        &__previous{
+            color: #666565;
+            border: 1px #666565 solid;
+        }
+
+        &__next{
+            color: $primary;
+            border: 1px $primary solid;
+        }
+    }
+}

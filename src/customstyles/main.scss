@@ -5,9 +5,17 @@
 
 @import 'spinners/loading-main';
 
+@import 'screens/index.scss';
+@import 'screens/emergency.scss';
+@import 'screens/prescriptionform.scss';
+@import 'screens/shop.scss';
 @import 'components/navbar';
-@import 'components/floatingbtn';
+@import 'components/floatingbtn.scss';
+@import 'components/trackrecord.scss';
+@import 'components/emergency.scss';
+@import 'components/prescriptionform.scss';
 @import 'components/sidebar';
+@import 'components/swiper';
 @import 'components/home.scss';
 @import 'components/auth.scss';
 @import 'components/products.scss';

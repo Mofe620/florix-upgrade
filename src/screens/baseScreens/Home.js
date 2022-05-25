@@ -5,6 +5,8 @@ import { connect, useDispatch, useSelector } from 'react-redux'
 import { Container, Row, Col, Button, Image} from 'react-bootstrap'
 import { getFeaturedBlog } from '../../redux/actions/blogActions'
 import FloatingAction from '../../components/FloatingAction';
+import Header from '../../components/global/Header';
+import Footer from '../../components/Footer';
 
 
 
@@ -31,6 +33,7 @@ const Home = ({isAuthenticated}) => {
 
     return(
         <div className="home">
+            <Header />
                <Helmet>
                 <meta charSet="utf-8" />
                 <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
@@ -85,6 +88,7 @@ const Home = ({isAuthenticated}) => {
                 </Row>
             </div>
             <FloatingAction />
+            <Footer />
         </div>
     )
 }

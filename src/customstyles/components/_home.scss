@@ -137,13 +137,11 @@
 .about{
     text-align: center;
     @include respond(tab-port) {
-    
         margin-top: 7rem;   
     }   
     @include respond(phone) {
         margin-top: 7rem;   
     }   
-  
 
     &__header-one{
         font-size: 2rem;
@@ -183,6 +181,9 @@
             height: 100px;
             width: 100px;
             border-radius: 50%;
+            @include respond(phone){
+                margin-top: 2rem;
+            }
 
         @include respond(tab-port) {
             height: 200px;
@@ -198,14 +199,12 @@
 
 
 .footer a{
-    color: $neutral;
+    color: #000;
 }
 footer, a:hover{
     color: rgb(248, 205, 232)
 }
 .footer{
-    color: $neutral;
-    background-color: $primary;
     font-size: 12px;
     max-width: 100%;
     height: auto;
@@ -213,14 +212,114 @@ footer, a:hover{
     margin: 0;
     overflow: hidden;
 
-    &__items{
+    &__divider{
+        height: 1rem;
+        width: 100%;
+        background-color: $primary;
+        margin-top: 1rem;
+    }
+    &__news{
+        background-color: $primary;
+        color: $neutral;
+        width: 100%;
+        height: 15vh;
         display: flex;
-      
+        padding-left: 5rem;
+        padding-right: 5rem;
+        padding-top: 6rem;
+        padding-bottom: 15rem;
+
+        @include respond(phone) {
+            display: grid;
+            height: auto;
+            align-items: center;   
+            padding-bottom: 6rem; 
+            padding-top: 3rem; 
+            padding-left: 0;
+            padding-right: 0;
+            
+        }   
+        
+
+        &__statement{
+            width: 45%;
+            margin-right: 5%;
+            @include respond(phone) {
+                width: 100%; 
+                margin-top: 2rem auto;
+                padding: 0 2rem;
+                
+                
+            }   
+
+            & h2{
+                font-size: 2.5rem;
+                font-weight: 700;
+                @include respond(phone) {
+                    margin-top: 5rem;
+                } 
+            }
+            & p{
+                font-size: 2rem;
+            }
+        }
+
+        &__subscription{
+            width: 45%;
+            margin-left: 5%;
+        }
+        &__form{
+
+            &__input{
+                height: 4rem;
+                width: 50rem;
+                border-radius: 5rem;
+                font-size: 1.7rem;
+                background-color: transparent;
+
+                @include respond(phone) {
+                   width: 30rem;   
+                   
+                }   
+              
+            }
+            &__btn{
+                width: 20rem;
+                padding-bottom: 3rem;
+                height: 3rem;
+                margin: 5px 0;
+                font-size: 1.7rem;
+                border-radius: 5rem;
+                background-color: $neutral;
+                color: $primary;
+                @include respond(phone) {
+                    width: 30rem;     
+                 }   
+            }
+        }
+    }
+
+    &__items{
+        width: 100%;
+        display: flex;
+        background-color: #EFEEEE;
+        color: #000 !important;
         padding: 1rem 1.5rem;
         justify-content: space-around;
         font-size: 1.4rem;
         font-weight: 400;
         cursor: pointer;
+
+        & h2{
+            font-weight: 700;
+            font-size: 1.8rem;
+            @include respond(phone){
+                margin-top: 2rem;
+            }
+        }
+        & a{
+            color: #000;
+        }
         
         @include respond(phone) {
            display: grid;
@@ -230,17 +329,17 @@ footer, a:hover{
     &__media{
         display: flex;
         font-size: 1.4rem;
-        padding: 1rem 2rem;
+     
         justify-content: center;
     
         &__icons{
             font-size: 2.5rem;
-            margin: 0 3rem;
+            margin: 0 1rem;
         }
     }
     &__subscription{
         font-size: 1.4rem;
-        padding: 1rem 4rem;
+     
 
         @include respond(phone) {
             margin: 0 6rem;
@@ -262,7 +361,7 @@ footer, a:hover{
   }
 
 .footer2{
-    background-color: #044b77;
+    background-color: $primary;
     color: $neutral;
     font-size: 1.4rem;
 }

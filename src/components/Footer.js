@@ -5,40 +5,55 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 const Footer = () =>{
     return(
         <>
-        <Container className='footer p-4 mt-4'> 
-        
-        <div className="footer__items">
-            <p><Link to="/posts">Blog Posts</Link></p>
-            <p><Link to="about">About Us</Link></p>
-            <p><Link to="/contact">Contact Us</Link></p>
+            <div className='footer__news mt-5'>
+                    <div className='footer__news__statement'>
+                        <h2>Be the first to find out about new products and services.</h2>
+                        <p>Sign up for our newsletter</p>
+                    </div>
+                    <div className='footer__news__subscription'>
+                        <Form className="footer__news__form">
+                            <Form.Group  controlId="formGroupEmail">
+                                <Form.Control className="footer__news__form__input" type="email" placeholder="Enter your email" /> 
+                            </Form.Group>
+                            <Button className="footer__news__form__btn">Subscribe</Button>
+                        </Form>
+                    </div>
+            </div>
+            <div className="footer__divider"></div>
+            <div className="footer__items">
+            <div>
+                <h2>Quick Links</h2>
+                <p><Link to="/">Home</Link></p>
+                <p><Link to="/about">About Us</Link></p>
+                <p><Link to="/posts">Blog</Link></p>
+            </div>
+
+            <div>
+                <h2>Solutions</h2>
+                <p><Link to="/">Wholesale store</Link></p>
+                <p><Link to="/">Logistics Portal</Link></p>
+                <p><Link to="/">Raredrug Portal</Link></p>
+            </div>
+
+            <div>
+                <h2>Policies</h2>
+                <p><Link to="/">Privacy Policy</Link></p>
+                <p><Link to="/">Terms and Conditions</Link></p>
+                <p><Link to="/">Blog</Link></p>
+            </div>
+
+            <div>
+                <h2>Socials</h2>
+                <p><Link to="/"><span className="footer__media__icons"><a href="https://www.facebook.com/florixhealthcare" target="_blank"><i className="fab fa-facebook"></i></a></span>Flo-Log Healthcare</Link></p>
+                <p><Link to="/"><span className="footer__media__icons"><a href="http://instagram.com/flo_log.hq" target="_blank"><i className="fab fa-instagram"></i></a></span>flo_log.hq</Link></p>
+                <p><Link to='/'><span className="footer__media__icons"><a href="/"><i className="fab fa-twitter"></i></a></span>Twitter</Link></p>
+            </div>
+           
         </div>
+        <div className='footer'> 
         
-        <Row className="">
-            <Col md={8} className="px-0 footer">
-                <div className="footer__media">
-                    <span className="footer__media__icons"><a href="https://www.facebook.com/florixhealthcare" target="_blank"><i className="fab fa-facebook"></i></a></span>
-                    <span className="footer__media__icons"><a href="http://instagram.com/flo_log.hq" target="_blank"><i className="fab fa-instagram"></i></a></span>
-                    <span className="footer__media__icons"><a href="https://tinyurl.com/2p98zk2h" target="_blank"><i className="fab fa-whatsapp"></i></a></span>
-                    <span className="footer__media__icons"><a href="/"><i className="fab fa-twitter"></i></a></span>
-                </div>
-            </Col>
-            <Col md={4} className="footer__subscription px-0">
-            <p className="footer__subscription__text">Get E-mail Updates About Our Latest News And Special Offers</p>
-                <Row>
-                    <Col xs={8} className="footer__subscription__form" >
-                    <Form className="px-0">
-                        <Form.Group  controlId="formGroupEmail">
-                            <Form.Control className="search-ppty" type="email" placeholder="Enter your email" /> 
-                        </Form.Group>
-                    </Form>
-                    </Col>
-                    <Col xs={4} >
-                    <Button variant="danger" className="search-ppty px-0">Subscribe</Button>
-                    </Col>
-                </Row>
-            </Col>            
-        </Row>
-        </Container>
+    
+        </div>
         <p className="footer2 text-center py-3">&copy; 2022 Florix Healthcare Ltd. All Rights Reserved. </p> 
     </>
     )

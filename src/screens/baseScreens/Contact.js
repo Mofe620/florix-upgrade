@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Button, Container, Form } from 'react-bootstrap'
 import { contactUs } from '../../redux/actions/contactAction';
 import {Helmet} from "react-helmet";
+import Footer from '../../components/Footer';
+import Header from '../../components/global/Header';
 
 const Contact = () => {
     const [name, setname] = useState([])
@@ -23,6 +25,8 @@ const Contact = () => {
     };
     console.log(subject)
     return (
+        <>
+        <Header />
         <Container className="content auth-container">
                <Helmet>
                 <meta charSet="utf-8" />
@@ -87,6 +91,8 @@ const Contact = () => {
                 </div>
                 
     </Container>
+    <Footer />
+    </>
     )
 }
 

@@ -1,0 +1,115 @@
+@import "../mixins/variables";
+
+.shop{
+
+    &__introline{
+        background-color: $secondary;
+        padding: 1rem 5rem;
+
+        & p{
+            color: $danger;
+        }
+    }
+    &__bar{
+      margin: 7rem 2rem;
+      margin-bottom: 5px;
+        @include respond(phone){
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__form{
+            width: 50rem;
+            @include respond(phone){
+                width: 100%;
+            }
+    
+            &__control{
+                height: 3.5rem;
+                border-radius: 2rem;
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+        }
+        
+        &__button{
+            height: 2.5rem;
+            width: auto;
+            padding: 1rem 2rem;
+            margin-right: 4rem;
+            padding-bottom: 3rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 5px;
+            background-color: $primary;
+
+            & a{
+                color: $neutral;
+            }
+
+            @include respond(phone){
+               margin-right: 0;
+            }
+
+        }
+    }
+
+    
+    &__pagedivider{
+        height: 10rem;
+        background-size: cover;
+        text-align: center;
+        align-items: center;
+        font-size: 2rem;
+
+        &__icon{
+            height: 3rem;
+        }
+        &__text{
+            letter-spacing: 1.5px;
+            @include respond(phone){
+                display: none;
+            }
+        }
+        &__button{
+            height: 2.5rem;
+            width: 10rem;
+            color: $primary;
+            background-color: $neutral;
+            padding-top: 3px;
+            font-weight: 600;
+        }
+
+    }
+
+    &__pagedivider2{
+        height: 15rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &__header{
+            font-size: 5rem;
+            font-weight: 700;
+            text-transform: capitalize;
+
+        }
+
+        &__text{
+            width: fit-content;
+            @include respond(phone){
+                display: none;
+            }
+        }
+        &__button{
+            height: 3.5rem;
+            width: 15rem;
+            color: $primary;
+            background-color: $neutral;
+            padding: 3px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+    
+}

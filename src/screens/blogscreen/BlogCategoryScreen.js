@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import {Helmet} from "react-helmet";
 import {Button, Container, Image} from 'react-bootstrap'
 import { getBlogCategory } from '../../redux/actions/blogActions'
+import Header from '../../components/global/Header';
+import Footer from '../../components/Footer';
 
 
 const BlogCategoryScreen = ({match}) => {
@@ -64,6 +66,8 @@ const BlogCategoryScreen = ({match}) => {
     };
 
     return (
+        <>
+        <Header />
         <Container className='content'>
             <Helmet>
              <meta charSet="utf-8" />
@@ -87,6 +91,8 @@ const BlogCategoryScreen = ({match}) => {
             */}
             {getCategoryBlogs()}
         </Container>
+        <Footer />
+    </>
     )
 }
 

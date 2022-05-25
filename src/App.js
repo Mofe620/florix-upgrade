@@ -43,19 +43,28 @@ import BlogHomeScreen from './screens/blogscreen/BlogHomeScreen';
 import BlogListScreen from './screens/blogscreen/BlogListScreen';
 import BlogDetailsScreen from './screens/blogscreen/BlogDetailsScreen';
 import BlogCategoryScreen from './screens/blogscreen/BlogCategoryScreen';
-
+import Slider1 from './components/sliders/shop/storeSlider';
+import Index from './screens/baseScreens/Index';
+import Shop from './screens/productScreens/Shop';
+import PrescriptionFormSreen from './screens/baseScreens/PrescriptionForm';
+import EmergencyScreen from './screens/baseScreens/EmergencyScreen';
+import EmergencySuccessScreen from './screens/baseScreens/EmergencySuccessScreen';
+ 
 function App() {
   return (
     <Router>
-      <Header />
       <main className="py-3">
       <Helmet>
         <title>Florix Healthcare</title>
         <meta name="description" content="Providing tech driven logistics solution" />
     </Helmet>
         <>
-
+        <Route path='/shop' component={Shop} />
         <Route path='/signup' component={SignUpScreen} />
+        <Route path='/test/index' component={Index} exact />
+        <Route path='/test/prescription' component={PrescriptionFormSreen} />
+        <Route path='/test/emergency' component={EmergencyScreen} exact />
+        <Route path='/test/emergency/success' component={EmergencySuccessScreen} />
           <Route path='/signin' component={SignInScreen} />
           <Route exact path="/reset-password" component={PasswordReset} />
           <Route exact path='/password/reset/confirm/:uid/:token' component={PasswordResetConfirm} />
@@ -96,7 +105,6 @@ function App() {
 
         </>
       </main>
-      <Footer />
     </Router>
   );
 }

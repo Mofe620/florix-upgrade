@@ -1,0 +1,46 @@
+@import "../mixins/variables";
+
+.pform{
+
+    &__group{
+        height: 5rem;
+        margin: 1.5rem 0;
+
+        &__wrapper{
+            width: 100%;
+            display: flex;
+            
+        }
+
+        &__first-half{
+            width: 49%;
+            margin-right: 1%;
+        }
+        &__second-half{
+            width: 49%;
+            margin-left: 1%;
+        }
+      
+    }
+
+    &__input{
+        height: 4rem;
+        font-size: 1.5rem;
+    }
+    &__textarea{
+        font-size: 1.5rem;
+    }
+
+    &__btn{
+        margin: 5rem 0;
+        background-color: $primary;
+        height: 3rem;
+        width: 18rem;
+        font-size: 1.5rem;
+        color: $neutral;
+        font-weight: 500;
+    }
+    &__contact{
+     
+    }
+}

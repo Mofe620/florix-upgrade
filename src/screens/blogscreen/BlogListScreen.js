@@ -7,6 +7,8 @@ import Blog from '../../components/blog/Blog'
 import { listBlogs } from '../../redux/actions/blogActions'
 import { getFeaturedBlog } from '../../redux/actions/blogActions'
 import { Link } from 'react-router-dom'
+import Footer from '../../components/Footer';
+import Header from '../../components/global/Header';
 
 
 const BlogListScreen = () => {
@@ -27,6 +29,9 @@ const BlogListScreen = () => {
     }, [dispatch])
     
     return (
+        <>
+        <Header />
+       
         <Container className="content">
              <meta charSet="utf-8" />
                 <Helmet>
@@ -50,6 +55,8 @@ const BlogListScreen = () => {
            
             </div>
         </Container>
+        <Footer />
+        </>
     )
 }
 

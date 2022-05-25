@@ -3,9 +3,13 @@ import {Container} from 'react-bootstrap'
 import {Helmet} from "react-helmet";
 import { Link } from 'react-router-dom';
 import FloatingAction from '../../components/FloatingAction';
+import Footer from '../../components/Footer';
+import Header from '../../components/global/Header';
 
 const servicesScreen = () => {
   return (
+    <>
+    <Header />
     <Container className="content">
         <Helmet>
             <meta charSet="utf-8" />
@@ -30,6 +34,8 @@ const servicesScreen = () => {
         </div>
         <FloatingAction />
     </Container>
+    <Footer />
+    </>
   )
 };
 

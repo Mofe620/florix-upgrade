@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import BlogCarousel from '../../components/blog/BlogCarousel';
+import Footer from '../../components/Footer';
+import Header from '../../components/global/Header';
 import { getFeaturedBlog } from '../../redux/actions/blogActions'
 
 const BlogHomeScreen = () => {
@@ -18,6 +20,8 @@ const BlogHomeScreen = () => {
 
   }, [dispatch])
   return (
+    <>
+    <Header />
   <Container className="content">
     <meta charSet="utf-8" />
         <Helmet>
@@ -61,7 +65,8 @@ const BlogHomeScreen = () => {
       </div>
       </div>
   </Container>
-
+  <Footer />
+  </>
   )
 };
 

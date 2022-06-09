@@ -42,6 +42,8 @@ import {
     blogCommentReducer,
 } from './reducers/blogReducers'
 
+import { emergencyReducer } from './reducers/emergencyReducer'
+
 const reducer = combineReducers({
     //auth: authReducer,
 
@@ -78,6 +80,7 @@ const reducer = combineReducers({
     featuredBlog: featuredBlogReducer,
     blogCategory: BlogCategoryReducer,
     blogComment: blogCommentReducer,
+    emergencyOrder: emergencyReducer,
 
 })
 

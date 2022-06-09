@@ -48,7 +48,7 @@ import Index from './screens/baseScreens/Index';
 import Shop from './screens/productScreens/Shop';
 import PrescriptionFormSreen from './screens/baseScreens/PrescriptionForm';
 import EmergencyScreen from './screens/baseScreens/EmergencyScreen';
-import EmergencySuccessScreen from './screens/baseScreens/EmergencySuccessScreen';
+import EmergencyOrderVerifyScreen from './screens/baseScreens/EmergencyOrderVerifyScreen';
  
 function App() {
   return (
@@ -59,12 +59,12 @@ function App() {
         <meta name="description" content="Providing tech driven logistics solution" />
     </Helmet>
         <>
-        <Route path='/shop' component={Shop} />
-        <Route path='/signup' component={SignUpScreen} />
-        <Route path='/test/index' component={Index} exact />
-        <Route path='/test/prescription' component={PrescriptionFormSreen} />
-        <Route path='/test/emergency' component={EmergencyScreen} exact />
-        <Route path='/test/emergency/success' component={EmergencySuccessScreen} />
+          <Route path='/shop' component={Shop} />
+          <Route path='/signup' component={SignUpScreen} />
+          <Route path='/test/index' component={Index} exact />
+          <Route path='/test/prescription' component={PrescriptionFormSreen} />
+          <Route path='/test/emergency' component={EmergencyScreen} exact />
+          <Route path='/test/emergency_order/verify' component={EmergencyOrderVerifyScreen} />
           <Route path='/signin' component={SignInScreen} />
           <Route exact path="/reset-password" component={PasswordReset} />
           <Route exact path='/password/reset/confirm/:uid/:token' component={PasswordResetConfirm} />

@@ -4,7 +4,8 @@ import Footer from '../../components/Footer'
 import Header from '../../components/global/Header'
 import RequestForm from '../../components/emergency/RequestForm'
 import DeliveyForm from '../../components/emergency/DeliveyForm'
-import EmergencySuccessScreen from './EmergencySuccessScreen'
+import EmergencyOrderVerifyScreen from './EmergencyOrderVerifyScreen'
+
 
 const EmergencyScreen = () => {
 
@@ -18,11 +19,19 @@ const getSteps = () =>{
 const steps = getSteps()
 // State Variables
 const [multiFormValues, setMultiformValues] = useState({
-  name: "",
-  email: "",
-  phoneNumber: "",
-  pickUpAddress: "",
-  deliveryAddress: ""
+
+  recipientName:"",
+  recipientTel:"",
+  pickUpAddress:"",
+  deliveryAddress:"",
+  image:"",
+  productName:"",
+  brand:"",
+  orderCategory:"",
+  storageSystem:"",
+  dosageForm:"",
+  strength:"",
+  packSize:""
 })
 
 // Handle next
@@ -39,6 +48,8 @@ const HandlePrevious = () =>{
 const handleChange = (input) => (e) =>{
   setMultiformValues({...multiFormValues, [input]: e.target.value})
 }
+
+
   return (
     <>
       <Header />
@@ -51,11 +62,11 @@ const handleChange = (input) => (e) =>{
           <DeliveyForm values={multiFormValues} handleChange = {handleChange} /> 
           )}
           {activeStep === 2 && (
-          <EmergencySuccessScreen handleChange = {handleChange} /> 
+          <EmergencyOrderVerifyScreen values={multiFormValues} handleChange = {handleChange} /> 
           )}
 
-      <Button variant='secondary' disabled={activeStep === 0} style={activeStep === 2 ? {display: 'none'}: {}} className='emergency__btn emergency__btn__previous' onClick={HandlePrevious}>Previous</Button>
-      <Button style={activeStep === 2 ? {display:"none"}: {}} className='emergency__btn emergency__btn__next ' onClick={HandleNext}>{activeStep === steps.length - 1?"Submit":"Next"}</Button>
+      {/* <Button variant='secondary' disabled={activeStep === 0} style={activeStep === 2 ? {display: 'none'}: {}} className='emergency__btn emergency__btn__previous' onClick={HandlePrevious}>Previous</Button> */}
+      <Button style={activeStep === 2 ? {display:"none"}: {}} className='emergency__btn emergency__btn__next' onClick={HandleNext}>{activeStep === steps.length - 1?"Verify":"Next"}</Button>
   
       </Container>
       <Footer />

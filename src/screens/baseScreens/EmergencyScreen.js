@@ -19,11 +19,13 @@ const getSteps = () =>{
 const steps = getSteps()
 // State Variables
 const [multiFormValues, setMultiformValues] = useState({
-
+  tel:"",
+  extraInfo:"",
   recipientName:"",
   recipientTel:"",
   pickUpAddress:"",
   deliveryAddress:"",
+  location:"",
   image:"",
   productName:"",
   brand:"",
@@ -31,7 +33,7 @@ const [multiFormValues, setMultiformValues] = useState({
   storageSystem:"",
   dosageForm:"",
   strength:"",
-  packSize:""
+  packSize:"",
 })
 
 // Handle next

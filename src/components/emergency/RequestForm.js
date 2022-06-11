@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Col, Form, Row } from 'react-bootstrap'
+import { Button, Col, Form, Image, Row } from 'react-bootstrap'
 
 const RequestForm = ({values, handleChange}) => {
   console.log(values)
@@ -39,10 +39,25 @@ const RequestForm = ({values, handleChange}) => {
           <div className='my-5'>
             <Form.Group>
               <Form.Label className='formlabel' style={{fontSize:"18px"}}>Briefly State Health Complaints<strong style={{color:"red"}}>*</strong></Form.Label>
-              <Form.Control as="textarea" placeholder="e.g. I'm having toothache" className='input-field' required/>
+              <Form.Control 
+                as="textarea" 
+                placeholder="e.g. I'm having toothache" 
+                className='input-field' 
+                required
+                onChange={handleChange('extraInfo')} value={values.extraInfo}
+                />
             </Form.Group>
           </div>
-
+          <div className='bg-primary p-2 d-flex justify-content-center' style={{color:"white"}}>
+            <Form.Group className=''>
+                <Form.Label className='mx-2' style={{fontSize:"18px"}}>Upload Prescription</Form.Label>
+                <Form.Control 
+                  type="file" 
+                  className='input-field' 
+                  onChange={handleChange('image')} value={values.image}
+                  />
+              </Form.Group>
+          </div>
           <div>
             <div className="emergency__pickup__container pt-5">
                 <Form.Group className='emergency__formgroup__wrapper'>
@@ -51,19 +66,19 @@ const RequestForm = ({values, handleChange}) => {
                 </Form.Group>
                 <Form.Group className='emergency__formgroup__wrapper'>
                   <Form.Label className='emergency__formgroup__text formlabel'>Brand</Form.Label>
-                  <Form.Control onChange={handleChange('brand')} value={values.brand} className='emergency__formgroup__input emergency__forminput input-field' placeholder='Emzor' />
+                  <Form.Control onChange={handleChange('brand')} value={values.brand} className='emergency__formgroup__input emergency__forminput input-field' placeholder='e.g. Emzor' />
                 </Form.Group>
                 <Form.Group className='emergency__formgroup__wrapper'>
                     <Form.Label className='emergency__formgroup__text formlabel'>Dosage Form<strong style={{color:"red"}}>*</strong></Form.Label>
                     <Form.Control className='emergency__formgroup__input emergency__forminput' onChange={handleChange('dosageForm')} value={values.dosageForm} as="select" aria-label="Default select example">
                       <option className='emergency__formgroup__option'>Select</option>
-                        <option className='emergency__formgroup__option input-field' value="Tablets">Tablets/Capsules</option>
-                        <option className='emergency__formgroup__option input-field' value="Capsules">Syrups/Suspensions/Emulsions/Solutions</option>
-                        <option className='emergency__formgroup__option input-field' value="Capsules">Eye/ear Drops*</option>
-                        <option className='emergency__formgroup__option input-field' value="Syrups/Suspensions">Creams/Ointments/Plasters</option>
-                        <option className='emergency__formgroup__option input-field' value="Pessaries/Suppositories">Injections/Infusions*</option>
-                        <option className='emergency__formgroup__option input-field' value="Injections">Aerosols/Sprays</option>
-                        <option className='emergency__formgroup__option input-field' value="Infusions">Pessaries/Suppositories</option>
+                        <option className='emergency__formgroup__option input-field' value="Tablets/Capsules">Tablets/Capsules</option>
+                        <option className='emergency__formgroup__option input-field' value="Syrups/Suspensions/Emulsions/Solutions">Syrups/Suspensions/Emulsions/Solutions</option>
+                        <option className='emergency__formgroup__option input-field' value="Eye/ear Drops*">Eye/ear Drops*</option>
+                        <option className='emergency__formgroup__option input-field' value="Creams/Ointments/Pastes">Creams/Ointments/Pastes</option>
+                        <option className='emergency__formgroup__option input-field' value="Injections/Infusions*">Injections/Infusions*</option>
+                        <option className='emergency__formgroup__option input-field' value="Aerosols/Sprays">Aerosols/Sprays</option>
+                        <option className='emergency__formgroup__option input-field' value="Pessaries/Suppositories">Pessaries/Suppositories</option>
                     </Form.Control>
                 </Form.Group>
                 
@@ -101,12 +116,12 @@ const RequestForm = ({values, handleChange}) => {
                     <Form.Label className='formlabel'>Location<strong style={{color:"red"}}>*</strong></Form.Label>
                     <Form.Control className='input-field' onChange={handleChange('location')} value={values.location} as="select" aria-label="Default select example">
                       <option className=''>Select area in Benin City</option>
-                        <option className='' value="Tablets">New Benin</option>
-                        <option className='' value="Capsules">Ekenhuan</option>
-                        <option className='' value="Syrups/Suspensions">Oluku/Ishihor</option>
-                        <option className='' value="Pessaries/Suppositories">Sakponba</option>
-                        <option className='' value="Injections">Uselu/Ugbowo</option>
-                        <option className='' value="Infusions">Agip</option>
+                        <option className='' value="New Benin">New Benin</option>
+                        <option className='' value="Ekenhen">Ekenhuan</option>
+                        <option className='' value="Oluku/Ishihor">Oluku/Ishihor</option>
+                        <option className='' value="Sakponba">Sakponba</option>
+                        <option className='' value="Uselu/Ugbowo">Uselu/Ugbowo</option>
+                        <option className='' value="Agip">Agip</option>
                     </Form.Control>
                 </Form.Group>
                 </Col>

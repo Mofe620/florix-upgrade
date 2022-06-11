@@ -8,13 +8,45 @@ const EmergencyOrderVerifyScreen = ({values}) => {
 
   const [chat, setChat] = useState(false)
 
-  const {recipientName, recipientTel, pickUpAddress, deliveryAddress, productName, orderCategory, brand,  dosageForm, strength, packSize} = values
+  const {
+    tel,
+    extraInfo,
+    recipientName, 
+    recipientTel, 
+    pickUpAddress, 
+    deliveryAddress, 
+    location,
+    orderCategory, 
+    productName, 
+    image,  
+    dosageForm, 
+    brand, 
+    strength,  
+    storageSystem, 
+    packSize,
+  } = values
 
   
   const dispatch = useDispatch()
   const submitHandler = (e)=>{
   e.preventDefault()
-  dispatch(emergency_order(recipientName, recipientTel, pickUpAddress, deliveryAddress, productName, orderCategory, brand,  dosageForm, strength, packSize))
+  dispatch(emergency_order(
+    tel,
+    extraInfo,
+    recipientName, 
+    recipientTel, 
+    pickUpAddress, 
+    deliveryAddress, 
+    location,
+    orderCategory, 
+    productName, 
+    image,  
+    dosageForm, 
+    brand, 
+    strength,  
+    storageSystem, 
+    packSize,
+    ))
   setChat(true)
 }
 
@@ -37,15 +69,18 @@ if(chat){
               <p>Recipient Phone Number: {recipientTel}</p>
               <p>Pick-Up Address: {pickUpAddress}</p>
               <p>Delivery Address: {deliveryAddress}</p>
+              <p>Location: {location}</p>
             </Col>
 
             <Col>
               <p>Product Ordered: {productName}</p>
+              <p>Image: {image}</p>
               <p>Category: {orderCategory}</p>
               <p>Brand: {brand}</p>
               <p>Dosage Form: {dosageForm}</p>
-              <p>Dosage Form: {strength}</p>
+              <p>Dose/Strength: {strength}</p>
               <p>Quantity: {packSize}</p>
+              <p>Complaints: {extraInfo}</p>
             </Col>
           </Row>
           </div>

@@ -6,14 +6,46 @@ import {EMERGENCY_ORDER_REQUEST,
 } from './types'
 
 
-export const emergency_order = (recipientName, recipientTel, pickUpAddress, deliveryAddress, orderCategory, productName, image,  dosageForm, brand, strength,  storageSystem, packSize) => async dispatch => {
+export const emergency_order = (
+    tel,
+    extraInfo,
+    recipientName, 
+    recipientTel, 
+    pickUpAddress, 
+    deliveryAddress, 
+    location,
+    orderCategory, 
+    productName, 
+    image,  
+    dosageForm, 
+    brand, 
+    strength,  
+    storageSystem, 
+    packSize,
+    ) => async dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json',
             Authorization: `JWT ${localStorage.getItem('access')}`,
         }
     };
-    const body = JSON.stringify({ recipientName, recipientTel, pickUpAddress, deliveryAddress, orderCategory, productName, image,  dosageForm, brand, strength,  storageSystem, packSize });
+    const body = JSON.stringify({ 
+        tel,
+        extraInfo,
+        recipientName, 
+        recipientTel, 
+        pickUpAddress, 
+        deliveryAddress, 
+        location,
+        orderCategory, 
+        productName, 
+        image,  
+        dosageForm, 
+        brand, 
+        strength,  
+        storageSystem, 
+        packSize,
+    });
     console.log(packSize)
     try {
     

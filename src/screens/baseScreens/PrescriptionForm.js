@@ -5,6 +5,7 @@ import Header from '../../components/global/Header'
 import PrescriptionForm from '../../components/PrescriptionForm'
 
 const PrescriptionFormSreen = () => {
+
   return (
     <>
       <Header />

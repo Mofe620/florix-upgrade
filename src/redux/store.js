@@ -11,6 +11,7 @@ import {
     productUpdateReducer,
     productReviewCreateReducer,
     productTopRatedReducer,
+    ProductClassReducer,
 } from './reducers/productReducers'
 
 import { cartReducer } from './reducers/cartReducers'
@@ -43,6 +44,7 @@ import {
 } from './reducers/blogReducers'
 
 import { emergencyReducer } from './reducers/emergencyReducer'
+import { uploadPrescriptionReducer } from './reducers/prescriptionReducer'
 
 const reducer = combineReducers({
     //auth: authReducer,
@@ -54,6 +56,7 @@ const reducer = combineReducers({
     productUpdate: productUpdateReducer,
     productReviewCreate: productReviewCreateReducer,
     productTopRated: productTopRatedReducer,
+    productClass: ProductClassReducer,
 
     cart: cartReducer,
     auth: authReducer,
@@ -81,6 +84,7 @@ const reducer = combineReducers({
     blogCategory: BlogCategoryReducer,
     blogComment: blogCommentReducer,
     emergencyOrder: emergencyReducer,
+    uploadPrescription: uploadPrescriptionReducer
 
 })
 

@@ -18,6 +18,7 @@ import PasswordResetComplete from './screens/authScreens/PasswordResetComplete.'
 import UserProfile from './screens/authScreens/UserProfile';
 import ActivateAccount from './screens/authScreens/ActivateAccount';
 
+
 //import Carousel from './components/Carousel';
 //import navbar from './components/global/_global/_navbar';
 import servicesScreen from './screens/baseScreens/servicesScreen';
@@ -49,6 +50,8 @@ import Shop from './screens/productScreens/Shop';
 import PrescriptionFormSreen from './screens/baseScreens/PrescriptionForm';
 import EmergencyScreen from './screens/baseScreens/EmergencyScreen';
 import EmergencyOrderVerifyScreen from './screens/baseScreens/EmergencyOrderVerifyScreen';
+import PrescriptionForm from './components/PrescriptionForm';
+import ProductClassScreen from './screens/productScreens/ProductClassScreen';
  
 function App() {
   return (
@@ -64,7 +67,7 @@ function App() {
           <Route path='/test/index' component={Index} exact />
           <Route path='/test/prescription' component={PrescriptionFormSreen} />
           <Route path='/test/emergency' component={EmergencyScreen} exact />
-          <Route path='/test/emergency_order/verify' component={EmergencyOrderVerifyScreen} />
+          <Route path='/test/prescription_form/upload' component={PrescriptionForm} />
           <Route path='/signin' component={SignInScreen} />
           <Route exact path="/reset-password" component={PasswordReset} />
           <Route exact path='/password/reset/confirm/:uid/:token' component={PasswordResetConfirm} />
@@ -77,6 +80,7 @@ function App() {
           <Route path='/services' component={servicesScreen} />
           <Route path='/drugstore' component={DrugStore} />
           <Route path='/products' component={ProductsScreen} />
+          <Route path='/med/therapeutic_class/:id' component={ProductClassScreen} />
           <Route path='/login' component={LoginScreen} />
           <Route path='/register' component={RegisterScreen} />
           <Route exact path="/profile" component={UserProfile} />          
@@ -87,6 +91,7 @@ function App() {
           <Route path='/payment' component={PaymentScreen} />
           <Route path='/product/:id' component={ProductDetailsScreen} />
           <Route path='/cart/:id?' component={CartScreen} />
+          
 
           <Route path='/blog/posts' component={BlogListScreen} />
           <Route path='/post/:id' component={BlogDetailsScreen} />

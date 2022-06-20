@@ -29,6 +29,11 @@ import {
     PRODUCT_TOP_SUCCESS,
     PRODUCT_TOP_FAIL,
 
+    
+    PRODUCT_CLASS_REQUEST,
+    PRODUCT_CLASS_SUCCESS,
+    PRODUCT_CLASS_FAIL,
+
 } from './types'
 
 
@@ -258,5 +263,33 @@ export const createProductReview = (productId, review) => async (dispatch, getSt
                 ? error.response.data.detail
                 : error.message,
         })
+    }
+}
+
+
+export const getProductClass = (productClass) => async dispatch => {
+    
+    const config = {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }; 
+
+    try {
+        dispatch({ type: PRODUCT_CLASS_REQUEST })
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/products/class/`, {productClass}, config);
+        console.log(res)
+        dispatch({
+            type: PRODUCT_CLASS_SUCCESS,
+            payload: res.data
+
+        });
+    } catch (error) {
+        dispatch({
+            type: PRODUCT_CLASS_FAIL,
+            payload: error.response && error.response.data.detail
+            ? error.response.data.detail
+            : error.message,
+        });
     }
 }

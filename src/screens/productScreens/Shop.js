@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Form, Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import StoreSlider from '../../components/sliders/shop/storeSlider'
@@ -8,8 +8,11 @@ import Antibiotics from '../../components/sliders/shop/antibiotics'
 import TrackRecord from '../../components/TrackRecord'
 import Header from '../../components/global/Header'
 import Footer from '../../components/Footer'
+import { getProductClass } from '../../redux/actions/productActions'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Shop = () =>{
+
     return(
         <>
             <div className='shop mt-5'>
@@ -23,23 +26,23 @@ const Shop = () =>{
                             </Form.Group>
                         </Form>
                     </div>
-                    <div className='ms-auto mt-3'>
+                    {/* <div className='ms-auto mt-3'>
                         <p className='shop__bar__button'><Link to='/test/prescription'>Upload Prescription</Link></p>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="px-5 py-4">
                 <StoreSlider />
                 </div>
                 <div className='shop__introline d-flex'>
-                    <h2 className='shop__introline__header'>Best Deals</h2>
-                    <p className='shop__introline__allbtn ms-auto pt-4'><Link to="/drugstore" />view all</p>
+                    <h2 className='shop__introline__header'>Painkillers</h2>
+                    <p className='shop__introline__allbtn ms-auto pt-4'><Link to="/med/therapeutic_class/analgesics" >view all</Link></p>
                 </div>
                 <div className='m-5'>
                     <Analgesics />
                 </div>
                 <div className='shop__introline d-flex'>
                     <h2 className='shop__introline__header'>Antibiotics</h2>
-                    <p className='shop__introline__allbtn ms-auto pt-4'><Link to="/drugstore" />view all</p>
+                    <p className='shop__introline__allbtn ms-auto pt-4'><Link to="/med/therapeutic_class/antibiotics" >view all</Link></p>
                 </div>
                 <div className='m-5'>
                     <Antibiotics />
@@ -59,7 +62,7 @@ const Shop = () =>{
             
                 <div className='shop__introline d-flex'>
                     <h2 className='shop__introline__header'>Multivitamins</h2>
-                    <p className='shop__introline__allbtn ms-auto pt-4'><Link to="/drugstore" />view all</p>
+                    <p className='shop__introline__allbtn ms-auto pt-4'><Link to="/med/therapeutic_class/multivitamins" >view all</Link></p>
                 </div>
                 <div className='px-5 py-4'>
                     <Multivitamins />

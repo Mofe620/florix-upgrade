@@ -21,41 +21,39 @@ const Footer = () =>{
             </div>
             <div className="footer__divider"></div>
             <div className="footer__items">
-            <div>
-                <h2>Quick Links</h2>
-                <p><Link to="/">Home</Link></p>
-                <p><Link to="/about">About Us</Link></p>
-                <p><Link to="/posts">Blog</Link></p>
+                <div>
+                    <h2>Quick Links</h2>
+                    <p className='footer__items__divider'></p>
+                    <p><Link to="/">Home</Link></p>
+                    <p><Link to="/about">About Us</Link></p>
+                    <p><Link to="/posts">Blog</Link></p>
+                </div>
+                <div>
+                    <h2>Solutions</h2>
+                    <p className='footer__items__divider'></p>
+                    <p><Link to="/">Wholesale store</Link></p>
+                    <p><Link to="/">Logistics Portal</Link></p>
+                    <p><Link to="/">Raredrug Portal</Link></p>
+                </div>
+                <div>
+                    <h2>Policies</h2>
+                    <p className='footer__items__divider'></p>
+                    <p><Link to="/">Privacy Policy</Link></p>
+                    <p><Link to="/">Terms and Conditions</Link></p>
+                </div>
+                <div>
+                    <h2>Social Media</h2>
+                    <p className='footer__items__divider'></p>
+                    <p><Link to="/"><span className="footer__media__icons"><a href="https://www.facebook.com/florixhealthcare" target="_blank"><i className="fab fa-facebook"></i></a></span>Flo-Log Healthcare</Link></p>
+                    <p><Link to="/"><span className="footer__media__icons"><a href="http://instagram.com/flo_log.hq" target="_blank"><i className="fab fa-instagram"></i></a></span>flo_log.hq</Link></p>
+                    <p><Link to='/'><span className="footer__media__icons"><a href="/"><i className="fab fa-twitter"></i></a></span>Twitter</Link></p>
+                </div>
             </div>
-
-            <div>
-                <h2>Solutions</h2>
-                <p><Link to="/">Wholesale store</Link></p>
-                <p><Link to="/">Logistics Portal</Link></p>
-                <p><Link to="/">Raredrug Portal</Link></p>
-            </div>
-
-            <div>
-                <h2>Policies</h2>
-                <p><Link to="/">Privacy Policy</Link></p>
-                <p><Link to="/">Terms and Conditions</Link></p>
-                <p><Link to="/">Blog</Link></p>
-            </div>
-
-            <div>
-                <h2>Socials</h2>
-                <p><Link to="/"><span className="footer__media__icons"><a href="https://www.facebook.com/florixhealthcare" target="_blank"><i className="fab fa-facebook"></i></a></span>Flo-Log Healthcare</Link></p>
-                <p><Link to="/"><span className="footer__media__icons"><a href="http://instagram.com/flo_log.hq" target="_blank"><i className="fab fa-instagram"></i></a></span>flo_log.hq</Link></p>
-                <p><Link to='/'><span className="footer__media__icons"><a href="/"><i className="fab fa-twitter"></i></a></span>Twitter</Link></p>
-            </div>
-           
-        </div>
         <div className='footer'> 
-        
-    
+
         </div>
         <p className="footer2 text-center py-3">&copy; 2022 Florix Healthcare Ltd. All Rights Reserved. </p> 
-    </>
+        </>
     )
 }
 

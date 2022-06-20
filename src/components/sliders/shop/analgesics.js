@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import {Image} from 'react-bootstrap'
@@ -10,6 +10,9 @@ import 'swiper/swiper.min.css';
 import 'swiper/modules/navigation/navigation.min.css'
 import 'swiper/modules/pagination/pagination.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { getProductClass } from '../../../redux/actions/productActions';
+import { listProducts } from '../../../redux/actions/productActions';
 
 const data = [
   {id:1, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"},
@@ -24,6 +27,15 @@ const data = [
 //<SwiperSlide><Image src='assets/images/Image2.png' height={300}/></SwiperSlide>
 
 const Analgesics = () => {
+  const dispatch = useDispatch()
+  const productList = useSelector(state => state.productList)
+  const { error, loading, products,} = productList
+  // const data = products
+
+  useEffect(() => {
+      dispatch(listProducts())
+   
+  }, [])
   return (
     <div>
       <Swiper
@@ -53,7 +65,7 @@ const Analgesics = () => {
                   <Image className='analgesics__slider__content__image' src={drug.image} />
                 <div className='analgesics__slider__content__text px-4'>
                   <p className='analgesics__slider__content__name'>{drug.name}</p>
-                  <p className='analgesics__slider__content__preamble'>{drug.preamble}</p>
+                  <p className='analgesics__slider__content__preamble'>{drug.strength}</p>
                   <p className='analgesics__slider__content__price'>#{drug.price}</p>
                 </div>
               </div>

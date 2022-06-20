@@ -215,8 +215,9 @@ footer, a:hover{
     &__divider{
         height: 1rem;
         width: 100%;
-        background-color: $primary;
-        margin-top: 1rem;
+        background-color: $neutral;
+        // background-color: $primary;
+        // margin-top: 1rem;
     }
     &__news{
         background-color: $primary;
@@ -302,28 +303,37 @@ footer, a:hover{
     &__items{
         width: 100%;
         display: flex;
-        background-color: #EFEEEE;
-        color: #000 !important;
+        background-color: rgb(85, 80, 80);
+        color: rgb(230, 221, 221) !important;
         padding: 1rem 1.5rem;
         justify-content: space-around;
         font-size: 1.4rem;
         font-weight: 400;
         cursor: pointer;
+        &__divider{
+            background-color: $primary;
+            height: 4px;
+            width: 10.5rem;
+        
+        }
 
         & h2{
             font-weight: 700;
             font-size: 1.8rem;
+            margin: 3px 0;
+            padding: 0;
             @include respond(phone){
                 margin-top: 2rem;
             }
         }
         & a{
-            color: #000;
+            color: rgb(230, 221, 221);
         }
         
         @include respond(phone) {
            display: grid;
-           justify-content: center;    
+           justify-content: center;  
+           font-size: 1.7rem;  
         }   
     }
     &__media{

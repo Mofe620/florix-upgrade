@@ -8,6 +8,7 @@
         &__intro{
             font-size: 3rem;
             font-weight: 700;
+            color: $header-color;
             @include respond(phone){
                 font-size: 2.5rem;
                 font-weight: 700;
@@ -15,16 +16,18 @@
             }
         }
         &__render{
-            background-color: $secondary;
+            background-color: $neutral;
             padding: 2rem;
             
             &__list{
                 font-size: 1.7rem;
+                color: #636360;
             }
 
             &__header{
                 font-size: 2rem;
                 font-weight: 700;
+                color: $header-color;
             }
         }
     }
@@ -37,12 +40,17 @@
             margin-right: auto;
             margin-top: 2rem;
             height: auto;
-           
+            & p{
+                font-size: 1.7rem;
+            }
+           @include respond(phone){
+            width: 90%;
+           }
            
             &__header{
                 font-size: 2rem;
                 font-weight: 700;
-                margin: 0;
+                margin: 5px 0;
                 padding: 0;
             }
         }

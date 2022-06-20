@@ -7,11 +7,13 @@
         & h2{
             font-size: 3rem;
             font-weight: 700;
+            color: $header-color;
         }
         & p{
             font-size: 1.5rem;
-            background-color: $secondary;
+            background-color: $neutral;
             padding: 2rem;
+            color: $par-color;
         }
     }
     &__introline{

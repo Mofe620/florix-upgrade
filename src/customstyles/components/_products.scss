@@ -2,6 +2,33 @@
 
 .product{
     margin-top: 2rem;
+    &__class{
+        &__container{
+            height: 27rem;
+            width: auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        
+        
+        }
+        &__file__wrapper{
+            align-items: center;
+
+            &__img{
+                height: 10rem;
+                justify-content: center;
+        
+            }
+     
+            
+        }
+        &__text{
+            
+    
+        }
+    }
+
     &__carousel{
         background-color: #053c5e;
         padding-top: 20px;

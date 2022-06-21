@@ -29,34 +29,32 @@ const ProductClassScreen = ({match}) => {
         products.map( (product)=> {
             console.log(product)
             return list.push(
-                <div>
-                    <h2 className="blog__category__header"><span className="d-inline-block mb-2">Therapeutic Category: <strong> {product.productClass}</strong></span></h2>
-                    <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
-                        
-                        <div className="col p-4 d-flex flex-column position-static">
-                           <Image className="post__img" src={`${process.env.REACT_APP_API_URL}${product.image}`} alt={product.name} fluid/>
-                            {/* <Image className="post__img" src={product.image} alt={product.name} fluid/> */}
+                <div className='product__class__container'>
+                    {/* <h2><span>Therapeutic Category: <strong> {product.productClass}</strong></span></h2> */}
+                        <div className="product__class__file__wrapper">
+                           <Image className="product__class__file__wrapper__img" src={`${process.env.REACT_APP_API_URL}${product.image}`} alt={product.name} fluid/>
+                              {/* <Image className="post__img" src={product.image} alt={product.name} fluid/> */}
+                        </div>
+                        <div className='product__class__text'>
                             <h3 className="mb-0">{product.name}</h3>
-                            <p as="h3" className="product__price"> &#8358; {product.price}</p>
+                            <p as="h3" className=""> &#8358; {product.price}</p>
                             <p>Strength: {product.strength}</p>
                            
-                            <Link to={`/product/${product.id}`} className="stretched-link"><Button className="blog__category__btn">Click</Button></Link>
+                            <Link to={`/product/${product.id}`} className="stretched-link"><Button className="">Proceed</Button></Link>
                         </div>
-                        <div className="col-auto d-none d-lg-block">
-                        </div>
-                    </div>
                 </div>
             );
         });
         for (let i = 0; i < list.length; i += 2) {
             result.push(
                 <div key={i} className='row mb-2'>
-                    <div className='col-md-6'>
+                    <div className='col-sm-6 col-md-4'>
                         {list[i]}
                     </div>
-                    <div className='col-md-6'>
+                    <div className='col-sm-6 col-md-4'>
                         {list[i+1] ? list[i+1] : null}
                     </div>
+                    
                 </div>
             )
         }
@@ -65,7 +63,7 @@ const ProductClassScreen = ({match}) => {
 
   return (
     <div>
-        <h1>{productClass}</h1>
+        <h1>Therapeutic Category: {productClass}</h1>
 
         <div>
             {getProductsByClass()}

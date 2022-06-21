@@ -10,11 +10,11 @@ import 'swiper/modules/pagination/pagination.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 
 const data = [
-  {id:1, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Neutricicals and Medical Equipment at affordable price", image: "/assets/images/Main.png"},
-  {id:2, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Neutricicals and Medical Equipment at affordable price", image: "/assets/images/Main.png"},
-  {id:3, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Neutricicals and Medical Equipment at affordable price", image: "/assets/images/Main.png"},
-  {id:4, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Neutricicals and Medical Equipment at affordable price", image: "/assets/images/Main.png"},
-  {id:6, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Neutricicals and Medical Equipment at affordable price", image: "/assets/images/Main.png"}
+  {id:1, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Nutraceuticals and Medical Equipment at affordable price", image: "/assets/images/Main.png"},
+  {id:2, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Nutraceuticals and Medical Equipment at affordable price", image: "/assets/images/Main.png"},
+  {id:3, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Nutraceuticals and Medical Equipment at affordable price", image: "/assets/images/Main.png"},
+  {id:4, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Nutraceuticals and Medical Equipment at affordable price", image: "/assets/images/Main.png"},
+  {id:6, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Nutraceuticals and Medical Equipment at affordable price", image: "/assets/images/Main.png"}
 ]
 
 const IndexSlider = () => {

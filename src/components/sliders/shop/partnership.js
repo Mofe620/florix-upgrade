@@ -11,11 +11,11 @@ import 'swiper/modules/navigation/navigation.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 
 const data = [
-  {id:1, name:"PCM", brand:"emzor", image: "/assets/images/Main.png"},
-  {id:2, name:"PCM", brand:"emzor", image: "/assets/images/Main.png"},
-  {id:3, name:"PCM", brand:"emzor", image: "/assets/images/Main.png"},
-  {id:4, name:"PCM", brand:"emzor", image: "/assets/images/Main.png"},
-  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/Main.png"}
+  {id:1, name:"PCM", brand:"emzor", image: "/assets/images/partners/bmc1.png"},
+  {id:3, name:"PCM", brand:"emzor", image: "/assets/images/partners/Fidson.png"},
+  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners/Lily1.png"},
+  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners/Dream life"},
+  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners/Unique pharma"}
 ]
 
 // <SwiperSlide><Image src='assets/images/Image1.png' height={300}/></SwiperSlide>
@@ -26,8 +26,19 @@ const Partnership = () => {
     <div>
       <Swiper
           modules={[Navigation, A11y, Autoplay]}
-          spaceBetween={15}
-          slidesPerView={4}
+          spaceBetween={10}
+          breakpoints={{
+            //when window with is >= 640
+            360: {
+              width: 360,
+              slidesPerView: 3,
+            },
+              //when window with is >= 768
+            768: {
+              width: 768,
+              slidesPerView: 2,
+            }
+          }}
           autoplay={{delay: "5000"}}
           navigation
           onSwiper={(swiper) => console.log(swiper)}

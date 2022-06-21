@@ -17,13 +17,13 @@ const SearchProduct = () => {
         }
     }
     return (
-        <Form className="auth-form px-4" onSubmit={submitHandler}>
-        <Form.Group controlId='searchbox' inline>
+        <Form className="shop__bar__form" onSubmit={submitHandler}>
+        <Form.Group className='shop__bar___form__group' controlId='searchbox' inline>
             <Form.Control
                 variant="lg"
-                className="search-ppty"
+                className="shop__bar__form__control"
                 type='text'
-                placeholder="Enter product..."
+                placeholder="Search Product"
                 name='q'
                 style={{backgroundColor:"white"}}
                 onChange={(e) => { 

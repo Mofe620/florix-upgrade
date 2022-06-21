@@ -173,6 +173,9 @@
     height: 25vh;
     display: flex;
     background-color: $neutral;
+    @include respond(phone){
+        height: 20rem;
+    }
     
     &__slider{
      

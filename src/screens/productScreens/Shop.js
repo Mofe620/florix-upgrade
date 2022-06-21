@@ -10,6 +10,7 @@ import Header from '../../components/global/Header'
 import Footer from '../../components/Footer'
 import { getProductClass } from '../../redux/actions/productActions'
 import { useDispatch, useSelector } from 'react-redux'
+import SearchProduct from '../../components/SearchProduct'
 
 const Shop = () =>{
 
@@ -19,12 +20,12 @@ const Shop = () =>{
                 <Header />
                 <div className="shop__bar content d-md-flex flex-row px- w-100">
                     <div className="">
-                        
-                        <Form className='shop__bar__form'>
+                        <SearchProduct />
+                        {/* <Form className='shop__bar__form'>
                             <Form.Group className="shop__bar___form__group">
                                 <Form.Control className="shop__bar__form__control" type='text' placeholder='search' />
                             </Form.Group>
-                        </Form>
+                        </Form> */}
                     </div>
                     {/* <div className='ms-auto mt-3'>
                         <p className='shop__bar__button'><Link to='/test/prescription'>Upload Prescription</Link></p>

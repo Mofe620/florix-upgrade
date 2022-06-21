@@ -26,14 +26,14 @@ const Footer = () =>{
                     <p className='footer__items__divider'></p>
                     <p><Link to="/">Home</Link></p>
                     <p><Link to="/about">About Us</Link></p>
-                    <p><Link to="/posts">Blog</Link></p>
+                    <p><Link to="/blog/posts">Blog</Link></p>
                 </div>
                 <div>
                     <h2>Solutions</h2>
                     <p className='footer__items__divider'></p>
-                    <p><Link to="/">Wholesale store</Link></p>
-                    <p><Link to="/">Logistics Portal</Link></p>
-                    <p><Link to="/">Raredrug Portal</Link></p>
+                    <p><Link to="/shop">Wholesale store</Link></p>
+                    <p><Link to="/services">Logistics Portal</Link></p>
+                    <p><Link to="/services">Raredrug Portal</Link></p>
                 </div>
                 <div>
                     <h2>Policies</h2>

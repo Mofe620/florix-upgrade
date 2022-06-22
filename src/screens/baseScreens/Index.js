@@ -43,7 +43,6 @@ const Index = () => {
                         <ul className='index__services__render__list'>
                             <li>Make wholesale procurements with ease</li>
                             <li>Fast and efficient logistics and delivery service </li>
-                            <li>Safe Shipment/Delivery</li>
                         </ul>
                     </div>
                 </div>

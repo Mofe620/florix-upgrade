@@ -11,11 +11,11 @@ import 'swiper/modules/navigation/navigation.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 
 const data = [
-  {id:1, name:"PCM", brand:"emzor", image: "/assets/images/partners/bmc1.png"},
+  {id:1, name:"PCM", brand:"emzor", image: "/assets/images/partners/BMC1.png"},
   {id:3, name:"PCM", brand:"emzor", image: "/assets/images/partners/Fidson.png"},
   {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners/Lily1.png"},
-  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners/Dream life"},
-  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners/Unique pharma"}
+  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners/Dream life.png"},
+  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners/Unique Pharma.png"}
 ]
 
 // <SwiperSlide><Image src='assets/images/Image1.png' height={300}/></SwiperSlide>

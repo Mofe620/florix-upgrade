@@ -51,7 +51,8 @@ const EmergencyOrderVerifyScreen = ({values}) => {
 }
 
 if(chat){
-  return <Redirect to={{ pathname: "https://tinyurl.com/2p98zk2h" }} target='_blank'/>
+  window.location.assign("https://tinyurl.com/2p98zk2h");
+  // return <Redirect to={{ pathname: "https://tinyurl.com/2p98zk2h" }} target='_blank'/>
 }
   return (
     <>
@@ -74,18 +75,18 @@ if(chat){
 
             <Col>
               <p>Product Ordered: {productName}</p>
-              <p>Image: {image}</p>
+              {/* <p>Image: {image}</p> */}
               <p>Category: {orderCategory}</p>
               <p>Brand: {brand}</p>
               <p>Dosage Form: {dosageForm}</p>
               <p>Dose/Strength: {strength}</p>
               <p>Quantity: {packSize}</p>
-              <p>Complaints: {extraInfo}</p>
+              {/* <p>Complaints: {extraInfo}</p> */}
             </Col>
           </Row>
           </div>
           <div className='mt-5'>
-            <p>Click the Button below to complete Request with FLO-LOG Whatsapp Admin</p>
+            <p style={{color:'#808080'}}>Click the Button below to complete Request with FLO-LOG Whatsapp Admin</p>
           </div>
           <Button onClick={submitHandler} className='emergency__btn emergency__btn__next'>Submit Order</Button>
       </div>

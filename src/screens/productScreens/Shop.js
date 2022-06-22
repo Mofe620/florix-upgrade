@@ -75,7 +75,7 @@ const Shop = () =>{
                     <h2 className='shop__pagedivider2__header'>our blog</h2>
                     <div>
                         <p className='shop__pagedivider2__text'>We've carefully selected topics to bring answers to all of your health-related inquiries.</p>
-                        <p className='shop__pagedivider2__button shadow'><Link>Click to Visit Blog</Link></p>
+                        <p className='shop__pagedivider2__button shadow'><Link to='/blog/posts'>Click to Visit Blog</Link></p>
                     </div>
                 </div>
                 <div>

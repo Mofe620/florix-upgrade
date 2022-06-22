@@ -12,12 +12,12 @@ import 'swiper/modules/pagination/pagination.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 
 const data = [
-  {id:1, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.JPG"},
-  {id:2, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.JPG"},
-  {id:3, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.JPG"},
-  {id:4, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.JPG"},
-  {id:6, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.JPG"},
-  {id:7, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.JPG"}
+  {id:1, name:"Hematogen Forte", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.jpg"},
+  {id:2, name:"Astymin", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.jpg"},
+  {id:3, name:"Astyfer", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.jpg"},
+  {id:4, name:"Ideos", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.jpg"},
+  {id:6, name:"Phatonic", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.jpg"},
+  {id:7, name:"Lycofer", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.jpg"}
 ]
 
 // <SwiperSlide><Image src='assets/images/Image1.png' height={300}/></SwiperSlide>
@@ -56,7 +56,10 @@ const Multivitamins = () => {
              <div className='multivitamins__slider__content__text px-4'>
                <p className='multivitamins__slider__content__name'>{drug.name}</p>
                <p className='multivitamins__slider__content__preamble'>{drug.preamble}</p>
-               <p className='multivitamins__slider__content__price'>#{drug.price}</p>
+               <div className='d-flex justify-content-between'>
+                  <p className='analgesics__slider__content__price'>#{drug.price}</p>
+                  <p className='analgesics__slider__content__button'><a href='/'>Add to cart</a></p>
+                </div>
              </div>
            </div>
          

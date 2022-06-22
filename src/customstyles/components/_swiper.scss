@@ -9,8 +9,12 @@
             height: 10rem;
             justify-content: center;
             align-items: center;
-            background-color: $primary;
+            background-color: #bdd2d7;
+         
             
+        }
+        &__wrapper{
+            // background-color: $primary;
         }
 
         &__text{
@@ -27,7 +31,8 @@
             }
 
             @include respond(phone){
-                margin: 4rem 2rem;
+                margin: 1rem;
+               
                 justify-content: center;
                 width: 100%;
                & h2{
@@ -64,10 +69,20 @@
             height: 20rem;
            
         }
+
         &__content{
             padding-top: 2rem;
             border: 1px $primary solid;
             border-radius: 1rem;
+            &__button{
+                border: 1px $primary solid;
+                border-radius: 2rem;
+                padding: 5px;
+                font-size: 1.2rem;
+                & a{
+                    color: $header-color;
+                }
+            }
            
             &__text{
                 justify-content: center;

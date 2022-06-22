@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom'
 import {Helmet} from "react-helmet";
 import './customstyles/main.scss';
 import './App.css';
@@ -64,7 +64,6 @@ function App() {
         <>
           <Route path='/shop' component={Shop} />
           <Route path='/signup' component={SignUpScreen} />
-          <Route path='/test/index' component={Index} exact />
           <Route path='/test/prescription' component={PrescriptionFormSreen} />
           <Route path='/test/emergency' component={EmergencyScreen} exact />
           <Route path='/test/prescription_form/upload' component={PrescriptionForm} />
@@ -74,7 +73,8 @@ function App() {
           <Route exact path='/activate/:uid/:token' component={ ActivateAccount} />
           <Route exact path="/reset-password-complete" component={PasswordResetComplete} />
           
-          <Route path='/' component={Home} exact />
+          {/* <Route path='/' component={Home} exact /> */}
+          <Route path='/' component={Index} exact />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route path='/services' component={servicesScreen} />
@@ -107,7 +107,7 @@ function App() {
 
           <Route path='/admin/orderlist' component={OrderListScreen} />
           */}
-
+        {/* <Redirect to='/' /> */}
         </>
       </main>
     </Router>

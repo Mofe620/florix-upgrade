@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
-import {Image} from 'react-bootstrap'
+import {Button, Image} from 'react-bootstrap'
 
 import 'swiper/swiper.min.css';
 //import 'swiper/css/navigation';
@@ -15,12 +15,12 @@ import { getProductClass } from '../../../redux/actions/productActions';
 import { listProducts } from '../../../redux/actions/productActions';
 
 const data = [
-  {id:1, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"},
-  {id:2, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"},
-  {id:3, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"},
-  {id:4, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"},
-  {id:6, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"},
-  {id:7, name:"PCM", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.JPG"}
+  {id:1, name:"Paracetamol", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
+  {id:2, name:"Ibuprofen", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
+  {id:3, name:"Diclofenac Potassium", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
+  {id:4, name:"Ketoprofen", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
+  {id:6, name:"Celecoxib", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
+  {id:7, name:"Naproxen", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"}
 ]
 
 // <SwiperSlide><Image src='assets/images/Image1.png' height={300}/></SwiperSlide>
@@ -66,7 +66,11 @@ const Analgesics = () => {
                 <div className='analgesics__slider__content__text px-4'>
                   <p className='analgesics__slider__content__name'>{drug.name}</p>
                   <p className='analgesics__slider__content__preamble'>{drug.strength}</p>
-                  <p className='analgesics__slider__content__price'>#{drug.price}</p>
+                  <div className='d-flex justify-content-between'>
+                    <p className='analgesics__slider__content__price'>#{drug.price}</p>
+                    <p className='analgesics__slider__content__button'><a href='/'>Add to cart</a></p>
+                  </div>
+                  
                 </div>
               </div>
             

@@ -10,11 +10,11 @@ import 'swiper/modules/pagination/pagination.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 
 const data = [
-  {id:1, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Nutraceuticals and Medical Equipment at affordable price", image: "/assets/images/Main.png"},
+  {id:1, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Nutraceuticals and Medical Equipment at affordable price", image: "/assets/banners/index-slider1.jpg"},
   {id:2, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Nutraceuticals and Medical Equipment at affordable price", image: "/assets/images/Main.png"},
-  {id:3, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Nutraceuticals and Medical Equipment at affordable price", image: "/assets/images/Main.png"},
-  {id:4, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Nutraceuticals and Medical Equipment at affordable price", image: "/assets/images/Main.png"},
-  {id:6, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Nutraceuticals and Medical Equipment at affordable price", image: "/assets/images/Main.png"}
+  // {id:3,  image: "/assets/banners/index-slider1.jpg"},
+  {id:4, motto:'"All Inclusive Healthcare E-marketplace and Logistics Service"', value:"Get high quality Pharmaceuticals, Nutraceuticals and Medical Equipment at affordable price",  image: "/assets/images/Main.png"},
+  // {id:6, image: "/assets/banners/index-slider1.jpg"}
 ]
 
 const IndexSlider = () => {
@@ -34,7 +34,8 @@ const IndexSlider = () => {
           <div className="swiper__slider">
             <SwiperSlide key={datum.id} className="swiper__slider__container p-4">
             <div 
-              style={{backgroundImage:`url('${datum.image}')`, backgroundRepeat:'no-repeat', backgroundPosition:'left center', height:'50rem'}}
+              style={{backgroundImage:`url('${datum.image}')`, backgroundRepeat:'no-repeat', backgroundPosition:'left center', height:'100%', width:'auto'}}
+              className="swiper__slider__wrapper p-4"
               >
                 {/* <Image src={drug.image} style={{height:'60rem'}}  fluid/> */}
                 <div className='d-flex flex-column'>

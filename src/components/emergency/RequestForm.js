@@ -32,11 +32,12 @@ const RequestForm = ({values, handleChange}) => {
                   <option className='emergency__formgroup__option input-field'>Select category of pick-up/delivery Item</option>
                   <option className='emergency__formgroup__option input-field' value="Medications">Medications</option>
                   <option className='emergency__formgroup__option input-field' value="Laboratory Specimen">Laboratory Specimen</option>
+                  <option className='emergency__formgroup__option input-field' value="Laboratory Specimen">Others</option>
                 </Form.Control>
             </Form.Group>
           </div>
 
-          <div className='my-5'>
+          {/* <div className='my-5'>
             <Form.Group>
               <Form.Label className='formlabel' style={{fontSize:"18px"}}>Briefly State Health Complaints<strong style={{color:"red"}}>*</strong></Form.Label>
               <Form.Control 
@@ -47,7 +48,7 @@ const RequestForm = ({values, handleChange}) => {
                 onChange={handleChange('extraInfo')} value={values.extraInfo}
                 />
             </Form.Group>
-          </div>
+          </div> */}
           <div className='bg-primary p-2 d-flex justify-content-center' style={{color:"white"}}>
             <Form.Group className=''>
                 <Form.Label className='mx-2' style={{fontSize:"18px"}}>Upload Prescription</Form.Label>
@@ -78,7 +79,8 @@ const RequestForm = ({values, handleChange}) => {
                         <option className='emergency__formgroup__option input-field' value="Creams/Ointments/Pastes">Creams/Ointments/Pastes</option>
                         <option className='emergency__formgroup__option input-field' value="Injections/Infusions*">Injections/Infusions*</option>
                         <option className='emergency__formgroup__option input-field' value="Aerosols/Sprays">Aerosols/Sprays</option>
-                        <option className='emergency__formgroup__option input-field' value="Pessaries/Suppositories">Pessaries/Suppositories</option>
+                        <option className='emergency__formgroup__option input-field' value="Pessaries/Suppositories">Inserts (Pessaries/Suppositories)</option>
+                        <option className='emergency__formgroup__option input-field' value="Consumables">Cosumables (e.g. Plasters, Bandages, Cotton Wool)*</option>
                     </Form.Control>
                 </Form.Group>
                 
@@ -90,11 +92,11 @@ const RequestForm = ({values, handleChange}) => {
                   <Form.Label className='emergency__formgroup__text formlabel'>Quantity<strong style={{color:"red"}}>*</strong></Form.Label>
                   <Form.Control onChange={handleChange('packSize')} value={values.packSize} className='emergency__formgroup__input emergency__forminput input-field' placeholder='e.g 1 Pack' />
                 </Form.Group>
-                <Form.Group className='d-flex my-4'>
+                {/* <Form.Group className='d-flex my-4'>
                   <Form.Label className='emergency__checkbox__label'>Nature of Package</Form.Label>
                   <Form.Check className='emergency__checkbox ms-5' type='radio' label='Normal'/>
                   <Form.Check className='emergency__checkbox ms-5' type='radio' label='Cold Chain'/>
-                </Form.Group>
+                </Form.Group> */}
             </div>
 
             <div className="emergency__pickup__container my-5">
@@ -122,6 +124,7 @@ const RequestForm = ({values, handleChange}) => {
                         <option className='' value="Sakponba">Sakponba</option>
                         <option className='' value="Uselu/Ugbowo">Uselu/Ugbowo</option>
                         <option className='' value="Agip">Agip</option>
+                        <option className='' value="Others">Others</option>
                     </Form.Control>
                 </Form.Group>
                 </Col>

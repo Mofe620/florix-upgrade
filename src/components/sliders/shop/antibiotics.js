@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Navigation, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import {Image} from 'react-bootstrap'
+import { getAntibiotics } from '../../../redux/actions/productActions';
 
 import 'swiper/swiper.min.css';
 //import 'swiper/css/navigation';
@@ -9,6 +10,7 @@ import 'swiper/swiper.min.css';
 //import 'swiper/modules/free-mode/free-mode.min.css
 import 'swiper/modules/navigation/navigation.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
+import { useDispatch, useSelector } from 'react-redux';
 
 const data = [
   {id:1, name:"Amoxicillin", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
@@ -22,6 +24,15 @@ const data = [
 //<SwiperSlide><Image src='assets/images/Image2.png' height={300}/></SwiperSlide>
 
 const Antibiotics = () => {
+  const dispatch = useDispatch()
+  const listAntibiotics = useSelector(state => state.antibiotics)
+  const { error, loading, products,} = listAntibiotics
+  // const data = products
+
+  useEffect(() => {
+      dispatch(getAntibiotics())
+   
+  }, [dispatch])
   return (
     <div>
       <Swiper
@@ -44,14 +55,14 @@ const Antibiotics = () => {
           onSlideChange={() => console.log('slide change')}
           className="antibiotics"
       >
-        {data.map(drug =>(
+        {products.map(drug =>(
           <div className="antibiotics__slider">
             <SwiperSlide key={drug.id} className="antibiotics__slider__container p-4">
               <div className="antibiotics__slider__content">
-                  <Image src={drug.image} className="antibiotics__slider__content__image" thumbnail/>
+                  <Image src={`${process.env.REACT_APP_API_URL}${drug.image}`} className="antibiotics__slider__content__image" thumbnail/>
                 <div className="antibiotics__slider__content__text">
                   <p className="antibiotics__slider__content__name">{drug.name}</p>
-                  <p className="antibiotics__slider__content__preamble">{drug.preamble}</p>
+                  <p className="antibiotics__slider__content__label">{drug.label}</p>
                 </div>
               </div>
             

@@ -34,6 +34,18 @@ import {
     PRODUCT_CLASS_SUCCESS,
     PRODUCT_CLASS_FAIL,
 
+    GET_ANALGESICS_REQUEST,
+    GET_ANALGESICS_SUCCESS,
+    GET_ANALGESICS_FAIL,
+
+    GET_ANTIBIOTICS_REQUEST,
+    GET_ANTIBIOTICS_SUCCESS,
+    GET_ANTIBIOTICS_FAIL,
+
+    GET_MULTIVITAMINS_REQUEST,
+    GET_MULTIVITAMINS_SUCCESS,
+    GET_MULTIVITAMINS_FAIL,
+
 } from './types'
 
 
@@ -266,7 +278,7 @@ export const createProductReview = (productId, review) => async (dispatch, getSt
     }
 }
 
-
+// ACTION FOR PRODUCT CLASS FOR POST REQUEST API
 export const getProductClass = (productClass) => async dispatch => {
     
     const config = {
@@ -291,5 +303,73 @@ export const getProductClass = (productClass) => async dispatch => {
             ? error.response.data.detail
             : error.message,
         });
+    }
+}
+
+// GET analgesic products
+
+export const getAnalgesics = () => async (dispatch) => {
+    try {
+        dispatch({ type: GET_ANALGESICS_REQUEST })
+
+        const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/products/product-class/?productClass=analgesics`)
+        console.log(data)
+
+        dispatch({
+            type: GET_ANALGESICS_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type: GET_ANALGESICS_FAIL,
+            payload: error.response && error.response.data.detail
+                ? error.response.data.detail
+                : error.message,
+        })
+    }
+}
+
+// GET antibiotics
+export const getAntibiotics = () => async (dispatch) => {
+    try {
+        dispatch({ type: GET_ANTIBIOTICS_REQUEST })
+
+        const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/products/product-class/?productClass=antibiotics`)
+
+        dispatch({
+            type: GET_ANTIBIOTICS_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type: GET_ANTIBIOTICS_FAIL,
+            payload: error.response && error.response.data.detail
+                ? error.response.data.detail
+                : error.message,
+        })
+    }
+}
+
+// GET Multivitamins
+export const getMultivitamins = () => async (dispatch) => {
+    try {
+        dispatch({ type: GET_MULTIVITAMINS_REQUEST })
+
+        const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/products/product-class/?productClass=multivitamins`)
+
+        dispatch({
+            type: GET_MULTIVITAMINS_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type: GET_MULTIVITAMINS_FAIL,
+            payload: error.response && error.response.data.detail
+                ? error.response.data.detail
+                : error.message,
+        })
     }
 }

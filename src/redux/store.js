@@ -12,6 +12,10 @@ import {
     productReviewCreateReducer,
     productTopRatedReducer,
     ProductClassReducer,
+    analgesicsReducer,
+    antibioticsReducer,
+    multivitaminsReducer
+
 } from './reducers/productReducers'
 
 import { cartReducer } from './reducers/cartReducers'
@@ -57,6 +61,9 @@ const reducer = combineReducers({
     productReviewCreate: productReviewCreateReducer,
     productTopRated: productTopRatedReducer,
     productClass: ProductClassReducer,
+    analgesics: analgesicsReducer,
+    antibiotics: antibioticsReducer,
+    multivitamins: multivitaminsReducer,
 
     cart: cartReducer,
     auth: authReducer,

@@ -44,9 +44,9 @@ const Footer = () =>{
                 <div>
                     <h2>Social Media</h2>
                     <p className='footer__items__divider'></p>
-                    <p><Link to="/"><span className="footer__media__icons"><a href="https://www.facebook.com/florixhealthcare" target="_blank"><i className="fab fa-facebook"></i></a></span>Flo-Log Healthcare</Link></p>
-                    <p><Link to="/"><span className="footer__media__icons"><a href="http://instagram.com/flo_log.hq" target="_blank"><i className="fab fa-instagram"></i></a></span>flo_log.hq</Link></p>
-                    <p><Link to='/'><span className="footer__media__icons"><a href="/"><i className="fab fa-twitter"></i></a></span>Twitter</Link></p>
+                    <p><span className="footer__media__icons"><a href="https://www.facebook.com/florixhealthcare" target="_blank" rel='noreferrer'><i className="fab fa-facebook"></i></a></span>Flo-Log Healthcare</p>
+                    <p><span className="footer__media__icons"><a href="http://instagram.com/flo_log.hq" target="_blank" rel='noreferrer'><i className="fab fa-instagram"></i></a></span>flo_log.hq</p>
+                    <p><span className="footer__media__icons"><a href="/"><i className="fab fa-twitter"></i></a></span>Twitter</p>
                 </div>
             </div>
         <div className='footer'> 

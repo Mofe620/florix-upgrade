@@ -33,6 +33,19 @@ import {
     PRODUCT_TOP_REQUEST,
     PRODUCT_TOP_SUCCESS,
     PRODUCT_TOP_FAIL,
+
+    
+    GET_ANALGESICS_REQUEST,
+    GET_ANALGESICS_SUCCESS,
+    GET_ANALGESICS_FAIL,
+
+    GET_ANTIBIOTICS_REQUEST,
+    GET_ANTIBIOTICS_SUCCESS,
+    GET_ANTIBIOTICS_FAIL,
+
+    GET_MULTIVITAMINS_REQUEST,
+    GET_MULTIVITAMINS_SUCCESS,
+    GET_MULTIVITAMINS_FAIL,
 } from '../actions/types'
 
 
@@ -188,3 +201,52 @@ export const ProductClassReducer = (state = { products: [] }, action) => {
     }
 }
 
+
+export const analgesicsReducer = (state = { products: [] }, action) => {
+    switch (action.type) {
+        case GET_ANALGESICS_REQUEST:
+            return { loading: true, products: [] }
+
+        case GET_ANALGESICS_SUCCESS:
+            return { loading: false, products: action.payload, }
+
+        case GET_ANALGESICS_FAIL:
+            return { loading: false, error: action.payload }
+
+        default:
+            return state
+    }
+}
+
+
+export const antibioticsReducer = (state = { products: [] }, action) => {
+    switch (action.type) {
+        case GET_ANTIBIOTICS_REQUEST:
+            return { loading: true, products: [] }
+
+        case GET_ANTIBIOTICS_SUCCESS:
+            return { loading: false, products: action.payload, }
+
+        case GET_ANTIBIOTICS_FAIL:
+            return { loading: false, error: action.payload }
+
+        default:
+            return state
+    }
+}
+
+export const multivitaminsReducer = (state = { products: [] }, action) => {
+    switch (action.type) {
+        case GET_MULTIVITAMINS_REQUEST:
+            return { loading: true, products: [] }
+
+        case GET_MULTIVITAMINS_SUCCESS:
+            return { loading: false, products: action.payload, }
+
+        case GET_MULTIVITAMINS_FAIL:
+            return { loading: false, error: action.payload }
+
+        default:
+            return state
+    }
+}

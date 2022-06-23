@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
 import {Button, Image} from 'react-bootstrap'
+import { getAnalgesics } from '../../../redux/actions/productActions';
 
 import 'swiper/swiper.min.css';
 //import 'swiper/css/navigation';
@@ -28,14 +29,14 @@ const data = [
 
 const Analgesics = () => {
   const dispatch = useDispatch()
-  const productList = useSelector(state => state.productList)
-  const { error, loading, products,} = productList
+  const listAnalgesics = useSelector(state => state.analgesics)
+  const { error, loading, products,} = listAnalgesics
   // const data = products
 
   useEffect(() => {
-      dispatch(listProducts())
+      dispatch(getAnalgesics())
    
-  }, [])
+  }, [dispatch])
   return (
     <div>
       <Swiper
@@ -58,16 +59,16 @@ const Analgesics = () => {
           onSlideChange={() => console.log('slide change')}
           className="analgesics"
       >
-        {data.map(drug =>(
+        {products.map(product =>(
           <div className="analgesics__slider">
-            <SwiperSlide key={drug.id} className="analgesics__slider__container p-4">
+            <SwiperSlide key={product?.id} className="analgesics__slider__container p-4">
               <div className='analgesics__slider__content'>
-                  <Image className='analgesics__slider__content__image' src={drug.image} />
+                  <Image className='analgesics__slider__content__image' src={`${process.env.REACT_APP_API_URL}${product.image}`} />
                 <div className='analgesics__slider__content__text px-4'>
-                  <p className='analgesics__slider__content__name'>{drug.name}</p>
-                  <p className='analgesics__slider__content__preamble'>{drug.strength}</p>
+                  <p className='analgesics__slider__content__name'>{product?.name}</p>
+                  <p className='analgesics__slider__content__label'>{product?.label}</p>
                   <div className='d-flex justify-content-between'>
-                    <p className='analgesics__slider__content__price'>#{drug.price}</p>
+                    <p className='analgesics__slider__content__price'>&#8358; {product?.price}</p>
                     <p className='analgesics__slider__content__button'><a href='/'>Add to cart</a></p>
                   </div>
                   

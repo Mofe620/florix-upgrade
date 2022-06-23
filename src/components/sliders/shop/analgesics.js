@@ -63,7 +63,7 @@ const Analgesics = () => {
           <div className="analgesics__slider">
             <SwiperSlide key={product?.id} className="analgesics__slider__container p-4">
               <div className='analgesics__slider__content'>
-                  <Image className='analgesics__slider__content__image' src={`${process.env.REACT_APP_API_URL}${product.image}`} />
+                  <Image className='analgesics__slider__content__image' src={product.image} />
                 <div className='analgesics__slider__content__text px-4'>
                   <p className='analgesics__slider__content__name'>{product?.name}</p>
                   <p className='analgesics__slider__content__label'>{product?.label}</p>

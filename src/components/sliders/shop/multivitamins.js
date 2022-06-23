@@ -63,7 +63,8 @@ const Multivitamins = () => {
          <div className="analgesics__slider">
          <SwiperSlide key={drug.id} className="analgesics__slider__container p-4">
            <div className='analgesics__slider__content'>
-               <Image className='analgesics__slider__content__image' src={`${process.env.REACT_APP_API_URL}${drug.image}`} />
+           {/* src={`${process.env.REACT_APP_API_URL}${drug.image}`} */}
+               <Image className='analgesics__slider__content__image' src={drug.image} /> 
              <div className='analgesics__slider__content__text px-4'>
                <p className='analgesics__slider__content__name'>{drug.name}</p>
                <p className='analgesics__slider__content__label'>{drug.label}</p>

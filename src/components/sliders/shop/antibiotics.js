@@ -59,7 +59,7 @@ const Antibiotics = () => {
           <div className="antibiotics__slider">
             <SwiperSlide key={drug.id} className="antibiotics__slider__container p-4">
               <div className="antibiotics__slider__content">
-                  <Image src={`${process.env.REACT_APP_API_URL}${drug.image}`} className="antibiotics__slider__content__image" thumbnail/>
+                  <Image src={drug.image} className="antibiotics__slider__content__image" thumbnail/>
                 <div className="antibiotics__slider__content__text">
                   <p className="antibiotics__slider__content__name">{drug.name}</p>
                   <p className="antibiotics__slider__content__label">{drug.label}</p>

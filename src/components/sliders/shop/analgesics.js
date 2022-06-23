@@ -14,6 +14,7 @@ import 'swiper/modules/autoplay/autoplay.min.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductClass } from '../../../redux/actions/productActions';
 import { listProducts } from '../../../redux/actions/productActions';
+import { Link } from 'react-router-dom';
 
 const data = [
   {id:1, name:"Paracetamol", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
@@ -67,9 +68,9 @@ const Analgesics = () => {
                 <div className='analgesics__slider__content__text px-4'>
                   <p className='analgesics__slider__content__name'>{product?.name}</p>
                   <p className='analgesics__slider__content__label'>{product?.label}</p>
-                  <div className='d-flex justify-content-between'>
+                  <div className='d-md-flex justify-content-between'>
                     <p className='analgesics__slider__content__price'>&#8358; {product?.price}</p>
-                    <p className='analgesics__slider__content__button'><a href='/'>Add to cart</a></p>
+                    <p className='analgesics__slider__content__button text-center'><Link to={`/product/${product.id}`}>Add to cart</Link></p>
                   </div>
                   
                 </div>

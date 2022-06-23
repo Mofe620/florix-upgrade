@@ -24,7 +24,7 @@ const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
     const authLinks = () => (
         <Fragment>
             <li className='navbar__list__item'>
-                <NavLink className='navbar__link' to='/products'>
+                <NavLink className='navbar__link' to='/shop'>
                         Drugstore
                 </NavLink>
             </li>

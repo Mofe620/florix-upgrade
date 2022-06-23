@@ -12,6 +12,7 @@ import 'swiper/modules/navigation/navigation.min.css'
 import 'swiper/modules/pagination/pagination.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const data = [
   {id:1, name:"Hematogen Forte", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/booster.jpg"},
@@ -68,9 +69,9 @@ const Multivitamins = () => {
              <div className='analgesics__slider__content__text px-4'>
                <p className='analgesics__slider__content__name'>{drug.name}</p>
                <p className='analgesics__slider__content__label'>{drug.label}</p>
-               <div className='d-flex justify-content-between'>
+               <div className='d-md-flex justify-content-between'>
                   <p className='analgesics__slider__content__price'>&#8358; {drug.price}</p>
-                  <p className='analgesics__slider__content__button'><a href='/'>Add to cart</a></p>
+                  <p className='analgesics__slider__content__button text-center'><Link to={`/product/${drug.id}`}>Add to cart</Link></p>
                 </div>
              </div>
            </div>

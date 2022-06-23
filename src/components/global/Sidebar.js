@@ -29,7 +29,7 @@ const guestLinks = () => (
     const authLinks = () => (
         <Fragment>
             <li className='sidebar__list__item' onClick={closeSidebar}>
-                <NavLink className='sidebar__link' to='/products'><img src="/assets/icons/Store.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
+                <NavLink className='sidebar__link' to='/shop'><img src="/assets/icons/Store.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
                     Drugstore
                 </NavLink>
             </li>

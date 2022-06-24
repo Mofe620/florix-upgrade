@@ -74,6 +74,7 @@ function ProductScreen({ match, history, isAuthenticated }) {
     }
 
     return (
+        <>
         <div className="product mx-4" style={{marginTop:"70px"}}>
             <Header />
             <Helmet>
@@ -219,9 +220,7 @@ function ProductScreen({ match, history, isAuthenticated }) {
                                                     <Form.Group controlId='comment'>
                                                         <Form.Label className="my-3">Add a comment</Form.Label> {/* The label called review is named comment in the database(backend)*/}
                                                         <Form.Control
-                                                            as='textarea'
-                                                            row='5'
-                                                            col='10'
+                                                            as="textarea"
                                                             value={comment}
                                                             onChange={(e) => setComment(e.target.value)}
                                                         ></Form.Control>
@@ -250,8 +249,9 @@ function ProductScreen({ match, history, isAuthenticated }) {
             }
 
             </Container>
-            <Footer />
         </div>
+        <Footer />
+        </>
     )
 }
 

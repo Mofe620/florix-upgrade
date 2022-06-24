@@ -4,7 +4,8 @@ import Footer from '../../components/Footer';
 import { getProductClass } from '../../redux/actions/productActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Col, Image, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
+import LoadingMain from '../../components/spinners/LoadingMain'
 
 const ProductClassScreen = ({match}) => {
     const [productClass, setProductClass] = useState('');
@@ -32,14 +33,14 @@ const ProductClassScreen = ({match}) => {
                 <div className='product__class__container'>
                     {/* <h2><span>Therapeutic Category: <strong> {product.productClass}</strong></span></h2> */}
                         <div className="product__class__file__wrapper">
-                           <Image className="product__class__file__wrapper__img" src={product.image} alt={product.name} fluid/>
+                           <Image className="product__class__file__wrapper__img" src={`${process.env.REACT_APP_API_URL}${product.image}`} alt={product.name} fluid/>
                               {/* <Image className="post__img" src={product.image} alt={product.name} fluid/> */}
                         </div>
                         <div className='product__class__text'>
-                            <h3 className="mb-0 fw-bold fs-2
-                            ">{product.name}</h3>
-                            <p as="h3" className="fw-bold"> &#8358; {product.price}</p>
-                            <p>Strength: {product.strength}</p>
+                            <h2 className="mb-0 fw-bold">{product.name}</h2>
+                            <h3>{product.label}</h3>
+                            <p className="fw-bold"> &#8358; {product.price}</p>
+                            <h3>Strength: {product.strength}</h3>
                            
                             <p className='analgesics__slider__content__button text-center'><Link to={`/product/${product.id}`}>Proceed</Link></p>
                         </div>
@@ -72,10 +73,10 @@ const ProductClassScreen = ({match}) => {
                 <Col md={8}>
                     <div className="nav-scroller py-1 mb-2" style={{marginTop:'60px'}}>
                         <nav className="nav d-flex justify-content-between">
-                            <Link className="drugstore__nav-link p-2 text-muted" to='/'>All</Link>
-                            <Link className="drugstore__nav-link p-2 text-muted" to='/med/therapeutic_class/antibiotics'>Pain Killers</Link>
-                            <Link className="drugstore__nav-link p-2 text-muted" to='/med/therapeutic_class/antimalaria'>Antimalaria</Link>
-                            <Link className="drugstore__nav-link p-2 text-muted" to='/med/therapeutic_class/multivitamins'>Multivitamins</Link>
+                            <a className="drugstore__nav-link p-2 text-muted" href='/'>All</a>
+                            <a className="drugstore__nav-link p-2 text-muted" href='/med/therapeutic_class/analgesics'>Pain Killers</a>
+                            <a className="drugstore__nav-link p-2 text-muted" href='/med/therapeutic_class/antibiotics'>Antibiotics</a>
+                            <a className="drugstore__nav-link p-2 text-muted" href="/med/therapeutic_class/multivitamins">Multivitamins</a>
                         </nav>
                     </div>
                 </Col>
@@ -85,8 +86,12 @@ const ProductClassScreen = ({match}) => {
             </Row>
             
             <div>
-            <h1>{productClass}</h1>
-                {getProductsByClass()}
+                <h1 className='fs-1 fw-bold'>{productClass}</h1>
+                <div>
+                   {loading? <LoadingMain /> : getProductsByClass()}
+                </div>
+                
+                
                 
             </div>
         </div>

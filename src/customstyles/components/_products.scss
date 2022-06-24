@@ -4,11 +4,17 @@
     margin-top: 2rem;
     &__class{
         &__container{
-            height: 27rem;
-            width: auto;
+            height: auto;
+            width: 20rem;
             padding: 2rem;
             display: flex;
             flex-direction: column;
+            border: 1px $secondary solid;
+            margin-bottom: 5px;
+            @include respond(phone){
+                display: flex;
+                justify-content: center;
+            }
         
         
         }
@@ -18,13 +24,23 @@
             &__img{
                 height: 10rem;
                 justify-content: center;
+                @include respond(phone){
+                    height: 15rem;
+                }
         
             }
      
             
         }
         &__text{
-            
+            & h3{
+                color: $header-color;
+                font-size: 1.2rem;
+            }
+            & p{
+                color: $primary;
+                font-size: 1.8rem;
+            }
     
         }
     }

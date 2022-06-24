@@ -246,8 +246,8 @@ footer, a:hover{
             width: 45%;
             margin-right: 5%;
             @include respond(phone) {
-                width: 100%; 
-                margin-top: 2rem auto;
+                width: auto; 
+                margin: 2rem auto;
                 padding: 0 2rem;
                 
                 
@@ -258,16 +258,27 @@ footer, a:hover{
                 font-weight: 700;
                 @include respond(phone) {
                     margin-top: 5rem;
+                    font-size: 2rem;
                 } 
             }
             & p{
                 font-size: 2rem;
+                @include respond(phone) {
+                    font-size: 1.5rem;
+                } 
             }
         }
 
         &__subscription{
             width: 45%;
             margin-left: 5%;
+            @include respond(phone) {
+                width: auto; 
+                margin: 0 auto;
+                padding: 0 2rem;
+                
+                
+            }   
         }
         &__form{
 

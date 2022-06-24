@@ -11,11 +11,8 @@ import 'swiper/modules/navigation/navigation.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 
 const data = [
-  {id:1, name:"Dr. Brainmoh", brand:"They deliver high quality pharmaceuticals and medical equipment at affordable prices", image: "/assets/images/nurse.jpg"},
-  {id:2, name:"Dr. Brainmoh", brand:"They deliver high quality pharmaceuticals and medical equipment at affordable prices", image: "/assets/images/nurse.jpg"},
-  {id:3, name:"Dr. Brainmoh", brand:"They deliver high quality pharmaceuticals and medical equipment at affordable prices", image: "/assets/images/nurse.jpg"},
-  {id:4, name:"Dr. Brainmoh", brand:"They deliver high quality pharmaceuticals and medical equipment at affordable prices", image: "/assets/images/nurse.jpg"},
-  {id:6, name:"Dr. Brainmoh", brand:"They deliver high quality pharmaceuticals and medical equipment at affordable prices", image: "/assets/images/nurse.jpg"}
+  {id:1, name:" Aiyanyor Smart", testimony:"Logistics, Pharmaceutical supplies"},
+  {id:2, name:"Sheila", testimony:"Efficient and reliable"},
 ]
 
 // <SwiperSlide><Image src='assets/images/Image1.png' height={300}/></SwiperSlide>
@@ -37,13 +34,10 @@ const Testimony= () => {
           <div className="testimony__slider">
             <SwiperSlide key={drug.id} className="testimony__slider__container d-flex justify-content-center p-4">
             <div className='testimony__slider__content d-flex justify-content-center align-items-center'>
-              <div>
-                <Image src={drug.image} className='testimony__slider__image' fluid/>
-              </div>
                 <div className='m-2 p-3'>
-                    <p>{drug.brand}</p>
-                    <p>{drug.name}</p>
-                    <p>{drug.name}</p>
+                    <p>{drug.testimony}</p>
+                    {/* <p>{drug.testimony}</p> */}
+             
                 </div>
             </div>
             </SwiperSlide>

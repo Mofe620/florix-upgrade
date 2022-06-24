@@ -36,14 +36,14 @@ const Shop = () =>{
                 </div>
                 <div className='shop__introline d-flex'>
                     <h2 className='shop__introline__header'>Painkillers</h2>
-                    <p className='shop__introline__allbtn ms-auto pt-4'><Link to="/med/therapeutic_class/analgesics" >view all</Link></p>
+                    <p className='shop__introline__allbtn ms-auto pt-ms-4'><Link to="/med/therapeutic_class/analgesics" >view all</Link></p>
                 </div>
                 <div className='m-5'>
                     <Analgesics />
                 </div>
                 <div className='shop__introline d-flex'>
                     <h2 className='shop__introline__header'>Antibiotics</h2>
-                    <p className='shop__introline__allbtn ms-auto pt-4'><Link to="/med/therapeutic_class/antibiotics" >view all</Link></p>
+                    <p className='shop__introline__allbtn ms-auto pt-ms-4'><Link to="/med/therapeutic_class/antibiotics" >view all</Link></p>
                 </div>
                 <div className='m-5'>
                     <Antibiotics />
@@ -63,7 +63,7 @@ const Shop = () =>{
             
                 <div className='shop__introline d-flex'>
                     <h2 className='shop__introline__header'>Multivitamins</h2>
-                    <p className='shop__introline__allbtn ms-auto pt-4'><Link to="/med/therapeutic_class/multivitamins" >view all</Link></p>
+                    <p className='shop__introline__allbtn ms-auto pt-md-4'><Link to="/med/therapeutic_class/multivitamins" >view all</Link></p>
                 </div>
                 <div className='px-5 py-4'>
                     <Multivitamins />

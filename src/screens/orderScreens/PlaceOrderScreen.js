@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react'
+import Header from '../../components/global/Header';
+import Footer from '../../components/Footer';
 import { Button, Row, Col, ListGroup, Image, Card, Container } from 'react-bootstrap'
 import { Link, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector, connect } from 'react-redux'
@@ -51,84 +53,89 @@ function PlaceOrderScreen({ history, isAuthenticated }) {
         
     }
     return (
-        <Container className="content">
-            <Helmet>
-             <meta charSet="utf-8" />
-                <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
-                <title>Place Order</title>
-            </Helmet>
-            <Row>
-                <Col md={4}>
-                     <div >
-                     
-                         <h3 className="me-2" style={{marginTop:"30px"}}><strong>Shipping Address: </strong></h3>
-                         <p>
-                             {cart.shippingAddress.address},  {cart.shippingAddress.city}
-                             {'  '}
-                             {cart.shippingAddress.postalCode},
-                             {'  '}
-                             {cart.shippingAddress.country}
-                         </p>
-                     </div>
-                     <div >
-                         <h3 className="me-2"><strong>Payment Method: </strong></h3>
-                         <p>
-                             {cart.paymentMethod}
-                         </p>
-                     </div> 
-                            <h3><strong>Order Summary</strong></h3>
-                          
-                                <Row>
-                                    <Col><p>Sub total:</p></Col>
-                                    <Col><p>&#8358; {cart.itemsPrice}</p></Col>
-                                </Row>
-                          
-                                {error && <Message variant='danger'>{error}</Message>}
-                       
-                                <div className="d-grid gap-2">
-                                    <Button
-                                        type='button'
-                                        size="lg"
-                                        disabled={cart.cartItems === 0}
-                                        onClick={placeOrder}
-                                    >
-                                        Place Order
-                                    </Button>
-                                </div>
-                </Col>
-                <Col md={8}>
-                    <ListGroup variant='flush'>
-                        <ListGroup.Item>
-                            <h2>Order Items</h2>
-                            {cart.cartItems.length === 0 ? <Message variant='info'>
-                                No Product in the Cart
-                            </Message> : (
-                                <ListGroup variant='flush'>
-                                    {cart.cartItems.map((item, index) => (
-                                        <ListGroup.Item key={index}>
-                                            <Row>
-                                                <Col md={1}>
-                                                    {/*  <Image src={`${process.env.REACT_APP_API_URL}${item.image}`} alt={item.name} fluid rounded /> */}
-                                                    <Image src={item.image} alt={item.name} fluid rounded />
-                                                </Col>
+        <>
+            <Container className="content">
+                <Helmet>
+                <meta charSet="utf-8" />
+                    <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
+                    <title>Place Order</title>
+                </Helmet>
+                <Header />
+                <Row>
+                    <Col md={4}>
+                        <div >
+                        
+                            <h3 className="me-2" style={{marginTop:"30px"}}><strong>Shipping Address: </strong></h3>
+                            <p>
+                                {cart.shippingAddress.address},  {cart.shippingAddress.city}
+                                {'  '}
+                                {cart.shippingAddress.postalCode},
+                                {'  '}
+                                {cart.shippingAddress.country}
+                            </p>
+                        </div>
+                        <div >
+                            <h3 className="me-2"><strong>Payment Method: </strong></h3>
+                            <p>
+                                {cart.paymentMethod}
+                            </p>
+                        </div> 
+                                <h3><strong>Order Summary</strong></h3>
+                            
+                                    <Row>
+                                        <Col><p>Sub total:</p></Col>
+                                        <Col><p>&#8358; {cart.itemsPrice}</p></Col>
+                                    </Row>
+                            
+                                    {error && <Message variant='danger'>{error}</Message>}
+                        
+                                    <div className="d-grid gap-2">
+                                        <Button
+                                            type='button'
+                                            size="lg"
+                                            disabled={cart.cartItems === 0}
+                                            onClick={placeOrder}
+                                        >
+                                            Place Order
+                                        </Button>
+                                    </div>
+                    </Col>
+                    <Col md={8}>
+                        <ListGroup variant='flush'>
+                            <ListGroup.Item>
+                                <h2>Order Items</h2>
+                                {cart.cartItems.length === 0 ? <Message variant='info'>
+                                    No Product in the Cart
+                                </Message> : (
+                                    <ListGroup variant='flush'>
+                                        {cart.cartItems.map((item, index) => (
+                                            <ListGroup.Item key={index}>
+                                                <Row>
+                                                    <Col md={1}>
+                                                        {/*  <Image src={`${process.env.REACT_APP_API_URL}${item.image}`} alt={item.name} fluid rounded /> */}
+                                                        <Image src={item.image} alt={item.name} fluid rounded />
+                                                    </Col>
 
-                                                <Col>
-                                                    <p className="mx-5"><Link to={`/product/${item.product}`}>{item.name}</Link></p>
-                                                </Col>
+                                                    <Col>
+                                                        <p className="mx-5"><Link to={`/product/${item.product}`}>{item.name}</Link></p>
+                                                    </Col>
 
-                                                <Col md={4}>
-                                                    <p className="product__price">{item.qty} X &#8358; {item.price} = &#8358; {(item.qty * item.price).toFixed(2)}</p>
-                                                </Col>
-                                            </Row>
-                                        </ListGroup.Item>
-                                    ))}
-                                </ListGroup>
-                            )}
-                        </ListGroup.Item>
-                    </ListGroup>
-                </Col>
-            </Row>
-        </Container>
+                                                    <Col md={4}>
+                                                        <p className="product__price">{item.qty} X &#8358; {item.price} = &#8358; {(item.qty * item.price).toFixed(2)}</p>
+                                                    </Col>
+                                                </Row>
+                                            </ListGroup.Item>
+                                        ))}
+                                    </ListGroup>
+                                )}
+                            </ListGroup.Item>
+                        </ListGroup>
+                    </Col>
+                </Row>
+            </Container>
+            <Footer />
+        </>
+        
     )
 }
 

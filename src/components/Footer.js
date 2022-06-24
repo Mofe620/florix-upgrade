@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from "react-router-dom"
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 
+
 const Footer = () =>{
     return(
         <>

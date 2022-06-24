@@ -9,6 +9,8 @@ import LoadingMain from '../../components/spinners/LoadingMain'
 import Loader from '../../components/Loader'
 import { getOrderDetails, payOrder, deliverOrder } from '../../redux/actions/orderActions'
 import { ORDER_PAY_RESET, ORDER_DELIVER_RESET } from '../../constants/orderConstants'
+import Header from '../../components/global/Header';
+import Footer from '../../components/Footer';
 
 function OrderScreen({ match, history, isAuthenticated }) {
     const orderId = match.params.id
@@ -81,12 +83,14 @@ function OrderScreen({ match, history, isAuthenticated }) {
     ) : error ? (
         <Message variant='danger'>{error}</Message>
     ) : (
-                <Container className="content">
+        <>
+            <Container className="content">
                     <Helmet>
                      <meta charSet="utf-8" />
                         <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
                         <title>Order products</title>
                     </Helmet>
+                    <Header />
                    {/* <h1>Order: {order.Id}</h1> */}
                     <Row>
                         <Col md={8}>
@@ -209,6 +213,8 @@ function OrderScreen({ match, history, isAuthenticated }) {
                         </Col>
                     </Row>
                 </Container>
+                 <Footer />
+                </>
             )
 }
 

@@ -1,4 +1,6 @@
 import React, { useState} from 'react'
+import Header from '../../components/global/Header';
+import Footer from '../../components/Footer';
 import { Container, Form, Button, Image, Card} from 'react-bootstrap'
 import {Helmet} from "react-helmet";
 import { Link, Redirect } from 'react-router-dom'
@@ -28,67 +30,71 @@ function ShippingScreen({history}) {
 
 
     return (
-        <Container className=' auth-container content'>
-            <Helmet>
-                <meta charSet="utf-8" />
-                <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
-                <title>Billing address</title>
-            </Helmet>
-        <Card className="p-5">
-       <CheckoutSteps step1 step2 />
-        <h2 className="text-center checkout__header">Shipping Address</h2>
-         {/*} {error && <Message variant='danger'>{error}</Message>}
-        {loading && <Loader />} */}
-            <Form className="auth-form" onSubmit={submitHandler}>
-                <Form.Group className="mb-3" controlId="address">
-                    <Form.Control 
-                        className="auth-input" 
-                        type='text'
-                        placeholder='Shipping address'
-                        value={address ? address : ''}
-                        onChange={(e) => setAddress(e.target.value)}
-                        required
-                        />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="city">
-                    <Form.Control 
-                        className="auth-input" 
-                        type='text'
-                        placeholder='City'
-                        value={city ? city : ''}
-                        onChange={(e) => setCity(e.target.value)}
-                        required
-                        />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId='postalCode'>
-                    <Form.Control
-                        className="auth-input"
-                        type='text'
-                        placeholder='Postal code'
-                        value={postalCode ? postalCode : ''}
-                        onChange={(e) => setPostalCode(e.target.value)}
-                        required
-                    >
-                    </Form.Control>
-                </Form.Group>
+        <>
+            <Container className=' auth-container content'>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
+                    <title>Billing address</title>
+                </Helmet>
+                <Header />
+            <Card className="p-5">
+            <CheckoutSteps step1 step2 />
+            <h2 className="text-center checkout__header">Shipping Address</h2>
+            {/*} {error && <Message variant='danger'>{error}</Message>}
+            {loading && <Loader />} */}
+                <Form className="auth-form" onSubmit={submitHandler}>
+                    <Form.Group className="mb-3" controlId="address">
+                        <Form.Control 
+                            className="auth-input" 
+                            type='text'
+                            placeholder='Shipping address'
+                            value={address ? address : ''}
+                            onChange={(e) => setAddress(e.target.value)}
+                            required
+                            />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="city">
+                        <Form.Control 
+                            className="auth-input" 
+                            type='text'
+                            placeholder='City'
+                            value={city ? city : ''}
+                            onChange={(e) => setCity(e.target.value)}
+                            required
+                            />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId='postalCode'>
+                        <Form.Control
+                            className="auth-input"
+                            type='text'
+                            placeholder='Postal code'
+                            value={postalCode ? postalCode : ''}
+                            onChange={(e) => setPostalCode(e.target.value)}
+                            required
+                        >
+                        </Form.Control>
+                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId='country'>
-                    <Form.Control
-                        className="auth-input" 
-                        type='text'
-                        placeholder='Country'
-                        value={country ? country : ''}
-                        onChange={(e) => setCountry(e.target.value)}
-                        required
-                    >
-                    </Form.Control>
-                </Form.Group>
-                    <div className='d-grid gap-2'>
-                        <Button size="lg" type="submit">Next</Button>
-                    </div>
-            </Form>
-            </Card>
-</Container>
+                    <Form.Group className="mb-3" controlId='country'>
+                        <Form.Control
+                            className="auth-input" 
+                            type='text'
+                            placeholder='Country'
+                            value={country ? country : ''}
+                            onChange={(e) => setCountry(e.target.value)}
+                            required
+                        >
+                        </Form.Control>
+                    </Form.Group>
+                        <div className='d-grid gap-2'>
+                            <Button size="lg" type="submit">Next</Button>
+                        </div>
+                </Form>
+                </Card>
+        </Container>
+        <Footer />
+    </>
     )
 }
 

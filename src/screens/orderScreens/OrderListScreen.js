@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../../components/Loader'
 import Message from '../../components/Message'
 import { listOrders } from '../../redux/actions/orderActions'
+import Header from '../../components/global/Header';
+import Footer from '../../components/Footer';
 
 function OrderListScreen({ history }) {
 
@@ -31,6 +33,7 @@ function OrderListScreen({ history }) {
 
     return (
         <Container className="content">
+            <Header />
             <h1>Orders</h1>
             {loading
                 ? (<Loader />)
@@ -86,6 +89,7 @@ function OrderListScreen({ history }) {
                             </tbody>
                         </Table>
                     )}
+            <Footer />
         </Container>
     )
 }

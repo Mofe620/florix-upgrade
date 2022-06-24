@@ -15,7 +15,7 @@ const TrackRecord = () => {
         </div>
         
         <div className='shadow'>
-        <p className='trackrecord__view'><Link to="/drugstore">view all</Link></p>
+        <p className='trackrecord__view'><Link to="/">view all</Link></p>
             <Partnership />
         </div>
         

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import Header from '../../components/global/Header';
+import Footer from '../../components/Footer';
 import { useDispatch, useSelector, connect } from 'react-redux'
 import {Helmet} from "react-helmet";
 import { Link, useLocation } from 'react-router-dom'
@@ -73,6 +75,7 @@ function ProductScreen({ match, history, isAuthenticated }) {
 
     return (
         <div className="product mx-4" style={{marginTop:"70px"}}>
+            <Header />
             <Helmet>
                 <meta charSet="utf-8" />
                 <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
@@ -247,6 +250,7 @@ function ProductScreen({ match, history, isAuthenticated }) {
             }
 
             </Container>
+            <Footer />
         </div>
     )
 }

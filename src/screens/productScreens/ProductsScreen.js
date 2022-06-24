@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import Header from '../../components/global/Header';
+import Footer from '../../components/Footer';
 import { Link, useHistory, useLocation } from 'react-router-dom'
 import {Helmet} from "react-helmet";
 import { useDispatch, useSelector, connect} from 'react-redux'
@@ -13,6 +15,7 @@ import LoadingMain from '../../components/spinners/LoadingMain'
 import SearchBox from '../../components/SearchBox'
 import { listProducts } from '../../redux/actions/productActions'
 import SearchProduct from '../../components/SearchProduct'
+import StoreSlider from '../../components/sliders/shop/storeSlider';
 
 
 function HomeScreen({history, isAuthenticated}) {
@@ -43,31 +46,32 @@ function HomeScreen({history, isAuthenticated}) {
 
     return (
         <div style={{marginTop:"50px"}}>
+            <Header />
             <Helmet>
                 <meta charSet="utf-8" />
                 <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
                 <title>All products</title>
             </Helmet>
-            <div className="product__carousel">
+            {/* <div className="product__carousel">
                 <Container className="py-4">
                     {<ProductCarousel />}
                 </Container>
             </div>
             <div>
                 <h3 className="intro-caption">Africa's Premium Healthcare E-marketplace and Logisttics Solution</h3>
-            </div>
+            </div> */}
+
             <Container className="product" >
+                <div className='py-4'>
+                    <SearchProduct />
+                </div>
+                <div className='mb-4'>
+                    <StoreSlider />
+                </div>
             {loading ? <LoadingMain />
                 : error ? <Message variant='danger'>{error}</Message>
                     :
                     <div>
-                        <Row>
-                            <Col xs={6}><h3><strong>Most Recent Products</strong></h3></Col>
-                            <Col xs={6}><SearchProduct/></Col>
-                            {/*<Col xs={6} className="float-end"><Button onClick={() => setLgShow(true)} variant="outline-info" className="ms-auto">Search Products</Button></Col> */}
-                        </Row>
-                        
-                        
                         <Row>
                             {products.map(product => (
                                 <Col key={product.id} xs={6} md={4} lg={4} xl={3}>
@@ -85,6 +89,7 @@ function HomeScreen({history, isAuthenticated}) {
                <SearchProduct />
             </Modal.Body>
         </Modal>
+        <Footer />
         </div>
     )
 }

@@ -38,7 +38,7 @@ const StoreSlider = () => {
         {data.map(drug =>(
           <div className="swiper__slider">
             <SwiperSlide key={drug.id} className="swiper__slider__container p-4">
-            <div><Image src={drug.image} fluid/></div>
+            <div style={{borderRadius:'20px'}}><Image src={drug.image} fluid/></div>
             </SwiperSlide>
           </div>
         ))}

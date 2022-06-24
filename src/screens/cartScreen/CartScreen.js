@@ -1,4 +1,6 @@
 import React, { useEffect} from 'react'
+import Header from '../../components/global/Header';
+import Footer from '../../components/Footer';
 import { Link, Redirect, useLocation  } from 'react-router-dom'
 import { useDispatch, useSelector, connect } from 'react-redux'
 import {Helmet} from "react-helmet";
@@ -44,12 +46,14 @@ function CartScreen({ match, history, isAuthenticated }) {
     }
 
     return (
+        <>
         <Container className="content checkout">
             <Helmet>
              <meta charSet="utf-8" />
                 <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
                 <title>Cart Page</title>
             </Helmet>
+            <Header />
         <Row>
             <Col md={8}>
                 <h2 className="checkout__header text-center">Cart Page</h2>
@@ -149,6 +153,8 @@ function CartScreen({ match, history, isAuthenticated }) {
             </Col>
         </Row>
         </Container>
+             <Footer />
+        </>
     )
 }
 

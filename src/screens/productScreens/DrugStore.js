@@ -11,15 +11,7 @@ const DrugStore = () => {
                 <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
                 <title>Product categories</title>
             </Helmet>
-             <div className="nav-scroller py-1 mb-2">
-                <nav className="nav d-flex justify-content-between">
-                    <Link className="drugstore__nav-link p-2 text-muted" to='/drugstore/med'>All</Link>
-                    <Link className="drugstore__nav-link p-2 text-muted" to='/drugstore/analgesics'>Pain Killers</Link>
-                    <Link className="drugstore__nav-link p-2 text-muted" to='/drugstore/antimalaria'>Antimalaria</Link>
-                    <Link className="drugstore__nav-link p-2 text-muted" to='/drugstore/multivitamins'>Multivitamins</Link>
-                   
-                </nav>
-            </div>
+             
             <div>
                 <Row>
                     <Col md={4}>

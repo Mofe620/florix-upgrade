@@ -33,8 +33,9 @@ const ProductClassScreen = ({match}) => {
                 <div className='product__class__container'>
                     {/* <h2><span>Therapeutic Category: <strong> {product.productClass}</strong></span></h2> */}
                         <div className="product__class__file__wrapper">
-                           <Image className="product__class__file__wrapper__img" src={`${process.env.REACT_APP_API_URL}${product.image}`} alt={product.name} fluid/>
+                           <Image className="product__class__file__wrapper__img" src={product.image} alt={product.name} fluid/>
                               {/* <Image className="post__img" src={product.image} alt={product.name} fluid/> */}
+                              {/* {`${process.env.REACT_APP_API_URL}${product.image}`} */}
                         </div>
                         <div className='product__class__text'>
                             <h2 className="mb-0 fw-bold">{product.name}</h2>

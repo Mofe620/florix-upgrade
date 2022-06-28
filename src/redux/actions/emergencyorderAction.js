@@ -49,7 +49,7 @@ export const emergency_order = (
     console.log(packSize)
     try {
     
-        const {data} = await axios.post(`${process.env.REACT_APP_API_URL}/api/emergency/`, body, config);
+        const {data} = await axios.post(`${process.env.REACT_APP_API_URL}/api/emergency/order/`, body, config);
         
         console.log(body)
         dispatch({

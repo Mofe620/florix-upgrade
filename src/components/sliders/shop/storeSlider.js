@@ -12,7 +12,7 @@ import 'swiper/modules/pagination/pagination.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 
 const data = [
-  {id:1, name:"PCM", brand:"emzor", image: "/assets/banners/Landingpage1.jpg"},
+  {id:1, name:"PCM", brand:"emzor", image: "/assets/banners/landingpage1.jpg"},
   {id:2, name:"PCM", brand:"emzor", image: "/assets/banners/Storeslide2.png"},
   {id:3, name:"PCM", brand:"emzor", image: "/assets/banners/Storeslide3.png"},
 ]

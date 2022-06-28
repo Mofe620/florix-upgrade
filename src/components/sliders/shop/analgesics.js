@@ -47,12 +47,12 @@ const Analgesics = () => {
             //when window with is >= 640
             360: {
               width: 360,
-              slidesPerView: 2,
+              slidesPerView: 3,
             },
               //when window with is >= 768
             768: {
               width: 768,
-              slidesPerView: 3,
+              slidesPerView: 4,
             }
           }}
           // autoplay={{delay: "5000"}}

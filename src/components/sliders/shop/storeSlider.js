@@ -12,11 +12,9 @@ import 'swiper/modules/pagination/pagination.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 
 const data = [
-  {id:1, name:"PCM", brand:"emzor", image: "/assets/images/Main.png"},
-  {id:2, name:"PCM", brand:"emzor", image: "/assets/images/Main.png"},
-  {id:3, name:"PCM", brand:"emzor", image: "/assets/images/Main.png"},
-  {id:4, name:"PCM", brand:"emzor", image: "/assets/images/Main.png"},
-  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/Main.png"}
+  {id:1, name:"PCM", brand:"emzor", image: "/assets/banners/Landingpage1.jpg"},
+  {id:2, name:"PCM", brand:"emzor", image: "/assets/banners/Storeslide2.png"},
+  {id:3, name:"PCM", brand:"emzor", image: "/assets/banners/Storeslide3.png"},
 ]
 
 // <SwiperSlide><Image src='assets/images/Image1.png' height={300}/></SwiperSlide>
@@ -38,7 +36,7 @@ const StoreSlider = () => {
         {data.map(drug =>(
           <div className="swiper__slider">
             <SwiperSlide key={drug.id} className="swiper__slider__container p-4">
-            <div style={{borderRadius:'20px'}}><Image src={drug.image} fluid/></div>
+            <div><Image src={drug.image} className="swiper__slider__index-image" style={{borderRadius:'20px', width:"100%"}} fluid/></div>
             </SwiperSlide>
           </div>
         ))}

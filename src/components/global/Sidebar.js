@@ -30,7 +30,12 @@ const guestLinks = () => (
         <Fragment>
             <li className='sidebar__list__item' onClick={closeSidebar}>
                 <NavLink className='sidebar__link' to='/shop'><img src="/assets/icons/Store.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
-                    Drugstore
+                    Wholesale Store
+                </NavLink>
+            </li>
+            <li className='sidebar__list__item' onClick={closeSidebar}>
+                <NavLink className='sidebar__link' to='/emergency/request'><img src="/assets/icons/Product_icon.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
+                    Emergency
                 </NavLink>
             </li>
        <LinkContainer className='sidebar__link' to='/profile'>

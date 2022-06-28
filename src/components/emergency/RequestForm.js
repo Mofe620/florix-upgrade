@@ -31,8 +31,8 @@ const RequestForm = ({values, handleChange}) => {
                 <Form.Control className='emergency__forminput' onChange={handleChange('orderCategory')} value={values.orderCategory} as="select" aria-label="Default select example">
                   <option className='emergency__formgroup__option input-field'>Select category of pick-up/delivery Item</option>
                   <option className='emergency__formgroup__option input-field' value="Medications">Medications</option>
-                  <option className='emergency__formgroup__option input-field' value="Laboratory Specimen">Laboratory Specimen</option>
-                  <option className='emergency__formgroup__option input-field' value="Laboratory Specimen">Others</option>
+                  {/* <option className='emergency__formgroup__option input-field' value="Laboratory Specimen">Laboratory Specimen</option> */}
+                  {/* <option className='emergency__formgroup__option input-field' value="Laboratory Specimen">Others</option> */}
                 </Form.Control>
             </Form.Group>
           </div>
@@ -60,7 +60,7 @@ const RequestForm = ({values, handleChange}) => {
               </Form.Group>
           </div>
           <div>
-            <div className="emergency__pickup__container pt-5">
+            <div className="emergency__pickup__container pt-md-5 pt-sm-3">
                 <Form.Group className='emergency__formgroup__wrapper'>
                   <Form.Label className='emergency__formgroup__text formlabel'>Generic Name<strong style={{color:"red"}}>*</strong></Form.Label>
                   <Form.Control onChange={handleChange('productName')} value={values.productName} className='emergency__formgroup__input emergency__forminput input-field' placeholder='e.g Paracetamol' />

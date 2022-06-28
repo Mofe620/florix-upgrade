@@ -8,10 +8,17 @@
         &__container{
             height: 10rem;
             justify-content: center;
-            align-items: center;
-            background-color: #bdd2d7;
+            align-items: center ;
+            @include respond(phone){
+                background-color: rgba(247, 247, 247, 0.801);
+              
+            }
+        }
+        &__index-image{
+            @include respond(phone){
+                height: 250px;
             
-            
+            }
         }
         &__wrapper{
             // background-color: $primary;
@@ -197,17 +204,17 @@
 
 
 .testimony{
-    height: 25vh;
+    height: 4rem;
     display: flex;
     background-color: $neutral;
     @include respond(phone){
-        height: 20rem;
+        height: 4rem;
     }
     
     &__slider{
      
         &__container{
-            height: 10rem;
+            height: auto;
             width: 50%;
             justify-content: center;
             align-items: center;
@@ -218,7 +225,7 @@
             
         }
         &__content{
-            background-color: $secondary;
+            // background-color: $secondary;
         }
         &__image{
             height: 20rem;

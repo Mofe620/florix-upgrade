@@ -23,7 +23,7 @@ const DeliveyForm = ({values, handleChange}) => {
             </div>
             <Form.Group className='emergency__formgroup'>
                 <Form.Label className='formlabel'>Delivery Address<strong style={{color:"red"}}>*</strong></Form.Label>
-                <Form.Control className='emergency__forminput' onChange={handleChange('deliveryAddress')} value={values.deliveryAddress} placeholder="Enter patent name" />
+                <Form.Control className='emergency__forminput' onChange={handleChange('deliveryAddress')} value={values.deliveryAddress} placeholder="" />
             </Form.Group>        
         </Form>
     </div>

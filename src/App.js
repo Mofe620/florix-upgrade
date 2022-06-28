@@ -65,7 +65,7 @@ function App() {
           <Route path='/shop' component={Shop} />
           <Route path='/signup' component={SignUpScreen} />
           <Route path='/test/prescription' component={PrescriptionFormSreen} />
-          <Route path='/test/emergency' component={EmergencyScreen} exact />
+          <Route path='/emergency/request' component={EmergencyScreen} exact />
           <Route path='/test/prescription_form/upload' component={PrescriptionForm} />
           <Route path='/signin' component={SignInScreen} />
           <Route exact path="/reset-password" component={PasswordReset} />

@@ -18,7 +18,7 @@ const Shop = () =>{
         <>
             <div className='shop mt-5'>
                 <Header />
-                <div className="shop__bar content d-md-flex flex-row px- w-100">
+                <div className="shop__bar px-3 d-md-flex flex-row w-100">
                     <div className="">
                         <SearchProduct />
                         {/* <Form className='shop__bar__form'>
@@ -31,7 +31,7 @@ const Shop = () =>{
                         <p className='shop__bar__button'><Link to='/test/prescription'>Upload Prescription</Link></p>
                     </div> */}
                 </div>
-                <div className="px-5 py-4">
+                <div className="px-3 my-3">
                 <StoreSlider />
                 </div>
                 <div className='shop__introline d-flex'>
@@ -48,7 +48,7 @@ const Shop = () =>{
                 <div className='m-5'>
                     <Antibiotics />
                 </div>
-                <div className='shop__pagedivider d-flex flex-row  justify-content-between my-5 px-5' style={{ backgroundImage: "url('/assets/images/logistic.jpg')"}}>
+                <div className='shop__pagedivider d-flex flex-row  justify-content-between my-5 px-5' style={{ backgroundImage: "url('/assets/banners/Logisticsbanner.png')"}}>
                     <div > 
                         <Image src='/assets/images/logoandname.png' className='shop__pagedivider__icon'/>
                         <h3><b>logistics service</b></h3>
@@ -70,9 +70,9 @@ const Shop = () =>{
                 </div>
                 <div 
                     className='shop__pagedivider2 d-flex flex-row justify-content-between align-items-center p-5'
-                    style={{ backgroundImage: "url('/assets/images/logistic.jpg')"}}
+                    style={{ backgroundImage: "url('/assets/banners/Logisticsbanner.png')"}}
                     >
-                    <h2 className='shop__pagedivider2__header'>our blog</h2>
+                    <h2 className='shop__pagedivider2__header'></h2>
                     <div>
                         <p className='shop__pagedivider2__text'>We've carefully selected topics to bring answers to all of your health-related inquiries.</p>
                         <p className='shop__pagedivider2__button shadow'><Link to='/blog/posts'>Click to Visit Blog</Link></p>

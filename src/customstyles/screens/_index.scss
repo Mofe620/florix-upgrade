@@ -3,7 +3,12 @@
 
     &__services{
         margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0;
+        @include respond(phone){
+            background-color: $primary;
+            padding: 1.5rem 0;
+        }
+        
 
         &__intro{
             font-size: 3rem;
@@ -18,6 +23,10 @@
         &__render{
             background-color: $neutral;
             padding: 2rem;
+            @include respond(phone){
+                margin-top: 5rem !important;
+              
+            }
             
             &__list{
                 font-size: 1.7rem;

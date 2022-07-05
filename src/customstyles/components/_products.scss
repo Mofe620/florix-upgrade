@@ -9,7 +9,8 @@
             padding: 2rem;
             display: flex;
             flex-direction: column;
-            border: 1px $secondary solid;
+            border: 1px $primary solid;
+            border-radius: 15px;
             margin-bottom: 5px;
             @include respond(phone){
                 display: flex;
@@ -38,8 +39,8 @@
                 font-size: 1.2rem;
             }
             & p{
-                color: $primary;
-                font-size: 1.8rem;
+                
+                font-size: 1.3rem;
             }
     
         }

@@ -11,7 +11,7 @@ import 'swiper/modules/navigation/navigation.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 
 const data = [
-  {id:1, name:" Aiyanyor Smart", testimony:"Logistics, Pharmaceutical supplies"},
+  {id:1, name:"Dr. Brainmoh", testimony:"They deliver best quality pharmaceuticals, nutraceuticals and medical equipment at the best price"},
   {id:2, name:"Sheila", testimony:"Efficient and reliable"},
 ]
 

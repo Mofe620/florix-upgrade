@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navigation, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
-import {Image} from 'react-bootstrap'
+import {Col, Container, Image, Row} from 'react-bootstrap'
 
 import 'swiper/swiper.min.css';
 //import 'swiper/css/navigation';
@@ -11,11 +11,11 @@ import 'swiper/modules/navigation/navigation.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 
 const data = [
-  {id:1, name:"PCM", brand:"emzor", image: "/assets/images/partners/BMC1.png"},
-  {id:3, name:"PCM", brand:"emzor", image: "/assets/images/partners/Fidson.png"},
-  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners/Lily1.png"},
-  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners/Dream life.png"},
-  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners/Unique Pharma.png"}
+  {id:1, name:"PCM", brand:"emzor", image: "/assets/images/partners2/BMC.png"},
+  {id:3, name:"PCM", brand:"emzor", image: "/assets/images/partners2/fidson.png"},
+  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners2/lily.png"},
+  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners2/dreamlife.png"},
+  {id:6, name:"PCM", brand:"emzor", image: "/assets/images/partners2/unique.png"}
 ]
 
 // <SwiperSlide><Image src='assets/images/Image1.png' height={300}/></SwiperSlide>
@@ -23,8 +23,38 @@ const data = [
 
 const Partnership = () => {
   return (
-    <div>
-      <Swiper
+    <Container>
+      <Row>
+        <Col xs={6} md={4} lg={4} xl={3}>
+          <Image src='/assets/images/partners2/BMC.png'  style={{height:"200px"}} />
+        </Col>
+        <Col xs={6} md={4} lg={4} xl={3}>
+        <Image src='/assets/images/partners2/fidson.png' style={{height:"200px"}}  />
+        </Col>
+        <Col xs={6} md={4} lg={4} xl={3}>
+          <Image src='/assets/images/partners2/lily.png'  style={{height:"200px"}} />
+        </Col>
+        <Col xs={6} md={4} lg={4} xl={3}>
+        <Image src='/assets/images/partners2/unique.png'  style={{height:"200px"}} />
+        </Col>
+        <Col xs={6} md={4} lg={4} xl={3}>
+        <Image src="/assets/images/partners2/dreamlife.png" style={{height:"200px"}}/>
+        </Col>
+      </Row>
+    
+
+
+       {/*
+      <div className='container d-sm-flex justify-content-between'>
+        {data.map(brand=>(
+          <div>
+            <Image src={brand.image} style={{height:"200px"}} />
+          </div>
+        ))}
+      </div>
+
+
+    <Swiper
           modules={[Navigation, A11y, Autoplay]}
           spaceBetween={10}
           breakpoints={{
@@ -53,8 +83,8 @@ const Partnership = () => {
           </div>
         ))}
 
-      </Swiper>
-    </div>
+      </Swiper> */}
+    </Container>
   );
 };
 

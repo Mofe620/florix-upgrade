@@ -9,6 +9,7 @@
             height: 10rem;
             justify-content: center;
             align-items: center ;
+            margin: 0 auto;
             @include respond(phone){
                 background-color: rgba(247, 247, 247, 0.801);
               
@@ -79,7 +80,7 @@
 
         &__content{
             padding-top: 2rem;
-            border: 1px $primary solid;
+            border: 0.2px $primary solid;
             border-radius: 1rem;
             &__name{
                 font-size: 1.6rem;
@@ -204,28 +205,33 @@
 
 
 .testimony{
-    height: 4rem;
+    height: 20rem;
     display: flex;
     background-color: $neutral;
     @include respond(phone){
-        height: 4rem;
+        height: 15rem;
     }
     
     &__slider{
      
         &__container{
-            height: auto;
+          
             width: 50%;
             justify-content: center;
             align-items: center;
          
-            @include respond(phone){
-               
-            }
             
         }
         &__content{
             // background-color: $secondary;
+            height: 15rem;
+            background-color: $secondary;
+            padding: 1rem;
+            
+            @include respond(phone){
+               width: 50%;
+               height: auto;
+            }
         }
         &__image{
             height: 20rem;

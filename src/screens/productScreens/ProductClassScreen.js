@@ -40,27 +40,27 @@ const ProductClassScreen = ({match}) => {
                         <div className='product__class__text'>
                             <h2 className="mb-0 fw-bold">{product.name}</h2>
                             <h3>{product.label}</h3>
-                            <p className="fw-bold"> &#8358; {product.price}</p>
-                            <h3>Strength: {product.strength}</h3>
+                            <h2 className="fw-bold"> &#8358; {product.price}</h2>
+                            {/* <h3>Strength: {product.strength}</h3> */}
                            
-                            <p className='analgesics__slider__content__button text-center'><Link to={`/product/${product.id}`}>Proceed</Link></p>
+                            <p className='analgesics__slider__content__button text-center'><Link to={`/product/${product.id}`}><img src="/assets/icons/Store.png" alt="" style={{height:"2rem", marginRight:"20px"}}/>Add to cart</Link></p>
                         </div>
                 </div>
             );
         });
         for (let i = 0; i < list.length; i += 2) {
             result.push(
-                <div key={i} className='row mb-2'>
-                    <div className='col-sm-6 col-md-3'>
+                <Row key={i} className='mb-2'>
+                    <Col className='' xs={6} md={4} lg={4} xl={3}>
                         {list[i]}
-                    </div>
-                    <div className='col-sm-6 col-md-3'>
+                    </Col>
+                    <Col className='' xs={6} md={4} lg={4} xl={3}>
                         {list[i+1] ? list[i+1] : null}
-                    </div>
-                    <div className='col-sm-6 col-md-6'>
+                    </Col>
+                    <Col className='' xs={6} md={4} lg={4} xl={3}>
 
-                    </div>
-                </div>
+                    </Col>
+                </Row>
             )
         }
         return result;

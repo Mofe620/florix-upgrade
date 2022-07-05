@@ -97,12 +97,15 @@ function RegisterScreen({ signup, isAuthenticated }) {
                     </Form>
                     <Row className="p-2">
                         <Col>
-                            <div className=""> Already have an account? <Link to="/login">Login</Link></div>
+                            
                         </Col>
                         <Col>
                             
                         </Col>
                     </Row>
+                    <div>
+                        <p className="auth-base"> Already have an account? <Link to="/login">Login</Link></p>
+                    </div>
         </Container>
         
     )

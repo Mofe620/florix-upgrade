@@ -68,16 +68,18 @@ function LoginScreen({ isAuthenticated }) {
                     </Form.Group>
                     <Row className="p-2">
                     <Col>
-                        <div>
-                        <p>Forgotten password? <Link to="/reset-password">Reset Password</Link></p>
-                        </div>
+                        
                     </Col>
                     <Col>
                         <Button className="auth-button" type="submit">Sign In</Button>
                     </Col>
+                    
                 </Row>
+                    <div>
+                        <p>Forgotten password? <Link to="/reset-password">Reset Password</Link></p>
+                    </div>
                 </Form>
-                </div>
+        </div>
             
     </Container>
     )

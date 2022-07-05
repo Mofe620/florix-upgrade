@@ -11,7 +11,7 @@
         margin-bottom: 10px
     }
     &__main-img{
-        height: 50rem;
+        height: 40rem;
         display: flex;
         justify-content: center;
 
@@ -36,9 +36,13 @@
     
     }
     &__intro{
-       margin-top: 10rem;
+       margin-top: 5rem;
        @include respond(phone){
            margin-top: 2rem;
+           width: 100%;
+           margin-left: auto;
+           margin-right: auto;
+           margin-bottom: 0;
        }
        @include respond(tab-port){
         margin-top: 3rem;
@@ -54,11 +58,15 @@
        &__start{
         background-color: $primary;
         margin-top: 2rem;
-        width: 15rem;
-        height: 5rem;
-        border-radius: 23px 25px;
+        width: 10rem;
+        height: 3rem;
+        // border-radius: 23px 25px;
         color: $neutral !important;
         font-size: 1.3rem;
+        :focus{
+            outline: none;
+            box-shadow: none;
+        }
         & a{
             color: #fff;
         }
@@ -220,24 +228,25 @@ footer, a:hover{
         // margin-top: 1rem;
     }
     &__news{
-        background-color: $primary;
+        background-color: $danger;
         color: $neutral;
         width: 100%;
         height: 15vh;
         display: flex;
         padding-left: 5rem;
         padding-right: 5rem;
-        padding-top: 6rem;
+        padding-top: 4rem;
         padding-bottom: 15rem;
 
         @include respond(phone) {
+            width: 100%;
             display: grid;
             height: auto;
             align-items: center;   
-            padding-bottom: 6rem; 
-            padding-top: 3rem; 
-            padding-left: 0;
-            padding-right: 0;
+            padding-bottom: 2rem; 
+            padding: 0;
+            margin: 0;
+            padding-bottom: 5rem;
             
         }   
         
@@ -283,14 +292,15 @@ footer, a:hover{
         &__form{
 
             &__input{
+                text-align: center;
                 height: 4rem;
-                width: 50rem;
+                width: 100%;
                 border-radius: 5rem;
                 font-size: 1.7rem;
-                background-color: transparent;
+                background-color: $danger;
 
                 @include respond(phone) {
-                   width: 30rem;   
+                   width: 100%;   
                    
                 }   
               
@@ -302,10 +312,11 @@ footer, a:hover{
                 margin: 5px 0;
                 font-size: 1.7rem;
                 border-radius: 5rem;
+                border: 1px $danger solid;
                 background-color: $neutral;
-                color: $primary;
+                color: $danger;
                 @include respond(phone) {
-                    width: 30rem;     
+                    width: 100%;     
                  }   
             }
         }
@@ -314,7 +325,8 @@ footer, a:hover{
     &__items{
         width: 100%;
         display: flex;
-        background-color: hsla(0, 0%, 30%, 0.938);
+        background-color: $dense-primary;
+        // background-color: hsla(0, 0%, 30%, 0.938);
         color: rgb(230, 221, 221) !important;
         padding: 1rem 1.5rem;
         justify-content: space-around;
@@ -322,7 +334,7 @@ footer, a:hover{
         font-weight: 400;
         cursor: pointer;
         &__divider{
-            background-color: $primary;
+            background-color: $neutral;
             height: 4px;
             width: 10.5rem;
         

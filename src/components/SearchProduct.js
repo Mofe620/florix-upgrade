@@ -23,7 +23,7 @@ const SearchProduct = () => {
                 variant="lg"
                 className="shop__bar__form__control"
                 type='text'
-                placeholder="Search Product"
+                placeholder="Search"
                 name='q'
                 style={{backgroundColor:"white"}}
                 onChange={(e) => { 

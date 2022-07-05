@@ -71,7 +71,7 @@ const Multivitamins = () => {
                <p className='analgesics__slider__content__label'>{drug.label}</p>
                <div className='d-md-flex justify-content-between'>
                   <p className='analgesics__slider__content__price'>&#8358; {drug.price}</p>
-                  <p className='analgesics__slider__content__button text-center'><Link to={`/product/${drug.id}`}>Add to cart</Link></p>
+                  <p className='analgesics__slider__content__button text-center'><Link to={`/product/${drug.id}`}><img src="/assets/icons/Store.png" alt="" style={{height:"25px", marginRight:"2rem"}}/>Add to cart</Link></p>
                 </div>
              </div>
            </div>

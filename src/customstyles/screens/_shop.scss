@@ -4,17 +4,23 @@
 
     &__introline{
         background-color: $secondary;
-        padding: 1rem 5rem;
+        padding-top: 1rem;
+        padding-bottom: 0;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        & a{
+            color: $danger;
+        }
 
         & p{
             color: $danger;
         }
 
         & h2{
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             @include respond(phone){
-               font-size: 1.6rem;
+               font-size: 1.5rem;
             }
         }
     }
@@ -37,7 +43,10 @@
                 height: 3.5rem;
                 border-radius: 2rem;
                 font-size: 1.2rem;
+                font-weight: bold;
                 letter-spacing: 1px;
+                color: $primary !important;
+                background-color: $secondary !important;
             }
         }
         
@@ -120,4 +129,24 @@
         }
     }
     
+}
+
+.rbootstrap{
+
+    &__carousel{
+
+        &__image{
+            height: 50vh;
+            width: 100%;
+            border: 2px $secondary solid;
+            border-radius: 7rem !important;
+
+            @include respond(phone){
+                height: 20vh;
+                border-radius: 3rem !important;
+
+            }
+
+        }
+    }
 }

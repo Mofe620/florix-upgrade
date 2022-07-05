@@ -27,16 +27,17 @@ const StoreSlider = () => {
           modules={[Navigation, Pagination, A11y, Autoplay]}
           spaceBetween={0}
           slidesPerView={1}
-          autoplay={{delay: "10000"}}
+          centeredSlides
+          autoplay={{delay: "3600"}}
           pagination={{ clickable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
           className="swiper"
       >
         {data.map(drug =>(
-          <div className="swiper__slider">
+          <div className="swiper__slider d-flex justify-content-center align-center">
             <SwiperSlide key={drug.id} className="swiper__slider__container p-4">
-            <div><Image src={drug.image} className="swiper__slider__index-image" style={{borderRadius:'20px', width:"100%"}} fluid/></div>
+            <div className=''><Image src={drug.image} className="swiper__slider__index-image" style={{borderRadius:'20px', margin:"", width:"100%"}} fluid/></div>
             </SwiperSlide>
           </div>
         ))}

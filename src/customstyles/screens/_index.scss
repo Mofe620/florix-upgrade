@@ -2,13 +2,15 @@
 .index{
 
     &__services{
-        margin-top: 2rem;
         margin-bottom: 0;
+        margin-top: 2rem;
         @include respond(phone){
-            background-color: $primary;
+            // background-color: $primary;
             padding: 1.5rem 0;
+            margin-top: 0;
         }
         
+    
 
         &__intro{
             font-size: 3rem;
@@ -21,8 +23,9 @@
             }
         }
         &__render{
-            background-color: $neutral;
-            padding: 2rem;
+            background-color: $primary;
+            padding: 1rem;
+            margin: 5rem;
             @include respond(phone){
                 margin-top: 5rem !important;
               
@@ -30,30 +33,36 @@
             
             &__list{
                 font-size: 1.7rem;
-                color: #636360;
+                color: $neutral;
             }
 
             &__header{
                 font-size: 2rem;
                 font-weight: 700;
-                color: $header-color;
+                color: $neutral;
             }
         }
     }
     &__healthcarefuture{
         background-color: $secondary;
-        padding: 2rem 5rem;
+        padding: 5px 2rem;
         &__wrapper{
             width: 50%;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 2rem;
+            margin-top: 5px;
             height: auto;
+            &__image{
+                height: 10rem;
+                @include respond(phone){
+                    height: 7rem;
+                }
+            }
             & p{
                 font-size: 1.7rem;
             }
            @include respond(phone){
-            width: 90%;
+            width: 100%;
            }
            
             &__header{

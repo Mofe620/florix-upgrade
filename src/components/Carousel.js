@@ -3,11 +3,11 @@ import {Carousel} from 'react-bootstrap';
 
 const ProductCarousel = () => {
     return (
-      <Carousel>
-        <Carousel.Item>
+      <Carousel controls={false} className='rbootstrap'>
+        <Carousel.Item className='rbootstrap__carousel'>
           <img
-            className="d-block w-100"
-            src="/assets/banners/Slide001.png"
+            className="d-block rbootstrap__carousel__image"
+            src="/assets/images/shop/savemore.png"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -16,8 +16,8 @@ const ProductCarousel = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-100"
-            src="/assets/banners/Slide2.png"
+            className="d-block rbootstrap__carousel__image"
+            src="/assets/images/shop/Storeslide2.png"
             alt="Second slide"
           />
 
@@ -27,8 +27,8 @@ const ProductCarousel = () => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-100"
-            src="/assets/banners/Slide3.png"
+            className="d-block rbootstrap__carousel__image"
+            src="/assets/images/shop/Storeslide3.png"
             alt="Third slide"
           />
 

@@ -11,6 +11,7 @@ import Footer from '../../components/Footer'
 import { getProductClass } from '../../redux/actions/productActions'
 import { useDispatch, useSelector } from 'react-redux'
 import SearchProduct from '../../components/SearchProduct'
+import ProductCarousel from '../../components/Carousel'
 
 const Shop = () =>{
 
@@ -32,7 +33,7 @@ const Shop = () =>{
                     </div> */}
                 </div>
                 <div className="px-3 my-3">
-                <StoreSlider />
+                <ProductCarousel />
                 </div>
                 <div className='shop__introline d-flex'>
                     <h2 className='shop__introline__header'>Painkillers</h2>
@@ -48,10 +49,10 @@ const Shop = () =>{
                 <div className='m-5'>
                     <Antibiotics />
                 </div>
-                <div className='shop__pagedivider d-flex flex-row  justify-content-between my-5 px-5' style={{ backgroundImage: "url('/assets/banners/Logisticsbanner.png')"}}>
+                {/* <div className='shop__pagedivider d-flex flex-row  justify-content-between my-5 px-5' style={{ backgroundImage: "url('/assets/banners/Logisticsbanner.png')"}}>
                     <div > 
-                        <Image src='/assets/images/logoandname.png' className='shop__pagedivider__icon'/>
-                        <h3><b>logistics service</b></h3>
+                        <Image src='' className='shop__pagedivider__icon'/>
+                      
                     </div>
                     <div className='shop__pagedivider__text'> 
                         <p>Get your medications delivered to you with just a click of a button</p>
@@ -59,7 +60,7 @@ const Shop = () =>{
                     <div className='shop__pagedivider__button text-center align-items-center justify-content-center shadow'> 
                         <Link to="/">Learn More</Link>
                     </div>
-                </div>
+                </div> */}
             
                 <div className='shop__introline d-flex'>
                     <h2 className='shop__introline__header'>Multivitamins</h2>
@@ -68,9 +69,9 @@ const Shop = () =>{
                 <div className='px-5 py-4'>
                     <Multivitamins />
                 </div>
-                <div 
+                {/* <div 
                     className='shop__pagedivider2 d-flex flex-row justify-content-between align-items-center p-5'
-                    style={{ backgroundImage: "url('/assets/banners/Logisticsbanner.png')"}}
+                    style={{ backgroundImage: "url('/assets/images/shop/Blogbanner.png')"}}
                     >
                     <h2 className='shop__pagedivider2__header'></h2>
                     <div>
@@ -80,7 +81,7 @@ const Shop = () =>{
                 </div>
                 <div>
                     <TrackRecord />
-                </div>
+                </div> */}
 
             </div>
         <Footer />

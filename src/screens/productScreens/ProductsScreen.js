@@ -66,7 +66,7 @@ function HomeScreen({history, isAuthenticated}) {
                     <SearchProduct />
                 </div>
                 <div className='mb-4'>
-                    <StoreSlider />
+                    <ProductCarousel />
                 </div>
             {loading ? <LoadingMain />
                 : error ? <Message variant='danger'>{error}</Message>

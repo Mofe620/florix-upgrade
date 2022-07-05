@@ -47,12 +47,12 @@ const Analgesics = () => {
             //when window with is >= 640
             360: {
               width: 360,
-              slidesPerView: 3,
+              slidesPerView: 2,
             },
               //when window with is >= 768
             768: {
               width: 768,
-              slidesPerView: 4,
+              slidesPerView: 3,
             }
           }}
           // autoplay={{delay: "5000"}}
@@ -70,7 +70,7 @@ const Analgesics = () => {
                   <p className='analgesics__slider__content__label'>{product?.label}</p>
                   <div className='d-md-flex justify-content-between'>
                     <p className='analgesics__slider__content__price'>&#8358; {product?.price}</p>
-                    <p className='analgesics__slider__content__button text-center'><Link to={`/product/${product.id}`}>Add to cart</Link></p>
+                    <p className='analgesics__slider__content__button text-center'><Link to={`/product/${product.id}`}><img src="/assets/icons/Store.png" alt="" style={{height:"2rem", marginRight:"20px"}}/>Add to cart</Link></p>
                   </div>
                   
                 </div>

@@ -140,12 +140,15 @@
             width: 100%;
             border: 2px $secondary solid;
             border-radius: 7rem !important;
-
+            @include respond(tab-port){
+                height: 30vh;
+            }
             @include respond(phone){
                 height: 20vh;
                 border-radius: 3rem !important;
 
             }
+        
 
         }
     }

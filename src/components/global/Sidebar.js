@@ -73,7 +73,7 @@ const guestLinks = () => (
                         </NavLink>
                     </li>
                     <li className='sidebar__list__item' onClick={closeSidebar}>
-                        <NavLink className='sidebar__link' to='/blog/categories'><img src="/assets/icons/Blog.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
+                        <NavLink className='sidebar__link' to='/blog/posts'><img src="/assets/icons/Blog.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
                             Blog
                         </NavLink>
                     </li>

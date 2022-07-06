@@ -64,7 +64,7 @@ const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
                     </NavLink>
                 </li>
                 <li className='navbar__list__item'>
-                    <NavLink className='navbar__link' to='/blog/categories'>
+                    <NavLink className='navbar__link' to='/blog/posts'>
                         Blog
                     </NavLink>
                 </li>

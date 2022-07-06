@@ -1,38 +1,6 @@
 @import "../mixins/variables";
 
 
-.post{
-    &__img{
-            border-radius: 10px;
-            height: 200px;
-            @include respond(phone){
-             float: left;
-               width: 40%;
-        
-            }
-            @include respond(tab-port){
-                height: 10rem;
-            }
-    }
-
-    &__txt{
-        margin-top: 10px;
-        width: 200px;
-
-        @include respond(phone) {
-            float: left;
-            width: 50%;
-            margin-left: 3%;
-        }
-
-        &__title{
-            font-size: 1.6rem;
-            color: rgba(0, 0, 0, 0.884);
-            
-
-        }
-    }
-}
 
 .post-details{
     &__img{
@@ -50,15 +18,94 @@
     }
 }
 .blog{
-    &__post{
-        :hover {
-            color: rgb(248, 205, 232);
+
+    &__overview{
+        &__categories{
+            & h2{
+                font-weight: bold;
+                border-bottom: 2px $secondary solid;
+            }
+            & p{
+                cursor: pointer;
+            }
+            & a{
+                color: $par-color;
+                font-weight: bold;
+            }
         }
+        &__body{
+            margin-top: 3rem;
+
+            &__image{
+                height: 15rem;
+                width: 100%;
+                @include respond(phone){
+                    height: 10rem;
+                }
+            }
+        }
+
+        &__aside{
+            @include respond(phone){
+                display: none;
+            }
+            @include respond(tab-port){
+                display: none;
+            }
+        }
+    }
+
+    &__post{
+        width: 30rem;
+        background-color: $secondary;
+        padding: 1rem;
+  
+        :hover {
+            // transform: translate(200%, 0, 0);
+        }
+       
+
         @include respond(phone) {
            margin-top: 15px;
           }
+          &__img{
+            height: 10rem;
+            width: 100%;
+        
+        }
+        
+        &__txt{
+            margin-top: 10px;
+            width: auto;
+            letter-spacing: 1px;
+
+            & h3{
+                font-size: 2rem;
+                font-weight: 600;
+                margin: 0;
+                padding: 0;
+            }
+
+        }
+
+        &__button{
+            background-color: $primary;
+            width: 15rem;
+            height: 3rem;
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 2px;
+            margin-top: 2rem;
+            margin-right: 0;
+            margin-left: auto;
+            & a{
+                color: $neutral;
+            }
+        }
       
     }
+
+
     &__content{
         max-width: 95%;
         @include respond(phone) {

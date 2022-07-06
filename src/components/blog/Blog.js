@@ -5,14 +5,14 @@ import { Image } from 'react-bootstrap'
 const Blog = ({blog}) => {
     return (
         <div className="blog__post">
-            <Link to={`/post/${blog.slug}`}><Image className="post__img" src={blog.image} alt={blog.title} fluid thumbnail/> </Link>
-            <div className='post__txt'>
-                <Link to={`/post/${blog.slug}`}>
-                    <p className="post__txt__title">{blog.title}</p>
-                </Link>
-                <p className="blog__home__date">{blog.datePublished.substring(0, 10)}</p>
-                
-            </div>
+            <>
+                <Image className="blog__post__img" src={blog.image} alt={blog.title} fluid/> 
+                <div className='blog__post__txt'>
+                    <h3 className='mb-3'>{blog.title}</h3> 
+                    <Link>{blog.category} / {blog.datePublished.substring(0, 10)}</Link> 
+                </div>
+                <p className="blog__post__button"><Link to={`/post/${blog.slug}`}>Read More</Link></p>
+            </>
         </div>
     )
 }

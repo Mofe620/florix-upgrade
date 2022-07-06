@@ -32,17 +32,32 @@ const BlogListScreen = () => {
         <>
         <Header />
        
-        <Container className="content">
-             <meta charSet="utf-8" />
+        <Container className="blog__overview content">
+            <meta charSet="utf-8" />
                 <Helmet>
                 <meta name="description" content="Health related blog content" />
                 <title>Blog posts</title>
                 </Helmet>
-            <BlogCarousel />
-            <div style={{marginTop:"20px"}}>
-                <div className="post">
-                    <h3 className="m-0 p-0"><strong>Latest Posts</strong></h3>
+            <Row>
+                <Col md={10}>
+                    <BlogCarousel />
+                </Col>
+                <Col md={2} sm={2} className='blog__overview__aside'>
+                    <div className=' blog__overview__categories ms-4'>
+                        <h2>Categories</h2>
+                        <p><Link to="/blog/category/diseases">Deseases</Link></p>
+                        <p><Link to="/blog/category/pharmaceuticals">Pharmaceuticals</Link></p>
+                        <p><Link to="/blog/category/medical_equipment">Medical Equipment</Link></p>
+                        <p><Link to="/blog/category/lifestyle">Lifestyle</Link></p>
+                        <p><Link to="/blog/category/health_news">Health News</Link></p>
+                    </div>
+                </Col>
+            </Row>
+            
+            <div className="blog__overview__body">
+                <h3 className="m-0 p-0"><strong>Recent Posts</strong></h3>
                     <hr />
+                <div className="my-5">
                     <Row>
                             {blogs.map(blog => (
                                 <Col key={blog.id} xs={12} sm={6} md={4} lg={4} xl={3}>
@@ -50,9 +65,12 @@ const BlogListScreen = () => {
                                 </Col>
                             ))}  
                     </Row>
+                   
                 </div>
-           
-           
+                <div>
+                    <Image src='/assets/images/shop/ems-ad1.png' className='blog__overview__body__image' />
+                </div>                
+                
             </div>
         </Container>
         <Footer />

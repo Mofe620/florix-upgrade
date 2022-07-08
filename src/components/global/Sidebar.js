@@ -62,11 +62,11 @@ const guestLinks = () => (
                         </NavLink>
                     </li>
                 
-                    <li className='sidebar__list__item' onClick={closeSidebar}>
+                    {/* <li className='sidebar__list__item' onClick={closeSidebar}>
                         <NavLink className='sidebar__link' to='/services'><img src="/assets/icons/Product_icon.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
                             Services
                         </NavLink>
-                    </li>
+                    </li> */}
                     <li className='sidebar__list__item' onClick={closeSidebar}>
                         <NavLink className='sidebar__link' to='/about'><img src="/assets/icons/AboutUs_icon.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
                             About Us

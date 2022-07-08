@@ -34,6 +34,9 @@
             &__list{
                 font-size: 1.7rem;
                 color: $neutral;
+                @include respond(phone){
+                    font-size:  1.5rem;
+                   }
             }
 
             &__header{
@@ -70,6 +73,12 @@
                 font-weight: 700;
                 margin: 5px 0;
                 padding: 0;
+            }
+            &__comment{
+                font-size: 1.7rem !important;
+                @include respond(phone){
+                    font-size: 1.5rem !important;
+                   }
             }
         }
     }

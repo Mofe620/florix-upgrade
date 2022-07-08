@@ -56,8 +56,9 @@ h3{
 }
 
 .formlabel{
-  font-size: 1.9rem;
-  margin-top: 1.7rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 5px;
 }
 @media (max-width: 900px) {
   .carousel-caption h2 {

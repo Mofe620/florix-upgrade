@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Button, Container, Form } from 'react-bootstrap'
+import { Button, Container, Form, Image } from 'react-bootstrap'
 import Footer from '../../components/Footer'
 import Header from '../../components/global/Header'
 import RequestForm from '../../components/emergency/RequestForm'
@@ -55,7 +55,10 @@ const handleChange = (input) => (e) =>{
   return (
     <>
       <Header />
-      <Container className='emergency content'>
+      <div className='mt-4'>
+        <Image src='/assets/images/shop/ems-ad2.png' className='emergency__image'/>
+      </div>
+      <Container className='emergency'>
           {activeStep === 0 && (
           <RequestForm values={multiFormValues} handleChange = {handleChange} /> 
           )}
@@ -68,7 +71,7 @@ const handleChange = (input) => (e) =>{
           )}
 
       {/* <Button variant='secondary' disabled={activeStep === 0} style={activeStep === 2 ? {display: 'none'}: {}} className='emergency__btn emergency__btn__previous' onClick={HandlePrevious}>Previous</Button> */}
-      <Button style={activeStep === 2 ? {display:"none"}: {}} className='emergency__btn emergency__btn__next' onClick={HandleNext}>{activeStep === steps.length - 1?"Verify":"Next"}</Button>
+      <Button style={activeStep === 2 ? {display:"none"}: {}} className='emergency__btn emergency__btn__next' onClick={HandleNext}>{activeStep === steps.length - 1?"Verify":"NEXT"}</Button>
   
       </Container>
       <Footer />

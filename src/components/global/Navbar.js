@@ -43,7 +43,7 @@ const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
                 <span className="navbar__logobtn__btn" >&#9776;</span>
         
                 <Link className='navbar__logo' exact to='/'>
-                    <img className='navbar__flolog-logo'  src='/assets/icons/logoandname.png' alt="brand-logo" />
+                    <img className='navbar__flolog-logo'  src='/assets/images/icons/flolog-logo.png' alt="flolog-logo" />
                 </Link>
             </div>
             <ul className='navbar__list ms-auto'>
@@ -52,11 +52,11 @@ const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
                         Home
                     </NavLink>
                 </li>
-                <li className='navbar__list__item'>
+                {/* <li className='navbar__list__item'>
                     <NavLink className='navbar__link' to='/services'>
                         Services
                     </NavLink>
-                </li>
+                </li> */}
                 
                 <li className='navbar__list__item'>
                     <NavLink className='navbar__link' to='/about'>

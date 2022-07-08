@@ -6,11 +6,11 @@ const RequestForm = ({values, handleChange}) => {
   console.log(handleChange)
   return (
     <>
-      <div className='emergency__header'>
+      <div className='emergency__header text-center'>
         <h2>Place Request</h2>
         <p>Please fill in accurate information and providemuch detail as possible where necessary</p>
       </div>
-        
+    
     <div className='emergency__form-container'>
       <Form>
       {/*         
@@ -51,7 +51,7 @@ const RequestForm = ({values, handleChange}) => {
           </div> */}
           <div className='bg-primary p-2 d-flex justify-content-center' style={{color:"white"}}>
             <Form.Group className=''>
-                <Form.Label className='mx-2' style={{fontSize:"18px"}}>Upload Prescription</Form.Label>
+                <Form.Label className='mx-2 text-center' style={{fontSize:"18px"}}>Upload Prescription</Form.Label>
                 <Form.Control 
                   type="file" 
                   className='input-field' 
@@ -65,32 +65,41 @@ const RequestForm = ({values, handleChange}) => {
                   <Form.Label className='emergency__formgroup__text formlabel'>Generic Name<strong style={{color:"red"}}>*</strong></Form.Label>
                   <Form.Control onChange={handleChange('productName')} value={values.productName} className='emergency__formgroup__input emergency__forminput input-field' placeholder='e.g Paracetamol' />
                 </Form.Group>
-                <Form.Group className='emergency__formgroup__wrapper'>
+                <Form.Group className='emergency__formgroup__wrapper mt-4'>
                   <Form.Label className='emergency__formgroup__text formlabel'>Brand</Form.Label>
                   <Form.Control onChange={handleChange('brand')} value={values.brand} className='emergency__formgroup__input emergency__forminput input-field' placeholder='e.g. Emzor' />
                 </Form.Group>
-                <Form.Group className='emergency__formgroup__wrapper'>
-                    <Form.Label className='emergency__formgroup__text formlabel'>Dosage Form<strong style={{color:"red"}}>*</strong></Form.Label>
-                    <Form.Control className='emergency__formgroup__input emergency__forminput' onChange={handleChange('dosageForm')} value={values.dosageForm} as="select" aria-label="Default select example">
-                      <option className='emergency__formgroup__option'>Select</option>
-                        <option className='emergency__formgroup__option input-field' value="Tablets/Capsules">Tablets/Capsules</option>
-                        <option className='emergency__formgroup__option input-field' value="Syrups/Suspensions/Emulsions/Solutions">Syrups/Suspensions/Emulsions/Solutions</option>
-                        <option className='emergency__formgroup__option input-field' value="Eye/ear Drops*">Eye/ear Drops*</option>
-                        <option className='emergency__formgroup__option input-field' value="Creams/Ointments/Pastes">Creams/Ointments/Pastes</option>
-                        <option className='emergency__formgroup__option input-field' value="Injections/Infusions*">Injections/Infusions*</option>
-                        <option className='emergency__formgroup__option input-field' value="Aerosols/Sprays">Aerosols/Sprays</option>
-                        <option className='emergency__formgroup__option input-field' value="Pessaries/Suppositories">Inserts (Pessaries/Suppositories)</option>
-                        <option className='emergency__formgroup__option input-field' value="Consumables">Cosumables (e.g. Plasters, Bandages, Cotton Wool)*</option>
-                    </Form.Control>
-                </Form.Group>
+                <div className='my-4'>
+                  <Row>
+                    <Col>
+                      <Form.Group className='emergency__formgroup__wrapper'>
+                        <Form.Label className='formlabel'>Dosage Form<strong style={{color:"red"}}>*</strong></Form.Label>
+                        <Form.Control className='emergency__formgroup__input__annex emergency__forminput'  onChange={handleChange('dosageForm')} value={values.dosageForm} as="select" aria-label="Default select example">
+                          <option className='emergency__formgroup__option'>Select</option>
+                            <option className='emergency__formgroup__option input-field' value="Tablets/Capsules">Tablets/Capsules</option>
+                            <option className='emergency__formgroup__option input-field' value="Syrups/Suspensions/Emulsions/Solutions">Syrups/Suspensions/Emulsions/Solutions</option>
+                            <option className='emergency__formgroup__option input-field' value="Eye/ear Drops*">Eye/ear Drops*</option>
+                            <option className='emergency__formgroup__option input-field' value="Creams/Ointments/Pastes">Creams/Ointments/Pastes</option>
+                            <option className='emergency__formgroup__option input-field' value="Injections/Infusions*">Injections/Infusions*</option>
+                            <option className='emergency__formgroup__option input-field' value="Aerosols/Sprays">Aerosols/Sprays</option>
+                            <option className='emergency__formgroup__option input-field' value="Pessaries/Suppositories">Inserts (Pessaries/Suppositories)</option>
+                            <option className='emergency__formgroup__option input-field' value="Consumables">Cosumables (e.g. Plasters, Bandages, Cotton Wool)*</option>
+                        </Form.Control>
+                      </Form.Group>
+                    </Col>
+                    <Col>
+                      <Form.Group className='emergency__formgroup__wrapper'>
+                        <Form.Label className='formlabel'>Dose/strength<strong style={{color:"red"}}>*</strong></Form.Label>
+                        <Form.Control onChange={handleChange('strength')} value={values.strength} className='emergency__formgroup__input__annex emergency__forminput input-field' placeholder='e.g 100 mg or 5 mg/ml' />
+                      </Form.Group>
+                    </Col>
+                  </Row>
+                </div>
+                
                 
                 <Form.Group className='emergency__formgroup__wrapper'>
-                  <Form.Label className='emergency__formgroup__text formlabel'>Dose/strength<strong style={{color:"red"}}>*</strong></Form.Label>
-                  <Form.Control onChange={handleChange('strength')} value={values.strength} className='emergency__formgroup__input emergency__forminput input-field' placeholder='e.g 100 mg or 5 mg/ml' />
-                </Form.Group>
-                <Form.Group className='emergency__formgroup__wrapper'>
                   <Form.Label className='emergency__formgroup__text formlabel'>Quantity<strong style={{color:"red"}}>*</strong></Form.Label>
-                  <Form.Control onChange={handleChange('packSize')} value={values.packSize} className='emergency__formgroup__input emergency__forminput input-field' placeholder='e.g 1 Pack' />
+                  <Form.Control onChange={handleChange('packSize')} style={{width:"35%"}} value={values.packSize} className='emergency__forminput input-field' placeholder='e.g 1 Pack' />
                 </Form.Group>
                 {/* <Form.Group className='d-flex my-4'>
                   <Form.Label className='emergency__checkbox__label'>Nature of Package</Form.Label>
@@ -99,7 +108,7 @@ const RequestForm = ({values, handleChange}) => {
                 </Form.Group> */}
             </div>
 
-            <div className="emergency__pickup__container my-5">
+            {/* <div className="emergency__pickup__container my-5">
               <Row>
                 <Col sm={12} md={4}>
                   <Form.Group className=''>
@@ -130,13 +139,14 @@ const RequestForm = ({values, handleChange}) => {
                 </Col>
               </Row>
               
-            </div>
+            </div> */}
+            
           </div>
 
         </Form>
         <div className='emergency__premium__container'>
           <h2>OR</h2>
-          <p><a href="https://tinyurl.com/2p98zk2h" target='_blank' rel="noreferrer">Speak with a Pharmacist</a></p>
+          <p><a href="https://tinyurl.com/2p98zk2h" target='_blank' rel="noreferrer">Speak to a Pharmacist</a></p>
         </div>
     </div>
     </>

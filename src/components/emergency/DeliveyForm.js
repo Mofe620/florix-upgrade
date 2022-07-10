@@ -6,7 +6,7 @@ const DeliveyForm = ({values, handleChange}) => {
   console.log(handleChange)
   return (
     <div>
-        <div className='emergency__header'>
+        <div className='emergency__header text-center'>
           <h2>Delivery Details</h2>
           <p>Please fill-in this form with much detail as possible</p>
         </div>

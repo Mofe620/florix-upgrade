@@ -9,13 +9,57 @@
             padding: 1.5rem 0;
             margin-top: 0;
         }
+        &__emergency{
+            background-color: $secondary;
+            width: 100%;
+            padding: 2rem 2rem;
+            margin: 5rem 2rem;
+            @include respond(phone){
+                margin: 2rem 0;
+            }
+            &__icon{
+                height: 20rem;
+            
+            }
+            & h3{
+                font-weight: 700;
+                font-size: 2rem;
+                color: #000;
+            }
+            & span{
+                color: $primary;
+            }
+            & p{
+                color: $danger;
+                font-size: 2rem;
+                font-weight: 700;
+                padding: 0;
+                margin: 0%;
+               
+            }
+        }
         
-    
-
         &__intro{
             font-size: 3rem;
             font-weight: 700;
             color: $header-color;
+            &__annex{
+                & h2 {
+                    color: $primary;
+                    font-size: 3rem;
+                    font-weight: 700 !important;
+                    @include respond(phone){
+                        font-size: 1.8rem;
+                    }
+                }
+                & p{
+                    color: $par-color;
+                }
+               
+            }
+            // &__auth{
+            //     color: $par-color;
+            // }
             @include respond(phone){
                 font-size: 2.5rem;
                 font-weight: 700;
@@ -27,7 +71,7 @@
             padding: 1rem;
             margin: 5rem;
             @include respond(phone){
-                margin-top: 5rem !important;
+                margin-top: 3rem !important;
               
             }
             

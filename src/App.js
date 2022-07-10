@@ -58,7 +58,7 @@ function App() {
     <Router>
       <main className="py-3">
       <Helmet>
-        <title>Florix Healthcare</title>
+        <title>FLO-LOG</title>
         <meta name="description" content="Providing tech driven logistics solution" />
     </Helmet>
         <>

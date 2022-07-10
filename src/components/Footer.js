@@ -33,8 +33,7 @@ const Footer = () =>{
                     <h2>Solutions</h2>
                     <p className='footer__items__divider'></p>
                     <p><Link to="/shop">Wholesale store</Link></p>
-                    <p><Link to="/services">Logistics Portal</Link></p>
-                    <p><Link to="/services">Raredrug Portal</Link></p>
+                    <p><Link to="/emergency/request">emergency</Link></p>
                 </div>
                 <div>
                     <h2>Policies</h2>

@@ -49,7 +49,7 @@ const RequestForm = ({values, handleChange}) => {
                 />
             </Form.Group>
           </div> */}
-          <div className='bg-primary p-2 d-flex justify-content-center' style={{color:"white"}}>
+          <div className='p-2 d-flex justify-content-center' style={{color:"white", backgroundColor:"#2E83B5"}}>
             <Form.Group className=''>
                 <Form.Label className='mx-2 text-center' style={{fontSize:"18px"}}>Upload Prescription</Form.Label>
                 <Form.Control 

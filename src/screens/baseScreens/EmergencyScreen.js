@@ -55,7 +55,7 @@ const handleChange = (input) => (e) =>{
   return (
     <>
       <Header />
-      <div className='mt-4'>
+      <div className='mt-5'>
         <Image src='/assets/images/shop/ems-ad2.png' className='emergency__image'/>
       </div>
       <Container className='emergency'>

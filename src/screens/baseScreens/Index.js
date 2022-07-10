@@ -19,7 +19,19 @@ const Index = ({isAuthenticated}) => {
 
 
     const guestLinks = () => (
-        <Button className="home__intro__start"><Link to="/login">Sign Up/Login</Link></Button>
+        <>
+            <Col sm={12} md={8}>
+                <div className='index__services__intro__annex mt-4'>
+                    <h2>Pharmacists, Physicians, other Healthcare Providers and Institutions?</h2>
+                </div>
+             </Col>
+            <Col sm={12} md={4}>
+                <div className='index__services__intro__annex'>          
+                    <Button className="home__intro__start"><Link to="/register">Sign Up</Link></Button>
+                    <p> Already have an account? <Link to='/login'>Login</Link></p>   
+                </div>                        
+            </Col>
+        </>
     
         );
       
@@ -40,10 +52,16 @@ const Index = ({isAuthenticated}) => {
                     <Col sm={12} md={8}>
                         <div className="home__intro">
                             <h3 className='home__intro__header'>"Africa's Premium Healthcare E-marketplace and Logistics Solution" </h3>
-                            <p className='home__intro__par'>Get the best quality pharmaceuticals, Nutraceuticals and medical equipment at the best prices!</p>
+                            <p className='home__intro__par'>
+                                We provide Pharmacies, Hospitals and other healthcare institutions an online wholesale market for best quality, affordable 
+                                registered medicines, healthcare consumables and devices delivered to their facility nationwide.
+                            </p>
                         </div>
-                        {isAuthenticated ? authLinks() : guestLinks()}
+                        
                     </Col>
+                </Row>
+                <Row>
+                    {isAuthenticated ? authLinks() : guestLinks()}     
                 </Row>
             </Container>
             <div className='mt-md-5'>
@@ -72,7 +90,13 @@ const Index = ({isAuthenticated}) => {
                         </ul>
                     </div>
                 </div>
-
+                <div className='index__services__emergency text-center'>
+                    <Link to='/emergency/request'>
+                        <h3><span>Patient?</span> Click this area to get access to our 24-hour</h3>
+                        <p>Emergency Medical Service</p>
+                        <Image src='/assets/images/icons/emergency-icon.png' className='index__services__emergency__icon text-center' />
+                    </Link>
+                </div>
                 <div className='d-flex justify-content-center my-5'>
                     <h2 className='index__services__intro'>The Future of Healthcare is Here!</h2>
                 </div>

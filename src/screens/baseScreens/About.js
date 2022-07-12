@@ -17,7 +17,7 @@ const About = () => {
                 <div>
                     <h2 style={{fontWeight: "bold", fontSize:"2.5rem",marginBottom:"10", color:""}}>Who are we?</h2>
                     <p className="about__paragraph" >
-                        Flo-log, an initiative of Florix Healthcare LTD, is a tech-driven health care solution that seeks to change the narrative of the African healthcare sector in terms of product procurement and logistics. We offer an e-marketplace solution to healthcare professionals for the remote purchase of medicines and medical products from accredited distributors, with an accompanying dedicated healthcare logistics system.
+                        FLO-LOG<sup>&trade;</sup>, an initiative of Florix Healthcare LTD, is a tech-driven health care solution that seeks to change the narrative of the African healthcare sector in terms of product procurement and logistics. We offer an e-marketplace solution to healthcare professionals for the remote purchase of medicines and medical products from accredited distributors, with an accompanying dedicated healthcare logistics system.
                     </p>
                 </div>
                 <Row className="about__goals">

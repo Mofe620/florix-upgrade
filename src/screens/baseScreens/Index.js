@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Col, Container, Image, Row } from 'react-bootstrap'
+import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Footer from '../../components/Footer'
@@ -42,7 +43,14 @@ const Index = ({isAuthenticated}) => {
 
   return (
     <> 
+        <Helmet>
+                <meta charSet="utf-8" />
+                <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
+                <title>FLO-LOG&trade;</title>
+        </Helmet>
+
         <Header />
+
         <div style={{marginTop:"5rem"}}>
         <Container className='content'>
                 <Row class="row">

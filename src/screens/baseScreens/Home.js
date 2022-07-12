@@ -34,11 +34,11 @@ const Home = ({isAuthenticated}) => {
     return(
         <div className="home">
             <Header />
-               <Helmet>
+               {/* <Helmet>
                 <meta charSet="utf-8" />
                 <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
                 <title>Florix Healthcare</title>
-            </Helmet>
+            </Helmet> */}
             <Container className='content'>
                 <Row class="row">
                     <Col sm={12} xl={6}>

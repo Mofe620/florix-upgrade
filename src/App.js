@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom'
 import {Helmet} from "react-helmet";
 import './customstyles/main.scss';
 import './App.css';
+import ScrollToTop from './components/global/ScrollToTop';
 import Header from './components/global/Header'
 import Footer from './components/Footer'
 
@@ -61,6 +62,7 @@ function App() {
         <title>FLO-LOG</title>
         <meta name="description" content="Providing tech driven logistics solution" />
     </Helmet>
+    <ScrollToTop />
         <>
           <Route path='/shop' component={Shop} />
           <Route path='/signup' component={SignUpScreen} />

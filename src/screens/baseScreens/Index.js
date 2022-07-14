@@ -100,7 +100,7 @@ const Index = ({isAuthenticated}) => {
                 </div>
                 <div className='index__services__emergency text-center'>
                     <Link to='/emergency/request'>
-                        <h3><span>Patient?</span> Click this area to get access to our 24-hour</h3>
+                        <h3><span>Patient?</span> Click here to get access to our 24-hour</h3>
                         <p>Emergency Medicine Service</p>
                         <Image src='/assets/images/icons/emergency-icon.png' className='index__services__emergency__icon text-center' />
                     </Link>

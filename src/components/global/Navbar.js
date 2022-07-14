@@ -30,7 +30,7 @@ const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
             </li>
             <li className='navbar__list__item'>
                 <NavLink className='navbar__link' to='/emergency/request'>
-                        Emergency
+                        EMS
                 </NavLink>
             </li>
             <li className="navbar__auth-link" onClick={logout}>Logout</li>

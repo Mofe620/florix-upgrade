@@ -33,7 +33,7 @@ const Footer = () =>{
                     <h2>Solutions</h2>
                     <p className='footer__items__divider'></p>
                     <p><Link to="/shop">Wholesale store</Link></p>
-                    <p><Link to="/emergency/request">emergency</Link></p>
+                    <p><Link to="/emergency/request">EMS</Link></p>
                 </div>
                 <div>
                     <h2>Policies</h2>
@@ -44,9 +44,11 @@ const Footer = () =>{
                 <div>
                     <h2>Social Media</h2>
                     <p className='footer__items__divider'></p>
-                    <p><a href="https://www.facebook.com/florixhealthcare" target="_blank" rel='noreferrer'><span className="footer__media__icons"><i className="fab fa-facebook"></i></span></a></p>
-                    <p><a href="http://instagram.com/flo_log.hq" target="_blank" rel='noreferrer'><span className="footer__media__icons"><i className="fab fa-instagram"></i></span></a></p>
-                    <p><a href="/"><span className="footer__media__icons"><i className="fab fa-twitter"></i></span></a></p>
+                    <div className='d-flex'>
+                        <p><a href="https://www.facebook.com/florixhealthcare" target="_blank" rel='noreferrer'><span className="footer__media__icons"><i className="fab fa-facebook"></i></span></a></p>
+                        <p><a href="http://instagram.com/flo_log.hq" target="_blank" rel='noreferrer'><span className="footer__media__icons"><i className="fab fa-instagram"></i></span></a></p>
+                        <p><a href="/"><span className="footer__media__icons"><i className="fab fa-twitter"></i></span></a></p>
+                    </div>
                 </div>
             </div>
         <div className='footer'> 

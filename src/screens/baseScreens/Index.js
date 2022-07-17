@@ -43,16 +43,16 @@ const Index = ({isAuthenticated}) => {
 
   return (
     <> 
+        <Header />
+
+        <div style={{marginTop:"5rem"}}>
+        <Container className='content'>
         <Helmet>
                 <meta charSet="utf-8" />
                 <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
                 <title>FLO-LOG&trade;</title>
         </Helmet>
 
-        <Header />
-
-        <div style={{marginTop:"5rem"}}>
-        <Container className='content'>
                 <Row class="row">
                     <Col sm={12} md={4}>
                         <Image className="home__main-img px-4" src="/assets/images/shop/index.png" fluid/>
@@ -101,7 +101,7 @@ const Index = ({isAuthenticated}) => {
                 <div className='index__services__emergency text-center'>
                     <Link to='/emergency/request'>
                         <h3><span>Patient?</span> Click here to get access to our 24-hour</h3>
-                        <p>Emergency Medicine Service</p>
+                        <p>Emergency medicines Service</p>
                         <Image src='/assets/images/icons/emergency-icon.png' className='index__services__emergency__icon text-center' />
                     </Link>
                 </div>
@@ -148,7 +148,7 @@ const Index = ({isAuthenticated}) => {
                 </div>
             </div>
         </div>
-        <Footer />
+    <Footer />
     </>
   )
 }

@@ -1,14 +1,14 @@
 import React from 'react'
 import { Button, Col, Form, Image, Row } from 'react-bootstrap'
 
-const RequestForm = ({values, handleChange}) => {
+const RequestForm = ({values, handleChange, handleErrors}) => {
   console.log(values)
   console.log(handleChange)
   return (
     <>
       <div className='emergency__header text-center'>
         <h2>Place Request</h2>
-        <p>Please fill in accurate information and providemuch detail as possible where necessary</p>
+        <p>Please fill in accurate information and provide much detail as possible where necessary</p>
       </div>
     
     <div className='emergency__form-container'>
@@ -28,11 +28,19 @@ const RequestForm = ({values, handleChange}) => {
         */}
           <div>
             <Form.Group className='emergency__formgroup mt-5'>
-                <Form.Control className='emergency__forminput' onChange={handleChange('orderCategory')} value={values.orderCategory} as="select" aria-label="Default select example">
+                <Form.Control 
+                  className='emergency__forminput' 
+                  onChange={handleChange('orderCategory')} 
+                  value={values.orderCategory} as="select" 
+                  aria-label="Default select example"
+                  isInvalid={!!handleErrors.orderCategory}
+                  >
+                  <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.orderCategory}</Form.Control.Feedback>
                   <option className='emergency__formgroup__option input-field'>Select category of pick-up/delivery Item</option>
                   <option className='emergency__formgroup__option input-field' value="Medications">Medications</option>
                   {/* <option className='emergency__formgroup__option input-field' value="Laboratory Specimen">Laboratory Specimen</option> */}
                   {/* <option className='emergency__formgroup__option input-field' value="Laboratory Specimen">Others</option> */}
+                  
                 </Form.Control>
             </Form.Group>
           </div>
@@ -63,18 +71,39 @@ const RequestForm = ({values, handleChange}) => {
             <div className="emergency__pickup__container pt-md-5 pt-sm-3">
                 <Form.Group className='emergency__formgroup__wrapper'>
                   <Form.Label className='emergency__formgroup__text formlabel'>Generic Name<strong style={{color:"red"}}>*</strong></Form.Label>
-                  <Form.Control onChange={handleChange('productName')} value={values.productName} className='emergency__formgroup__input emergency__forminput input-field' placeholder='e.g Paracetamol' />
+                  <Form.Control 
+                    onChange={handleChange('productName')} 
+                    value={values.productName} 
+                    className='emergency__formgroup__input emergency__forminput input-field' 
+                    placeholder='e.g Paracetamol' 
+                    isInvalid={!!handleErrors.productName}
+                    />
+                  <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.productName}</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group className='emergency__formgroup__wrapper mt-4'>
-                  <Form.Label className='emergency__formgroup__text formlabel'>Brand</Form.Label>
-                  <Form.Control onChange={handleChange('brand')} value={values.brand} className='emergency__formgroup__input emergency__forminput input-field' placeholder='e.g. Emzor' />
+                  <Form.Label className='emergency__formgroup__text formlabel'>Brand<strong style={{color:"red"}}>*</strong></Form.Label>
+                  <Form.Control 
+                    onChange={handleChange('brand')} 
+                    value={values.brand} className='emergency__formgroup__input emergency__forminput input-field' 
+                    placeholder='e.g. Emzor' 
+                    isInvalid={!!handleErrors.brand}
+                    />
+                  <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.brand}</Form.Control.Feedback>
                 </Form.Group>
                 <div className='my-4'>
                   <Row>
                     <Col>
                       <Form.Group className='emergency__formgroup__wrapper'>
                         <Form.Label className='formlabel'>Dosage Form<strong style={{color:"red"}}>*</strong></Form.Label>
-                        <Form.Control className='emergency__formgroup__input__annex emergency__forminput'  onChange={handleChange('dosageForm')} value={values.dosageForm} as="select" aria-label="Default select example">
+                        <Form.Control 
+                          className='emergency__formgroup__input__annex emergency__forminput'  
+                          onChange={handleChange('dosageForm')} 
+                          value={values.dosageForm} 
+                          as="select" 
+                          aria-label="Default select example"
+                          isInvalid={!!handleErrors.dosageForm}
+                          >
+                            
                           <option className='emergency__formgroup__option'>Select</option>
                             <option className='emergency__formgroup__option input-field' value="Tablets/Capsules">Tablets/Capsules</option>
                             <option className='emergency__formgroup__option input-field' value="Syrups/Suspensions/Emulsions/Solutions">Syrups/Suspensions/Emulsions/Solutions</option>
@@ -84,13 +113,22 @@ const RequestForm = ({values, handleChange}) => {
                             <option className='emergency__formgroup__option input-field' value="Aerosols/Sprays">Aerosols/Sprays</option>
                             <option className='emergency__formgroup__option input-field' value="Pessaries/Suppositories">Inserts (Pessaries/Suppositories)</option>
                             <option className='emergency__formgroup__option input-field' value="Consumables">Cosumables (e.g. Plasters, Bandages, Cotton Wool)*</option>
+                            
+                          <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.dosageForm}</Form.Control.Feedback>
                         </Form.Control>
                       </Form.Group>
                     </Col>
                     <Col>
                       <Form.Group className='emergency__formgroup__wrapper'>
                         <Form.Label className='formlabel'>Dose/strength<strong style={{color:"red"}}>*</strong></Form.Label>
-                        <Form.Control onChange={handleChange('strength')} value={values.strength} className='emergency__formgroup__input__annex emergency__forminput input-field' placeholder='e.g 100 mg or 5 mg/ml' />
+                        <Form.Control 
+                          onChange={handleChange('strength')} 
+                          value={values.strength} 
+                          className='emergency__formgroup__input__annex emergency__forminput input-field' 
+                          placeholder='e.g 500 mg or 125mg/5ml'
+                          isInvalid={!!handleErrors.strength}
+                          />
+                          <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.strength}</Form.Control.Feedback>
                       </Form.Group>
                     </Col>
                   </Row>
@@ -99,7 +137,15 @@ const RequestForm = ({values, handleChange}) => {
                 
                 <Form.Group className='emergency__formgroup__wrapper'>
                   <Form.Label className='emergency__formgroup__text formlabel'>Quantity<strong style={{color:"red"}}>*</strong></Form.Label>
-                  <Form.Control onChange={handleChange('packSize')} style={{width:"35%"}} value={values.packSize} className='emergency__forminput input-field' placeholder='e.g 1 Pack' />
+                  <Form.Control 
+                    onChange={handleChange('packSize')} 
+                    style={{width:"35%"}} 
+                    value={values.packSize} 
+                    className='emergency__forminput input-field' 
+                    placeholder='e.g 1 Pack' 
+                    isInvalid={!!handleErrors.packSize}
+                    />
+                    <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.packSize}</Form.Control.Feedback>
                 </Form.Group>
                 {/* <Form.Group className='d-flex my-4'>
                   <Form.Label className='emergency__checkbox__label'>Nature of Package</Form.Label>

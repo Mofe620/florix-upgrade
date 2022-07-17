@@ -32,7 +32,7 @@ const Footer = () =>{
                 <div>
                     <h2>Solutions</h2>
                     <p className='footer__items__divider'></p>
-                    <p><Link to="/shop">Wholesale store</Link></p>
+                    <p><Link to="/shop">Wholesale Store</Link></p>
                     <p><Link to="/emergency/request">EMS</Link></p>
                 </div>
                 <div>
@@ -41,16 +41,14 @@ const Footer = () =>{
                     <p><Link to="/">Privacy Policy</Link></p>
                     <p><Link to="/">Terms and Conditions</Link></p>
                 </div>
-                <div>
-                    <h2>Social Media</h2>
-                    <p className='footer__items__divider'></p>
-                    <div className='d-flex'>
-                        <p><a href="https://www.facebook.com/florixhealthcare" target="_blank" rel='noreferrer'><span className="footer__media__icons"><i className="fab fa-facebook"></i></span></a></p>
-                        <p><a href="http://instagram.com/flo_log.hq" target="_blank" rel='noreferrer'><span className="footer__media__icons"><i className="fab fa-instagram"></i></span></a></p>
-                        <p><a href="/"><span className="footer__media__icons"><i className="fab fa-twitter"></i></span></a></p>
+            </div>
+            <div>
+                    <div className='d-flex justify-content-center' style={{backgroundColor:"#0467a4"}}>
+                        <p><a href="https://www.facebook.com/florixhealthcare" target="_blank" rel='noreferrer'><span className="footer__media__icons" style={{color:"#fff"}}><i className="fab fa-facebook"></i></span></a></p>
+                        <p><a href="http://instagram.com/flo_log.hq" target="_blank" rel='noreferrer'><span className="footer__media__icons"  style={{color:"#e95950"}}><i className="fab fa-instagram"></i></span></a></p>
+                        <p><a href="/"><span className="footer__media__icons" style={{color:"#fff"}}><i className="fab fa-twitter"></i></span></a></p>
                     </div>
                 </div>
-            </div>
         <div className='footer'> 
 
         </div>

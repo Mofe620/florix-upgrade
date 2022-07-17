@@ -36,9 +36,44 @@ const [multiFormValues, setMultiformValues] = useState({
   packSize:"",
 })
 
+const [errors, setErrors] = useState({})
+
+//Handle Form values on change
+const handleChange = (input) => (e) =>{
+  setMultiformValues({...multiFormValues, [input]: e.target.value})
+
+  if(!!errors[input])
+  setErrors({
+    ...errors,
+    [input]:null
+  })
+}
+
+const validateInput = () =>{
+  const {orderCategory, brand, productName, dosageForm, strength, packSize, recipientName, recipientTel, deliveryAddress} = multiFormValues
+  const newErrors={}
+  if(!orderCategory || orderCategory === "") newErrors.orderCategory = "Select product category"
+  if(!productName || productName === "") newErrors.productName = "Enter product name"
+  if(!brand || brand === "") newErrors.brand = "Enter product brand"
+  if(!dosageForm || dosageForm === "") newErrors.dosageForm = "Select dosage form"
+  if(!strength || strength === "") newErrors.strength = "Enter dose/strength"
+  if(!packSize || packSize === "") newErrors.packSize = "Enter quantity"
+  // if(!recipientName || recipientName === "") newErrors.recipientName = "Recipient name is required"
+  // if(!recipientTel || recipientTel === "") newErrors.recipientTel = "Enter Recipient phone number"
+  // if(!deliveryAddress || deliveryAddress === "") newErrors.deliveryAddress = "Enter the delivery address"
+
+  return newErrors
+}
+
 // Handle next
 const HandleNext = () =>{
-  setActiveStep((nextStep) => nextStep + 1)
+  const inputErrors = validateInput()
+  if(Object.keys(inputErrors).length > 0){
+    setErrors(inputErrors)
+  } else{
+    setActiveStep((nextStep) => nextStep + 1)
+  }
+  
 }
 
 // Handle Previous Step
@@ -46,10 +81,7 @@ const HandlePrevious = () =>{
   setActiveStep((previousStep) => previousStep - 1)
 }
 
-//Handle Form values on change
-const handleChange = (input) => (e) =>{
-  setMultiformValues({...multiFormValues, [input]: e.target.value})
-}
+
 
 
   return (
@@ -60,11 +92,11 @@ const handleChange = (input) => (e) =>{
       </div>
       <Container className='emergency'>
           {activeStep === 0 && (
-          <RequestForm values={multiFormValues} handleChange = {handleChange} /> 
+          <RequestForm values={multiFormValues} handleChange = {handleChange} handleErrors={errors} /> 
           )}
 
           {activeStep === 1 && (
-          <DeliveyForm values={multiFormValues} handleChange = {handleChange} /> 
+          <DeliveyForm values={multiFormValues} handleChange = {handleChange} handleErrors={errors} /> 
           )}
           {activeStep === 2 && (
           <EmergencyOrderVerifyScreen values={multiFormValues} handleChange = {handleChange} /> 

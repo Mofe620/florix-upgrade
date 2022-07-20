@@ -88,7 +88,7 @@ if(chat){
           <div className='mt-5'>
             <p style={{color:'#808080'}}>Click the Button below to complete Request with FLO-LOG Whatsapp Admin</p>
           </div>
-          <Button onClick={submitHandler} className='emergency__btn emergency__btn__next'>Submit Order</Button>
+          <Button onClick={submitHandler} className='emergency__btn emergency__btn__next'>Submit</Button>
       </div>
     </>
   )

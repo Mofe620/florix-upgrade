@@ -29,7 +29,7 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
           <div>
             <Form.Group className='emergency__formgroup mt-5'>
                 <Form.Control 
-                  className='emergency__forminput' 
+                  className='emergency__forminput form-select' 
                   onChange={handleChange('orderCategory')} 
                   value={values.orderCategory} as="select" 
                   aria-label="Default select example"
@@ -96,7 +96,7 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
                       <Form.Group className='emergency__formgroup__wrapper'>
                         <Form.Label className='formlabel'>Dosage Form<strong style={{color:"red"}}>*</strong></Form.Label>
                         <Form.Control 
-                          className='emergency__formgroup__input__annex emergency__forminput'  
+                          className='emergency__formgroup__input__annex emergency__forminput form-select'  
                           onChange={handleChange('dosageForm')} 
                           value={values.dosageForm} 
                           as="select" 

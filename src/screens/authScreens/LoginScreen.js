@@ -2,6 +2,8 @@ import React, { useState} from 'react'
 import {Container, Row, Col, Form, Button} from 'react-bootstrap'
 import { Link, Redirect, useLocation } from 'react-router-dom'
 import { connect, useDispatch, useSelector } from 'react-redux'
+import AuthNavigation from '../../components/global/_authNavigation'
+import AuthFooter from '../../components/global/_authFooter'
 import swal from 'sweetalert';
 import {Helmet} from "react-helmet";
 import Loader from '../../components/Loader'
@@ -31,57 +33,66 @@ function LoginScreen({ isAuthenticated }) {
 
 
     return (
-        <Container className='content auth-container'>
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>Sign In</title>
-            </Helmet>
-            <div className="">
-            <div className=' auth-header text-center'>
-            {error && <Message variant='danger'>{error}</Message>}
-            {loading && <Loader />}
-            
-                <h2 className="auth-header">Welcome back!</h2>
-                <p className="auth-base"> Don't have an account?<Link to="/register"> Sign Up</Link></p>
-            </div>
-                <Form className="auth-form px-4" onSubmit={submitHandler}>
-                    <Form.Group className="mb-3" controlId="formGroupPassword">
-                        <Form.Control 
-                            className="auth-input search-ppty" 
-                            variant="lg"
-                            type="email" 
-                            placeholder="Enter Email" 
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formGroupPassword">
-                        <Form.Control 
-                            className="auth-input search-ppty" 
-                            type="password" 
-                            variant="lg"
-                            placeholder="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            
-                            />
-                    </Form.Group>
-                    <Row className="p-2">
-                    <Col>
+        <>
+            <Container className='content auth-container'>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>Sign In</title>
+                </Helmet>
+                <AuthNavigation />
+                <div className="">
+                <div className=' auth-header text-center'>
+                {error && <Message variant='danger'>{error}</Message>}
+                {loading && <Loader />}
+
+                <div className="auth__header">
+                    <h2 className="">Sign-In Information</h2>
+                </div>
+                </div>
+                    <Form className="auth__form" onSubmit={submitHandler}>
+                        <Form.Group className="" controlId="formGroupPassword">
+                        <Form.Label className='auth__form__label' >Email Address</Form.Label>
+                            <Form.Control 
+                                className="auth__form__control" 
+                                variant="lg"
+                                type="email" 
+                                placeholder="" 
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                />
+                        </Form.Group>
+                        <Form.Group className="my-3" controlId="formGroupPassword">
+                            <Form.Label className='auth__form__label' >Password</Form.Label>
+                            <Form.Control 
+                                className="auth__form__control" 
+                                type="password" 
+                                variant="lg"
+                                placeholder="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                
+                                />
+                        </Form.Group>
+                        <div className='auth__login__terms d-flex justify-content-between'>
+                            <Form.Group>
+                                <Form.Check
+                                    label='Remember me'
+                                    type='checkbox'
+                                />
+                            </Form.Group>
+                            <p className=''>Forgotten password? <Link to="/reset-password">Reset Password</Link></p>
+                        </div>
+                        <div className='auth__btnwrapper'>
+                            <Button type="submit" className="auth__bt">Sign In</Button>
+                            <p> Don't have an account? <Link to="/register">Create an account</Link></p>
+                        </div>
                         
-                    </Col>
-                    <Col>
-                        <Button className="auth-button" type="submit">Sign In</Button>
-                    </Col>
-                    
-                </Row>
-                    <div>
-                        <p>Forgotten password? <Link to="/reset-password">Reset Password</Link></p>
-                    </div>
-                </Form>
-        </div>
-            
-    </Container>
+                    </Form>
+            </div>
+               
+        </Container>
+        <AuthFooter />
+    </>
     )
 }
 

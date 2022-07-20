@@ -7,6 +7,8 @@ import Loader from '../../components/Loader'
 import Message from '../../components/Message'
 import { signup } from '../../redux/actions/authActions'
 import swal from 'sweetalert';
+import AuthNavigation from '../../components/global/_authNavigation';
+import AuthFooter from '../../components/global/_authFooter';
 
 function RegisterScreen({ signup, isAuthenticated }) {
 
@@ -39,75 +41,99 @@ function RegisterScreen({ signup, isAuthenticated }) {
         return <Redirect to="/" />
         }
     return (
-        <Container className='content auth-container'>
+        <>
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Create your Flolog Account</title>
             </Helmet>
-            <div className="auth-header text-center mb-4">
-                <h2 className="auth-header">Sign Up</h2>
-                <p>Add your deatils to sign up</p>
-            </div>
-            {/* {message && <Message variant='success'>{message}</Message>} */}
-            {error && <Message variant='danger'>{error}</Message>}
-            {loading && <Loader />}
-                    <Form className="auth-form" onSubmit={submitHandler}>
-                        <Form.Group className="mb-3" controlId='name'>
-                            <Form.Control 
-                                className="auth-input search-ppty" 
-                                required
-                                minLength='6'
-                                type="name" 
-                                placeholder="Username" 
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                                />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId='email'>
-                            <Form.Control
-                                required 
-                                className="auth-input search-ppty" 
-                                type="email" 
-                                placeholder="Email" 
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                
-                                />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="password">
-                            <Form.Control 
-                                className="auth-input search-ppty" 
-                                type="password" 
-                                placeholder="Password" 
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                
-                                />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="passwordConfirm">
-                            <Form.Control 
-                                className="auth-input search-ppty" 
-                                type="password" 
-                                placeholder="Confirm Password" 
-                                value={re_password}
-                                onChange={(e) => setRe_password(e.target.value)}
-                                />
-                        </Form.Group>
-                        <Button type="submit" className="auth-button">Sign Up</Button>
-                    </Form>
-                    <Row className="p-2">
-                        <Col>
+            <AuthNavigation />
+            <Container className='auth-container'>
+                <div className="auth__header text-center">
+                    <h2 className="">Create Account</h2>
+                    <p>Individual Account</p>
+                </div>
+                {/* {message && <Message variant='success'>{message}</Message>} */}
+                {error && <Message variant='danger'>{error}</Message>}
+                {loading && <Loader />}
+                        <Form className="auth-form" onSubmit={submitHandler}>
+                        <Row>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId='name'>
+                                        <Form.Label className='auth__form__label'>Username</Form.Label>
+                                        <Form.Control 
+                                            className="auth__form__control" 
+                                            size='lg'
+                                            required
+                                            minLength='6'
+                                            type="name" 
+                                            value={username}
+                                            onChange={(e) => setUsername(e.target.value)}
+                                            />
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId='email'>
+                                        <Form.Label className='auth__form__label'>Email Address</Form.Label>
+                                        <Form.Control
+                                            required 
+                                            size='lg'
+                                            className="auth__form__control" 
+                                            type="email" 
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)} 
+                                        />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
                             
-                        </Col>
-                        <Col>
+                            <Row>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId="password">
+                                        <Form.Label className='auth__form__label'>Password</Form.Label>
+                                        <Form.Control 
+                                            className="auth__form__control"
+                                            size='lg'
+                                            type="password" 
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                        />
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId="passwordConfirm">
+                                        <Form.Label className='auth__form__label'>Confirm Password</Form.Label>
+                                        <Form.Control 
+                                            className="auth__form__control"
+                                            size='lg'
+                                            type="password" 
+                                            value={re_password}
+                                            onChange={(e) => setRe_password(e.target.value)}
+                                        />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+                        
+                        </Form>
+                        <div className='auth__policy__wrapper d-flex'>
+                                <Form.Group>
+                                    <Form.Check
+                                        type='checkbox'
+                                    />
+                                </Form.Group>
+                        
+                                <p>I agree to all the <Link>Terms</Link> and <Link>Privacy policy</Link></p>
+                    
+                            </div>
+
                             
-                        </Col>
-                    </Row>
-                    <div>
-                        <p className="auth-base"> Already have an account? <Link to="/login">Login</Link></p>
-                    </div>
+                            
+                            <div className='auth__btnwrapper'>
+                                <Button type="submit" className="auth__bt">Create Account</Button>
+                                <p> Already have an account? <Link to="/login">Sign In</Link></p>
+                            </div>
         </Container>
-        
+        <AuthFooter />
+    </>
     )
 }
 

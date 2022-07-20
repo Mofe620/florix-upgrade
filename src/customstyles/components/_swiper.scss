@@ -183,65 +183,19 @@
 
 
 .partnership{
-    height: 15rem;
-    display: flex;
-    background-color: $neutral;
-    &__slider{
-     
-        &__container{
-            height: 10rem;
-            justify-content: center;
-            align-items: center;
-            
-        }
+ &__brand{
 
-        &__image{
-            height: 10rem;
-            width: 10rem;
-            border-radius: 50%;
+    &__image{
+        height: 150px !important;
+        @include respond(phone){
+            height: 100px !important;
+            margin: 0;
+            padding: 0;
         }
     }
+ }
 }
 
-
-.testimony{
-    height: 20rem;
-    display: flex;
-    background-color: $neutral;
-    @include respond(phone){
-        height: 15rem;
-    }
-    
-    &__slider{
-     
-        &__container{
-          
-            width: 50%;
-            justify-content: center;
-            align-items: center;
-         
-            
-        }
-        &__content{
-            // background-color: $secondary;
-            height: 15rem;
-            background-color: $secondary;
-            padding: 1rem;
-            
-            @include respond(phone){
-               width: 50%;
-               height: auto;
-            }
-        }
-        &__image{
-            height: 20rem;
-            width: 40rem;
-            @include respond(phone){
-                width: auto;
-            }
-        }
-    }
-}
 
 
 .swiper-container{
@@ -257,5 +211,38 @@
 @media screen and (min-width: 768px){
     .swiper-container{
         width:768px
+    }
+}
+
+/* Bootstrap Carousel */
+
+.testimony{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+ 
+    &__wrapper{
+        &__carousel{
+            color: $header-color !important;  
+            & p{
+                margin: 0;
+                padding: 0;
+                color: $par-color;
+            } 
+            & h3{
+                color: $primary;
+                font-weight: 700;
+                margin-top: 5px;
+                margin-bottom: 0;
+                padding: 0;
+            }
+            & h4{
+                color: $primary;
+                font-weight: 200;
+            }
+ 
+        }
+       
     }
 }

@@ -25,20 +25,20 @@ const Partnership = () => {
   return (
     <Container>
       <Row>
-        <Col xs={6} md={4} lg={4} xl={3}>
-          <Image src='/assets/images/partners2/BMC.png'  style={{height:"200px"}} />
+        <Col xs={4} md={3} xl={2}>
+          <Image src='/assets/images/partners2/BMC.png'  className='partnership__brand__image'  style={{height:"200px"}} />
         </Col>
-        <Col xs={6} md={4} lg={4} xl={3}>
-        <Image src='/assets/images/partners2/fidson.png' style={{height:"200px"}}  />
+        <Col xs={4} md={3} xl={2}>
+        <Image src='/assets/images/partners2/fidson.png' className='partnership__brand__image' style={{height:"200px"}}  />
         </Col>
-        <Col xs={6} md={4} lg={4} xl={3}>
-          <Image src='/assets/images/partners2/lily.png'  style={{height:"200px"}} />
+        <Col xs={4} md={3} xl={2}>
+          <Image src='/assets/images/partners2/lily.png' className='partnership__brand__image'  style={{height:"200px"}} />
         </Col>
-        <Col xs={6} md={4} lg={4} xl={3}>
-        <Image src='/assets/images/partners2/unique.png'  style={{height:"200px"}} />
+        <Col xs={4} md={3} xl={2}>
+        <Image src='/assets/images/partners2/unique.png' className='partnership__brand__image'  style={{height:"200px"}} />
         </Col>
-        <Col xs={6} md={4} lg={4} xl={3}>
-        <Image src="/assets/images/partners2/dreamlife.png" style={{height:"200px"}}/>
+        <Col xs={4} md={3} xl={2}>
+        <Image src="/assets/images/partners2/dreamlife.png" className='partnership__brand__image' style={{height:"200px"}}/>
         </Col>
       </Row>
     

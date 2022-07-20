@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navigation, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
-import {Image} from 'react-bootstrap'
+import {Carousel, Image} from 'react-bootstrap'
 
 import 'swiper/swiper.min.css';
 //import 'swiper/css/navigation';
@@ -20,31 +20,32 @@ const data = [
 
 const Testimony= () => {
   return (
-    <div>
-      <Swiper
-          modules={[Navigation, A11y, Autoplay]}
-          spaceBetween={15}
-          slidesPerView={1}
-          autoplay={{delay: "5000"}}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
-          className="testimony"
-      >
-        {data.map(drug =>(
-          <div className="testimony__slider">
-            <SwiperSlide key={drug.id} className="testimony__slider__container d-flex justify-content-center p-4">
-            <div className='testimony__slider__content d-flex justify-content-center align-items-center'>
-                <div className='m-2 p-3'>
-                    <p>{drug.testimony}</p>
-                    {/* <p>{drug.testimony}</p> */}
-             
-                </div>
-            </div>
-            </SwiperSlide>
+    <div className='testimony'>
+      <div className='testimony__wrapper'></div>
+        <Carousel controls={false}>
+        <Carousel.Item className='testimony__wrapper__carousel'>
+        <div>
+            <p>Logistics, pharmaceutical supplies</p>
+            <h3>Aiyanyor Smart Omorodion Moses</h3>
+            <h4>(Wellsmart Pharmacy)</h4>
           </div>
-        ))}
-
-      </Swiper>
+        </Carousel.Item>
+        <Carousel.Item className='testimony__wrapper__carousel'>
+          <div>
+            <p>Efficient and reliable</p>
+            <h3>Sheila</h3>
+            <h4>(Dreamlife Pharmacy)</h4>
+          </div>
+        </Carousel.Item>
+        
+        <Carousel.Item className='testimony__wrapper__carousel'>
+        <div>
+            <p>Jos University Teaching Hospital</p>
+            <h3>Dr. Joseph Igbanugo Sunday</h3>
+            <h4>(Prompt response or supply)</h4>
+          </div>
+        </Carousel.Item>
+    </Carousel>
     </div>
   );
 };

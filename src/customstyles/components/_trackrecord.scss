@@ -66,4 +66,16 @@
             color: red;
         };
     }
+    &__partners{
+        & h2{
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            padding-top: 5rem;
+            text-transform: capitalize;
+            @include respond(phone){
+                padding-top: 1rem;
+            }
+        }
+    }
 }

@@ -2,8 +2,90 @@
 
 .auth{
     max-width: 90%;
-    margin-top: 100px;
+    margin-top: 5rem;
     margin-bottom: 100px;
+
+    @include respond(phone){
+      margin-top: 3rem;
+    }
+    
+
+    &__header{
+      margin-bottom: 4rem;
+      @include respond(phone){
+        margin-bottom: 2rem;
+      }
+      & h2{
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+      }
+      & p{
+        font-size: 1.5rem;
+        color: $header-color;
+      }
+    }
+    &__form{
+
+      &__label{
+        font-size: 1.5rem;
+      }
+      &__control{
+        border: 1px #d0d2d4 solid !important;
+        box-shadow: none !important;
+        font-size: 1.5rem;
+        // background-color: $secondary !important;
+      }
+
+    }
+    &__btnwrapper{
+      display: grid;
+      justify-content: center;
+      
+
+      & Button{
+  
+        background-color: $primary;
+        margin: 1rem 0;
+        font-size: 1.5rem; 
+      }
+      & p{
+        font-size: 1.5rem;
+      }
+    }
+    &__policy{
+
+      &__wrapper{
+        & p{
+          font-size: 1.5rem;
+        }
+      }
+    }
+    &__activation{
+
+      &__wrapper{
+        height: auto;
+        background-color: $primary;
+        color: $neutral;
+        padding-top: 5px;
+        margin-top: 10rem;
+        padding: 1rem;
+       
+        
+   
+      }
+    }
+    &__login{
+      &__terms{
+        & p{
+          font-size: 1.5rem;
+        }
+       @include respond(phone){
+        display: grid !important;
+       }
+      }
+    }
 }
 
 .auth-container{
@@ -17,7 +99,8 @@
     @include respond(phone) {
       max-width: 95%;
     }
-  }
+
+}
 
 .profile-container{
   max-width: 50%;

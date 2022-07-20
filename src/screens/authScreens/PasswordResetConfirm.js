@@ -4,6 +4,8 @@ import {Helmet} from "react-helmet";
 import { Container, Form, Button } from 'react-bootstrap'
 import { connect, useDispatch } from 'react-redux';
 import { reset_password_confirm } from '../../redux/actions/authActions';
+import AuthNavigation from '../../components/global/_authNavigation'
+import AuthFooter from '../../components/global/_authFooter'
 
 const PasswordResetConfirm = ({ match, reset_password_confirm }) => {
     const [requestSent, setRequestSent] = useState(false);
@@ -24,14 +26,16 @@ const PasswordResetConfirm = ({ match, reset_password_confirm }) => {
     };
 
     if (requestSent) {
-        return <Redirect to='/' />
+        return <Redirect to='/reset-password-complete' />
     }
 
     return (
+        <>
+        <AuthNavigation />
         <Container className=' auth-container pt-4'>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Password Reset Confirm</title>
+                <title>password reset complete</title>
             </Helmet>
                 <div className=' auth-header text-center'>
                     <p className="auth-base"> Enter a new password</p>
@@ -39,8 +43,9 @@ const PasswordResetConfirm = ({ match, reset_password_confirm }) => {
                 <Form className="auth-form" onSubmit={e => submitHandler(e)}>
                     <Form.Group className="mb-3" controlId="formGroupPassword">
                         <Form.Control 
-                            className="auth-input search-ppty" 
+                            className="auth__form__control" 
                             type="password" 
+                            variant="lg"
                             placeholder="Password" 
                             value={new_password}
                             onChange={(e) => setNew_password(e.target.value)}
@@ -50,8 +55,9 @@ const PasswordResetConfirm = ({ match, reset_password_confirm }) => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formGroupPassword">
                         <Form.Control 
-                            className="auth-input search-ppty" 
+                            className="auth__form__control" 
                             type="password" 
+                            variant="lg"
                             placeholder="Password" 
                             value={re_new_password}
                             onChange={(e) => setRe_new_password(e.target.value)}
@@ -61,7 +67,9 @@ const PasswordResetConfirm = ({ match, reset_password_confirm }) => {
                     </Form.Group>
                     <Button className="auth-button btn btn-block w-100" type="submit">Submit</Button>
                 </Form>
-    </Container>
+        </Container>
+        <AuthFooter />
+    </>
     )
 }
 

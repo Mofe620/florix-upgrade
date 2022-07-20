@@ -10,23 +10,23 @@ const TrackRecord = () => {
         <Container className='trackrecord__header my-5'>
             <h2 className='d-grid justify-content-center'>Track Record</h2>
             <Row className='trackrecord__wrapper container justify-content-between mt-5'>
-                <Col>
+                <Col className='text-center'>
                     <h2>50+</h2>
                     <p>Pharmacies</p>
                 </Col>
-                <Col>
+                <Col className='text-center'>
                     <h2>20+</h2>
                     <p>Hospitals and Clinics</p>
                 </Col>
-                <Col>
+                <Col className='text-center'>
                     <h2>1000+</h2>
                     <p>Healthcare Professionals</p>
                 </Col>
             </Row>
         </Container>
 
-        <div className='pt-5'>
-            <h2 className='d-grid justify-content-center fw-bold fs-1'>Partner brands</h2>
+        <div className='trackrecord__partners'>
+            <h2 className=''>Partner brands</h2>
             <Partnership />
         </div>
         

@@ -53,7 +53,7 @@ const validateInput = () =>{
   const {orderCategory, brand, productName, dosageForm, strength, packSize, recipientName, recipientTel, deliveryAddress} = multiFormValues
   const newErrors={}
   if(!orderCategory || orderCategory === "") newErrors.orderCategory = "Select product category"
-  if(!productName || productName === "") newErrors.productName = "Enter product name"
+  if(!productName || productName === "") newErrors.productName = "Enter  product name"
   if(!brand || brand === "") newErrors.brand = "Enter product brand"
   if(!dosageForm || dosageForm === "") newErrors.dosageForm = "Select dosage form"
   if(!strength || strength === "") newErrors.strength = "Enter dose/strength"

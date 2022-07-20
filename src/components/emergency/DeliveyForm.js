@@ -15,6 +15,7 @@ const DeliveyForm = ({values, handleChange, handleErrors}) => {
                 <Form.Group className='emergency__formgroup__first-half'>
                   <Form.Label className='formlabel'>Recipient Full Name<strong style={{color:"red"}}>*</strong></Form.Label>
                   <Form.Control 
+                    required 
                     className='emergency__forminput' 
                     onChange={handleChange('recipientName')} 
                     value={values.recipientName} 
@@ -26,6 +27,7 @@ const DeliveyForm = ({values, handleChange, handleErrors}) => {
                   <Form.Label className='formlabel'>Recipient Phone Number<strong style={{color:"red"}}>*</strong></Form.Label>
                   <Form.Control 
                     className='emergency__forminput' 
+                    required 
                     onChange={handleChange('recipientTel')} 
                     value={values.recipientTel} 
                     placeholder='Phone Number' 
@@ -37,6 +39,7 @@ const DeliveyForm = ({values, handleChange, handleErrors}) => {
                 <Form.Label className='formlabel'>Delivery Address<strong style={{color:"red"}}>*</strong></Form.Label>
                 <Form.Control 
                   className='emergency__forminput' 
+                  required 
                   onChange={handleChange('deliveryAddress')} 
                   value={values.deliveryAddress} 
                   isInvalid={!!handleErrors.deliveryAddress}

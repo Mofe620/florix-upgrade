@@ -4,6 +4,8 @@ import {Helmet} from "react-helmet";
 import { connect, useDispatch } from 'react-redux';
 import { Container, Form, Button } from 'react-bootstrap';
 import { reset_password } from '../../redux/actions/authActions';
+import AuthNavigation from '../../components/global/_authNavigation'
+import AuthFooter from '../../components/global/_authFooter'
 
 const PasswordReset = ({ reset_password }) => {
     const [requestSent, setRequestSent] = useState(false);
@@ -25,6 +27,8 @@ const PasswordReset = ({ reset_password }) => {
     }
 
     return (
+        <>
+        <AuthNavigation />
         <Container className='auth-container '>
             <Helmet>
                 <meta charSet="utf-8" />
@@ -36,9 +40,10 @@ const PasswordReset = ({ reset_password }) => {
             <Form className="auth-form" onSubmit={e => submitHandler(e)}>
                 <Form.Group className="mb-3" controlId="formGroupPassword">
                     <Form.Control 
-                        className="auth-input search-ppty" 
+                        className="auth__form__control" 
                         type="email" 
-                        placeholder="example@email.com" 
+                        variant="lg"
+                        placeholder="Enter account email" 
                         name='email'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -49,6 +54,8 @@ const PasswordReset = ({ reset_password }) => {
             </Form>
             
         </Container>
+        <AuthFooter />
+    </>
     )
 }
 

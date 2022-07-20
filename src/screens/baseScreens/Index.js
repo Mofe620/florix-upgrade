@@ -28,7 +28,7 @@ const Index = ({isAuthenticated}) => {
              </Col>
             <Col sm={12} md={4}>
                 <div className='index__services__intro__annex'>          
-                    <Button className="home__intro__start"><Link to="/register">Sign Up</Link></Button>
+                    <Button className="home__intro__start"><Link to="/register">Sign Up to Shop</Link></Button>
                     <p> Already have an account? <Link to='/login'>Login</Link></p>   
                 </div>                        
             </Col>
@@ -101,7 +101,7 @@ const Index = ({isAuthenticated}) => {
                 <div className='index__services__emergency text-center'>
                     <Link to='/emergency/request'>
                         <h3><span>Patient?</span> Click here to get access to our 24-hour</h3>
-                        <p>Emergency medicines Service</p>
+                        <p>Emergency Medicines Service</p>
                         <Image src='/assets/images/icons/emergency-icon.png' className='index__services__emergency__icon text-center' />
                     </Link>
                 </div>

@@ -31,6 +31,7 @@ const ProductClassScreen = ({match}) => {
             console.log(product)
             return list.push(
                 <div className='product__class__container'>
+                    <Link to={`/product/${product.id}`}>
                     {/* <h2><span>Therapeutic Category: <strong> {product.productClass}</strong></span></h2> */}
                         <div className="product__class__file__wrapper">
                            <Image className="product__class__file__wrapper__img" src={product.image} alt={product.name} fluid/>
@@ -43,8 +44,9 @@ const ProductClassScreen = ({match}) => {
                             <h2 className="fw-bold"> &#8358; {product.price}</h2>
                             {/* <h3>Strength: {product.strength}</h3> */}
                            
-                            <p className='analgesics__slider__content__button text-center'><Link to={`/product/${product.id}`}><img src="/assets/icons/Store.png" alt="" style={{height:"2rem", marginRight:"20px"}}/>Add to cart</Link></p>
+                            {/* <p className='analgesics__slider__content__button text-center'><Link to={`/product/${product.id}`}><img src="/assets/icons/Store.png" alt="" style={{height:"2rem", marginRight:"20px"}}/>Add to cart</Link></p> */}
                         </div>
+                    </Link>
                 </div>
             );
         });
@@ -87,7 +89,7 @@ const ProductClassScreen = ({match}) => {
             </Row>
             
             <div>
-                <h1 className='fs-1 fw-bold'>{productClass}</h1>
+                <h1 className='fs-1 fw-bold'>{productClass.toUpperCase}</h1>
                 <div>
                    {loading? <LoadingMain /> : getProductsByClass()}
                 </div>

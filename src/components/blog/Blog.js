@@ -4,7 +4,7 @@ import { Image } from 'react-bootstrap'
 
 const Blog = ({blog}) => {
     return (
-        <div className="blog__post">
+        <div className="blog__post m-2">
             <>
                 <Image className="blog__post__img" src={blog.image} alt={blog.title} fluid/> 
                 <div className='blog__post__txt'>

@@ -10,6 +10,7 @@ import swal from 'sweetalert';
 import AuthNavigation from '../../components/global/_authNavigation';
 import AuthFooter from '../../components/global/_authFooter';
 
+
 function RegisterScreen({ signup, isAuthenticated }) {
 
     const [accountCreated, setAccountCreated] = useState(false);
@@ -24,17 +25,18 @@ function RegisterScreen({ signup, isAuthenticated }) {
 
     const submitHandler = e => {
         e.preventDefault();
-
-        if (password === re_password) {
+        if (password !== re_password) {
+            swal('Invalid credentials', "Password must match!", "error")
+        } else{
             signup(username, email, password, re_password);
             setAccountCreated(true);
-            setMessage("Welcome! Click on the link sent to your email to activate your account")
         }
     };
     
     
     if (accountCreated) {
-        return <Redirect to='/login' />
+        swal('Account created but not active!', "An account activation email has been sent to you, please click on the activation link to activate your account", "info")
+        // return <Redirect to='/login' />
     }
 
     if (isAuthenticated){
@@ -112,9 +114,7 @@ function RegisterScreen({ signup, isAuthenticated }) {
                                     </Form.Group>
                                 </Col>
                             </Row>
-                        
-                        </Form>
-                        <div className='auth__policy__wrapper d-flex'>
+                            <div className='auth__policy__wrapper d-flex'>
                                 <Form.Group>
                                     <Form.Check
                                         type='checkbox'
@@ -124,13 +124,12 @@ function RegisterScreen({ signup, isAuthenticated }) {
                                 <p>I agree to all the <Link>Terms</Link> and <Link>Privacy policy</Link></p>
                     
                             </div>
-
-                            
-                            
                             <div className='auth__btnwrapper'>
                                 <Button type="submit" className="auth__bt">Create Account</Button>
                                 <p> Already have an account? <Link to="/login">Sign In</Link></p>
                             </div>
+                        </Form>
+                        
         </Container>
         <AuthFooter />
     </>
@@ -142,3 +141,6 @@ const mapStateToProps = state => ({
   });
 
 export default connect(mapStateToProps, {signup}) (RegisterScreen)
+
+
+

@@ -40,9 +40,9 @@ const Testimony= () => {
         
         <Carousel.Item className='testimony__wrapper__carousel'>
         <div>
-            <p>Jos University Teaching Hospital</p>
+            <p>Prompt response or supply</p>
             <h3>Dr. Joseph Igbanugo Sunday</h3>
-            <h4>(Prompt response or supply)</h4>
+            <h4>(Jos University Teaching Hospital)</h4>
           </div>
         </Carousel.Item>
     </Carousel>

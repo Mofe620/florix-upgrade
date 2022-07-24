@@ -16,7 +16,7 @@ const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
 
         <Fragment>
             <LinkContainer to='/login'>
-                <li className="navbar__auth-link">Sign In</li>
+                <li className="navbar__auth-link"><i class="fa fa-sign-in-alt"></i> Sign In</li>
             </LinkContainer>
         </Fragment>
     );
@@ -33,7 +33,7 @@ const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
                         EMS
                 </NavLink>
             </li>
-            <li className="navbar__auth-link" onClick={logout}>Logout</li>
+            <li className="navbar__auth-link" onClick={logout}><i class="fa fa-sign-out-alt"></i> Logout</li>
         </Fragment>
     );
 

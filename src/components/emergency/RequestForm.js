@@ -192,7 +192,7 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
         </Form>
         <div className='emergency__premium__container'>
           <h2>OR</h2>
-          <p><a href="https://tinyurl.com/2p98zk2h" target='_blank' rel="noreferrer">Speak to a Pharmacist</a></p>
+          <p><a href="https://tinyurl.com/2p98zk2h" target='_blank' rel="noreferrer">Chat with a Pharmacist</a></p>
         </div>
     </div>
     </>

@@ -103,8 +103,19 @@
 }
 
 .profile-container{
-  max-width: 50%;
+  width: 50%;
+  @include respond(phone){
+    width: 80%;
+  }
 }
+.profile-img{
+  height: 15rem;
+  @include respond(phone){
+    height: 10rem;
+    border: 2px $secondary solid;
+  }
+}
+
   
 .auth-header > p{
   color: #aeafb1;

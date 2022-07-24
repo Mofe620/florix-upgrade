@@ -8,6 +8,9 @@ import Message from '../../components/Message'
 import Loader from '../../components/Loader'
 import { load_user_profile } from '../../redux/actions/authActions'
 
+import Header from '../../components/global/Header';
+import Footer from '../../components/Footer';
+
 function UserProfile({location, history, isAuthenticated}) {
     
     const [username, setUsername] = useState('')
@@ -29,7 +32,7 @@ function UserProfile({location, history, isAuthenticated}) {
     console.log(userInfo)
     useEffect(() => {
         if (!isAuthenticated) {
-            history.push('/login')
+            // history.push('/login')
         } else {
                 setUsername(user.username)
                 setEmail(user.email)
@@ -40,42 +43,61 @@ function UserProfile({location, history, isAuthenticated}) {
         
     }, [history, isAuthenticated, userInfo, user])
     return (
-        <Container className='content'>
+        <div className=''>
+            <Header />
                <Helmet>
                 <meta charSet="utf-8" />
                 <title>Profle</title>
             </Helmet>
-            <Row className="">
-                <h1 className="profile-header">{company} profile</h1>
-                <Col md={3} className="">
-                    <div className="">
-                            <img className='profile-img img-fluid rounded-circle  mt-4 mb-4' src={image}  alt=''/>
-                            <p><Link href="/">Edit profile</Link></p>
-                    </div>
-                </Col>
-                <Col md={8}>
-                    <Form className="mt-4">
-                        <Form.Group className="mb-3" controlId="formGroupEmail">
-                            <Form.Control className="auth-input" type="name" value={username} disabled/>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formGroupEmail">
-                            <Form.Control className="auth-input" type="name" value={email} disabled/>
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formGroupEmail">
-                            <Form.Control className="auth-input" type="name"   value={company ? company : " Your company/organization name?"  } />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formGroupPassword">
-                            <Form.Control className="auth-input" type="email" value={telephone ? telephone : " Mobile/telephone no."} />
-                        </Form.Group>
+            <div className="d-flex justify-content-center content">
+                    <h2>Hello, {username.toUpperCase()} </h2>
+                    <img className='profile-img img-fluid rounded-circle  my-5' src='/assets/images/icons/profile.png'  alt=''/>
+                
+            </div>
+            <Container>
+            <Form className="auth__form profile-container mt-4 mx-auto" >
+                <Form.Group className="mb-3" controlId="username">
+                    <Form.Control 
+                        className="auth__form__control" 
+                        type="name" 
+                        value={username} 
+                        disabled
+                        size='lg'
+                        />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formGroupEmail">
+                    <Form.Control 
+                        className="auth__form__control" 
+                        type="name" 
+                        value={email} 
+                        disabled
+                        size='lg'
+                        />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formGroupEmail">
+                    <Form.Control 
+                        className="auth__form__control" 
+                        type="name" 
+                        value={company ? company : "dd/mm/yyyy"  }
+                        disabled
+                        size='lg' 
+                        />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formGroupPassword">
+                    <Form.Control 
+                        className="auth__form__control" 
+                        type="email"
+                         value={telephone ? telephone : ""}
+                         disabled
+                         size='lg' 
+                         />
+                </Form.Group>
                         {/*<Button className="auth-button btn btn-block w-100" variant="primary" value="reset"> Save</Button>*/}
-                    </Form>
-                </Col>
-            </Row>
-                <div md={6}  className="mt-4">
-                    <h2>My Order History</h2>
-                </div>
-        
-    </Container>
+            </Form>
+            </Container>
+            
+        <Footer />     
+    </div>
     )
 }
 

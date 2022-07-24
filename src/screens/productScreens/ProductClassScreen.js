@@ -89,7 +89,7 @@ const ProductClassScreen = ({match}) => {
             </Row>
             
             <div>
-                <h1 className='fs-1 fw-bold'>{productClass.toUpperCase}</h1>
+                <h1 className='fs-1 fw-bold'>{productClass.toUpperCase()}</h1>
                 <div>
                    {loading? <LoadingMain /> : getProductsByClass()}
                 </div>

@@ -79,7 +79,7 @@ const About = () => {
                                     <h4 style={{color:"red"}}>Head, Human Resource and Strategy</h4>
                                     <hr />
                                     <p>
-                                        Joy Chidimma Enwerem, Pharmacist, Content Editor, and Strategist, with interests in leading an innovative change in the Nigerian Healthcare space. She graduated from the University of Benin with a Doctor of Pharmacy degree. She currently is the Chief of Strategy and Human Resource at Florix Healthcare Limited.
+                                        Joy Enwerem is the Chief of Strategy and Human Resources at Florix Healthcare Limited. She is a Pharmacist and Strategist whose passion is to drive innovation and excellence in the Nigerian Healthcare space. She holds Doctor of Pharmacy degree from the University of Benin and a number of Healthcare leadership certifications from the University of Washington department of Global Health. 
                                     </p>
                                 </div>
                             </Col>

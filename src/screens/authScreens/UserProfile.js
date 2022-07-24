@@ -49,12 +49,12 @@ function UserProfile({location, history, isAuthenticated}) {
                 <meta charSet="utf-8" />
                 <title>Profle</title>
             </Helmet>
+       
+            <Container>
             <div className="d-flex justify-content-center content">
                     <h2>Hello, {username.toUpperCase()} </h2>
                     <img className='profile-img img-fluid rounded-circle  my-5' src='/assets/images/icons/profile.png'  alt=''/>
-                
             </div>
-            <Container>
             <Form className="auth__form profile-container mt-4 mx-auto" >
                 <Form.Group className="mb-3" controlId="username">
                     <Form.Control 

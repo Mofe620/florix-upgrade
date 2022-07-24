@@ -9,8 +9,6 @@
             padding: 2rem;
             display: flex;
             flex-direction: column;
-            // border: 1px $primary solid;
-            // border-radius: 15px;
             margin-bottom: 5px;
             @include respond(phone){
                 display: flex;
@@ -34,13 +32,15 @@
             
         }
         &__text{
-            & h3{
-                color: $header-color;
-                font-size: 1.2rem;
+            & h2{
+                color: $primary;
+                font-size: 2rem;
+                font-weight: 700;
             }
             & p{
-                
-                font-size: 1.3rem;
+                font-size: 1.5rem;
+                color: #000;
+
             }
     
         }

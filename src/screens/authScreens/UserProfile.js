@@ -32,7 +32,7 @@ function UserProfile({location, history, isAuthenticated}) {
     console.log(userInfo)
     useEffect(() => {
         if (!isAuthenticated) {
-            // history.push('/login')
+            history.push('/login')
         } else {
                 setUsername(user.username)
                 setEmail(user.email)

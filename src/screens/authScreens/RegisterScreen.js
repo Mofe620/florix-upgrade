@@ -126,7 +126,7 @@ function RegisterScreen({ signup, isAuthenticated }) {
                             </div>
                             <div className='auth__btnwrapper'>
                                 <Button type="submit" className="auth__bt">Create Account</Button>
-                                <p> Already have an account? <Link to="/login">Sign In</Link></p>
+                                <p> Already have an account? <Link to="/login" className='router-link'>Sign In</Link></p>
                             </div>
                         </Form>
                         

@@ -11,6 +11,7 @@ import 'swiper/swiper.min.css';
 import 'swiper/modules/navigation/navigation.min.css'
 import 'swiper/modules/autoplay/autoplay.min.css'
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const data = [
   {id:1, name:"Amoxicillin", brand:"emzor", preamble: "lorem ipsum lorem ipsum", price: "5000", image: "/assets/images/drugs/covonia.jpg"},
@@ -63,6 +64,7 @@ const Antibiotics = () => {
                 <div className="antibiotics__slider__content__text">
                   <p className="antibiotics__slider__content__name">{drug.name}</p>
                   <p className="antibiotics__slider__content__label">{drug.label}</p>
+                  <p className='analgesics__slider__content__label mb-0 mt-auto'><Link to={`/product/${drug.id}`} className='router-link'>Shop Now</Link></p>
                 </div>
               </div>
             

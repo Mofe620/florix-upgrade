@@ -102,20 +102,35 @@
 
 }
 
+.profile{
+
+  &__header{
+    margin-top: 7rem;
+
+    & h2{
+      text-align: center;
+      color: $primary;
+      font-weight: 700;
+    }
+  }
+  &__image{
+    height: 10rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include respond(phone){
+      height: 7rem;
+      border: 2px $secondary solid;
+    }
+  }
+}
+
 .profile-container{
   width: 50%;
   @include respond(phone){
     width: 80%;
   }
 }
-.profile-img{
-  height: 15rem;
-  @include respond(phone){
-    height: 10rem;
-    border: 2px $secondary solid;
-  }
-}
-
   
 .auth-header > p{
   color: #aeafb1;

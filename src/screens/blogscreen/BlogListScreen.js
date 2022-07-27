@@ -9,6 +9,8 @@ import { getFeaturedBlog } from '../../redux/actions/blogActions'
 import { Link } from 'react-router-dom'
 import Footer from '../../components/Footer';
 import Header from '../../components/global/Header';
+import LoadingMain from '../../components/spinners/LoadingMain';
+import Message from '../../components/Message';
 
 
 const BlogListScreen = () => {
@@ -58,14 +60,18 @@ const BlogListScreen = () => {
                 <h3 className="m-0 p-0"><strong>Recent Posts</strong></h3>
                     <hr />
                 <div className="my-5">
-                    <Row>
-                            {blogs.map(blog => (
-                                <Col key={blog.id} xs={12} sm={6} md={4} lg={4} xl={3}>
-                                    <Blog blog={blog} />
-                                </Col>
-                            ))}  
-                    </Row>
-                   
+                    {loading ? <LoadingMain /> :
+                        error ? <Message variant='info'>{error}</Message> :
+                        (
+                            <Row>
+                                {blogs.map(blog => (
+                                    <Col key={blog.id} sm={6} md={4} xl={3}>
+                                        <Blog blog={blog}/>
+                                    </Col>
+                                ))}  
+                            </Row>
+                        )
+                }               
                 </div>
                 <div>
                     <Image src='/assets/images/shop/ems-ad1.png' className='blog__overview__body__image' />

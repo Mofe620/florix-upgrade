@@ -42,6 +42,12 @@ function UserProfile({location, history, isAuthenticated}) {
             }
         
     }, [history, isAuthenticated, userInfo, user])
+
+    const capitalizeFirstLetter = (word) => {
+        if (word)
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        return '';
+    };
     return (
         <div className=''>
             <Header />
@@ -50,11 +56,12 @@ function UserProfile({location, history, isAuthenticated}) {
                 <title>Profle</title>
             </Helmet>
        
-            <Container>
-            <div className="d-flex justify-content-center content">
-                    <h2>Hello, {username.toUpperCase()} </h2>
-                    <img className='profile-img img-fluid rounded-circle  my-5' src='/assets/images/icons/profile.png'  alt=''/>
+            <Container className='profile'>
+            <div className="profile__header">
+                    <h2>Hello, {capitalizeFirstLetter(username)} </h2>
+                   
             </div>
+            <img className='profile__image img-fluid rounded-circle  my-5' src='/assets/images/icons/profile.png'  alt=''/>
             <Form className="auth__form profile-container mt-4 mx-auto" >
                 <Form.Group className="mb-3" controlId="username">
                     <Form.Control 

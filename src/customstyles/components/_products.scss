@@ -32,14 +32,16 @@
             
         }
         &__text{
+    
             & h2{
                 color: $primary;
-                font-size: 2rem;
                 font-weight: 700;
+                font-size: 1.7rem;
             }
             & p{
+                color: rgb(34, 33, 33);
+                font-weight: 700;
                 font-size: 1.5rem;
-                color: #000;
 
             }
     

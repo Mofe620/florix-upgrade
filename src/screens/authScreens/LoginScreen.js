@@ -80,11 +80,11 @@ function LoginScreen({ isAuthenticated }) {
                                     type='checkbox'
                                 />
                             </Form.Group>
-                            <p className=''>Forgotten password? <Link to="/reset-password">Reset Password</Link></p>
+                            <p className=''>Forgotten password? <Link to="/reset-password" className='router-link'>Reset Password</Link></p>
                         </div>
                         <div className='auth__btnwrapper'>
                             <Button type="submit" className="auth__bt">Sign In</Button>
-                            <p> Don't have an account? <Link to="/register">Create an account</Link></p>
+                            <p> Don't have an account? <Link to="/register" className='router-link'>Create an account</Link></p>
                         </div>
                         
                     </Form>

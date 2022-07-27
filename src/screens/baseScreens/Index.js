@@ -29,7 +29,7 @@ const Index = ({isAuthenticated}) => {
             <Col sm={12} md={4}>
                 <div className='index__services__intro__annex'>          
                     <Button className="home__intro__start"><Link to="/register">Sign Up to Shop</Link></Button>
-                    <p> Already have an account? <Link to='/login'>Login</Link></p>   
+                    <p> Already have an account? <Link to='/login' className='router-link'>Login</Link></p>   
                 </div>                        
             </Col>
         </>

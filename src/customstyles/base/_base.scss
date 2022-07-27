@@ -1,3 +1,4 @@
+@import "../mixins/variables";
 *,
 *::after,
 *::before {
@@ -38,6 +39,10 @@ div{
         background-color: #fff !important;
         color:rgb(245, 46, 168) !important;
     }
+}
+
+.router-link{
+    color: $primary !important;
 }
 
  // formix error message 

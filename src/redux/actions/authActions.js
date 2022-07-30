@@ -234,18 +234,48 @@ export const login = (email, password) => async dispatch => {
     }
 };
 
-export const signup = (username, email, password, re_password) => async dispatch => {
+export const signup = (
+    firstName,
+    lastName,
+    gender,
+    dateOfBirth,
+    address,
+    country,
+    state,
+    city,
+    username,
+    email,
+    profession,
+    telephone,
+    password,
+    re_password
+) => async dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json'
         }
     };
 
-    const body = JSON.stringify({ username, email, password, re_password });
+    const body = { 
+        firstName,
+        lastName,
+        gender,
+        dateOfBirth,
+        address,
+        country,
+        state,
+        city,
+        username,
+        email,
+        profession,
+        telephone,
+        password,
+        re_password
+     };
 
     try {
-    
-        const {data} = await axios.post(`${process.env.REACT_APP_API_URL}/api/users/`, body, config);
+        console.log(body)
+        const {data} = await axios.post(`${process.env.REACT_APP_API_URL}/api/account/register/`, body, config);
         
         console.log(body)
         dispatch({

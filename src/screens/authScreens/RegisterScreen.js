@@ -14,8 +14,18 @@ import AuthFooter from '../../components/global/_authFooter';
 function RegisterScreen({ signup, isAuthenticated }) {
 
     const [accountCreated, setAccountCreated] = useState(false);
+    const [firstName, setFirstName] = useState([])
+    const [lastName, setLastName] = useState([])
     const [username, setUsername] = useState([])
     const [email, setEmail] = useState([])
+    const [profession, setProfession] = useState([])
+    const [telephone, setTelephone] = useState([])
+    const [gender, setGender] = useState([])
+    const [dob, setDob] = useState([])
+    const [address, setAddress] = useState([])
+    const [country, setCountry] = useState([])
+    const [state, setState] = useState([])
+    const [city, setCity] = useState([])
     const [password, setPassword] = useState([])
     const [re_password, setRe_password] = useState([])
     const [message, setMessage] = useState('')
@@ -58,7 +68,38 @@ function RegisterScreen({ signup, isAuthenticated }) {
                 {error && <Message variant='danger'>{error}</Message>}
                 {loading && <Loader />}
                         <Form className="auth-form" onSubmit={submitHandler}>
+
                         <Row>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId='name'>
+                                        <Form.Label className='auth__form__label'>First Name</Form.Label>
+                                        <Form.Control 
+                                            className="auth__form__control" 
+                                            size='lg'
+                                            required
+                                            minLength='6'
+                                            type="text" 
+                                            value={firstName}
+                                            onChange={(e) => setFirstName(e.target.value)}
+                                            />
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId='name'>
+                                        <Form.Label className='auth__form__label'>Last Name</Form.Label>
+                                        <Form.Control
+                                            required 
+                                            size='lg'
+                                            className="auth__form__control" 
+                                            type="text" 
+                                            value={lastName}
+                                            onChange={(e) => setLastName(e.target.value)} 
+                                        />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+
+                            <Row>
                                 <Col sm={12} md={6}>
                                     <Form.Group className="mb-3" controlId='name'>
                                         <Form.Label className='auth__form__label'>Username</Form.Label>
@@ -67,7 +108,7 @@ function RegisterScreen({ signup, isAuthenticated }) {
                                             size='lg'
                                             required
                                             minLength='6'
-                                            type="name" 
+                                            type="text" 
                                             value={username}
                                             onChange={(e) => setUsername(e.target.value)}
                                             />
@@ -87,7 +128,139 @@ function RegisterScreen({ signup, isAuthenticated }) {
                                     </Form.Group>
                                 </Col>
                             </Row>
+
                             
+                            <Row>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId='profession'>
+                                        <Form.Label className='auth__form__label'>Profession</Form.Label>
+                                        <Form.Control
+                                        as="select"
+                                        required 
+                                        size='lg'
+                                        className="auth__form__control form-select" 
+                                        onChange={(e) => setProfession(e.target.value)} 
+                                    >
+                                        <option>---Select Profession--</option>
+                                        <option>Pharmacist</option>
+                                        <option>Medical Doctor</option>
+                                        <option>Dentist</option>
+                                        <option>Nurse</option>
+                                        <option>Midwife</option>
+                                        <option>Others</option>
+                                    </Form.Control>
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId='telephone'>
+                                        <Form.Label className='auth__form__label'>Phone Number</Form.Label>
+                                        <Form.Control
+                                            required 
+                                            size='lg'
+                                            className="auth__form__control" 
+                                            type="number" 
+                                            value={telephone}
+                                            onChange={(e) => setTelephone(e.target.value)} 
+                                        />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+                            
+                            <Row>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId='gender'>
+                                        <Form.Label className='auth__form__label'>Gender</Form.Label>
+                                        <Form.Control
+                                        required 
+                                        size='lg'
+                                        className="auth__form__control form-select" 
+                                        as='select'
+                                        value={gender}
+                                        onChange={(e) => setGender(e.target.value)} 
+                                    >
+                                         <option>--Select Gender--</option>
+                                        <option>Male</option>
+                                        <option>    Female</option>
+                                    </Form.Control>
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId='dob'>
+                                        <Form.Label className='auth__form__label'>Date of Birth</Form.Label>
+                                        <Form.Control
+                                            required 
+                                            size='lg'
+                                            className="auth__form__control" 
+                                            type="text" 
+                                            value={dob}
+                                            onChange={(e) => setDob(e.target.value)} 
+                                        />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+
+
+                            <Row>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId='address'>
+                                        <Form.Label className='auth__form__label'>Address</Form.Label>
+                                        <Form.Control 
+                                            className="auth__form__control" 
+                                            size='lg'
+                                            required
+                                            minLength=''
+                                            type="text" 
+                                            value={address}
+                                            onChange={(e) => setAddress(e.target.value)}
+                                            />
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId='country'>
+                                        <Form.Label className='auth__form__label'>Country</Form.Label>
+                                        <Form.Control
+                                            required 
+                                            size='lg'
+                                            className="auth__form__control" 
+                                            type="text" 
+                                            value={country}
+                                            onChange={(e) => setCountry(e.target.value)} 
+                                        />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+
+                            
+                            <Row>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId='state'>
+                                        <Form.Label className='auth__form__label'>State</Form.Label>
+                                        <Form.Control 
+                                            className="auth__form__control" 
+                                            size='lg'
+                                            required
+                                            minLength='6'
+                                            type="text" 
+                                            value={state}
+                                            onChange={(e) => setState(e.target.value)}
+                                            />
+                                    </Form.Group>
+                                </Col>
+                                <Col sm={12} md={6}>
+                                    <Form.Group className="mb-3" controlId='city'>
+                                        <Form.Label className='auth__form__label'>City</Form.Label>
+                                        <Form.Control
+                                            required 
+                                            size='lg'
+                                            className="auth__form__control" 
+                                            type="text" 
+                                            value={city}
+                                            onChange={(e) => setCity(e.target.value)} 
+                                        />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+
                             <Row>
                                 <Col sm={12} md={6}>
                                     <Form.Group className="mb-3" controlId="password">

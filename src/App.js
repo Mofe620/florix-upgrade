@@ -9,8 +9,8 @@ import Footer from './components/Footer'
 import Home from './screens/baseScreens/Home';
 import About from './screens/baseScreens/About';
 import Contact from './screens/baseScreens/Contact';
-import RegisterScreen from './screens/authScreens/RegisterScreen';
-// import RegisterScreen from './screens/authScreens/register/RegisterScreen';
+// import RegisterScreen from './screens/authScreens/RegisterScreen';
+import RegisterScreen from './screens/authScreens/register/RegisterScreen';
 import SignUpScreen from './screens/authScreens/SignUpScreen';
 import  SignInScreen  from './screens/authScreens/SignInScreen';
 import LoginScreen from './screens/authScreens/LoginScreen';

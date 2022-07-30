@@ -51,4 +51,8 @@ div{
     color: red;
     font-size: .6rem;
   }
+
+Button:hover, Button:active, Button:visited{
+    background-color: $primary !important;
+  }
   

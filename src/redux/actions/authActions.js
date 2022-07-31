@@ -275,7 +275,7 @@ export const signup = (
 
     try {
         console.log(body)
-        const {data} = await axios.post(`${process.env.REACT_APP_API_URL}/api/account/register/`, body, config);
+        const {data} = await axios.post(`${process.env.REACT_APP_API_URL}/api/users/`, body, config);
         
         console.log(body)
         dispatch({

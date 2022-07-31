@@ -57,48 +57,67 @@ function UserProfile({location, history, isAuthenticated}) {
             </Helmet>
        
             <Container className='profile'>
-            <div className="profile__header">
-                    <h2>Hello, {capitalizeFirstLetter(username)} </h2>
-                   
+            <div className='profile__header__wrapper'>
+                <h2>My Account</h2>
+                <div className="profile__header">
+                    <img className='profile__image img-fluid rounded-circle  my-5' src='/assets/images/icons/profile.png'  alt=''/>
+                    <div className='profile__header__text-wrapper'>
+                        <h2>{capitalizeFirstLetter(username)} </h2>
+                        <p>{email}</p>
+                    </div>    
+                </div>
             </div>
-            <img className='profile__image img-fluid rounded-circle  my-5' src='/assets/images/icons/profile.png'  alt=''/>
+            
+            
             <Form className="auth__form profile-container mt-4 mx-auto" >
-                <Form.Group className="mb-3" controlId="username">
-                    <Form.Control 
-                        className="auth__form__control" 
-                        type="name" 
-                        value={username} 
-                        disabled
-                        size='lg'
+                <Row>
+                    <Col sm={12} md={6}>
+                        <Form.Group className="mb-3" controlId="username">
+                            <Form.Label className="auth__form__label" >Username</Form.Label>
+                            <Form.Control 
+                                className="auth__form__control" 
+                                type="text" 
+                                value={username} 
+                                disabled
+                                size='lg'
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formGroupEmail">
+                        <Form.Label className="auth__form__label">Email Address</Form.Label>
+                            <Form.Control 
+                                className="auth__form__control" 
+                                type="email" 
+                                value={email} 
+                                disabled
+                                size='lg'
+                            />
+                    </Form.Group>
+                    </Col>
+                    <Col sm={12} md={6}>
+                        <Form.Group className="mb-3" controlId="telephone">
+                        <Form.Label className="auth__form__label">Mobile Number</Form.Label>
+                        <Form.Control 
+                            className="auth__form__control" 
+                            type="text" 
+                            value={telephone ? telephone : ""  }
+                            disabled
+                            size='lg' 
+                            />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="shippingAddress">
+                        <Form.Label className="auth__form__label">Shipping Address</Form.Label>
+                        <Form.Control 
+                            className="auth__form__control" 
+                            type="text"
+                            // value={address ? address : ""}
+                            disabled
+                            size='lg' 
                         />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formGroupEmail">
-                    <Form.Control 
-                        className="auth__form__control" 
-                        type="name" 
-                        value={email} 
-                        disabled
-                        size='lg'
-                        />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formGroupEmail">
-                    <Form.Control 
-                        className="auth__form__control" 
-                        type="name" 
-                        value={company ? company : "dd/mm/yyyy"  }
-                        disabled
-                        size='lg' 
-                        />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formGroupPassword">
-                    <Form.Control 
-                        className="auth__form__control" 
-                        type="email"
-                         value={telephone ? telephone : ""}
-                         disabled
-                         size='lg' 
-                         />
-                </Form.Group>
+                    </Form.Group>
+                    </Col>
+                </Row>
+                
+                
                         {/*<Button className="auth-button btn btn-block w-100" variant="primary" value="reset"> Save</Button>*/}
             </Form>
             </Container>

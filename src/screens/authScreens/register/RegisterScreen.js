@@ -1,15 +1,23 @@
 import React, {useState} from 'react'
 import { Button, Container, Form, Image } from 'react-bootstrap'
 import AuthNavigation from '../../../components/global/_authNavigation'
-
+import { signup } from '../../../redux/actions/authActions'
 import BioData from './_BioData'
 import AccountData from './_AccountData'
 import EmergencyOrderVerifyScreen from '../../baseScreens/EmergencyOrderVerifyScreen'
 import AuthFooter from '../../../components/global/_authFooter'
 import { Link } from 'react-router-dom'
 import RegisterDetailsVerify from './RegisterDetailsVerify'
+import { connect, useDispatch, useSelector } from 'react-redux'
+import Message from '../../../components/Message'
+import Loader from '../../../components/Loader'
 
-const RegisterScreen = () => {
+
+const RegisterScreen = ({ signup, isAuthenticated }) => {
+
+  const dispatch = useDispatch()
+  const auth = useSelector(state => state.auth)
+  const { error, loading, userInfo } = auth
 
     // Steps
     const [activeStep, setActiveStep] = useState(0)
@@ -96,6 +104,8 @@ const validateInput = () =>{
     <>
       <AuthNavigation />
       <Container className=''>
+        {error && <Message variant='danger'>{error}</Message>}
+            {loading && <Loader />}
           {activeStep === 0 && (
           <BioData values={multiFormValues} handleChange = {handleChange} handleErrors={errors} /> 
           )}
@@ -129,4 +139,8 @@ const validateInput = () =>{
   )
 }
 
-export default RegisterScreen
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, {signup}) (RegisterScreen)

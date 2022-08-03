@@ -6,16 +6,15 @@ import {Helmet} from "react-helmet";
 import { useDispatch, useSelector, connect} from 'react-redux'
 import { Row, Col, Container, Button, Modal, Form } from 'react-bootstrap'
 import Product from '../../components/Product'
-import Loader from '../../components/Loader'
 import Message from '../../components/Message'
 import Paginate from '../../components/Paginate'
 import ProductCarousel from '../../components/Carousel'
-import LoadingMain from '../../components/spinners/LoadingMain'
 //import ProductCarousel from '../components/ProductCarousel'
 import SearchBox from '../../components/SearchBox'
 import { listProducts } from '../../redux/actions/productActions'
 import SearchProduct from '../../components/SearchProduct'
 import StoreSlider from '../../components/sliders/shop/storeSlider';
+import StoreSpinner from '../../components/spinners/StoreSpinner';
 
 
 function HomeScreen({history, isAuthenticated}) {
@@ -68,7 +67,7 @@ function HomeScreen({history, isAuthenticated}) {
                 <div className='mb-4'>
                     <ProductCarousel />
                 </div>
-            {loading ? <LoadingMain />
+            {loading ? <StoreSpinner />
                 : error ? <Message variant='danger'>{error}</Message>
                     :
                     <div>

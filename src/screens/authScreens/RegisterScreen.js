@@ -21,7 +21,7 @@ function RegisterScreen({ signup, isAuthenticated }) {
     const [profession, setProfession] = useState([])
     const [telephone, setTelephone] = useState([])
     const [gender, setGender] = useState([])
-    const [dob, setDob] = useState([])
+    const [dateOfBirth, setDateOfBirth] = useState([])
     const [address, setAddress] = useState([])
     const [country, setCountry] = useState([])
     const [state, setState] = useState([])
@@ -38,7 +38,23 @@ function RegisterScreen({ signup, isAuthenticated }) {
         if (password !== re_password) {
             swal('Invalid credentials', "Password must match!", "error")
         } else{
-            signup(username, email, password, re_password);
+            signup(
+                firstName,
+                lastName,
+                gender,
+                dateOfBirth,
+                address,
+                country,
+                state,
+                city,
+                username,
+                email,
+                profession,
+                telephone,
+                password,
+                re_password
+            );
+           
             setAccountCreated(true);
         }
     };
@@ -192,8 +208,8 @@ function RegisterScreen({ signup, isAuthenticated }) {
                                             size='lg'
                                             className="auth__form__control" 
                                             type="text" 
-                                            value={dob}
-                                            onChange={(e) => setDob(e.target.value)} 
+                                            value={dateOfBirth}
+                                            onChange={(e) => setDateOfBirth(e.target.value)} 
                                         />
                                     </Form.Group>
                                 </Col>

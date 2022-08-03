@@ -1,0 +1,33 @@
+
+.storespinner {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.25;
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__loading{
+        width: 30px;
+        height: 30px;
+        border: 5px solid;
+        border-color: $secondary transparent $secondary transparent;
+        border-radius: 50%;
+        animation: spin 1.2s linear infinite;
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

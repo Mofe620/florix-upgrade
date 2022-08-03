@@ -26,7 +26,6 @@ const RegisterDetailsVerify = ({values}) => {
   const dispatch = useDispatch()
     const submitHandler = e => {
         e.preventDefault();
-        console.log(firstName)
         dispatch(
           signup(
             firstName, lastName, gender,

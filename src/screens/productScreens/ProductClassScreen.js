@@ -5,7 +5,7 @@ import { getProductClass } from '../../redux/actions/productActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Col, Image, Row } from 'react-bootstrap';
 import { Link} from 'react-router-dom';
-import LoadingMain from '../../components/spinners/LoadingMain'
+import StoreSpinner from '../../components/spinners/StoreSpinner';
 
 const ProductClassScreen = ({match}) => {
     const [productClass, setProductClass] = useState('');
@@ -90,7 +90,7 @@ const ProductClassScreen = ({match}) => {
             <div>
                 <h1 className='fs-1 fw-bold'>{productClass.toUpperCase()}</h1>
                 <div>
-                   {loading? <LoadingMain /> : getProductsByClass()}
+                   {loading? <StoreSpinner /> : getProductsByClass()}
                 </div>
                 
                 

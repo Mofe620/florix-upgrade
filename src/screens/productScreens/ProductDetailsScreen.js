@@ -7,9 +7,9 @@ import { Link, useLocation } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Button, Card, Form, Container } from 'react-bootstrap'
 import Rating from '../../components/Rating'
 import Message from '../../components/Message'
-import LoadingMain from '../../components/spinners/LoadingMain'
 import { listProductDetails, createProductReview } from '../../redux/actions/productActions'
 import { PRODUCT_CREATE_REVIEW_RESET } from '../../constants/productConstants'
+import StoreSpinner from '../../components/spinners/StoreSpinner';
 
 function ProductScreen({ match, history, isAuthenticated }) {
     const [qty, setQty] = useState(1)
@@ -84,7 +84,7 @@ function ProductScreen({ match, history, isAuthenticated }) {
             </Helmet>
             <Container className=''>
             {loading ?
-                <LoadingMain />
+                <StoreSpinner />
                 : error
                     ? <Message variant='danger'>{error}</Message>
                     : (
@@ -194,7 +194,7 @@ function ProductScreen({ match, history, isAuthenticated }) {
                                         <ListGroup.Item>
                                             
 
-                                            {loadingProductReview && <LoadingMain />}
+                                            {loadingProductReview && <StoreSpinner />}
                                             {successProductReview && <Message variant='success'>Feedback was sent successfully</Message>}
                                             {errorProductReview && <Message variant='warning'>Sorry, we couldn't submit your feedback. Select an option and try again OR you may have given feedback on this product before.</Message>}
 

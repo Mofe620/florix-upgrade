@@ -4,12 +4,12 @@ import { Link, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector, connect } from 'react-redux'
 import {Helmet} from "react-helmet";
 import Message from '../../components/Message'
-import LoadingMain from '../../components/spinners/LoadingMain'
 import Loader from '../../components/Loader'
 import { getOrderDetails, payOrder, deliverOrder } from '../../redux/actions/orderActions'
 import { ORDER_PAY_RESET, ORDER_DELIVER_RESET } from '../../constants/orderConstants'
 import Header from '../../components/global/Header';
 import Footer from '../../components/Footer';
+import StoreSpinner from '../../components/spinners/StoreSpinner';
 
 function OrderScreen({ match, history, isAuthenticated }) {
     const orderId = match.params.id
@@ -107,7 +107,7 @@ function OrderScreen({ match, history, isAuthenticated }) {
     }
 
     return loading ? (
-        <LoadingMain />
+        <StoreSpinner />
     ) : error ? (
         <Message variant='danger'>{error}</Message>
     ) : (
@@ -212,10 +212,10 @@ function OrderScreen({ match, history, isAuthenticated }) {
 
                                     {!order.isPaid && (
                                         <ListGroup.Item>
-                                            {loadingPay && <LoadingMain />}
+                                            {loadingPay && <StoreSpinner />}
 
                                             {!sdkReady ? (
-                                                <LoadingMain />
+                                                <StoreSpinner />
                                             ) : (
                                                 <>
                                                     <div className="d-grid gap-2 pt-2">
@@ -231,7 +231,7 @@ function OrderScreen({ match, history, isAuthenticated }) {
                                         </ListGroup.Item>
                                     )}
                                 </ListGroup>
-                                {loadingDeliver && <LoadingMain />}
+                                {loadingDeliver && <StoreSpinner />}
                                 {isAuthenticated && isAuthenticated.isAdmin && order.isPaid && !order.isDelivered && (
                                     <ListGroup.Item>
                                         <Button

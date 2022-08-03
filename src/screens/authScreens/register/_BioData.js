@@ -1,8 +1,15 @@
 import React from 'react'
-import { Col, Container, Form, Row } from 'react-bootstrap'
-import { Helmet } from 'react-helmet'
-import AuthFooter from '../../../components/global/_authFooter'
+import { Col, Container, Form, Row } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import DatePicker from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css"
+
+
+
 const BioData = ({values, handleChange, handleErrors}) => {
+    console.log(values.dateOfBirth)
   return (
     <>
             <Helmet>
@@ -15,7 +22,6 @@ const BioData = ({values, handleChange, handleErrors}) => {
                     <p>Individual Account</p>
                 </div>
                         <Form className="auth-form">
-
                         <Row>
                                 <Col sm={12} md={6}>
                                     <Form.Group className="mb-3" controlId='name'>
@@ -72,15 +78,21 @@ const BioData = ({values, handleChange, handleErrors}) => {
                                 <Col sm={12} md={6}>
                                     <Form.Group className="mb-3" controlId='dateOfBirth'>
                                         <Form.Label className='auth__form__label'>Date of Birth</Form.Label>
+                                        {/* <DatePicker
+                                          isClearable
+                                          dateFormat="yyyy-mm-dd"
+                                          type='Number'
+                                        /> */}
                                         <Form.Control
                                             required 
                                             size='lg'
                                             className="auth__form__control" 
-                                            type="text" 
-                                            placeholder='yyyy-mm-dd'
+                                            type="date" 
+                                            dateFormat='yyyy-mm-dd'
                                             value={values.dateOfBirth}
                                             onChange={handleChange('dateOfBirth')}
                                             isInvalid={!!handleErrors.dateOfBirth}
+                                            
                                         />
                                         <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.dateOfBirth}</Form.Control.Feedback>
                                     </Form.Group>

@@ -1,7 +1,9 @@
 import React from 'react'
 import { Col, Container, Form, Row } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
-import AuthFooter from '../../../components/global/_authFooter'
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
+
 
 const AccountData = ({values, handleChange, handleErrors}) => {
   return (
@@ -77,7 +79,12 @@ const AccountData = ({values, handleChange, handleErrors}) => {
                                 <Col sm={12} md={6}>
                                     <Form.Group className="mb-3" controlId='telephone'>
                                         <Form.Label className='auth__form__label'>Phone Number</Form.Label>
-                                        <Form.Control
+                                        <PhoneInput 
+                                            country={'ng'}
+                                            regions={'africa'}
+                                            required
+                                        />
+                                        {/* <Form.Control
                                             required 
                                             size='lg'
                                             className="auth__form__control" 
@@ -85,7 +92,7 @@ const AccountData = ({values, handleChange, handleErrors}) => {
                                             value={values.telephone}
                                             onChange={handleChange('telephone')} 
                                             isInvalid={!!handleErrors.telephone}
-                                        />
+                                        /> */}
                                         <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.telephone}</Form.Control.Feedback>
                                     </Form.Group>
                                 </Col>

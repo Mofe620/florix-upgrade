@@ -15,7 +15,7 @@ function PaymentScreen({ history }) {
 
     const dispatch = useDispatch()
 
-    const [paymentMethod, setPaymentMethod] = useState('PayPal')
+    const [paymentMethod, setPaymentMethod] = useState('Powered By Monnify')
 
     if (!shippingAddress.address) {
         history.push('/shipping')
@@ -40,12 +40,12 @@ function PaymentScreen({ history }) {
             <div className="d-flex justify-content-center checkout__header" style={{paddingTop:"15rem" }}>
             <Form onSubmit={submitHandler}>
                 <Form.Group>
-                    <Form.Label as='legend'>Payment Options</Form.Label>
+                    <Form.Label as='legend'>Payment Option</Form.Label>
                     <Col>
                         <Form.Check
                             type='radio'
-                            label='PayPal or Credit Card'
-                            id='paypal'
+                            label='Monnify Card or Account Transfer'
+                            id='Monnify'
                             name='paymentMethod'
                             checked
                             onChange={(e) => setPaymentMethod(e.target.value)}

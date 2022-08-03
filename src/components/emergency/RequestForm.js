@@ -36,10 +36,10 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
                   isInvalid={!!handleErrors.orderCategory}
                   >
                   <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.orderCategory}</Form.Control.Feedback>
-                  <option className='emergency__formgroup__option input-field'>Select category of pick-up/delivery Item</option>
+                  <option className='emergency__formgroup__option input-field'>--Select Request--</option>
                   <option className='emergency__formgroup__option input-field' value="Medications">Medications</option>
-                  {/* <option className='emergency__formgroup__option input-field' value="Laboratory Specimen">Laboratory Specimen</option> */}
-                  {/* <option className='emergency__formgroup__option input-field' value="Laboratory Specimen">Others</option> */}
+                  {/* <option className='emergency__formgroup__option input-field' value="Laboratory Specimen">Medical Items</option> */}
+                 
                   
                 </Form.Control>
             </Form.Group>

@@ -3,7 +3,6 @@ import { Button, Row, Col, ListGroup, Image, Card, Container } from 'react-boots
 import { Link, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector, connect } from 'react-redux'
 import {Helmet} from "react-helmet";
-import { PayPalButton } from 'react-paypal-button-v2'
 import Message from '../../components/Message'
 import LoadingMain from '../../components/spinners/LoadingMain'
 import Loader from '../../components/Loader'
@@ -33,13 +32,40 @@ function OrderScreen({ match, history, isAuthenticated }) {
     }
 
 
-    const addPayPalScript = () => {
+    const payWithMonnify = () => {
         const script = document.createElement('script')
         script.type = 'text/javascript'
-        script.src = 'https://www.paypal.com/sdk/js?client-id=AU7EU-hk7Fhx_4JxjlZIdHXssAJDOBgt-ejulNmFSpuSPrrJPxj18G6uhouktuYEp3HRSFld1jaYfcWd'
+        script.src = 'https://sdk.monnify.com/plugin/monnify.js'
         script.async = true
+        
         script.onload = () => {
+            window.MonnifySDK.initialize({
+                amount: order.itemsPrice,
+                currency: "NGN",
+                reference: '' + Math.floor((Math.random() * 1000000000) + 1),
+                customerName: order.user.username,
+                customerEmail: order.user.email,
+                apiKey: "MK_TEST_JGYE5NJ1T1",
+                contractCode: "3834928931",
+                paymentDescription: "Test Pay",
+                isTestMode: true,
+                metadata: {
+                        "name": "Damilare",
+                        "age": 45
+                },
+                paymentMethods: ["CARD", "ACCOUNT_TRANSFER"],
+                onComplete: function(paymentResult){
+                    //Implement what happens when transaction is completed.
+                    dispatch(payOrder(orderId, paymentResult))
+                     console.log(paymentResult);
+                },
+                onClose: function(data){
+                    //Implement what should happen when the modal is closed here
+                    console.log(data);
+                }
+            });
             setSdkReady(true)
+            
         }
         document.body.appendChild(script)
     }
@@ -53,26 +79,28 @@ function OrderScreen({ match, history, isAuthenticated }) {
                     from: location,
                 }
             })
-        }
-
-        if (!order || successPay || order.id !== Number(orderId) || successDeliver) {
-            dispatch({ type: ORDER_PAY_RESET })
-            dispatch({ type: ORDER_DELIVER_RESET })
-
-            dispatch(getOrderDetails(orderId))
-        } else if (!order.isPaid) {
-            if (!window.paypal) {
-                addPayPalScript()
-            } else {
-                setSdkReady(true)
+        } else{
+            if (!order || successPay || order.id !== Number(orderId) || successDeliver) {
+                dispatch({ type: ORDER_PAY_RESET })
+                dispatch({ type: ORDER_DELIVER_RESET })
+    
+                dispatch(getOrderDetails(orderId))
+            } else if (!order.isPaid) {
+                if (!window.MonnifySDK) {
+                    payWithMonnify()
+                } else {
+                    setSdkReady(true)
+                }
             }
         }
+
+
     }, [dispatch, order, orderId, successPay, successDeliver])
 
 
-    const successPaymentHandler = (paymentResult) => {
-        dispatch(payOrder(orderId, paymentResult))
-    }
+    // const successPaymentHandler = (paymentResult) => {
+    //     dispatch(payOrder(orderId, paymentResult))
+    // }
 
     const deliverHandler = () => {
         dispatch(deliverOrder(order))
@@ -189,10 +217,16 @@ function OrderScreen({ match, history, isAuthenticated }) {
                                             {!sdkReady ? (
                                                 <LoadingMain />
                                             ) : (
-                                                    <PayPalButton
-                                                        amount={order.totalPrice}
-                                                        onSuccess={successPaymentHandler}
-                                                    />
+                                                <>
+                                                    <div className="d-grid gap-2 pt-2">
+                                                        <Button
+                                                            size="lg"
+                                                            onClick={payWithMonnify()}
+                                                            >
+                                                            Click to Pay
+                                                        </Button>
+                                                    </div>
+                                                </>
                                                 )}
                                         </ListGroup.Item>
                                     )}

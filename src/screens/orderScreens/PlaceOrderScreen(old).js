@@ -69,10 +69,6 @@ function PlaceOrderScreen({ history }) {
                                     {cart.paymentMethod}
                                 </p>
                             </div>
-                            
-                           
-                    
-                      
                         <ListGroup.Item>
                             <h2>Order Items</h2>
                             {cart.cartItems.length === 0 ? <Message variant='info'>

@@ -73,7 +73,8 @@ const validateInput = () =>{
     const HandleNext = () =>{
     const inputErrors = validateInput()
     if(Object.keys(inputErrors).length > 0){
-        setErrors(inputErrors)
+        // setErrors(inputErrors)
+        setActiveStep((nextStep) => nextStep + 1)
     } else{
         setActiveStep((nextStep) => nextStep + 1)
     }

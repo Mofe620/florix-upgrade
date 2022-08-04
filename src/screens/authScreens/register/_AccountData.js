@@ -80,9 +80,13 @@ const AccountData = ({values, handleChange, handleErrors}) => {
                                     <Form.Group className="mb-3" controlId='telephone'>
                                         <Form.Label className='auth__form__label'>Phone Number</Form.Label>
                                         <PhoneInput 
+                                            inputStyle={{width:"100%"}}
                                             country={'ng'}
                                             regions={'africa'}
                                             required
+                                            value={values.telephone}
+                                            // onChange={handleChange('telephone')} 
+                                            isInvalid={!!handleErrors.telephone}
                                         />
                                         {/* <Form.Control
                                             required 

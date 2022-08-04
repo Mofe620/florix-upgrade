@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Col, Container, Form, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
-
+import countries from "i18n-iso-countries";
+// Import the languages you want to use
+import enLocale from "i18n-iso-countries/langs/en.json";
+import itLocale from "i18n-iso-countries/langs/it.json";
 
 
 const BioData = ({values, handleChange, handleErrors}) => {
-    console.log(values.dateOfBirth)
+  
+    // Have to register the languages you want to use
+    countries.registerLocale(enLocale);
+    countries.registerLocale(itLocale);
+  
+    // Returns an object not a list
+    const countryObj = countries.getNames("en", { select: "official" });
+  
+    const countryArr = Object.entries(countryObj).map(([key, value]) => {
+      return {
+        label: value,
+        value: key
+      };
+    });
+  
+    
   return (
     <>
             <Helmet>
@@ -121,15 +139,24 @@ const BioData = ({values, handleChange, handleErrors}) => {
                                     <Form.Group className="mb-3" controlId='country'>
                                         <Form.Label className='auth__form__label'>Country</Form.Label>
                                         <Form.Control
-                                            disabled
                                             placeholder='Nigeria'
                                             size='lg'
-                                            className="auth__form__control" 
+                                            className="auth__form__control form-select" 
                                             type="text" 
+                                            as="select"
                                             value={values.country}
                                             onChange={handleChange('country')} 
+                                            
                                             // isInvalid={!!handleErrors.country}
-                                        />
+                                        >
+                                            {!!countryArr?.length &&
+                                                countryArr.map(({ label, value }) => (
+                                                    <option key={value} value={value}>
+                                                    {label}
+                                                    </option>
+                                                ))}
+                                                
+                                                </Form.Control>
                                         {/* <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.country}</Form.Control.Feedback> */}
                                     </Form.Group>
                                 </Col>

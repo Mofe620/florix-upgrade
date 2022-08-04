@@ -119,7 +119,7 @@ const validateInput = () =>{
 
       {/* <Button variant='secondary' disabled={activeStep === 0} style={activeStep === 2 ? {display: 'none'}: {}} className='emergency__btn emergency__btn__previous' onClick={HandlePrevious}>Previous</Button> */}
       
-        <div className='auth__policy__wrapper d-flex justify-content-center'>
+        {/* <div className='auth__policy__wrapper d-flex justify-content-center'>
             <Form.Group>
                 <Form.Check
                     type='checkbox'
@@ -128,9 +128,9 @@ const validateInput = () =>{
                         
             <p>I agree to all the <Link>Terms</Link> and <Link>Privacy policy</Link></p>
                     
-        </div>
+        </div> */}
         <div className='auth__btnwrapper'>
-        <Button style={activeStep === 2 ? {display:"none"}: {}} className='auth__bt' onClick={HandleNext}>{activeStep === steps.length - 1?'Create Account':"NEXT"}</Button>
+        <Button style={activeStep === 2 ? {display:"none"}: {}} className='auth__bt' onClick={HandleNext}>{activeStep === steps.length - 1?'FINAL STEP':"NEXT"}</Button>
             <p> Already have an account? <Link to="/login" className='router-link'>Sign In</Link></p>
         </div>
       </Container>

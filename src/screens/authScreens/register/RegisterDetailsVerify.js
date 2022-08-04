@@ -1,9 +1,13 @@
 import React from 'react'
 import { Button, Container } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
+import Loader from '../../../components/Loader';
+import Message from '../../../components/Message';
 import { signup } from '../../../redux/actions/authActions';
 
 const RegisterDetailsVerify = ({values}) => {
+  const auth = useSelector(state => state.auth)
+  const { error, loading, userInfo } = auth
 
     const {
         firstName,
@@ -38,12 +42,18 @@ const RegisterDetailsVerify = ({values}) => {
     };
 
   return (
-    <Container>
-        <div className='' style={{marginTop:"10rem"}}>
-        <Button onClick={submitHandler} className='emergency__btn emergency__btn__next'>Submit</Button>
+    <Container className='auth-container'>
+    {error && <Message variant='danger'>{error}</Message>}
+            {loading && <Loader />}
+        <div className='auth__btnwrapper' style={{marginTop:"10rem"}}>
+        <Button onClick={submitHandler} className='auth__bt'>CREATE ACCOUNT</Button>
         </div>
     </Container>
   )
 }
 
-export default RegisterDetailsVerify
+ const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, {signup}) (RegisterDetailsVerify)

@@ -282,12 +282,12 @@ export const signup = (
             type: SIGNUP_SUCCESS,
             payload: data
         });
-    } catch (err) {
+    } catch (error) {
         dispatch({
             type: SIGNUP_FAIL,
-            payload: err.response && err.response.data.detail
-                ? err.response.data.detail
-                : err.message,
+            payload: error.response && error.response.data.detail
+                ? error.response.data.detail
+                : error.message,
         })
     }
 };

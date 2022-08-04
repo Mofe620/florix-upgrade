@@ -56,7 +56,6 @@ function LoginScreen({ isAuthenticated }) {
                                 className="auth__form__control" 
                                 variant="lg"
                                 type="email" 
-                                placeholder="" 
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 />
@@ -67,7 +66,6 @@ function LoginScreen({ isAuthenticated }) {
                                 className="auth__form__control" 
                                 type="password" 
                                 variant="lg"
-                                placeholder="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 

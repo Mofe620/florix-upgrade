@@ -33,7 +33,7 @@ const RegisterScreen = ({ signup, isAuthenticated }) => {
         username:"",
         firstName:"",
         lastName:"",
-        telephone:"",
+        telephone: "",
         gender:"",
         dateOfBirth:"",
         profession:"",
@@ -45,20 +45,27 @@ const RegisterScreen = ({ signup, isAuthenticated }) => {
         re_password:""
     })
 
-    const [errors, setErrors] = useState({})
+    const [stepOneErrors, setStepOneErrors] = useState({})
+    const [stepTwoErrors, setStepTwoErrors] = useState({})
 
     //Handle Form values on change
     const handleChange = (input) => (e) =>{
     setMultiformValues({...multiFormValues, [input]: e.target.value})
 
-  if(!!errors[input])
-  setErrors({
-    ...errors,
+  if(!!stepOneErrors[input]){
+  setStepOneErrors({
+    ...stepOneErrors,
+    [input]:null
+  })} else
+    if(!!stepTwoErrors[input]){
+  setStepOneErrors({
+    ...stepTwoErrors,
     [input]:null
   })
+  }
 }
 
-const validateInput = () =>{
+const validateStepOneInput = () =>{
   const {firstName, lastName, username, email,  telephone, gender, dateOfBirth, profession, address, country, state, city,} = multiFormValues
   const newErrors={}
   if(!firstName || firstName === "") newErrors.firstName = "First name is required"
@@ -66,28 +73,46 @@ const validateInput = () =>{
   if(!gender || gender === "") newErrors.gender = "Please select gender"
   if(!dateOfBirth || dateOfBirth === "") newErrors.dateOfBirth = "Date of birth is required"
   if(!address || address === "") newErrors.address = "Address is required"
-  // if(!country || country === "") newErrors.country = ""
+  if(!country || country === "") newErrors.country = "is required"
   if(!state || state === "") newErrors.state = "State is required"
   if(!city || city === "") newErrors.city = "City is required"
-
-  // if(!recipientName || recipientName === "") newErrors.recipientName = "Recipient name is required"
-  // if(!recipientTel || recipientTel === "") newErrors.recipientTel = "Enter Recipient phone number"
-  // if(!deliveryAddress || deliveryAddress === "") newErrors.deliveryAddress = "Enter the delivery address"
 
   return newErrors
 }
 
+  const validateStepTwoInput = () =>{
+    const {username, email,  telephone, profession, password, re_password} = multiFormValues
+    const newErrors={}
+    if(!username || username === "") newErrors.username = "Username is required"
+    if(!email || email === "") newErrors.email = "email is requied"
+    if(!profession || profession === "") newErrors.profession = "Profession is required"
+    if(!telephone || telephone === "") newErrors.telephone = "Telephone is requied"
+    if(!password || password === "") newErrors.password = ""
+    if(password === re_password) newErrors.re_password = "Password must match"
+
+    // if(!recipientName || recipientName === "") newErrors.recipientName = "Recipient name is required"
+    // if(!recipientTel || recipientTel === "") newErrors.recipientTel = "Enter Recipient phone number"
+    // if(!deliveryAddress || deliveryAddress === "") newErrors.deliveryAddress = "Enter the delivery address"
+
+    return newErrors
+  }
     // Handle next
     const HandleNext = () =>{
-    const inputErrors = validateInput()
-    if(Object.keys(inputErrors).length > 0){
-        // setErrors(inputErrors)
-        setActiveStep((nextStep) => nextStep + 1)
+    const stepOneInputErrors = validateStepOneInput()
+    const stepTwoInputErrors = validateStepTwoInput()
+
+    if(Object.keys(stepOneErrors).length > 0) {
+        setStepOneErrors(stepOneInputErrors) 
     } else{
-        setActiveStep((nextStep) => nextStep + 1)
+      setActiveStep((nextStep) => nextStep + 1)
+      console.log("Error getting in")
     }
-    
-    }
+  
+  }
+    // else if(Object.keys(stepTwoInputErrors).length > 0){
+    //     setStepOneErrors(stepTwoInputErrors)
+    // } 
+   
 
     // Handle Previous Step
     const HandlePrevious = () =>{
@@ -107,11 +132,11 @@ const validateInput = () =>{
         {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader />}
           {activeStep === 0 && (
-          <BioData values={multiFormValues} handleChange = {handleChange} handleErrors={errors} /> 
+          <BioData values={multiFormValues} handleChange = {handleChange} handleErrors={stepOneErrors} /> 
           )}
 
           {activeStep === 1 && (
-          <AccountData values={multiFormValues} handleChange = {handleChange} handleErrors={errors} /> 
+          <AccountData values={multiFormValues} handleChange = {handleChange} handleErrors={stepTwoErrors} /> 
           )}
           {activeStep === 2 && (
           <RegisterDetailsVerify values={multiFormValues} handleChange = {handleChange} /> 

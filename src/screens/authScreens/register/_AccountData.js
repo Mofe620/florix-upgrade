@@ -82,11 +82,11 @@ const AccountData = ({values, handleChange, handleErrors}) => {
                                         <PhoneInput 
                                             inputStyle={{width:"100%"}}
                                             country={'ng'}
-                                            regions={'africa'}
-                                            required
-                                            value={values.telephone}
+                                            // regions={'africa'}
+                                            // required
+                                            // value={values.telephone}
                                             // onChange={handleChange('telephone')} 
-                                            isInvalid={!!handleErrors.telephone}
+                                            // isInvalid={!!handleErrors.telephone}
                                         />
                                         {/* <Form.Control
                                             required 

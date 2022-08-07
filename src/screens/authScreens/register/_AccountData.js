@@ -3,6 +3,7 @@ import { Col, Container, Form, Row } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
+import { Link } from 'react-router-dom'
 
 
 const AccountData = ({values, handleChange, handleErrors}) => {
@@ -80,7 +81,7 @@ const AccountData = ({values, handleChange, handleErrors}) => {
                                     <Form.Group className="mb-3" controlId='telephone'>
                                         <Form.Label className='auth__form__label'>Phone Number</Form.Label>
                                         <PhoneInput 
-                                            inputStyle={{width:"100%"}}
+                                            inputStyle={{width:"100%", height:"4rem"}}
                                             country={'ng'}
                                             // regions={'africa'}
                                             // required
@@ -132,6 +133,7 @@ const AccountData = ({values, handleChange, handleErrors}) => {
                                     </Form.Group>
                                 </Col>
                             </Row>
+                            <p className='text-center'> Already have an account? <Link to="/login" className='ruter-link'>Sign In</Link></p>
                         </Form>
                         
         </Container>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Container } from 'react-bootstrap';
 import { connect, useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Loader from '../../../components/Loader';
 import Message from '../../../components/Message';
 import { signup } from '../../../redux/actions/authActions';
@@ -43,10 +44,11 @@ const RegisterDetailsVerify = ({values}) => {
 
   return (
     <Container className='auth-container'>
-    {error && <Message variant='danger'>{error}</Message>}
-            {loading && <Loader />}
-        <div className='auth__btnwrapper' style={{marginTop:"10rem"}}>
-        <Button onClick={submitHandler} className='auth__bt'>CREATE ACCOUNT</Button>
+        <div className='auth__btnwrapper ' style={{marginTop:"1rem"}}>
+          {/* {error && <Message variant='danger'>{error}</Message>}
+          {loading && <Loader />} */}
+          <Button onClick={submitHandler} className='auth__bt'>CLICK TO CREATE ACCOUNT</Button>
+          <p className='text-center'> Already have an account? <Link to="/login" className='ruter-link'>Sign In</Link></p>
         </div>
     </Container>
   )

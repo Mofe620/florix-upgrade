@@ -66,7 +66,7 @@ const RegisterScreen = ({ signup, isAuthenticated }) => {
 }
 
 const validateStepOneInput = () =>{
-  const {firstName, lastName, username, email,  telephone, gender, dateOfBirth, profession, address, country, state, city,} = multiFormValues
+  const {firstName, lastName, gender, dateOfBirth, address, country, state, city} = multiFormValues
   const newErrors={}
   if(!firstName || firstName === "") newErrors.firstName = "First name is required"
   if(!lastName || lastName === "") newErrors.lastName = "Last name is required"
@@ -90,10 +90,6 @@ const validateStepOneInput = () =>{
     if(!password || password === "") newErrors.password = ""
     if(password === re_password) newErrors.re_password = "Password must match"
 
-    // if(!recipientName || recipientName === "") newErrors.recipientName = "Recipient name is required"
-    // if(!recipientTel || recipientTel === "") newErrors.recipientTel = "Enter Recipient phone number"
-    // if(!deliveryAddress || deliveryAddress === "") newErrors.deliveryAddress = "Enter the delivery address"
-
     return newErrors
   }
     // Handle next
@@ -101,19 +97,14 @@ const validateStepOneInput = () =>{
     const stepOneInputErrors = validateStepOneInput()
     const stepTwoInputErrors = validateStepTwoInput()
 
-    if(Object.keys(stepOneErrors).length > 0) {
-        setStepOneErrors(stepOneInputErrors) 
-    } else{
-      setActiveStep((nextStep) => nextStep + 1)
-      console.log("Error getting in")
-    }
+    if(Object.keys(stepOneInputErrors ).length > 0) {
+        setStepOneErrors(stepOneInputErrors ) 
+    }else{
+        setActiveStep((nextStep) => nextStep + 1)
+      }
   
   }
-    // else if(Object.keys(stepTwoInputErrors).length > 0){
-    //     setStepOneErrors(stepTwoInputErrors)
-    // } 
-   
-
+    
     // Handle Previous Step
     const HandlePrevious = () =>{
     setActiveStep((previousStep) => previousStep - 1)
@@ -129,34 +120,35 @@ const validateStepOneInput = () =>{
     <>
       <AuthNavigation />
       <Container className=''>
-        {error && <Message variant='danger'>{error}</Message>}
-            {loading && <Loader />}
-          {activeStep === 0 && (
-          <BioData values={multiFormValues} handleChange = {handleChange} handleErrors={stepOneErrors} /> 
-          )}
+        <div className='shadow py-4' style={{marginTop:"10rem"}}>
+          {error && <Message variant='danger'>{error}</Message>}
+              {loading && <Loader />}
+            {activeStep === 0 && (
+            <BioData values={multiFormValues} handleChange = {handleChange} handleErrors={stepOneErrors} /> 
+            )}
 
-          {activeStep === 1 && (
-          <AccountData values={multiFormValues} handleChange = {handleChange} handleErrors={stepTwoErrors} /> 
-          )}
-          {activeStep === 2 && (
-          <RegisterDetailsVerify values={multiFormValues} handleChange = {handleChange} /> 
-          )}
+            {activeStep === 1 && (
+            <AccountData values={multiFormValues} handleChange = {handleChange} handleErrors={stepTwoErrors} /> 
+            )}
+            {activeStep === 2 && (
+            <RegisterDetailsVerify values={multiFormValues} handleChange = {handleChange} /> 
+            )}
 
-      {/* <Button variant='secondary' disabled={activeStep === 0} style={activeStep === 2 ? {display: 'none'}: {}} className='emergency__btn emergency__btn__previous' onClick={HandlePrevious}>Previous</Button> */}
-      
-        {/* <div className='auth__policy__wrapper d-flex justify-content-center'>
-            <Form.Group>
-                <Form.Check
-                    type='checkbox'
-                />
-            </Form.Group>
-                        
-            <p>I agree to all the <Link>Terms</Link> and <Link>Privacy policy</Link></p>
-                    
-        </div> */}
-        <div className='auth__btnwrapper'>
-        <Button style={activeStep === 2 ? {display:"none"}: {}} className='auth__bt' onClick={HandleNext}>{activeStep === steps.length - 1?'FINAL STEP':"NEXT"}</Button>
-            <p> Already have an account? <Link to="/login" className='router-link'>Sign In</Link></p>
+        {/* <Button variant='secondary' disabled={activeStep === 0} style={activeStep === 2 ? {display: 'none'}: {}} className='emergency__btn emergency__btn__previous' onClick={HandlePrevious}>Previous</Button> */}
+        
+          {/* <div className='auth__policy__wrapper d-flex justify-content-center'>
+              <Form.Group>
+                  <Form.Check
+                      type='checkbox'
+                  />
+              </Form.Group>
+                          
+              <p>I agree to all the <Link>Terms</Link> and <Link>Privacy policy</Link></p>
+                      
+          </div> */}
+          <div className='auth__btnwrapper'>
+            <Button style={activeStep === 2 ? {display:"none"}: {}} className='auth__bt' onClick={HandleNext}>{activeStep === steps.length - 1?'FINAL STEP':"NEXT"}</Button>
+          </div>
         </div>
       </Container>
       <AuthFooter />

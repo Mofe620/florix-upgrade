@@ -2,7 +2,6 @@
 
 .auth{
     max-width: 90%;
-    margin-top: 5rem;
     margin-bottom: 100px;
 
     @include respond(phone){
@@ -30,25 +29,30 @@
 
       &__label{
         font-size: 1.5rem;
+        margin-top: 2rem !important;
       }
       &__control{
         border: .5px #ecedee solid !important;
         // box-shadow: none !important;
         font-size: 1.5rem;
         background-color: $neutral !important;
+        height: 3.8rem;
       }
 
     }
     &__btnwrapper{
       display: grid;
       justify-content: center;
+      align-items: center;
       
 
       & Button{
-  
-        background-color: $primary;
+        background-color: $neutral;
+        color: #000;
+        border: 1px $primary solid;
         margin: 1rem 0;
         font-size: 1.5rem; 
+        width: 20rem;
 
         & :hover, :active, :visited{
           background-color: $primary !important;
@@ -94,7 +98,7 @@
 
 .auth-container{
   max-width: 50%;
-  margin-top: 10rem;
+  margin-top: 1rem;
   font-size: 1.6rem;
 
     @include respond(tab-land) {

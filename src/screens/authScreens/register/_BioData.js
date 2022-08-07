@@ -9,6 +9,7 @@ import countries from "i18n-iso-countries";
 // Import the languages you want to use
 import enLocale from "i18n-iso-countries/langs/en.json";
 import itLocale from "i18n-iso-countries/langs/it.json";
+import { Link } from 'react-router-dom';
 
 
 const BioData = ({values, handleChange, handleErrors}) => {
@@ -196,6 +197,7 @@ const BioData = ({values, handleChange, handleErrors}) => {
                                     </Form.Group>
                                 </Col>
                             </Row>
+                            <p className='text-center'> Already have an account? <Link to="/login" className='ruter-link'>Sign In</Link></p>
                         </Form>
                         
         </Container>

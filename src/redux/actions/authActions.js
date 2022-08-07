@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { AxiosInterceptor } from '../../screens/authScreens/AxiosIntercept';
 import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
@@ -40,13 +41,12 @@ export const load_user = () => async dispatch => {
                 type: USER_LOADED_SUCCESS,
                 payload: res.data
             });
-        } catch (err) {
+        } catch (error) {
             dispatch({
                 type: USER_LOADED_FAIL,
-                payload: err.response && err.response.data.detail
-                ? err.response.data.detail
-                : err.message,
+                payload: <AxiosInterceptor />
             });
+            
         }
     } else {
         dispatch({
@@ -224,13 +224,13 @@ export const login = (email, password) => async dispatch => {
 
         dispatch(load_user());
         dispatch(load_user_profile());
-    } catch (err) {
+    } catch (error) {
         dispatch({
             type: LOGIN_FAIL,
-            payload: err.response && err.response.data.detail
-                ? err.response.data.detail
-                : err.message
-        })
+            payload: error.response && error.response.data.detail
+                ? error.response.data.detail
+                : error.message
+        });
     }
 };
 
@@ -274,21 +274,19 @@ export const signup = (
      };
 
     try {
-        console.log(body)
         const {data} = await axios.post(`${process.env.REACT_APP_API_URL}/api/users/`, body, config);
-        
-        console.log(body)
         dispatch({
             type: SIGNUP_SUCCESS,
             payload: data
         });
-    } catch (error) {
+    } catch (err) {
         dispatch({
             type: SIGNUP_FAIL,
-            payload: error.response && error.response.data.detail
-                ? error.response.data.detail
-                : error.message,
-        })
+            payload: err.response && err.response.data.detail
+            ? err.response.data.detail
+            : err.message,
+        });
+       
     }
 };
 

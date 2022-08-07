@@ -279,6 +279,7 @@ export const signup = (
             type: SIGNUP_SUCCESS,
             payload: data
         });
+        
     } catch (err) {
         dispatch({
             type: SIGNUP_FAIL,

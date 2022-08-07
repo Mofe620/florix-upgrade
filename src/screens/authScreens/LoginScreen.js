@@ -34,13 +34,13 @@ function LoginScreen({ isAuthenticated }) {
 
     return (
         <>
-            <Container className='content auth-container' style={{marginTop:'10rem'}}>
+            <Container className='' style={{marginTop:'10rem'}}>
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>Sign In</title>
                 </Helmet>
                 <AuthNavigation />
-                <div className="shadow py-5">
+                <div className="shadow p-5">
                 <div className=' auth-header text-center'>
                 {error && <Message variant='danger'>{error}</Message>}
                 {loading && <Loader />}

@@ -40,7 +40,7 @@ function LoginScreen({ isAuthenticated }) {
                     <title>Sign In</title>
                 </Helmet>
                 <AuthNavigation />
-                <div className="shadow p-5">
+                <div className="shadow py-5">
                 <div className=' auth-header text-center'>
                 {error && <Message variant='danger'>{error}</Message>}
                 {loading && <Loader />}

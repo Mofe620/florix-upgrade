@@ -10,8 +10,8 @@ const AuthFooter = () =>{
             <div className="footer__items footer__items__auth">
                     <p><Link to="/">Home</Link></p>
                     <p><Link to="/about">About Us</Link></p>
-                    <p><Link to="/">Privacy Policy</Link></p>
-                    <p><Link to="/">Terms and Conditions</Link></p>
+                    <p><Link to="/emergency/request">EMS</Link></p>
+                    <p><Link to="/terms-conditions">Terms and Conditions</Link></p>
             </div>
             <div>
                     <div className='d-flex justify-content-center' style={{backgroundColor:"#0467a4"}}>

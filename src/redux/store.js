@@ -47,6 +47,10 @@ import {
     blogCommentReducer,
 } from './reducers/blogReducers'
 
+import {
+    termsReducer
+} from './reducers/baseReducers'
+
 import { emergencyReducer } from './reducers/emergencyReducer'
 import { uploadPrescriptionReducer } from './reducers/prescriptionReducer'
 
@@ -69,6 +73,7 @@ const reducer = combineReducers({
     auth: authReducer,
     profileInfo: userProfile,
     contact: ContactReducer,
+    termsDetails: termsReducer,
 
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,

@@ -22,7 +22,7 @@ const ProductClassScreen = ({match}) => {
         dispatch(getProductClass(id))
      
     }, [])
-
+ 
     const getProductsByClass = () => {
         let list = [];
         let result = [];

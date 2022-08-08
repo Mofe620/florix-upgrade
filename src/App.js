@@ -42,6 +42,7 @@ import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/orderScreens/OrderListScreen'
 */
+
 import BlogHomeScreen from './screens/blogscreen/BlogHomeScreen';
 import BlogListScreen from './screens/blogscreen/BlogListScreen';
 import BlogDetailsScreen from './screens/blogscreen/BlogDetailsScreen';
@@ -54,6 +55,8 @@ import EmergencyScreen from './screens/baseScreens/EmergencyScreen';
 import EmergencyOrderVerifyScreen from './screens/baseScreens/EmergencyOrderVerifyScreen';
 import PrescriptionForm from './components/PrescriptionForm';
 import ProductClassScreen from './screens/productScreens/ProductClassScreen';
+
+import Terms from './screens/baseScreens/Terms';
  
 function App() {
   return (
@@ -86,7 +89,8 @@ function App() {
           <Route path='/med/therapeutic_class/:id' component={ProductClassScreen} />
           <Route path='/login' component={LoginScreen} />
           <Route path='/register' component={RegisterScreen} />
-          <Route exact path="/profile" component={UserProfile} />          
+          <Route exact path="/profile" component={UserProfile} />     
+          <Route exact path="/terms-conditions" component={Terms} /> 
         
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/placeorder' component={PlaceOrderScreen} />

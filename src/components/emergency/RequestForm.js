@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Col, Form, Image, Row } from 'react-bootstrap'
+import {Col, Form, Row} from 'react-bootstrap'
 
 const RequestForm = ({values, handleChange, handleErrors}) => {
   console.log(values)
@@ -13,19 +13,6 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
     
     <div className='emergency__form-container'>
       <Form>
-      {/*         
-          <div className='emergency__formgroup__wrapper'>
-            <Form.Group className='emergency__formgroup__first-half'>
-              <Form.Label className='formlabel'>Full Name<strong style={{color:"red"}}>*</strong></Form.Label>
-              <Form.Control  className='emergency__forminput' placeholder='Full Name' />
-            </Form.Group>
-            <Form.Group className='emergency__formgroup__second-half'>
-              <Form.Label className='formlabel'>Phone Number<strong style={{color:"red"}}>*</strong></Form.Label>
-              <Form.Control onChange={handleChange('tel')} value={values.tel} className='emergency__forminput' placeholder='Phone Number' />
-            </Form.Group>
-          </div>
-          
-        */}
           <div>
             <Form.Group className='emergency__formgroup mt-5'>
                 <Form.Control 
@@ -44,19 +31,6 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
                 </Form.Control>
             </Form.Group>
           </div>
-
-          {/* <div className='my-5'>
-            <Form.Group>
-              <Form.Label className='formlabel' style={{fontSize:"18px"}}>Briefly State Health Complaints<strong style={{color:"red"}}>*</strong></Form.Label>
-              <Form.Control 
-                as="textarea" 
-                placeholder="e.g. I'm having toothache" 
-                className='input-field' 
-                required
-                onChange={handleChange('extraInfo')} value={values.extraInfo}
-                />
-            </Form.Group>
-          </div> */}
           <div className='p-2 d-flex justify-content-center' style={{color:"white", backgroundColor:"#2E83B5"}}>
             <Form.Group className=''>
                 <Form.Label className='mx-2 text-center' style={{fontSize:"18px"}}>Upload Prescription</Form.Label>
@@ -133,8 +107,6 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
                     </Col>
                   </Row>
                 </div>
-                
-                
                 <Form.Group className='emergency__formgroup__wrapper'>
                   <Form.Label className='emergency__formgroup__text formlabel'>Quantity<strong style={{color:"red"}}>*</strong></Form.Label>
                   <Form.Control 
@@ -147,45 +119,8 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
                     />
                     <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.packSize}</Form.Control.Feedback>
                 </Form.Group>
-                {/* <Form.Group className='d-flex my-4'>
-                  <Form.Label className='emergency__checkbox__label'>Nature of Package</Form.Label>
-                  <Form.Check className='emergency__checkbox ms-5' type='radio' label='Normal'/>
-                  <Form.Check className='emergency__checkbox ms-5' type='radio' label='Cold Chain'/>
-                </Form.Group> */}
             </div>
 
-            {/* <div className="emergency__pickup__container my-5">
-              <Row>
-                <Col sm={12} md={4}>
-                  <Form.Group className=''>
-                    <Form.Label className='formlabel'>Pick-up Address<strong style={{color:"red"}}>*</strong></Form.Label>
-                    <Form.Control onChange={handleChange('pickUpAddress')} value={values.pickUpAddress} className='input-field' placeholder='Pick-up Address' />
-                  </Form.Group>
-                </Col>
-                <Col sm={12} md={4}>
-                  <Form.Group className=''>
-                    <Form.Label className='formlabel'>Phone no.<strong style={{color:"red"}}>*</strong></Form.Label>
-                    <Form.Control onChange={handleChange('tel')} value={values.tel} className='input-field' placeholder='' />
-                  </Form.Group>
-                </Col>
-                <Col sm={12} md={4}>
-                <Form.Group className=''>
-                    <Form.Label className='formlabel'>Location<strong style={{color:"red"}}>*</strong></Form.Label>
-                    <Form.Control className='input-field' onChange={handleChange('location')} value={values.location} as="select" aria-label="Default select example">
-                      <option className=''>Select area in Benin City</option>
-                        <option className='' value="New Benin">New Benin</option>
-                        <option className='' value="Ekenhen">Ekenhuan</option>
-                        <option className='' value="Oluku/Ishihor">Oluku/Ishihor</option>
-                        <option className='' value="Sakponba">Sakponba</option>
-                        <option className='' value="Uselu/Ugbowo">Uselu/Ugbowo</option>
-                        <option className='' value="Agip">Agip</option>
-                        <option className='' value="Others">Others</option>
-                    </Form.Control>
-                </Form.Group>
-                </Col>
-              </Row>
-              
-            </div> */}
             
           </div>
 

@@ -93,9 +93,11 @@ const About = () => {
                             <Col md={8}>
                                 <div className="mt-4">
                                     <h3 style={{fontWeight:"bold"}}>Raphael Chimezie Odoh</h3>
-                                    <h4 style={{color:"red"}}>Chief Innovation Officer</h4>
+                                    <h4 style={{color:"red"}}>Chief Operations Officer</h4>
                                     <hr />
-                                    <p>Raphael Chiemezie Odoh, a Pharmacist, Creative Designer, and Publicist, with key interests in Sales and Marketing. He bagged his Doctor of Pharmacy degree from the University of Benin. He is currently the Chief Innovation Officer at Florix Healthcare Limited, owners of FLO-LOG.</p>
+                                    <p>
+                                        Raphael Chiemezie Odoh, a Pharmacist who bagged his doctor of Pharmacy degree from the University of Benin. With Passion in Digital Product development and Business management in the healthcare sector he currently serves as the chief operations officer at Florix Healthcare Limited.
+                                    </p>
                                 </div>
                             </Col>
                         </Row>

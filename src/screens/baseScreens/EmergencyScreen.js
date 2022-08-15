@@ -5,9 +5,11 @@ import Header from '../../components/global/Header'
 import RequestForm from '../../components/emergency/RequestForm'
 import DeliveyForm from '../../components/emergency/DeliveyForm'
 import EmergencyOrderVerifyScreen from './EmergencyOrderVerifyScreen'
+import { connect } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 
 
-const EmergencyScreen = () => {
+const EmergencyScreen = ({isAuthenticated, history}) => {
 
   // Steps
 const [activeStep, setActiveStep] = useState(0)
@@ -80,9 +82,16 @@ const HandleNext = () =>{
 const HandlePrevious = () =>{
   setActiveStep((previousStep) => previousStep - 1)
 }
+const location = useLocation()
 
-
-
+if(!isAuthenticated){
+  history.push({
+      pathname: "/login",
+      state: {
+          from: location
+      }
+  })
+} 
 
   return (
     <>
@@ -111,4 +120,8 @@ const HandlePrevious = () =>{
   )
 }
 
-export default EmergencyScreen
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { }) (EmergencyScreen)

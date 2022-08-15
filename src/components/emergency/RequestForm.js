@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import {Button, Col, Form, Row} from 'react-bootstrap'
+import {Button, Col, Form, Modal, Row} from 'react-bootstrap'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import swal from 'sweetalert'
-// import Monnify from '../../utils/Monnify'
+import Monnify from '../../utils/Monnify'
 
 
 const RequestForm = ({values, handleChange, handleErrors}) => {
@@ -10,51 +11,13 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
   const userDetails = useSelector(state => state.userDetails)
   const { error, loading, user } = userDetails
 
-  const [sdkReady, setSdkReady] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   
   console.log(values)
   console.log(handleChange)
-
-  const Monnify = () => {
-    const script = document.createElement('script')
-    script.type = 'text/javascript'
-    script.src = 'https://sdk.monnify.com/plugin/monnify.js'
-    script.async = true
-
-    script.onload = () => {
-        window.MonnifySDK.initialize({
-            amount: '3000',
-            currency: "NGN",
-            reference: '' + Math.floor((Math.random() * 1000000000) + 1),
-            customerName: user.username,
-            customerEmail: user.email,
-            apiKey: "MK_TEST_JGYE5NJ1T1",
-            contractCode: "3834928931",
-            paymentDescription: "Test Pay",
-            isTestMode: true,
-            metadata: {
-                    "name": user.username,
-            },
-            paymentMethods: ["CARD", "ACCOUNT_TRANSFER"],
-            onComplete: function(paymentResult){
-                //Implement what happens when transaction is completed.
-                // dispatch(payOrder(orderId, paymentResult))
-                //  console.log(paymentResult);
-            },
-            onClose: function(data){
-                //Implement what should happen when the modal is closed here
-                console.log(data);
-            }
-        });
-        setSdkReady(true)
-        
-    }
-    document.body.appendChild(script)
-    }
-
   const premiumHandler = () =>{
-    swal('Suscribe to premium verson to unlock this feature')
+    swal('Subscribe to premium verson to unlock this feature')
   }
   return (
     <>
@@ -180,7 +143,7 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
         {!premium ? 
          <div className='emergency__premium__container'>
             <h2>OR</h2>
-            <p><a href='#' onClick={premiumHandler}>Chat with a Pharmacist</a></p>
+            <p><a href='#' onClick={()=>{setShowModal(true)}}>Chat with a Pharmacist</a></p>
           </div> :
 
               <div className='emergency__premium__container'>
@@ -188,7 +151,14 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
                 <p><a href="https://tinyurl.com/2p98zk2h" target='_blank' rel="noreferrer">Chat with a Pharmacist</a></p>
               </div>
         }
-        
+
+          <Modal size="lg" show={showModal} onHide={() => setShowModal(false)} aria-labelledby="example-modal-sizes-title-lg">
+            <Modal.Body className='emergency__premium__modal w-70' style={{backgroundColor:'#5d8181', color:'white'}}>
+              <p>Subscribe to the premium version to unlock this feature</p>
+              <span><i class="fas fa-arrow-right"></i> <Link to='/payment/monnify'>Click to Subscribe</Link></span>
+            </Modal.Body>
+            
+        </Modal>      
     </div>
     </>
   )

@@ -182,5 +182,21 @@
             }
 
         }
+
+        &__modal{
+            background-color: $info !important;
+            & span{
+                background-color: $danger;
+                padding: 5px;
+                & a{
+                    color: $neutral;
+                }
+            }
+            & > i{
+                font-size: 2rem;
+                color: $danger;
+
+            }
+        }
     }
 }

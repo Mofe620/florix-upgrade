@@ -55,6 +55,7 @@ import EmergencyScreen from './screens/baseScreens/EmergencyScreen';
 import EmergencyOrderVerifyScreen from './screens/baseScreens/EmergencyOrderVerifyScreen';
 import PrescriptionForm from './components/PrescriptionForm';
 import ProductClassScreen from './screens/productScreens/ProductClassScreen';
+import Monnify from './utils/Monnify'
 
 import Terms from './screens/baseScreens/Terms';
  
@@ -98,7 +99,7 @@ function App() {
           <Route path='/payment' component={PaymentScreen} />
           <Route path='/product/:id' component={ProductDetailsScreen} />
           <Route path='/cart/:id?' component={CartScreen} />
-          
+          <Route path='/payment/monnify' component={Monnify} exact/>
 
           <Route path='/blog/posts' component={BlogListScreen} />
           <Route path='/post/:id' component={BlogDetailsScreen} />

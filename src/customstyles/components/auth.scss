@@ -43,10 +43,10 @@
         margin-left: auto;
         margin-right: auto;
         @include respond(tab-land){
-          width: 70%;
+          width: 80%;
          }
         @include respond(phone){
-          width: 90%;
+          width: 99%;
          }
       }
 

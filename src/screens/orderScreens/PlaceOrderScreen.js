@@ -54,13 +54,13 @@ function PlaceOrderScreen({ history, isAuthenticated }) {
     }
     return (
         <>
-            <Container className="content">
-                <Helmet>
+            <Helmet>
                 <meta charSet="utf-8" />
-                    <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
-                    <title>Place Order</title>
-                </Helmet>
-                <Header />
+                <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
+                <title>order summary</title>
+            </Helmet>
+            <Header />
+            <Container className="content">
                 <Row>
                     <Col md={4}>
                         <div >
@@ -75,7 +75,7 @@ function PlaceOrderScreen({ history, isAuthenticated }) {
                             </p>
                         </div>
                         <div >
-                            <h3 className="me-2"><strong>Payment Method: </strong></h3>
+                            <h3 className="me-2"><strong>Payment:</strong></h3>
                             <p>
                                 {cart.paymentMethod}
                             </p>
@@ -89,7 +89,7 @@ function PlaceOrderScreen({ history, isAuthenticated }) {
                             
                                     {error && <Message variant='danger'>{error}</Message>}
                         
-                                    <div className="d-grid gap-2">
+                                    <div className="auth__btnwrapper">
                                         <Button
                                             type='button'
                                             size="lg"
@@ -101,7 +101,7 @@ function PlaceOrderScreen({ history, isAuthenticated }) {
                                     </div>
                     </Col>
                     <Col md={8}>
-                        <ListGroup variant='flush'>
+                        <ListGroup variant='flush'> 
                             <ListGroup.Item>
                                 <h2>Order Items</h2>
                                 {cart.cartItems.length === 0 ? <Message variant='info'>

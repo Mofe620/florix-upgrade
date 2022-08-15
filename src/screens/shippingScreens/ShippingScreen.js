@@ -31,44 +31,47 @@ function ShippingScreen({history}) {
 
     return (
         <>
-            <Container className=' auth-container content'>
-                <Helmet>
-                    <meta charSet="utf-8" />
-                    <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
-                    <title>Billing address</title>
-                </Helmet>
-                <Header />
+            <Helmet>
+                <meta charSet="utf-8" />
+                <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
+                <title>Billing address</title>
+            </Helmet>
+            <Header />
+            <Container className=' auth-container' style={{marginTop:"10rem"}}>
             <Card className="p-5">
             <CheckoutSteps step1 step2 />
             <h2 className="text-center checkout__header">Shipping Address</h2>
             {/*} {error && <Message variant='danger'>{error}</Message>}
             {loading && <Loader />} */}
-                <Form className="auth-form" onSubmit={submitHandler}>
+                <Form className="" onSubmit={submitHandler}>
                     <Form.Group className="mb-3" controlId="address">
+                        <Form.Label className='auth__form__label'>Shipping Address</Form.Label>
                         <Form.Control 
-                            className="auth-input" 
+                            className="auth__form__control" 
                             type='text'
-                            placeholder='Shipping address'
+                            placeholder=''
                             value={address ? address : ''}
                             onChange={(e) => setAddress(e.target.value)}
                             required
                             />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="city">
+                    <Form.Label className='auth__form__label'>City</Form.Label>
                         <Form.Control 
-                            className="auth-input" 
+                            className="auth__form__control" 
                             type='text'
-                            placeholder='City'
+                            placeholder=''
                             value={city ? city : ''}
                             onChange={(e) => setCity(e.target.value)}
                             required
                             />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId='postalCode'>
+                        <Form.Label className='auth__form__label'>Postal Code</Form.Label>
                         <Form.Control
-                            className="auth-input"
+                            className="auth__form__control"
                             type='text'
-                            placeholder='Postal code'
+                            placeholder=''
                             value={postalCode ? postalCode : ''}
                             onChange={(e) => setPostalCode(e.target.value)}
                             required
@@ -77,18 +80,19 @@ function ShippingScreen({history}) {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId='country'>
+                        <Form.Label className='auth__form__label'>Country</Form.Label>
                         <Form.Control
-                            className="auth-input" 
+                            className="auth__form__control" 
                             type='text'
-                            placeholder='Country'
+                            placeholder=''
                             value={country ? country : ''}
                             onChange={(e) => setCountry(e.target.value)}
                             required
                         >
                         </Form.Control>
                     </Form.Group>
-                        <div className='d-grid gap-2'>
-                            <Button size="lg" type="submit">Next</Button>
+                        <div className='auth__btnwrapper'>
+                            <Button className='auth__bt' size="lg" type="submit">CONTIUNE</Button>
                         </div>
                 </Form>
                 </Card>

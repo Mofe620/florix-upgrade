@@ -29,22 +29,23 @@ function PaymentScreen({ history }) {
 
     return (
         <>
-        <Container className="content" >
             <Helmet>
                 <meta charSet="utf-8" />
                 <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
                 <title>Payment method</title>
             </Helmet>
             <Header />
+            <Container style={{marginTop:"10rem" }}>
+           
             <CheckoutSteps step1 step2 step3 />
-            <div className="d-flex justify-content-center checkout__header" style={{paddingTop:"15rem" }}>
+            <div className="auth__form__wrapper d-flex justify-content-center checkout__header">
             <Form onSubmit={submitHandler}>
                 <Form.Group>
-                    <Form.Label as='legend'>Payment Option</Form.Label>
                     <Col>
                         <Form.Check
                             type='radio'
-                            label='Monnify Card or Account Transfer'
+                            style={{fontSize:"1.5rem"}}
+                            label='Pay via Debit Card or Bank Transfer'
                             id='Monnify'
                             name='paymentMethod'
                             checked
@@ -54,7 +55,7 @@ function PaymentScreen({ history }) {
                         </Form.Check>
                     </Col>
                 </Form.Group>
-                <div className="d-grid gap-2 pt-2">
+                <div className="auth__btnwrapper">
                     <Button size="lg" type="submit"> Continue</Button>
                 </div>
             </Form>

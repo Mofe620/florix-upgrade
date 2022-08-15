@@ -5,28 +5,31 @@ import { Link } from 'react-router-dom'
 
 function Product({ product }) {
     return (
-        <div className="">
-            <Link to={`/product/${product.id}`}>
-                
-                <Image className="product__img shadow-sm" src={product.image} fluid/> 
+    <>
+        <Link to={`/product/${product.id}`}>
+            <div  className='product__class__container'> 
+                <div className="product__class__file__wrapper">
+                    <Image className="product__class__file__wrapper__img" src={product.image} fluid/> 
+                </div>
 
                 {/*Adding ${process.env.REACT_APP_API_URL} to image src doesn't work in production 
                 <Image className="product__img shadow-sm" src={`${process.env.REACT_APP_API_URL}${product.image}`} fluid/> 
                 */}
-            </Link>
-            <div>
-                <Link to={`/product/${product.id}`}><h3 className='product__name'>{product.name}</h3></Link>
-                <p as="h3" className="product__price"> &#8358; {product.price}</p>
-                <p>Dosage form: {product.dosageForm}</p>
-                <p>Strength: {product.strength}</p>
-                {/*
-                <div className="my-3">
-                    <Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#f8e825'} />
+            
+                <div className='product__class__text'>
+                    <h2>{product.name}</h2>
+                    <p> &#8358; {product.price}</p>
+                    <p>Dosage form: {product.dosageForm}</p>
+                    <p>Strength: {product.strength}</p>
+                    {/*
+                    <div className="my-3">
+                        <Rating value={product.rating} text={`${product.numReviews} reviews`} color={'#f8e825'} />
+                    </div>
+                    */}
                 </div>
-                */}
             </div>
-        
-        </div>
+        </Link>
+    </>
     )
 }
 

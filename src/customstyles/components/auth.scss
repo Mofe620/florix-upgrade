@@ -38,6 +38,17 @@
         background-color: $neutral !important;
         height: 3.8rem;
       }
+      &__wrapper{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        @include respond(tab-land){
+          width: 70%;
+         }
+        @include respond(phone){
+          width: 90%;
+         }
+      }
 
     }
     &__btnwrapper{

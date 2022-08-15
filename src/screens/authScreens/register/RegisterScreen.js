@@ -120,7 +120,7 @@ const validateStepOneInput = () =>{
     <>
       <AuthNavigation />
       <Container className=''>
-        <div className='shadow py-4' style={{marginTop:"10rem"}}>
+        <div className='auth__form__wrapper shadow py-4' style={{marginTop:"10rem"}}>
           {error && <Message variant='danger'>{error}</Message>}
               {loading && <Loader />}
             {activeStep === 0 && (

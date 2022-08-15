@@ -34,13 +34,9 @@ function LoginScreen({ isAuthenticated }) {
 
     return (
         <>
+        <AuthNavigation />
             <Container className='' style={{marginTop:'10rem'}}>
-                <Helmet>
-                    <meta charSet="utf-8" />
-                    <title>Sign In</title>
-                </Helmet>
-                <AuthNavigation />
-                <div className="shadow p-5">
+                <div className="auth__form__wrapper shadow p-5">
                 <div className=' auth-header text-center'>
                 {error && <Message variant='danger'>{error}</Message>}
                 {loading && <Loader />}
@@ -81,7 +77,7 @@ function LoginScreen({ isAuthenticated }) {
                             <p className=''>Forgotten password? <Link to="/reset-password" className='router-link'>Reset Password</Link></p>
                         </div>
                         <div className='auth__btnwrapper'>
-                            <Button type="submit" className="auth__bt">Sign In</Button>
+                            <Button className='auth__bt mx-auto' type="submit">Sign In</Button>
                             <p> Don't have an account? <Link to="/register" className='router-link'>Create an account</Link></p>
                         </div>
                         

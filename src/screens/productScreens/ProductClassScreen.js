@@ -41,6 +41,8 @@ const ProductClassScreen = ({match}) => {
                         <div className='product__class__text'>
                             <h2>{product.name}</h2>
                             <p> &#8358; {product.price}</p>
+                            <p>Dosage form: {product.dosageForm}</p>
+                            <p>Strength: {product.strength}</p>
                             {/* <h3>Strength: {product.strength}</h3> */}
                            
                             {/* <p className='analgesics__slider__content__button text-center'><Link to={`/product/${product.id}`}><img src="/assets/icons/Store.png" alt="" style={{height:"2rem", marginRight:"20px"}}/>Add to cart</Link></p> */}

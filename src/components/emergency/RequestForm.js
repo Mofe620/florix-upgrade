@@ -1,9 +1,61 @@
-import React from 'react'
-import {Col, Form, Row} from 'react-bootstrap'
+import React, { useState } from 'react'
+import {Button, Col, Form, Row} from 'react-bootstrap'
+import { useSelector } from 'react-redux'
+import swal from 'sweetalert'
+// import Monnify from '../../utils/Monnify'
+
 
 const RequestForm = ({values, handleChange, handleErrors}) => {
+  const [premium, setPremium] = useState(false)
+  const userDetails = useSelector(state => state.userDetails)
+  const { error, loading, user } = userDetails
+
+  const [sdkReady, setSdkReady] = useState(false)
+
+  
   console.log(values)
   console.log(handleChange)
+
+  const Monnify = () => {
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.src = 'https://sdk.monnify.com/plugin/monnify.js'
+    script.async = true
+
+    script.onload = () => {
+        window.MonnifySDK.initialize({
+            amount: '3000',
+            currency: "NGN",
+            reference: '' + Math.floor((Math.random() * 1000000000) + 1),
+            customerName: user.username,
+            customerEmail: user.email,
+            apiKey: "MK_TEST_JGYE5NJ1T1",
+            contractCode: "3834928931",
+            paymentDescription: "Test Pay",
+            isTestMode: true,
+            metadata: {
+                    "name": user.username,
+            },
+            paymentMethods: ["CARD", "ACCOUNT_TRANSFER"],
+            onComplete: function(paymentResult){
+                //Implement what happens when transaction is completed.
+                // dispatch(payOrder(orderId, paymentResult))
+                //  console.log(paymentResult);
+            },
+            onClose: function(data){
+                //Implement what should happen when the modal is closed here
+                console.log(data);
+            }
+        });
+        setSdkReady(true)
+        
+    }
+    document.body.appendChild(script)
+    }
+
+  const premiumHandler = () =>{
+    swal('Suscribe to premium verson to unlock this feature')
+  }
   return (
     <>
       <div className='emergency__header text-center'>
@@ -125,10 +177,18 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
           </div>
 
         </Form>
-        <div className='emergency__premium__container'>
-          <h2>OR</h2>
-          <p><a href="https://tinyurl.com/2p98zk2h" target='_blank' rel="noreferrer">Chat with a Pharmacist</a></p>
-        </div>
+        {!premium ? 
+         <div className='emergency__premium__container'>
+            <h2>OR</h2>
+            <p><a href='#' onClick={premiumHandler}>Chat with a Pharmacist</a></p>
+          </div> :
+
+              <div className='emergency__premium__container'>
+                <h2>OR</h2>
+                <p><a href="https://tinyurl.com/2p98zk2h" target='_blank' rel="noreferrer">Chat with a Pharmacist</a></p>
+              </div>
+        }
+        
     </div>
     </>
   )

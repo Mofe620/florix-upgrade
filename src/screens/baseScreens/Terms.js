@@ -11,6 +11,7 @@ const Terms = () => {
 
     const termsDetails = useSelector(state => state.termsDetails)
     const { loading, error, terms } = termsDetails
+    console.log(terms[0]?.body)
 
     const dispatch = useDispatch()
 
@@ -30,7 +31,6 @@ const Terms = () => {
                 error? <Message variant='danger'>{error}</Message> :
                     (
                         <>
-                           <h2>Hello</h2>
                             <div className='mt-5 mb-5' dangerouslySetInnerHTML={termsStatement()} ></div>
                         </>
                     )

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Button, Form, Image } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import StoreSlider from '../../components/sliders/shop/storeSlider'
 import Analgesics from '../../components/sliders/shop/analgesics'
 import Multivitamins from '../../components/sliders/shop/multivitamins'
@@ -9,11 +9,22 @@ import TrackRecord from '../../components/TrackRecord'
 import Header from '../../components/global/Header'
 import Footer from '../../components/Footer'
 import { getProductClass } from '../../redux/actions/productActions'
-import { useDispatch, useSelector } from 'react-redux'
+import { connect, useDispatch, useSelector } from 'react-redux'
 import SearchProduct from '../../components/SearchProduct'
 import ProductCarousel from '../../components/Carousel'
 
-const Shop = () =>{
+const Shop = ({isAuthenticated, history}) =>{
+
+    const location = useLocation()
+
+    if(!isAuthenticated){
+    history.push({
+        pathname: "/login",
+        state: {
+            from: location
+        }
+    })
+    } 
 
     return(
         <>
@@ -89,4 +100,8 @@ const Shop = () =>{
     )
 }
 
-export default Shop
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+  });
+  
+  export default connect(mapStateToProps, { }) (Shop)

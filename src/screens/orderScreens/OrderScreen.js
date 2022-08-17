@@ -10,6 +10,7 @@ import { ORDER_PAY_RESET, ORDER_DELIVER_RESET } from '../../constants/orderConst
 import Header from '../../components/global/Header';
 import Footer from '../../components/Footer';
 import StoreSpinner from '../../components/spinners/StoreSpinner';
+import swal from 'sweetalert';
 
 function OrderScreen({ match, history, isAuthenticated }) {
     const orderId = match.params.id
@@ -85,13 +86,14 @@ function OrderScreen({ match, history, isAuthenticated }) {
                 dispatch({ type: ORDER_DELIVER_RESET })
     
                 dispatch(getOrderDetails(orderId))
-            } else if (!order.isPaid) {
-                if (!window.MonnifySDK) {
-                    payWithMonnify()
-                } else {
-                    setSdkReady(true)
-                }
-            }
+            } //else if (!order.isPaid) {
+            //     swal('Please click on payment button')
+            //     if (!window.MonnifySDK) {
+            //         payWithMonnify()
+            //     } else {
+            //         setSdkReady(true)
+            //     }
+            // }
         }
 
 
@@ -140,7 +142,7 @@ function OrderScreen({ match, history, isAuthenticated }) {
                                         </Col>
                                         <Col sm={10}>
                                         {order.isDelivered ? (
-                                        <Message variant='success'>Delivered on {order.dateDelivered}</Message>
+                                        <Message variant='success'>Items Delivered{order.dateDelivered}</Message>
                                     ) : (
                                             <Message variant='info'>Not Delivered</Message>
                                         )}
@@ -156,7 +158,7 @@ function OrderScreen({ match, history, isAuthenticated }) {
                                     </p>
                                     <Row><Col sm={2}><p><strong>Payment Status:</strong></p></Col>
                                     <Col sm={10}>{order.isPaid ? (
-                                        <Message variant='success'>Payment successfully {order.datePaid}</Message>
+                                        <Message variant='success'>Payment successful{order.datePaid}</Message>
                                     ) : (
                                             <Message variant='info'>Not Paid</Message>
                                         )}
@@ -213,21 +215,16 @@ function OrderScreen({ match, history, isAuthenticated }) {
                                     {!order.isPaid && (
                                         <ListGroup.Item>
                                             {loadingPay && <StoreSpinner />}
-
-                                            {!sdkReady ? (
-                                                <StoreSpinner />
-                                            ) : (
                                                 <>
                                                     <div className="d-grid gap-2 pt-2">
                                                         <Button
                                                             size="lg"
-                                                            onClick={payWithMonnify()}
+                                                            onClick={payWithMonnify}
                                                             >
                                                             Click to Pay
                                                         </Button>
                                                     </div>
                                                 </>
-                                                )}
                                         </ListGroup.Item>
                                     )}
                                 </ListGroup>
@@ -254,6 +251,6 @@ function OrderScreen({ match, history, isAuthenticated }) {
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
-  });
+});
   
   export default connect(mapStateToProps, { getOrderDetails, payOrder, deliverOrder }) (OrderScreen)

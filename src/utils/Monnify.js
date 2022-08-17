@@ -24,8 +24,8 @@ const Monnify = ({history, isAuthenticated}) => {
             amount: '3000',
             currency: "NGN",
             reference: '' + Math.floor((Math.random() * 1000000000) + 1),
-            customerName: 'Chukwuyem',
-            customerEmail:"crispytech@gmail.com",
+            customerName: user.username,
+            customerEmail:user.emal,
             apiKey: "MK_TEST_JGYE5NJ1T1",
             contractCode: "3834928931",
             paymentDescription: "Test Pay",
@@ -47,12 +47,12 @@ const Monnify = ({history, isAuthenticated}) => {
             },
             onClose: function(data){
                 //Implement what should happen when the modal is closed here
-                swal({
-                    title: "Payment Unsuccessful!",
-                    text: "Sorry, we could not process your subscription. Please try again or contact our customer support",
-                    icon: "danger",
-                    button: "OK!",
-                  });
+                // swal({
+                //     title: "Payment Unsuccessful!",
+                //     text: "Sorry, we could not process your subscription. Please try again or contact our customer support",
+                //     icon: "danger",
+                //     button: "OK!",
+                //   });
             }
         });
         setSdkReady(true)

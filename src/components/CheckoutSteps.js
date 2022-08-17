@@ -19,30 +19,30 @@ function CheckoutSteps({ step1, step2, step3, step4 }) {
             <Nav.Item>
                 {step2 ? (
                     <LinkContainer to='/shipping'>
-                        <Nav.Link><p className="checkout__steps">Shipping</p></Nav.Link>
+                        <Nav.Link><p className="checkout__steps">Delivery</p></Nav.Link>
                     </LinkContainer>
                 ) : (
-                        <Nav.Link disabled><p className="checkout__steps">Shipping</p></Nav.Link>
+                        <Nav.Link disabled><p className="checkout__steps">Delivery</p></Nav.Link>
                     )}
             </Nav.Item>
 
             <Nav.Item>
                 {step3 ? (
                     <LinkContainer to='/payment'>
-                        <Nav.Link><p className="checkout__steps">Payment</p></Nav.Link>
+                        <Nav.Link><p className="checkout__steps">Payment Method</p></Nav.Link>
                     </LinkContainer>
                 ) : (
-                        <Nav.Link disabled><p className="checkout__steps">Payment</p></Nav.Link>
+                        <Nav.Link disabled><p className="checkout__steps">Payment Method</p></Nav.Link>
                     )}
             </Nav.Item>
 
             <Nav.Item>
                 {step4 ? (
                     <LinkContainer to='/placeorder'>
-                        <Nav.Link><p className="checkout__steps">Order</p></Nav.Link>
+                        <Nav.Link><p className="checkout__steps">Summary</p></Nav.Link>
                     </LinkContainer>
                 ) : (
-                        <Nav.Link disabled><p className="checkout__steps">Order</p></Nav.Link>
+                        <Nav.Link disabled><p className="checkout__steps">Summary</p></Nav.Link>
                     )}
             </Nav.Item>
         </Nav>

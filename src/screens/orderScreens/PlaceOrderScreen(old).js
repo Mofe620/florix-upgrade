@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-
 import { Button, Row, Col, ListGroup, Image, Card, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -27,7 +26,8 @@ function PlaceOrderScreen({ history }) {
 
     useEffect(() => {
         if (success) {
-            history.push(`/order/${order.id}`)
+            history.push('/payment/monnify')
+            // history.push(`/order/${order.id}`)
             dispatch({ type: ORDER_CREATE_RESET })
         }
     }, [success, history])
@@ -37,7 +37,7 @@ function PlaceOrderScreen({ history }) {
             orderItems: cart.cartItems,
             shippingAddress: cart.shippingAddress,
             paymentMethod: cart.paymentMethod,
-            itemsPrice: cart.itemsPrice,
+            itemsPrice: cart.itemsPrice, 
         }))
     }
 

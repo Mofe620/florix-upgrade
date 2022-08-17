@@ -41,8 +41,6 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
                   <option className='emergency__formgroup__option input-field'>--Select Request--</option>
                   <option className='emergency__formgroup__option input-field' value="Medications">Medications</option>
                   {/* <option className='emergency__formgroup__option input-field' value="Laboratory Specimen">Medical Items</option> */}
-                 
-                  
                 </Form.Control>
             </Form.Group>
           </div>

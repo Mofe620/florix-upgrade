@@ -2,6 +2,12 @@
 
 .product{
     margin-top: 2rem;
+
+    & p{
+        margin: 0;
+        padding: 0;
+        font-size: 1.5rem;
+    }
     &__class{
         &__container{
             height: auto;
@@ -57,16 +63,23 @@
         width: auto;
     }
     &__name{
-        color: rgba(0, 0, 0, 0.692);
-        font-size: 1.7rem;
+        color: $primary;
+        font-size: 2rem;
         font-weight: 700;
+        padding: 0;
+        margin: 0;
     }
-    &__details__img{
-        height: auto;
+    &__brand{
+        margin-bottom: 5rem !important;
+    }
+    &__details{
+      &__img{
+        height: 40rem;
         width: 100%;
         border-radius: 10%;
-     
-        
+        margin: 0;
+        padding: 0;
+      }
     }
     &__discription{
         font-size: 1.5rem;
@@ -92,8 +105,8 @@
         }
     } 
     &__price{
-        font-size: 2rem;
-        font-weight: 600;
+        font-size: 1.5rem;
+        font-weight: 700;
     }    
     &__trash{
         background-color: red;
@@ -113,6 +126,7 @@
     }
 }
 .cart{
+    margin-top: 7rem;
     &__btn{
         @include respond(phone){
             margin-top: 1rem;
@@ -120,6 +134,36 @@
     }
     &__name{
         font-size: 2rem;
+      
+        & a{
+            color: $primary;
+        }
+    }
+    &__item{
+
+        &__name{
+            font-size: 1.5rem;
+            @include respond(phone){
+                font-size: 1.2rem;
+            }
+        }
+        &__price{
+            font-size: 1.5rem;
+            @include respond(phone){
+                font-size: 1rem;
+            }
+            &__total{
+                font-size: 2rem;
+                font-weight: 700;
+               
+            }
+        }
+        
+        &__remove{
+            color: $danger;
+            cursor: pointer;
+        }
+        
     }
 }
 
@@ -131,13 +175,6 @@
     color: #fff;
 }
 
-.checkout{
-    &__header{
-        font-size: 2.6rem;
-        font-weight: 600;
-        color: rgba(0, 0, 0, 0.582);
-    }
-}
 
 .order{
     &__details{

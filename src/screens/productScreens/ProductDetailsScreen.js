@@ -90,49 +90,34 @@ function ProductScreen({ match, history, isAuthenticated }) {
                     : (
                         <div>
                             <Row>
-                                <Col md={4} className="">
+                                <Col md={8} className="">
                                     <Image src={product.image} alt={product.name} className="product__details__img" fluid />   
-                                </Col>
-                                <Col md={4}>
                                     <div>
-                                        <h4 className="product__name mt-3">Generic Name: {product.name}</h4>
-                                        <p>Brand: {product.brand}  </p>
-                                        <p>Dosage form: {product.dosageForm} </p>
-                                        <p>Strength: {product.strength}</p>
-                                        <p> Description: {product.description} </p>
-                                    
+                                        <div className='mb-2'>
+                                            <h2 className="product__name mt-3">{product.name}</h2>
+                                            <span> {product.brand}</span>
+                                        </div>
+                                        <p>{product.dosageForm} <span>{product.strength}</span></p>
                                         
+                                        <p> {product.description} </p> 
                                     </div>
+                                    <p>
+                                        {product.countInStock > 0 ? <div><p style={{color:'#68ff68', fontWeight:'700'}}>In Stock</p><p className='product__price'>&#8358; {product.price}</p></div>
+                                            : <p style={{color:'#F22B0C', fontWeight:'700'}}>Out of Stock</p>
+                                        }
+                                            </p>
                                 </Col>
+                            
                                 <Col md={4}>
                                     <Card className="product__details__card">
                                         <ListGroup variant='flush'>
-                                            <ListGroup.Item>
-                                                <Row>
-                                                    <Col>Price:</Col>
-                                                    <Col>
-                                                        <p className="product__price">&#8358; {product.price}</p>
-                                                    </Col>
-                                                </Row>
-                                            </ListGroup.Item>
-                                            <ListGroup.Item>
-                                                <Row>
-                                                    <Col>Status:</Col>
-                                                    <Col>
-                                                        {product.countInStock > 0 ? 'In Stock' 
-                                                        
-                                                        
-                                                        : <p className='product__oos'>Out of Stock</p>}
-                                                    </Col>
-                                                </Row>
                                                  <ListGroup.Item>
                                                 {product.countInStock > 0 ? 
                                                        <Form onSubmit ={handleSubmit}>
                                                        <Form.Control
-                                                           style={{backgroundColor:"white", height:"3rem"}}
+                                                           style={{backgroundColor:"white", height:"3rem", fontSize:'1.2rem'}}
                                                            type="number"
-                                                           min="1"
-                           
+                                                           min='1'
                                                            placeholder='Enter quantity'
                                                            max={product.countInStock} 
                                                            onChange= {e=>setQty(e.target.value)}
@@ -156,18 +141,14 @@ function ProductScreen({ match, history, isAuthenticated }) {
                                                     : <div className="d-grid gap-2 pt-2">
                                                     <Button
                                                         size="lg"
+                                                        style={{backgroundColor:"#F1F0F0", color:'#fff', border:"#F1F0F0"}}
                                                         disabled={product.countInStock === 0}
                                                         type="submit">
                                                         Add to Cart
                                                     </Button>
                                                     </div>}
                                                  
-                                                </ListGroup.Item>
-                                            </ListGroup.Item>
-
-                                        
-                                               
-            
+                                                </ListGroup.Item>     
                                         </ListGroup>
                                        
                                     </Card>
@@ -199,16 +180,18 @@ function ProductScreen({ match, history, isAuthenticated }) {
                                             {errorProductReview && <Message variant='warning'>Sorry, we couldn't submit your feedback. Select an option and try again OR you may have given feedback on this product before.</Message>}
 
                                             {user ? (
-                                                <Form onSubmit={submitHandler}>
+                                                <Form onSubmit={submitHandler} style={{fontSize:'1.5rem'}}>
                                                     <Form.Group controlId='rating'>
-                                                        <Form.Label className="my-3">Leave Feedback on this Product</Form.Label>
+                                                        <Form.Label className="mt-4">Leave Feedback on this Product</Form.Label>
                                                         <Form.Control
                                                             as='select'
-                                                            className="search-ppty"
+                                                            size='lg'
+                                                            style={{boxShadow:'none', border:'#F1F0F0'}}
+                                                            className="fs-5 form-select"
                                                             value={rating}
                                                             onChange={(e) => setRating(e.target.value)}
                                                         >
-                                                            <option value=''>Option...</option>
+                                                            <option value=''>--Option--</option>
                                                             <option value='1'>1 - Very dissatisfied</option>
                                                             <option value='2'>2 - Dissatisfied</option>
                                                             <option value='3'>3 - Neither satisfied nor dissatisfied</option>
@@ -218,7 +201,7 @@ function ProductScreen({ match, history, isAuthenticated }) {
                                                     </Form.Group>
 
                                                     <Form.Group controlId='comment'>
-                                                        <Form.Label className="my-3">Add a comment</Form.Label> {/* The label called review is named comment in the database(backend)*/}
+                                                        <Form.Label className="mt-4">Add a comment</Form.Label> {/* The label called review is named comment in the database(backend)*/}
                                                         <Form.Control
                                                             as="textarea"
                                                             value={comment}

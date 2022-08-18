@@ -47,7 +47,7 @@ function CartScreen({ match, history, isAuthenticated }) {
 
     return (
         <>
-        <Container className="content checkout">
+        <Container className="cart">
             <Helmet>
              <meta charSet="utf-8" />
                 <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
@@ -56,36 +56,31 @@ function CartScreen({ match, history, isAuthenticated }) {
             <Header />
         <Row>
             <Col md={8}>
-                <h2 className="checkout__header text-center">Cart Page</h2>
                 {cartItems.length === 0 ? (
                     <Message variant='info'>
-                        No Item in the Cart <Link to='/'>Go Back</Link>
+                        No product in the Cart <Link to='/'>Add product</Link>
                     </Message>
                     
                 ) : (
-                        <ListGroup variant='flush'>
+                        <div variant='flush'>
                             {cartItems.map(item => (
-                                <ListGroup.Item key={item.product}>
+                                <div key={item.product}>
 
                                     {/* Item info */}
                                     
                                     <Row>
-                                        <Col md={2}>
+                                        <Col xs={2}>
                                             {/* <Image src={`${process.env.REACT_APP_API_URL}${item.image}`} alt={item.name} fluid rounded /> */}
                                             <Image src={item.image} alt={item.name} fluid rounded />
                                         </Col>
-                                        <Col md={3} className="cart__name">
+                                        <Col xs={3} className="cart__item__name">
                                             <Link to={`/product/${item.product}`}>{item.name}</Link>
                                         </Col>
 
-                                        {/* Price of item */}
-                                        <Col md={2}>
-                                            <p className="product__price">&#8358; {item.price}</p>
-                                        </Col>
-
+                                        
                                         {/* Column for adjusting quantity of items in the cart  */}
                                         
-                                        <Col md={3}>
+                                        <Col xs={2}>
                                             <Form.Control
                                                 style={{backgroundColor:"white", height:"3rem"}}
                                                 type="number"
@@ -94,64 +89,59 @@ function CartScreen({ match, history, isAuthenticated }) {
                                                 value={item.qty}
                                                 onChange={(e) => dispatch(addToCart(item.product, Number(e.target.value)))}
                                             >
-                            
-
                                             </Form.Control>
                                         </Col>
-                                         {/* Remove Item from Cart Column */}       
-                                        <Col md={1} className="cart__btn">
-                                            <Button
-                                                type='button'
-                                                variant='light'
-                                                onClick={() => removeFromCartHandler(item.product)}
-                                            >
-                                                {/*<i className='fas fa-trash'></i> */}
-                                                <span className="product__trash">Remove</span>
-                                            </Button>
-                                            
+
+                                        {/* Price of item */}
+                                        <Col xs={3}>
+                                            <p className="cart__item__price">&#8358; {item.price}</p>
                                         </Col>
+
+                                         {/* Remove Item from Cart Column */}       
+                                        <Col xs={1} className="cart__btn">
+                                            <div  onClick={() => removeFromCartHandler(item.product)}>
+                                            <i className="fas fa-times cart__item__remove"></i>
+                                            </div>               
+                                        </Col>
+                                        
                                     </Row>
-                                </ListGroup.Item>
+                                </div>
                             ))}
-                        </ListGroup>
+                        </div>
                     )}
             </Col>
 
+
             <Col md={4}>
-                <Card>
-                    <ListGroup variant='flush'>
-                        <ListGroup.Item className="">
-                            <h2>{cartItems.reduce((acc, item) => acc + item.qty, 0)} Product(s) Added</h2>
-                            <p className="product__price"> Sub total: &#8358; {cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}</p>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <div className="d-grid gap-2">
-                                <Button
-                                    type='button'
-                                    size="lg"
-                                    disabled={cartItems.length === 0}
-                                    onClick={checkoutHandler}
-                                >
-                                    Checkout
-                                </Button>
-                            </div>
-                        </ListGroup.Item>
-                    <ListGroup.Item>
-                        <div className="d-grid gap-2">
-                            <Button
-                                type='button'
-                                size="lg"
-                                variant="warning"
-                                onClick={keepShopping}
-                            >
-                                Add More Products?
-                            </Button>
-                        </div>
-                    </ListGroup.Item>
-                    </ListGroup>
-                </Card>
+            
             </Col>
         </Row>
+        <div className='mt-5'>
+            <h2 className='fw-bold'>Total Number of Items .......... {cartItems.reduce((acc, item) => acc + item.qty, 0)}</h2>
+            <p className='cart__item__price__total'> Sub Total ............... &#8358;{cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}</p>
+        </div>
+        <hr />
+        <div className='d-flex justify-content-between'>
+        <div className="">
+                    <Button
+                        size="lg"
+                        variant="warning"
+                        onClick={keepShopping}
+                    >
+                        Add More Products
+                    </Button>
+                </div>
+                <div className="">
+                    <Button
+                        size="lg"
+                        disabled={cartItems.length === 0}
+                        onClick={checkoutHandler}
+                    >
+                        Proceed to Checkout
+                    </Button>
+                </div>
+        </div>
+        
         </Container>
              <Footer />
         </>

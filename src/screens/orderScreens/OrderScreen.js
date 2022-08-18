@@ -167,30 +167,10 @@ function OrderScreen({ match, history, isAuthenticated }) {
                                 </ListGroup.Item>
 
                                 <ListGroup.Item>
-                                    <h2>Order Items</h2>
                                     {order.orderItems.length === 0 ? <Message variant='info'>
                                         Order is empty
                             </Message> : (
-                                            <ListGroup variant='flush'>
-                                                {order.orderItems.map((item, index) => (
-                                                    <ListGroup.Item key={index}>
-                                                        <Row>
-                                                            <Col md={1}>
-                                                                {/* <Image src={`${process.env.REACT_APP_API_URL}${item.image}`} alt={item.name} fluid rounded /> */}
-                                                                <Image src={item.image} alt={item.name} fluid rounded />
-                                                            </Col>
-
-                                                            <Col>
-                                                                <p><Link to={`/product/${item.product}`}>{item.name}</Link></p>
-                                                            </Col>
-
-                                                            <Col md={4}>
-                                                                {item.qty} X &#8358; {item.price} = &#8358; {(item.qty * item.price).toFixed(2)}
-                                                            </Col>
-                                                        </Row>
-                                                    </ListGroup.Item>
-                                                ))}
-                                            </ListGroup>
+                                            <div>Ready to make payment</div>
                                         )}
                                 </ListGroup.Item>
 
@@ -201,10 +181,6 @@ function OrderScreen({ match, history, isAuthenticated }) {
                         <Col md={4}>
                             <Card>
                                 <ListGroup variant='flush'>
-                                    <ListGroup.Item>
-                                        <h2>Process Transaction</h2>
-                                    </ListGroup.Item>
-
                                     <ListGroup.Item>
                                         <Row className="product__price">
                                             <Col><p>Sub total:</p></Col>

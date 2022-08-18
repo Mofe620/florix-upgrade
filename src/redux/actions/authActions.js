@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 import { AxiosInterceptor } from '../../screens/authScreens/AxiosIntercept';
 import {
     LOGIN_SUCCESS,
@@ -23,6 +24,10 @@ import {
     FACEBOOK_AUTH_FAIL,
     LOGOUT
 } from './types';
+
+function indexRedirect(){
+    <Redirect to='/login' />
+}
 
 export const load_user = () => async dispatch => {
     if (localStorage.getItem('access')) {
@@ -279,6 +284,8 @@ export const signup = (
             type: SIGNUP_SUCCESS,
             payload: data
         });
+
+        indexRedirect()
         
     } catch (err) {
         dispatch({

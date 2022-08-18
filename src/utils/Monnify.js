@@ -8,12 +8,19 @@ import { payOrder } from '../redux/actions/orderActions'
 const Monnify = ({history, isAuthenticated}) => {
     const userDetails = useSelector(state => state.userDetails)
     const { error, loading, user } = userDetails
+    console.log(user)
 
     const [sdkReady, setSdkReady] = useState(false)
     const location = useLocation()
 
-    
-
+    if(!isAuthenticated){
+      history.push({
+          pathname: "/login",
+          state: {
+              from: location
+          }
+      })
+    } 
     const script = document.createElement('script')
     script.type = 'text/javascript'
     script.src = 'https://sdk.monnify.com/plugin/monnify.js'
@@ -24,8 +31,8 @@ const Monnify = ({history, isAuthenticated}) => {
             amount: '3000',
             currency: "NGN",
             reference: '' + Math.floor((Math.random() * 1000000000) + 1),
-            customerName: user.username,
-            customerEmail:user.emal,
+            customerName: 'Crispilion',
+            customerEmail: 'crispy@gmail.com',
             apiKey: "MK_TEST_JGYE5NJ1T1",
             contractCode: "3834928931",
             paymentDescription: "Test Pay",

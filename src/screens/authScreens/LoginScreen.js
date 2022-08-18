@@ -1,7 +1,9 @@
 import React, { useState} from 'react'
-import {Container, Row, Col, Form, Button} from 'react-bootstrap'
+import {Container, Row, Col, Form, Button, Toast} from 'react-bootstrap'
 import { Link, Redirect, useLocation } from 'react-router-dom'
 import { connect, useDispatch, useSelector } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import AuthNavigation from '../../components/global/_authNavigation'
 import AuthFooter from '../../components/global/_authFooter'
 import swal from 'sweetalert';
@@ -27,6 +29,8 @@ function LoginScreen({ isAuthenticated }) {
         dispatch(login(email, password))
     }
 
+    const notify =toast('Unable to login, please use valid email or password')
+
     if (isAuthenticated){
         return <Redirect to={from} />
       }
@@ -38,7 +42,17 @@ function LoginScreen({ isAuthenticated }) {
             <Container className='' style={{marginTop:'10rem'}}>
                 <div className="auth__form__wrapper shadow p-5">
                 <div className=' auth-header text-center'>
-                {error && <Message variant='danger'>{error}</Message>}
+                    
+                {/* {error && <Message variant='danger'>{error}</Message>} */}
+                {error && 
+                    <div>
+                        <ToastContainer
+                        position='top-center'
+                        >
+                            {notify}
+                        </ ToastContainer>
+                    </div>
+                }
                 {loading && <Loader />}
 
                 <div className="auth__header">

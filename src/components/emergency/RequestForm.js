@@ -14,8 +14,8 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
   const [showModal, setShowModal] = useState(false)
 
   
-  console.log(values)
-  console.log(handleChange)
+  // console.log(values)
+  // console.log(handleChange)
   const premiumHandler = () =>{
     swal('Subscribe to premium verson to unlock this feature')
   }

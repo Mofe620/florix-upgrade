@@ -61,23 +61,25 @@ const Multivitamins = () => {
           className="analgesics"
       >
         {products.map(drug =>(
-         <div className="analgesics__slider">
-         <SwiperSlide key={drug.id} className="analgesics__slider__container p-4">
-           <div className='analgesics__slider__content'>
-           {/* src={`${process.env.REACT_APP_API_URL}${drug.image}`} */}
-               <Image className='analgesics__slider__content__image' src={drug.image} /> 
+      <div className="analgesics__slider">
+        <SwiperSlide key={drug.id} className="analgesics__slider__container p-4">
+          <div className='analgesics__slider__content'>
+           <Link to={`/product/${drug.id}`}>
+                  {/* src={`${process.env.REACT_APP_API_URL}${drug.image}`} */}
+              <Image className='analgesics__slider__content__image' src={drug.image} /> 
              <div className='analgesics__slider__content__text px-4'>
-               <p className='analgesics__slider__content__name'>{drug.name}</p>
-               <p className='analgesics__slider__content__label'>{drug.label}</p>
-               <div className='d-md-flex justify-content-between'>
+                <p className='analgesics__slider__content__name'>{drug.name}</p>
+                <p className='analgesics__slider__content__label'>{drug.label}</p>
+                <div className='d-md-flex justify-content-between'>
                   <p className='analgesics__slider__content__price'>&#8358; {drug.price}</p>
-                  <p className='analgesics__slider__content__button text-center'><Link to={`/product/${drug.id}`}><img src="/assets/icons/Store.png" alt="" style={{height:"25px", marginRight:"2rem"}}/>Add to cart</Link></p>
+                  <p className='analgesics__slider__content__button text-center'><Link to={`/product/${drug.id}`}><img src="/assets/icons/Store.png" alt="" style={{height:"25px", marginRight:"2px"}}/>Add to cart</Link></p>
                 </div>
-             </div>
-           </div>
+              </div>
+            </Link>
+          </div>
          
-         </SwiperSlide>
-       </div>
+        </SwiperSlide>
+      </div>
         ))}
 
       </Swiper>

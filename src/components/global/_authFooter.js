@@ -11,6 +11,7 @@ const AuthFooter = () =>{
                     <p><Link to="/">Home</Link></p>
                     <p><Link to="/about">About Us</Link></p>
                     <p><Link to="/emergency/request">EMS</Link></p>
+                    <p><Link to="/privacy-policy">Privacy Policy</Link></p>
                     <p><Link to="/terms-conditions">Terms and Conditions</Link></p>
             </div>
             <div>

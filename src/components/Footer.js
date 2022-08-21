@@ -39,7 +39,8 @@ const Footer = () =>{
                     <h2>Policies</h2>
                     <p className='footer__items__divider'></p>
                     {/* <p><Link to="/">Privacy Policy</Link></p> */}
-                    <p><Link to="/terms-conditions">Terms and Conditions</Link></p>
+                    <p><Link to="/privacy-policy">Privacy Policy</Link></p>
+                    <p><Link to="/terms-conditions">Terms and conditions</Link></p>
                 </div>
             </div>
             <div>

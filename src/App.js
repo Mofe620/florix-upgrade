@@ -57,7 +57,8 @@ import PrescriptionForm from './components/PrescriptionForm';
 import ProductClassScreen from './screens/productScreens/ProductClassScreen';
 import Monnify from './utils/Monnify'
 
-import Terms from './screens/baseScreens/Terms';
+import PolicyScreen from './screens/baseScreens/PolicyScreen';
+import TermsScreen from './screens/baseScreens/TermsScreen';
  
 function App() {
   return (
@@ -91,8 +92,9 @@ function App() {
           <Route path='/login' component={LoginScreen} />
           <Route path='/register' component={RegisterScreen} />
           <Route exact path="/profile" component={UserProfile} />     
-          <Route exact path="/terms-conditions" component={Terms} /> 
-        
+          <Route exact path="/terms-conditions" component={TermsScreen} /> 
+          <Route exact path="/privacy-policy" component={PolicyScreen} /> 
+
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/placeorder' component={PlaceOrderScreen} />
           <Route path='/order/:id' component={OrderScreen} />

@@ -7,26 +7,26 @@ import Message from '../../components/Message'
 import LoadingMain from '../../components/spinners/LoadingMain'
 import { termsAction } from '../../redux/actions/baseActions'
  
-const Terms = () => {
+const PolicyScreen = () => {
 
     const termsDetails = useSelector(state => state.termsDetails)
     const { loading, error, terms } = termsDetails
-    console.log(terms[0]?.body)
+    const policy = terms[0]
+    // console.log(terms[0]?.body)
 
     const dispatch = useDispatch()
-
 
     useEffect(() => {
         dispatch(termsAction())
     }, [dispatch])
     
     const termsStatement = () => {
-        return {__html: terms[0]?.body}
+        return {__html: policy?.body}
     };
   return (
     <>
         <Header />
-        <Container className='mt-4'>
+        <Container className='px-4 pt-5'>
             {loading ? <LoadingMain /> :
                 error? <Message variant='danger'>{error}</Message> :
                     (
@@ -41,4 +41,4 @@ const Terms = () => {
   )
 }
 
-export default Terms
+export default PolicyScreen

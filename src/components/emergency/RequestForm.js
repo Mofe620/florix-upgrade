@@ -146,14 +146,14 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
 
               <div className='emergency__premium__container'>
                 <h2>OR</h2>
-                <p><a href="https://tinyurl.com/2p98zk2h" target='_blank' rel="noreferrer">Chat with a Pharmacist</a></p>
+                <p><a href="https://wa.me/2347014868950" target='_blank' rel="noreferrer">Chat with a Pharmacist</a></p>
               </div>
         }
 
           <Modal size="lg" show={showModal} onHide={() => setShowModal(false)} aria-labelledby="example-modal-sizes-title-lg">
             <Modal.Body className='emergency__premium__modal w-70' style={{backgroundColor:'#5d8181', color:'white'}}>
-              <p>Subscribe to the premium version to unlock this feature</p>
-              <span><i class="fas fa-arrow-right"></i> <Link to='/payment/monnify'>Click to Subscribe</Link></span>
+              <p>You are about to visit Flo-Log admin WhatsApp page</p>
+              <span><i class="fas fa-arrow-right"></i> <a href="https://wa.me/2347014868950">Click to Continue</a></span>
             </Modal.Body>
             
         </Modal>      

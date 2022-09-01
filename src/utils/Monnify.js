@@ -13,14 +13,14 @@ const Monnify = ({history, isAuthenticated}) => {
     const [sdkReady, setSdkReady] = useState(false)
     const location = useLocation()
 
-    if(!isAuthenticated){
-      history.push({
-          pathname: "/login",
-          state: {
-              from: location
-          }
-      })
-    } 
+    // if(!isAuthenticated){
+    //   history.push({
+    //       pathname: "/login",
+    //       state: {
+    //           from: location
+    //       }
+    //   })
+    // } 
     const script = document.createElement('script')
     script.type = 'text/javascript'
     script.src = 'https://sdk.monnify.com/plugin/monnify.js'

@@ -46,12 +46,12 @@ function OrderScreen({ match, history, isAuthenticated }) {
                 reference: '' + Math.floor((Math.random() * 1000000000) + 1),
                 customerName: order.user.username,
                 customerEmail: order.user.email,
-                apiKey: "MK_TEST_JGYE5NJ1T1",
-                contractCode: "3834928931",
-                paymentDescription: "Test Pay",
-                isTestMode: true,
+                apiKey: " MK_PROD_STSPKM89H4",
+                contractCode: " 991133027437",
+                paymentDescription: "Life Pay",
+                isTestMode: false,
                 metadata: {
-                        "name": "Damilare",
+                        "name": "Flo-Log",
                         "age": 45
                 },
                 paymentMethods: ["CARD", "ACCOUNT_TRANSFER"],

@@ -9,8 +9,8 @@ import Partnership from '../../components/sliders/shop/partnership'
 
 
   const data = [
-    {id: 1, img: '/assets/iflolog/amsi.jpg', heading: 'mens wear', text: ''},
-    {id: 2, img: '/assets/iflolog/ams.jpg', heading: 'womens wear', text: ''},
+    {id: 1, img: '/assets/iflolog/amsi.jpg', heading: 'men care', text: ''},
+    {id: 2, img: '/assets/iflolog/ams.jpg', heading: 'women care', text: ''},
     {id: 3, img: '/assets/iflolog/hand-holding-blood-glucose-meter-measuring-blood-sugar-background-is-stethoscope-chart-file.jpg', heading: 'hypertension care', text: ''},
     {id: 4, img: '/assets/iflolog/beautiful-pregnant-belly.jpg', heading: 'diabetics care', text: ''},
     {id: 5, img: '/assets/iflolog/boy-doing-occupational-therapy-session-with-psychologist.jpg', heading: 'antenatal care', text: ''},

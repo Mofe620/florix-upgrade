@@ -42,7 +42,26 @@
         &__option{
             width: 700;
         }
-   
+        &__upload-image{
+            height: 30rem;
+            width: 100%;
+            background-color: $secondary;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            & P{
+                font-size: 2rem;
+                font-weight: 500;
+                color: $header-color;
+            }
+            &__icon{
+                width: 4rem;
+                height: auto;
+                color: #929191;
+            }
+        }
 
         &__first-half{
             width: 49%;

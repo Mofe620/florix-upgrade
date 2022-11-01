@@ -52,12 +52,6 @@ const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
                         Home
                     </NavLink>
                 </li>
-                {/* <li className='navbar__list__item'>
-                    <NavLink className='navbar__link' to='/services'>
-                        Services
-                    </NavLink>
-                </li> */}
-                
                 <li className='navbar__list__item'>
                     <NavLink className='navbar__link' to='/about'>
                         About 

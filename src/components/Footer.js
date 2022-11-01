@@ -53,7 +53,7 @@ const Footer = () =>{
         <div className='footer'> 
 
         </div>
-        <p className="footer2 text-center py-3">&copy; 2022 Florix Healthcare Ltd. All Rights Reserved. </p> 
+        <p className="footer2 text-center py-3">2022 &copy; Florix Healthcare Ltd. All Rights Reserved. </p> 
         </>
     )
 }

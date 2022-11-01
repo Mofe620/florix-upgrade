@@ -32,7 +32,7 @@ const PasswordResetConfirm = ({ match, reset_password_confirm }) => {
     return (
         <>
         <AuthNavigation />
-        <Container className=' auth-container pt-4'>
+        <Container className=' auth-container' style={{marginTop:'10rem'}}>
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>password reset complete</title>

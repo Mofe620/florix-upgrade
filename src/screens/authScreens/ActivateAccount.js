@@ -30,7 +30,7 @@ const ActivateAccount = ({ verify, match }) => {
             </Helmet>
             <Form className="auth-form">
                 <Button 
-                    className="auth-button  btn btn-block w-100" 
+                    className="auth-button btn btn-block w-100" 
                     type="submit"
                     onClick={accountActivation}
                     >

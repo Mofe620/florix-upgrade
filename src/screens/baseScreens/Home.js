@@ -1,100 +1,140 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom';
-import {Helmet} from "react-helmet";
-import { connect, useDispatch, useSelector } from 'react-redux'
-import { Container, Row, Col, Button, Image} from 'react-bootstrap'
-import { getFeaturedBlog } from '../../redux/actions/blogActions'
-import FloatingAction from '../../components/FloatingAction';
-import Header from '../../components/global/Header';
-import Footer from '../../components/Footer';
+import React from 'react'
+import { Button, Col, Image, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import ProductCarousel from '../../components/Carousel'
+import Footer from '../../components/Footer'
+import Header from '../../components/global/Header'
+import IndexSlider from '../../components/sliders/index/indexSlider'
+import Partnership from '../../components/sliders/shop/partnership'
 
 
+  const data = [
+    {id: 1, img: '/assets/iflolog/amsi.jpg', heading: 'mens wear', text: ''},
+    {id: 2, img: '/assets/iflolog/ams.jpg', heading: 'womens wear', text: ''},
+    {id: 3, img: '/assets/iflolog/hand-holding-blood-glucose-meter-measuring-blood-sugar-background-is-stethoscope-chart-file.jpg', heading: 'hypertension care', text: ''},
+    {id: 4, img: '/assets/iflolog/beautiful-pregnant-belly.jpg', heading: 'diabetics care', text: ''},
+    {id: 5, img: '/assets/iflolog/boy-doing-occupational-therapy-session-with-psychologist.jpg', heading: 'antenatal care', text: ''},
+    {id: 6, img: '/assets/iflolog/brain-study-background-mental-health-care-medical-technology.jpg', heading: 'children care', text: ''},
+    {id: 7, img: '/assets/iflolog/brain-writes-with-white-chalk-is-hand-draw-concept.jpg', heading: 'asthma', text: ''},
+    {id: 8, img: '/assets/iflolog/practice.jpg', heading: 'eye care', text: ''},
+  ]
 
-const Home = ({isAuthenticated}) => {
 
-    const featuredBlog = useSelector(state => state.featuredBlog)
-    const { blog } = featuredBlog
-    const post = blog[0]
+const footerData = [
+  {id: 1, img: '/assets/iflolog/pharmacy.png', subscribers: '100+', category: 'Pharmacies'},
+  {id: 2, img: '/assets/iflolog/hospital.png', subscribers: '50+', category: 'Hospitals'},
+  {id: 3, img: '/assets/iflolog/patient.png', subscribers: '50, 000+', category: 'Patients'},
+  {id: 4, img: '/assets/iflolog/professional.png', subscribers: '100+', category: 'Healthcare providers'},
+]
 
-    const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(getFeaturedBlog())
-
-    }, [dispatch])
-
-    const guestLinks = () => (
-        <Button className="home__intro__start"><Link to="/login">Sign In</Link></Button>
-    
-        );
-      
-        const authLinks = () => (
-            <p></p>
-        );
-
-    return(
-        <div className="home">
-            <Header />
-               {/* <Helmet>
-                <meta charSet="utf-8" />
-                <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
-                <title>Florix Healthcare</title>
-            </Helmet> */}
-            <Container className='content'>
-                <Row class="row">
-                    <Col sm={12} xl={6}>
-                        <div className="home__intro">
-                            <h3 className='home__intro__header'>"Africa's No. 1 Healthcare Wholesale E-marketplace and Logistics Solution" </h3>
-                            <p className='home__intro__par'>Get the best quality pharmaceuticals, nutriceucals and medical equipment at the best prices!</p>
-                            {isAuthenticated ? authLinks() : guestLinks()}
-                        </div>
-                    </Col>
-                    <Col sm={12} xl={6} >
-                        <Image className="home__main-img px-4" src="/assets/images/Main.png" fluid/>
-                    </Col>
-                </Row>
-            </Container>
-            
-            <h1 style={{marginLeft:"4rem", fontWeight:"600"}}>Featured Blog Post</h1>
-            <Row className="px-5">
-                <Col xs={12} sm={8}>
-                    <Row>
-                        <Col xm={4} className=""> <Image className="blog__home__img" src={post?.image} alt={blog?.title}  fluid/></Col>
-                            <Col xm={8}>
-                                <div className=''>
-                                    <p className="blog__home__title"><strong>{post?.title}</strong></p>
-                                    <p className="blog__home__date">{post?.datePublished.substring(0, 10)}</p>
-                                    <p><Link to={`/post/${post?.slug}`}>Read More</Link></p> 
-                                </div>
-                            </Col>
-                    </Row>
-                    </Col>
-
-                    <Col xs={12} sm={4}>
-        
-                </Col>
-            </Row>
-          
-            <div className='home__logistics'>
-                <Row class="row">
-                    <Col md={4} sm={12} className="my-4">
-                        
-                    </Col>
-                    <Col md={4} sm={12} className="my-4">
-                     {/*   <Image className="home__img mx-auto"  src="/assets/images/logistic_image.png"  fluid/> */}
-                    </Col>
-                    <Col md={4} sm={12} className="my-4">
-                        
-                    </Col>
-                </Row>
-            </div>
-            <FloatingAction />
-            <Footer />
+const Home = () => {
+  return (
+    <div className='home'>
+        <Header />
+        <div className='home__slider'>
+          <ProductCarousel />
+            {/* <IndexSlider /> */}
         </div>
-    )
+        <div className='home__layer-one'>
+          <Row>
+            <Col xs={12} sm={6} >
+              <div>
+                <h2>Pharmacists, Physicians, other Healthcare Providers and Institutions?</h2>
+                <h3><Link to='register'>Sign Up</Link></h3>
+                <p>Already have account? Login</p>
+                <img src='/assets/iflolog/members.png' />
+              </div>
+            </Col>
+            <Col>
+              <div  className='home__layer-one__aside'>
+                <div className='text-center'>
+                  <h2>Save More</h2>
+                  <p>Get the best prices</p>
+                  <p>and best delivery rate</p>
+                </div>
+              </div>
+              
+            </Col>
+          </Row>
+        </div>
+        <div className='home__layer-one__extended'>
+          <Row>
+              <Col sm={6}>
+                <img src='/assets/iflolog/symptom.png' fluid/>
+              </Col>
+              <Col>
+                <div className='home__layer-one__extended__wrapper'>
+                  <h3>Patient?</h3>
+                  <p>Assess our 24-hour</p>
+                  <h2>Emergency medicines service</h2>
+                  <p><Link to='emergency/request' className='fs-1'>Click Here</Link></p>
+                </div>
+              </Col>
+          </Row>
+        </div>
+        <div className='home__layer-two'>
+          <Row>
+            <Col>
+              <div>
+                <h2>We guarantee you the CAPS of Healthcare</h2>
+                <p>Convenience</p>
+                <p>Accessibilty</p>
+                <p>Privacy</p>
+                <p>Speed</p>
+              </div>
+            </Col>
+            <Col>
+              <img src='/assets/iflolog/qw.png' className='' />
+            </Col>
+          </Row>
+        </div>
+        <div className='home__subscribe'>
+          <h5>Looking for quality Healthcare</h5>
+          <p>Subscribe to an offer that perfectly suits your Healthcare needs</p>
+        </div>
+        <div className='home__layer-three'>
+          <Row>
+            
+              {data.map((product)=>(
+                <Col key={product.id} className='d-flex justify-content-center mx-auto' xs={12} md={5} lg={4} xl={3}>
+                  <div className='home__layer-three__wrapper'>
+                    <img src={product.img} />
+                    <h3>{product.heading}</h3>
+                    <p>Starting from NGN 9,999 30-day subscription</p>
+                  </div>
+                </Col>
+              ))}
+          
+          </Row>
+        </div>
+        <div className='home__layer-four'>
+          <h4>Health management  organisation</h4>
+          <p>Sign Up to service your patient's prescription</p>
+        </div>
+        <div className='home__layer-five'>
+          <div>
+            <h5>Health at your fingertips</h5>
+            <p>In 15 months of operations, we have become a trusted Healthcare to</p>
+          </div>
+          <div  className='home__layer-five__footer-icons'>
+            <Row>
+              {footerData.map(item=>(
+                <Col xs={6} md={3}>
+                  <div>
+                    <img src={item.img} /> 
+                    <h3>{item.subscribers}</h3>
+                    <p>{item.category}</p>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+            
+          </div>
+        </div>
+        <Partnership />
+        <Footer />
+    </div>
+  )
 }
 
-const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
-  });
-  
-export default connect(mapStateToProps)(Home);
+export default Home

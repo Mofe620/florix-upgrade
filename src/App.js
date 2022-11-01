@@ -81,8 +81,8 @@ function App() {
           <Route exact path='/activate/:uid/:token' component={ ActivateAccount} />
           <Route exact path="/reset-password-complete" component={PasswordResetComplete} />
           
-          {/* <Route path='/' component={Home} exact /> */}
-          <Route path='/' component={Index} exact />
+          <Route path='/' component={Home} exact />
+          {/* <Route path='/' component={Index} exact /> */}
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route path='/services' component={servicesScreen} />

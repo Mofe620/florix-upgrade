@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Col, Container, Form, Row } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import { Link } from 'react-router-dom'
 
-
 const AccountData = ({values, handleChange, handleErrors}) => {
+    const [confirmPassword, setConfirmPassword] = useState('')
+    const [field, setField] = useState(false);
+    const [message, setMessage] = useState(null);
+    const [alertStatus, setAlertStatus] = useState('danger');
+
+    const matchPassword = (e) =>{
+        setConfirmPassword(e.target.value);
+        setField(true)
+        if(values.password === confirmPassword){
+            setAlertStatus('danger')
+            setMessage('Password must match!')
+        } else{
+            setAlertStatus('info')
+            setMessage('Good!')
+        }
+    }
+
   return (
     <>
             <Helmet>
@@ -125,11 +141,15 @@ const AccountData = ({values, handleChange, handleErrors}) => {
                                             className="auth__form__control"
                                             size='lg'
                                             type="password" 
-                                            value={values.re_password}
-                                            onChange={handleChange('re_password')}
-                                            isInvalid={!!handleErrors.re_password}
+                                            value={confirmPassword}
+                                            onChange={matchPassword}
+                                            // onChange={handleChange('re_password')}
+                                            // isInvalid={!!handleErrors.re_password}
                                         />
-                                        <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.re_password}</Form.Control.Feedback>
+                                        {field && (
+                                            <p className={`${alertStatus === 'danger' ? 'auth__danger': 'auth__success'}`}>{message}</p>
+                                        )}
+                                        {/* <Form.Control.Feedback type='invalid' className='ms-2'>{handleErrors.re_password}</Form.Control.Feedback> */}
                                     </Form.Group>
                                 </Col>
                             </Row>

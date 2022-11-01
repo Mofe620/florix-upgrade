@@ -231,22 +231,23 @@
     }
 
     &__divider{
-        height: 1rem;
+        height: 5rem;
         width: 100%;
         background-color: $neutral;
         // background-color: $primary;
         // margin-top: 1rem;
     }
     &__news{
-        background-color: $danger;
+        background-color: #0467A4;
         color: $neutral;
-        width: 100%;
+        width: 70%;
         height: 15vh;
         display: flex;
         padding-left: 5rem;
         padding-right: 5rem;
         padding-top: 4rem;
         padding-bottom: 15rem;
+        margin: 0 auto 10rem auto;
 
         @include respond(phone) {
             width: 100%;
@@ -415,7 +416,7 @@
   }
 
 .footer2{
-    background-color: $primary;
+    background-color: #30B0FF;
     color: $neutral;
     font-size: 1.5rem;
 }

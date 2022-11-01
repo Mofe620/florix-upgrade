@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {Button, Col, Form, Modal, Row} from 'react-bootstrap'
+import { MdCloudUpload } from 'react-icons/md'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import swal from 'sweetalert'
@@ -44,15 +45,24 @@ const RequestForm = ({values, handleChange, handleErrors}) => {
                 </Form.Control>
             </Form.Group>
           </div>
-          <div className='p-2 d-flex justify-content-center' style={{color:"white", backgroundColor:"#2E83B5"}}>
-            <Form.Group className=''>
-                <Form.Label className='mx-2 text-center' style={{fontSize:"18px"}}>Upload Prescription</Form.Label>
-                <Form.Control 
-                  type="file" 
-                  className='input-field' 
-                  onChange={handleChange('image')} value={values.image}
+          <div className='p-2 d-flex justify-content-center' style={{backgroundColor:'#F1F0F0'}}>
+            <div className=''>
+                <label className='emergency__formgroup__upload-image mx-2 text-center'>
+                  <div>
+                    <MdCloudUpload className='emergency__formgroup__upload-image__icon'  />
+                    <p>Click to Upload File</p>
+                  </div>
+                  <input 
+                    id='upload-image'
+                    type="file" 
+                    className='input-field' 
+                    name='image-upload'
+                    onChange={handleChange('image')} value={values.image}
+                    
                   />
-              </Form.Group>
+                </label>
+              </div>
+             
           </div>
           <div>
             <div className="emergency__pickup__container pt-md-5 pt-sm-3">

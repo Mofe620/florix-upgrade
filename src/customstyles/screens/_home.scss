@@ -1,0 +1,233 @@
+@import "../mixins/variables";
+
+.home{
+
+    &__slider{
+        margin-top: 5rem;
+        // height: 833.74px;
+    }
+
+    &__layer-one{
+        height: 30rem;
+        width: 100%;
+        background-color: #efefef;
+        padding: 5rem 10rem 0 10rem;
+        @include respond(phone){
+            padding: 3rem; 
+          }
+
+
+        & img{
+            height: 7rem;
+            margin: 0;
+            padding: 0;
+            @include respond(phone){
+              height: 5rem;  
+            }
+        }
+        & h2{
+            font-size: x-large;
+            font-weight: 700;
+            color: $primary;
+            @include respond(phone){
+                width: 100%;
+                font-size: large;
+                font-weight: 700;
+                margin: 0;
+                padding: 0;
+              }
+        }
+        & h3{
+            background-color: $primary;
+            width: 10rem;
+            height: 2rem;
+            text-align: center;
+            padding-bottom: 3rem;
+            & a{
+                color: $neutral;
+            }
+        }
+        & p{
+            color: $primary;
+        }
+
+        &__aside{
+            background-image: linear-gradient(to left, rgba(4, 103, 164, .7), rgba(4, 103, 164, 0.5)),
+            url('/images/leave.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+            padding-top: 7rem;
+            box-shadow: 10px 10px 5px 0px rgba($color: #afacac, $alpha: 0.75);
+            cursor:pointer;
+            @include respond(phone){
+                display: none;
+            }
+           & h2{
+            color: $neutral;
+            font-weight: 700;
+           }
+           & p{
+            color: #d4d0d0;
+            padding: 0;
+            margin: 0;
+           }
+        }
+
+        &__extended{
+            width: 100%;
+            margin: 0 auto;
+            & img{
+                width: 50rem;
+                @include respond(phone){
+                    width: 40rem;
+                }
+            }
+            &__wrapper{
+                margin: 0 2rem;
+                padding-top: 10rem;
+
+                & h3{
+                    color: #30B0FF;
+                    padding: 0;
+                    margin: 0;
+                    font-size: xx-large;
+                    font-weight: 700;
+                }
+                & h2{
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 40px;
+                    padding: 0;
+                    margin: 0;
+                    color: $danger;
+                    @include respond(phone){
+                        font-size: x-large;
+                    }
+                }
+                & p{
+                    font-size: x-large;
+                    & a{
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+
+    &__layer-two{
+        margin-top: 3rem;
+        padding: 0 5rem;
+        & h2{
+            color: #0467A4;
+            font-weight: 700;
+            font-size: xx-large;
+        }
+        & p{
+            color: #30B0FF;
+            font-size: x-large;
+        }
+        & img{
+            height: 30rem;
+            @include respond(phone){
+                width: 28rem;
+            }
+        }
+    }
+
+    &__subscribe{
+        text-align: center;
+        margin-top: 5rem;
+        color: #0467A4;
+        & h5{
+           font-size: 1rem;
+        }
+        & p{
+            font-size: xx-large;
+            font-weight: 700;
+            @include respond(phone){
+                font-size: x-large;
+            }
+        }
+    }
+
+    &__layer-three{   
+        &__wrapper{
+            position: relative;
+            & img{
+                width: 400px;
+                // height: 384px;
+                height: 300;
+                // margin: 1.2rem 0;
+                padding: 0 2rem;
+
+                @include respond(phone){
+                    width: 500px;
+                }
+            }
+            & h3{
+                position: absolute;
+                left: 50px;
+                bottom: 150px;
+                color: #ece8e8;
+                font-size: x-large;
+                font-weight: 700;
+                text-transform: uppercase;
+                // box-shadow: 1px 2px 2px 2px rgba($color: #898989, $alpha: 0.75);
+            }
+            & p{
+                position: relative;
+                left: 50px;
+                bottom: 120px;
+                width: 200px;
+                padding: 0;
+                margin: 0;
+                color: $neutral;
+
+            }
+        }
+    }
+
+    &__layer-four{
+        background-color: #0467A4;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        text-align: center;
+        width: 70%;
+        margin: 5rem auto 0 auto;
+        color: $neutral;
+
+        @include respond(phone){
+            width: 100%;
+        }
+    }
+
+    &__layer-five{
+        background-color: #0467A4;
+        background: radial-gradient();
+        margin: 5rem auto 0 auto;
+        padding-bottom: 2rem;
+        text-align: center;
+        width: 100%;
+        color: $neutral;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        & p{
+            width: 95%;
+        }
+
+        &__footer-icons{
+            display: flex;
+            justify-content: space-around;
+            margin: 3rem 0;
+
+            & img{
+                width: 30px;
+            }
+            & p{
+                color: #30B0FF;
+            }
+        }
+    }
+}

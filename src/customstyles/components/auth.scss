@@ -8,7 +8,12 @@
       margin-top: 3rem;
     }
     
-
+    &__success{
+      color: green;
+    }
+    &__danger{
+      color: red;
+    }
     &__header{
       margin-bottom: 4rem;
       @include respond(phone){
@@ -39,14 +44,24 @@
         height: 3.8rem;
       }
       &__wrapper{
-        width: 50%;
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
-        @include respond(tab-land){
-          width: 80%;
-         }
         @include respond(phone){
           width: 99%;
+          margin-left: auto;
+          margin-right: auto;
+         }
+
+         &__login{
+          width: 50%;
+          margin: 0 auto;
+          @include respond(tab-land){
+            width: 80%;
+          }
+          @include respond(phone){
+            width: 99%;
+         }
          }
       }
 
@@ -58,17 +73,24 @@
       
 
       & Button{
-        background-color: $neutral;
-        color: #000;
+        background-color: $primary;
+        color: $neutral;
         border: 1px $primary solid;
         margin: 1rem 0;
         font-size: 1.5rem; 
         width: 20rem;
-
-        & :hover, :active, :visited{
-          background-color: $primary !important;
-        } 
+        height: 4rem;
       }
+      & Button:hover{
+        background-color: $neutral !important;
+        color: $primary;
+
+      }
+      & Button:focus{
+        background-color: $neutral !important;
+        color: $primary;
+      }
+     
       & p{
         font-size: 1.5rem;
       }
@@ -208,6 +230,7 @@
     outline: none !important;
     box-shadow: none !important;
   }
+
 }
 .contact-input{
   font-size: 1.4rem;

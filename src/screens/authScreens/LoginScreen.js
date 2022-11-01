@@ -29,7 +29,7 @@ function LoginScreen({ isAuthenticated }) {
         dispatch(login(email, password))
     }
 
-    const notify =toast('Unable to login, please use valid email or password')
+    const notify =toast('Unable to login, please use valid email and password')
 
     if (isAuthenticated){
         return <Redirect to={from} />
@@ -40,14 +40,18 @@ function LoginScreen({ isAuthenticated }) {
         <>
         <AuthNavigation />
             <Container className='' style={{marginTop:'10rem'}}>
-                <div className="auth__form__wrapper shadow p-5">
+                <div className="auth__form__wrapper__login p-5">
                 <div className=' auth-header text-center'>
                     
                 {/* {error && <Message variant='danger'>{error}</Message>} */}
                 {error && 
                     <div>
                         <ToastContainer
-                        position='top-center'
+                            position='top-center'
+                            limit={1}
+                            draggableDirection='x'
+                            hideProgressBar={true}
+                            theme='light'
                         >
                             {notify}
                         </ ToastContainer>

@@ -29,7 +29,7 @@ const PasswordReset = ({ reset_password }) => {
     return (
         <>
         <AuthNavigation />
-        <Container className='auth-container '>
+        <Container className='auth-container' style={{marginTop:'10rem'}}>
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Reset Password</title>

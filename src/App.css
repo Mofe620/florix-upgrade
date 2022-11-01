@@ -40,6 +40,9 @@ body{
 
 .input-field{
   font-size: 1.6rem;
+}
+#upload-image{
+  height: 0;
 
 }
 
@@ -47,6 +50,7 @@ Button:focus{
   outline: none !important;
   box-shadow: none !important;
 }
+
 
 /* .right.carousel-control, .left.carousel-control{
   opacity: 0;

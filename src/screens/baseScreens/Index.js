@@ -3,11 +3,11 @@ import { Button, Col, Container, Image, Row } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { useSpring, animated } from 'react-spring'
 import Footer from '../../components/Footer'
 import Header from '../../components/global/Header'
-import IndexSlider from '../../components/sliders/index/indexSlider'
 import TrackRecord from '../../components/TrackRecord'
-import { getProductClass } from '../../redux/actions/productActions'
+
 
 
 const HealthcareFuture = [
@@ -18,7 +18,7 @@ const HealthcareFuture = [
 
 const Index = ({isAuthenticated}) => {
 
-
+    const props = useSpring({ to: { opacity: 1 }, from: { opacity: 0 } })
     const guestLinks = () => (
         <>
             <Col sm={12} md={8}>
@@ -74,14 +74,14 @@ const Index = ({isAuthenticated}) => {
             </Container>
             <div className='mt-md-5'>
                 <div className='index__services d-md-flex justify-content-center'>
-                    <div className='index__services__render m-4 shadow'>
+                    <animated.div style={props} className='index__services__render m-4 shadow'>
                         <h3 className='index__services__render__header'>Save More</h3>
                         <ul className='index__services__render__list'>
                             <li>Affordable Price</li>
                             <li>Credit Facility</li>
                             <li>Safe Shipment/Delivery</li>
                         </ul> 
-                    </div >
+                    </animated.div >
                     <div className='index__services__render m-4 shadow'>
                         <h3 className='index__services__render__header'>Get More Options</h3>
                         <ul className='index__services__render__list'>

@@ -205,12 +205,13 @@
             & h3{
                 position: absolute;
                 left: 50px;
-                bottom: 150px;
+                bottom: 170px;
                 color: #ece8e8;
                 font-size: x-large;
                 font-weight: 700;
                 text-transform: uppercase;
                 // box-shadow: 1px 2px 2px 2px rgba($color: #898989, $alpha: 0.75);
+              
             }
             & p{
                 position: relative;
@@ -220,8 +221,23 @@
                 padding: 0;
                 margin: 0;
                 color: $neutral;
-
             }
+            &__btn{
+                background-color: $neutral;
+                height: 2.5rem;
+                max-width: 8rem;
+                text-align: center;
+                align-items: center;
+                cursor: pointer;
+                border-radius: 5px;
+                
+
+                & a{
+                    color: $primary;
+                }
+                
+            }
+
         }
     }
 

@@ -31,8 +31,8 @@ const Footer = () =>{
                 </div>
                 <div>
                     <h2>Solutions</h2>
-                    <p className='footer__items__divider'></p>
                     <p><Link to="/shop">Wholesale Store</Link></p>
+                    <p className='footer__items__divider'>Logistics Portal</p>
                     <p><Link to="/emergency/request">EMS</Link></p>
                 </div>
                 <div>

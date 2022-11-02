@@ -69,7 +69,7 @@ const Home = () => {
                   <h3>Patient?</h3>
                   <p>Assess our 24-hour</p>
                   <h2>Emergency medicines service</h2>
-                  <p><Link to='emergency/request' className='fs-1'>Click Here</Link></p>
+                  <p><Link to='/emergency/request' className='fs-1'>Click Here</Link></p>
                 </div>
               </Col>
           </Row>
@@ -91,7 +91,7 @@ const Home = () => {
           </Row>
         </div>
         <div className='home__subscribe'>
-          <h5>Looking for quality Healthcare</h5>
+          <h5>Looking for quality Healthcare?</h5>
           <p>Subscribe to an offer that perfectly suits your Healthcare needs</p>
         </div>
         <div className='home__layer-three'>
@@ -102,6 +102,7 @@ const Home = () => {
                     <img src={product.img} />
                     <h3>{product.heading}</h3>
                     <p>Starting from NGN 9,999 30-day subscription</p>
+                    <p className='home__layer-three__wrapper__btn'><Link to='#'>Get now</Link></p>
                   </div>
                 </Col>
               ))}

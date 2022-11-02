@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Col, Image, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { MdVerified } from "react-icons/md"
 import ProductCarousel from '../../components/Carousel'
 import Footer from '../../components/Footer'
 import Header from '../../components/global/Header'
@@ -17,6 +18,7 @@ import Partnership from '../../components/sliders/shop/partnership'
     {id: 6, img: '/assets/iflolog/brain-study-background-mental-health-care-medical-technology.jpg', heading: 'children care', text: ''},
     {id: 7, img: '/assets/iflolog/brain-writes-with-white-chalk-is-hand-draw-concept.jpg', heading: 'asthma', text: ''},
     {id: 8, img: '/assets/iflolog/practice.jpg', heading: 'eye care', text: ''},
+    {id: 9, img: '/assets/iflolog/practice.jpg', heading: 'eye care', text: ''},
   ]
 
 
@@ -32,8 +34,8 @@ const Home = () => {
     <div className='home'>
         <Header />
         <div className='home__slider'>
-          <ProductCarousel />
-            {/* <IndexSlider /> */}
+          {/* <ProductCarousel /> */}
+            <IndexSlider />
         </div>
         <div className='home__layer-one'>
           <Row>
@@ -41,16 +43,16 @@ const Home = () => {
               <div>
                 <h2>Pharmacists, Physicians, other Healthcare Providers and Institutions?</h2>
                 <h3><Link to='register'>Sign Up</Link></h3>
-                <p>Already have account? Login</p>
+                <p>Already have account? <Link to='login'>Login</Link></p>
                 <img src='/assets/iflolog/members.png' />
               </div>
             </Col>
             <Col>
               <div  className='home__layer-one__aside'>
                 <div className='text-center'>
-                  <h2>Save More</h2>
-                  <p>Get the best prices</p>
-                  <p>and best delivery rate</p>
+                  <h2>Stay on Time</h2>
+                  <p>Make wholesale procurement with ease</p>
+                  <p>Get fast snd efficient logistics</p>
                 </div>
               </div>
               
@@ -77,14 +79,14 @@ const Home = () => {
             <Col>
               <div>
                 <h2>We guarantee you the CAPS of Healthcare</h2>
-                <p>Convenience</p>
-                <p>Accessibilty</p>
-                <p>Privacy</p>
-                <p>Speed</p>
+                <p><MdVerified className='home__layer-two__icon'/>Convenience</p>
+                <p><MdVerified className='home__layer-two__icon'/> Accessibilty</p>
+                <p><MdVerified className='home__layer-two__icon'/> Privacy</p>
+                <p><MdVerified className='home__layer-two__icon'/> Speed</p>
               </div>
             </Col>
             <Col>
-              <img src='/assets/iflolog/qw.png' className='' />
+              <img src='/assets/iflolog/logistics.png' className='' />
             </Col>
           </Row>
         </div>
@@ -94,9 +96,8 @@ const Home = () => {
         </div>
         <div className='home__layer-three'>
           <Row>
-            
               {data.map((product)=>(
-                <Col key={product.id} className='d-flex justify-content-center mx-auto' xs={12} md={5} lg={4} xl={3}>
+                <Col key={product.id} className='d-flex justify-content-center mx-auto' xs={12} md={5} lg={4} >
                   <div className='home__layer-three__wrapper'>
                     <img src={product.img} />
                     <h3>{product.heading}</h3>

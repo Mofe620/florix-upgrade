@@ -38,7 +38,7 @@ const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
     );
 
     return(
-        <nav className='navbar fixed-top shadow-sm'>
+        <nav className='navbar shadow-sm w-100'>
             <div className="navbar__logobtn">
                 <span className="navbar__logobtn__btn" >&#9776;</span>
         

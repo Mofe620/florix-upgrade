@@ -34,7 +34,6 @@ const Home = () => {
     <div className='home'>
         <Header />
         <div className='home__slider'>
-          {/* <ProductCarousel /> */}
             <IndexSlider />
         </div>
         <div className='home__layer-one'>
@@ -99,7 +98,7 @@ const Home = () => {
         <div className='home__layer-three'>
           <Row>
               {data.map((product)=>(
-                <Col key={product.id} className='d-flex justify-content-center mx-auto' xs={12} sm={6} md={4} lg={4} >
+                <Col key={product.id} className='justify-content-center mx-auto' xs={12} sm={6} md={4} lg={4} >
                   <div className='home__layer-three__wrapper'>
                     <img src={product.img} />
                     <h3>{product.heading}</h3>

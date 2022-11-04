@@ -33,11 +33,10 @@ div{
     font-size: 1.2rem;
 }
 .active {
-    color: rgb(245, 46, 168) !important;
+    color: $primary !important;
 
     @include respond(tab-port) {
         background-color: #fff !important;
-        color:rgb(245, 46, 168) !important;
     }
 }
 

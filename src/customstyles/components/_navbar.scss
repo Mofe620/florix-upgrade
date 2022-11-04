@@ -6,19 +6,20 @@
     padding-right: 1rem;
     padding-bottom: 1rem;
     padding-top: 1rem;
-    height: 6rem;
+    height: 64px !important;
     @include respond(phone) {
         padding-right: 0;
         
     }
  
     &__flolog-logo{
-        height: 40px;
+        height: 32px;
+        width: 113px;
         margin-left: 4rem;
         padding-bottom: 1rem;
 
         @include respond(phone) {
-            margin-left: 1.5rem;
+            margin-left: 1.2rem;
             
         }
       }
@@ -38,7 +39,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 1.8rem;
+            font-size: 18px;
             margin: 0 20px;
          
 
@@ -49,9 +50,9 @@
     }
 
     &__link {
-        color: $primary;
+        color: #000;
         font-weight: 500;
-        font-size: 1.5rem;
+        font-size: 18px;
         text-decoration: none;
 
 
@@ -67,7 +68,7 @@
 
     &__gestlinks{
         margin-left: 30px;
-        font-size: 1.9rem;
+        font-size: 18px;
     }
     &__logobtn{
         

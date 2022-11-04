@@ -129,7 +129,7 @@
             width: 100%;
             margin: 0% 10rem;
             @include respond(phone){
-                margin: 3rem auto;
+                margin: 1rem auto;
             }
            &__file{
             display: flex;
@@ -196,6 +196,10 @@
         // max-width: 100%;
         margin-top: 5rem;
         padding: 0 5rem;
+        @include respond(phone){
+            margin-top: 0%;
+            padding: 0 2rem;
+        }
        
         & h2{
             color: #0467A4;
@@ -226,6 +230,7 @@
             height: 430px;
             @include respond(phone){
                 width: 30rem;
+                height: 300px;
             }
         }
     }

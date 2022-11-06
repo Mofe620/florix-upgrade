@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import Header from '../../components/global/Header';
 import Footer from '../../components/Footer';
-import { Link, useHistory, useLocation } from 'react-router-dom'
+import {useLocation } from 'react-router-dom'
 import {Helmet} from "react-helmet";
 import { useDispatch, useSelector, connect} from 'react-redux'
-import { Row, Col, Container, Button, Modal, Form } from 'react-bootstrap'
+import { Row, Col, Container, Modal} from 'react-bootstrap'
 import Product from '../../components/Product'
 import Message from '../../components/Message'
 import Paginate from '../../components/Paginate'
 import ProductCarousel from '../../components/Carousel'
-//import ProductCarousel from '../components/ProductCarousel'
-import SearchBox from '../../components/SearchBox'
 import { listProducts } from '../../redux/actions/productActions'
 import SearchProduct from '../../components/SearchProduct'
-import StoreSlider from '../../components/sliders/shop/storeSlider';
 import StoreSpinner from '../../components/spinners/StoreSpinner';
 
 

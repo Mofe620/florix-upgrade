@@ -52,7 +52,6 @@ const EmergencyOrderVerifyScreen = ({values}) => {
 
 if(chat){
   window.location.assign("https://tinyurl.com/2p98zk2h");
-  // return <Redirect to={{ pathname: "https://tinyurl.com/2p98zk2h" }} target='_blank'/>
 }
   return (
     <>

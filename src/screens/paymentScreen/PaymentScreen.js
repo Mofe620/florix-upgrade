@@ -4,7 +4,6 @@ import Footer from '../../components/Footer';
 import { Form, Button, Col, Container } from 'react-bootstrap'
 import {Helmet} from "react-helmet";
 import { useDispatch, useSelector } from 'react-redux'
-import FormContainer from '../../components/FormContainer'
 import CheckoutSteps from '../../components/CheckoutSteps'
 import { savePaymentMethod } from '../../redux/actions/cartActions'
 

@@ -110,10 +110,7 @@ if(!isAuthenticated){
           {activeStep === 2 && (
           <EmergencyOrderVerifyScreen values={multiFormValues} handleChange = {handleChange} /> 
           )}
-
-      {/* <Button variant='secondary' disabled={activeStep === 0} style={activeStep === 2 ? {display: 'none'}: {}} className='emergency__btn emergency__btn__previous' onClick={HandlePrevious}>Previous</Button> */}
       <Button style={activeStep === 2 ? {display:"none"}: {}} className='emergency__btn emergency__btn__next' onClick={HandleNext}>{activeStep === steps.length - 1?"Verify":"NEXT"}</Button>
-  
       </Container>
       <Footer />
     </>

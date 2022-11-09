@@ -13,8 +13,8 @@
     }
  
     &__flolog-logo{
-        height: 32px;
-        width: 113px;
+        height: 35px;
+        width: 100px;
         margin-left: 4rem;
         padding-bottom: 1rem;
 
@@ -105,24 +105,24 @@
    
 
     &__button {
-        display: none;
+        // display: none;
 
         @include respond(tab-port) {
             position: fixed;
+            right: 1em;
             display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            height: 65%;
-            margin: 17.5% 0;
-            width: 5rem;
+            height: 4em;
+            // background-color: $primary;
+            width: 4em;
+            z-index: 50;
             cursor: pointer;
             
+           
 
             &:hover {
-                height: 70%;
-                margin: 15% 0;
+                // margin: 15% 0;
             }
 
             &__component {
@@ -136,6 +136,9 @@
                 }
             }
         }
+    }
+    &__button svg {
+        scale: 2;
     }
     &__auth-link{
         cursor: pointer;

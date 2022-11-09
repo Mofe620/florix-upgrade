@@ -1,9 +1,7 @@
-import React, { Fragment } from 'react';
-import {Link, NavLink} from 'react-router-dom'
-import { LinkContainer } from 'react-router-bootstrap';
-import { useSelector, connect } from 'react-redux'
+import React from 'react';
+import {NavLink} from 'react-router-dom'
+import { connect } from 'react-redux'
 import { logout } from '../../redux/actions/authActions';
-import {Dropdown, NavDropdown} from 'react-bootstrap';
 
 const Sidebar = ({
     isAuthenticated, 
@@ -11,23 +9,23 @@ const Sidebar = ({
     isOpen,
     closeSidebar
 }) => {
-    const styles = isOpen ? 'sidebar sidebar--open' : 'sidebar sidebar--closed';
-
+        
+const styles = isOpen ? 'sidebar sidebar--open' : 'sidebar sidebar--closed';
     
 const guestLinks = () => (
 
-        <Fragment>
-            <LinkContainer className='sidebar__link' to='/register'>
-                <li className='sidebar__list__item sidebar__auth-link' onClick={closeSidebar}>Sign Up</li>
-            </LinkContainer>
-            <LinkContainer className='sidebar__link' to='/login'>
-                <li className='sidebar__list__item sidebar__auth-link' onClick={closeSidebar}>Sign In</li>
-            </LinkContainer>
-        </Fragment>
+    <>
+        <div className='sidebar__link' to='/login'>
+            <li className='sidebar__list__item sidebar__auth-link' onClick={closeSidebar}>Sign In</li>
+        </div>
+        <div className='sidebar__link' to='/register'>
+            <li className='sidebar__list__item sidebar__auth-link' onClick={closeSidebar}>Sign Up</li>
+        </div>
+    </>
     );
     
     const authLinks = () => (
-        <Fragment>
+        <>
             <li className='sidebar__list__item' onClick={closeSidebar}>
                 <NavLink className='sidebar__link' to='/shop'><img src="/assets/icons/Store.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
                     Wholesale Store
@@ -38,19 +36,18 @@ const guestLinks = () => (
                     EMS
                 </NavLink>
             </li>
-       <LinkContainer className='sidebar__link' to='/profile'>
+        <div className='sidebar__link' to='/profile'>
             <li className='sidebar__list__item' onClick={closeSidebar}><img src="/assets/icons/Profile.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
                 Profile
             </li>
-        </LinkContainer>
-
-            <li className='sidebar__list__item sidebar__auth-link' onClick={closeSidebar} onClick={logout}>Logout</li>
-        </Fragment>
+        </div>
+            <li className='sidebar__list__item sidebar__auth-link' onClick={logout}>Logout</li>
+        </>
     );
 
     return (
-        <Fragment>
-            {isOpen ? <div className='sidebar__backdrop' onClick={closeSidebar}></div> : <Fragment></Fragment>}
+        <>
+            {isOpen ? <div className='sidebar__backdrop' onClick={closeSidebar}></div> : <></>}
             <nav className={`${styles}`}>
                 <ul className='sidebar__list mt-5'>
                     <div className='sidebar__logo'>
@@ -61,12 +58,6 @@ const guestLinks = () => (
                             Home
                         </NavLink>
                     </li>
-                
-                    {/* <li className='sidebar__list__item' onClick={closeSidebar}>
-                        <NavLink className='sidebar__link' to='/services'><img src="/assets/icons/Product_icon.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
-                            Services
-                        </NavLink>
-                    </li> */}
                     <li className='sidebar__list__item' onClick={closeSidebar}>
                         <NavLink className='sidebar__link' to='/about'><img src="/assets/icons/AboutUs_icon.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
                             About Us
@@ -77,13 +68,11 @@ const guestLinks = () => (
                             Blog
                         </NavLink>
                     </li>
-                   
-                    <Dropdown.Divider />
                     {isAuthenticated ? authLinks() : guestLinks()}
                     
                 </ul>
             </nav>
-        </Fragment>
+        </>
     );
 };
 

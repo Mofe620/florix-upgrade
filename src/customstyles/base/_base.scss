@@ -1,23 +1,20 @@
 @import "../mixins/variables";
+:root {
+    font-size: 16px;
+}
 *,
 *::after,
 *::before {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
-}
-
-html {
-    font-size: 62.5%;
-    font-family: 'Montserrat', sans-serif, Arial, Helvetica,;
-}
-
-body {
     box-sizing: border-box;
-    width: 100%;
 }
-p{
-    font-size: 1.6rem;
+body {
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    max-width: 1440px;
+    overflow-x: hidden;
+    color: $primary;
 }
 
 .content {
@@ -30,9 +27,7 @@ p{
     }
 }
 
-div{
-    font-size: 1.2rem;
-}
+
 .active {
     color: $primary !important;
 
@@ -52,7 +47,7 @@ div{
     font-size: .6rem;
   }
 
-Button:hover, Button:active, Button:visited{
-    background-color: $primary !important;
-  }
+// Button:hover, Button:active, Button:visited{
+//     background-color: $primary !important;
+//   }
   

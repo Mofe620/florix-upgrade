@@ -13,7 +13,7 @@
     "formik": "^2.2.9",
     "i18n-iso-countries": "^7.5.0",
     "react": "^17.0.1",
-    "react-bootstrap": "^1.6.4",
+    "react-bootstrap": "^2.6.0",
     "react-calendar": "^3.7.0",
     "react-datepicker": "^4.8.0",
     "react-dom": "^17.0.1",
@@ -31,13 +31,13 @@
     "redux-thunk": "^2.3.0",
     "sass": "^1.45.2",
     "sweetalert": "^2.1.2",
-    "swiper": "^8.1.4",
+    "swiper": "^8.4.4",
     "web-vitals": "^0.2.4",
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
-    "//start": "react-scripts start",
+    "//start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

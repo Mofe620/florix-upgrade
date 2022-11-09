@@ -1,0 +1,472 @@
+.home {
+    max-width: 100%;
+}
+.swiper {
+    height: 620px;
+}
+.swiper_slide {
+    position: relative;
+    min-height: 620px;
+    background-color: var(--primary);
+}
+.swiper_slide img {
+    width: 100%;
+    height: 620px;
+    object-fit: cover;
+    position: absolute;
+    mix-blend-mode: multiply;
+    zoom: 1.8;
+    object-position: 0% 1000%;
+}
+.swiper_text {
+    position: relative;
+    width: 60%;
+    padding: 15em 4em 4em;
+    color: var(--neutral);
+    z-index: 4;
+}
+.swiper_text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    -webkit-text-stroke: 1px #000000;
+}
+.swiper_text p {
+    font-size: 1.25rem;
+}
+
+.layer_one{
+    display: flex;
+    justify-content: space-around;
+    padding: 3em;
+    width: 100%;
+    background-color: #efefef;
+    color: var(--dense-primary);
+    margin: auto;
+}
+.layer_one > div {
+    width: 50%;
+}
+.layer_one > div p {
+    font-size: 1.2rem;
+}
+.layer_one a {
+    text-decoration: none;
+}
+.layer_one button {
+    padding: 0.5em;
+    color: var(--neutral);
+    background-color: var(--primary);
+    border: none;
+    margin-top: -0.5em;
+}
+.layer_one button svg {
+    margin-left: -0.25em;
+}
+.layer_one img {
+    margin-bottom: -10em;
+}
+.layer_one .card {
+    background-image: linear-gradient(to left, rgba(4, 103, 164, .7), rgba(4, 103, 164, 0.5)), url('../images/qw.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-size: 1rem;
+    border-radius: 0.5em;
+    padding: 4em;
+    width: 30%;
+    min-height: 21em;
+    margin: auto 0em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--neutral);
+    animation: fade 9s ease infinite alternate;
+}
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+.layer_one .card.two {
+    background-image: url('../images/Front view of plant growing from golden coins.png');
+}
+
+.layer_two {
+    background-color: var(--dense-primary);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 8em 5em 4em;
+    padding: 0em;
+    color: var(--neutral);
+    position: relative;
+}
+.illustration {
+    width: 50%;
+}
+.illustration img {
+    position: relative;
+    left: -6em;
+    top: -0.5em;
+}
+.emergency_cta {
+    width: 40%;
+}
+.emergency_cta h3 {
+    color: #87D1FF;
+    margin-bottom: -0.5em;
+}
+.emergency_cta h2 {
+    margin-top: -0.5em;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.emergency_cta button {
+    padding: 0.5em;
+    text-decoration: none;
+    color: var(--dense-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--neutral);
+    border: none;
+    cursor: pointer;
+}
+
+.layer_three {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0em auto;
+    font-size: 2.5rem;
+    padding: 3em;
+}
+.layer_three img {
+    width: 50%;
+}
+.layer_three h2 {
+    font-weight: 600;
+    color: var(--dense-primary);
+}
+.layer_three p {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+.layer_three svg {
+    color: var(--dense-primary);
+}
+
+.subscribe h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--dense-primary);
+}
+.subscribe h3 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    max-width: 60%;
+    margin: 0em auto;
+    color: var(--dense-primary);
+}
+.product_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-template-rows: repeat(3, 330px);
+    gap: 3em;
+    padding: 4em 12em;
+    color: var(--neutral);
+}
+.product {
+    position: relative;
+    min-height: 15em;
+}
+.product img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+    border-radius: 0.25em;
+}
+.product_info {
+    position: absolute;
+    left: 1em;
+    bottom: 1em;
+}
+.product h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: var(--neutral);
+    padding: 0em 0em;
+}
+.product p {
+    font-size: 1rem;
+}
+.product a {
+    cursor: pointer;
+}
+.product button {
+    background-color: var(--neutral);
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 0.25em;
+}
+.product button:hover {
+    background-color: var(--neutral);
+}
+.product_info * {
+    margin: 0;
+}
+
+
+.layer_four {
+    background-color: #0467A4;
+    padding: 4em;
+    text-align: center;
+    width: 80%;
+    margin: 5em auto;
+    color: var(--neutral);
+    position: relative;
+}
+.layer_four h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.layer_four p {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.layer_four button {
+    padding: 0.5em 1em;
+    color: var(--neutral);
+    background-color: var(--primary);
+    border: none;
+    cursor: pointer;
+}
+
+
+.layer_five {
+    background-image: url(../images/testimonial.svg);
+    background-repeat: no-repeat;
+    background-position-x: 60%;
+    margin: 2em auto 0em;
+    text-align: center;
+    width: 100%;
+    color: var(--neutral);
+    padding: 20em 2em;
+    position: relative;
+}
+.layer_five h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.layer_five p {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.layer_five .partner_data {
+    display: flex;
+    justify-content: space-around;
+    margin: 3em 0;
+}
+.partner_data img {
+    width: 50px;
+}
+.partner_data h2 {
+    color: #30B0FF;
+}
+.partners_swiper {
+    margin: 0em 0em;
+}
+.partners_swiper h6 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.newsletter_layer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0em auto;
+    padding: 4em;
+    background-color: var(--dense-primary);
+    color: var(--neutral);
+}
+.newsletter_layer h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.newsletter_layer p {
+    font-size: 1.25rem;
+}
+.newsletter_layer .form_wrapper {
+    width: 45%;
+}
+.form_wrapper input {
+    padding: 0.5em;
+    margin: 0.5em 0em;
+    border: none;
+    border-radius: 0.25em;
+}
+.form_wrapper button {
+    background-color: var(--neutral);
+    color: var(--primary);
+    width: 40%;
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.25em;
+}
+
+/* MEDIA QUERIES */
+@media (max-width:400px) {
+    :root {
+        font-size: 12px;
+    }
+    .swiper, .swiper_slide, .swiper_slide img {
+        height: 90vh;
+        min-height: auto;
+    }
+    .swiper_slide img {
+        zoom: 1;
+        object-position: 45% 0%;
+    }
+    .swiper_text {
+        padding: 15em 2em 2em;
+        width: 100%;
+    }
+    .swiper_text h1 {
+        font-size: 2.5rem;
+    }
+    .swiper_text p {
+        font-size: 1.5rem;
+    }
+
+    .layer_one {
+        flex-direction: column;
+    }
+    .layer_one > div {
+        width: 100%;
+    }
+    .layer_one img {
+        margin: 0em 0em 2em;
+    }
+    .layer_one .card {
+        width: 100%;
+    }
+
+    .layer_two {
+        flex-direction: column;
+        border-radius: 0.25em;
+        margin: 8em 3em 4em;
+    }
+    .illustration {
+        width: 100%;
+    }
+    .illustration img {
+        position: relative;
+        left: -3em;
+        top: -0.5em;
+    }
+    .emergency_cta {
+        width: 100%;
+        padding: 2em;
+    }
+
+    .layer_three {
+        flex-direction: column;
+        width: 100%;
+        padding: 2em;
+    }
+    .layer_three img {
+        width: 100%;
+        margin-top: 1em;
+    }
+    .product {
+        width: 100%;
+        margin: 2em auto;
+        min-height: 20em;
+    }
+    .product img {
+        width: 100%;
+    }
+
+
+    .subscribe h5 {
+        font-size: 1.5rem;
+    }
+    .subscribe h3 {
+        font-size: 2rem;
+        max-width: 90%;
+    }
+
+    .layer_four {
+        width: 100%;
+        padding: 3em;
+        margin: 3em auto;
+    }
+    .layer_four h4 {
+        font-size: 2rem;
+    }
+    .layer_four p {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-top: 1em;
+    }
+    .layer_four button {
+        padding: 0.5em 1em;
+        margin-top: 0.5em;
+        font-size: 1.25rem;
+    }
+
+    .layer_five {
+        background-position-x: 50%;
+        margin-top: -10em;
+    }
+    .layer_five p {
+        font-size: 2rem;
+        margin-top: 1em;
+    }
+    .layer_five .partner_data {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .partners_swiper {
+        margin: -2em 0em 10em;
+    }
+
+    .newsletter_layer {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+    .newsletter_layer .form_wrapper {
+        width: 100%;
+    }
+    .form_wrapper input {
+        padding: 1em;
+    }
+    .form_wrapper button {
+        width: auto;
+        display: block;
+        margin: 0.5em auto;
+    }
+}

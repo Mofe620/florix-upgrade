@@ -1,28 +1,28 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {Link, NavLink} from 'react-router-dom'
-import { LinkContainer } from 'react-router-bootstrap';
-import { useSelector, connect } from 'react-redux'
+import { connect } from 'react-redux'
 import { logout } from '../../redux/actions/authActions';
-import {NavDropdown} from 'react-bootstrap';
+import { FaBars, FaTimes } from "react-icons/fa";
 
 
-const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
+const NavbarInfo = ({ toggleSidebar, showSidebar, isAuthenticated, logout }) => {
 
-    const auth = useSelector(state => state.auth)
-    const { error, loading, user } = auth
+    // const auth = useSelector(state => state.auth)
+    // const { error, loading, user } = auth
   
-
     const guestLinks = () => (
 
-        <Fragment>
-            <LinkContainer to='/login'>
-                <li className="navbar__auth-link"><i class="fa fa-sign-in-alt"></i> Sign In</li>
-            </LinkContainer>
-        </Fragment>
+        <>
+            <li className='navbar__list__item'>
+                <NavLink className="navbar__link" to='/login'>
+                    Sign In
+                </NavLink>
+            </li>
+        </>
     );
   
     const authLinks = () => (
-        <Fragment>
+        <>
             <li className='navbar__list__item'>
                 <NavLink className='navbar__link' to='/shop'>
                         Wholesale Store
@@ -34,14 +34,12 @@ const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
                 </NavLink>
             </li>
             <li className="navbar__auth-link" onClick={logout}><i class="fa fa-sign-out-alt"></i> Logout</li>
-        </Fragment>
+        </>
     );
 
     return(
         <nav className='navbar shadow-sm w-100'>
             <div className="navbar__logobtn">
-                <span className="navbar__logobtn__btn" >&#9776;</span>
-        
                 <Link className='navbar__logo' exact to='/'>
                     <img className='navbar__flolog-logo'  src='/assets/images/icons/flolog-logo.png' alt="flolog-logo" />
                 </Link>
@@ -54,7 +52,7 @@ const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
                 </li>
                 <li className='navbar__list__item'>
                     <NavLink className='navbar__link' to='/about'>
-                        About 
+                        About Us
                     </NavLink>
                 </li>
                 <li className='navbar__list__item'>
@@ -66,13 +64,9 @@ const NavbarInfo = ({ toggleSidebar, isAuthenticated, logout }) => {
                     {isAuthenticated ? authLinks() : guestLinks()}
         
             </ul>
-     
             <div className='navbar__button' onClick={toggleSidebar}>
-               
+             {showSidebar ? <FaTimes/> :  <FaBars />}
             </div>
-            <div>
-            </div>  
-         
         </nav>
     );
 }

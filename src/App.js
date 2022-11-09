@@ -1,14 +1,13 @@
-import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import {Helmet} from "react-helmet";
 import './customstyles/main.scss';
 import './App.css';
-import ScrollToTop from './components/global/ScrollToTop';
 import Home from './screens/baseScreens/Home';
 import About from './screens/baseScreens/About';
 import Contact from './screens/baseScreens/Contact';
 import RegisterScreen from './screens/authScreens/register/RegisterScreen';
 import SignUpScreen from './screens/authScreens/SignUpScreen';
-import  SignInScreen  from './screens/authScreens/SignInScreen';
+import SignInScreen  from './screens/authScreens/SignInScreen';
 import LoginScreen from './screens/authScreens/LoginScreen';
 import PasswordReset from './screens/authScreens/PasswordReset';
 import PasswordResetConfirm from './screens/authScreens/PasswordResetConfirm'
@@ -39,51 +38,47 @@ import TermsScreen from './screens/baseScreens/TermsScreen';
 function App() {
   return (
     <Router>
-      <main className="py-3">
       <Helmet>
         <title>FLO-LOG</title>
         <meta name="description" content="Providing tech driven logistics solution" />
-    </Helmet>
-    <ScrollToTop />
-        <>
-          <Route path='/shop' component={Shop} />
-          <Route path='/signup' component={SignUpScreen} />
-          <Route path='/test/prescription' component={PrescriptionFormSreen} />
-          <Route path='/emergency/request' component={EmergencyScreen} exact />
-          <Route path='/test/prescription_form/upload' component={PrescriptionForm} />
-          <Route path='/signin' component={SignInScreen} />
-          <Route exact path="/reset-password" component={PasswordReset} />
-          <Route exact path='/password/reset/confirm/:uid/:token' component={PasswordResetConfirm} />
-          <Route exact path='/activate/:uid/:token' component={ ActivateAccount} />
-          <Route exact path="/reset-password-complete" component={PasswordResetComplete} />
-          
-          <Route path='/' component={Home} exact />
-          {/* <Route path='/' component={Index} exact /> */}
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route path='/services' component={servicesScreen} />
-          <Route path='/products' component={ProductsScreen} />
-          <Route path='/med/therapeutic_class/:id' component={ProductClassScreen} />
-          <Route path='/login' component={LoginScreen} />
-          <Route path='/register' component={RegisterScreen} />
-          <Route exact path="/profile" component={UserProfile} />     
-          <Route exact path="/terms-conditions" component={TermsScreen} /> 
-          <Route exact path="/privacy-policy" component={PolicyScreen} /> 
+      </Helmet>
+      <>
+        <Route path='/shop' component={Shop} />
+        <Route path='/signup' component={SignUpScreen} />
+        <Route path='/test/prescription' component={PrescriptionFormSreen} />
+        <Route path='/emergency/request' component={EmergencyScreen} exact />
+        <Route path='/test/prescription_form/upload' component={PrescriptionForm} />
+        <Route path='/signin' component={SignInScreen} />
+        <Route exact path="/reset-password" component={PasswordReset} />
+        <Route exact path='/password/reset/confirm/:uid/:token' component={PasswordResetConfirm} />
+        <Route exact path='/activate/:uid/:token' component={ ActivateAccount} />
+        <Route exact path="/reset-password-complete" component={PasswordResetComplete} />
+        
+        <Route path='/' component={Home} exact />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+        <Route path='/services' component={servicesScreen} />
+        <Route path='/products' component={ProductsScreen} />
+        <Route path='/med/therapeutic_class/:id' component={ProductClassScreen} />
+        <Route path='/login' component={LoginScreen} />
+        <Route path='/register' component={RegisterScreen} />
+        <Route exact path="/profile" component={UserProfile} />     
+        <Route exact path="/terms-conditions" component={TermsScreen} /> 
+        <Route exact path="/privacy-policy" component={PolicyScreen} /> 
 
-          <Route path='/shipping' component={ShippingScreen} />
-          <Route path='/placeorder' component={PlaceOrderScreen} />
-          <Route path='/order/:id' component={OrderScreen} />
-          <Route path='/payment' component={PaymentScreen} />
-          <Route path='/product/:id' component={ProductDetailsScreen} />
-          <Route path='/cart/:id?' component={CartScreen} />
-          <Route path='/payment/monnify' component={Monnify} exact/>
+        <Route path='/shipping' component={ShippingScreen} />
+        <Route path='/placeorder' component={PlaceOrderScreen} />
+        <Route path='/order/:id' component={OrderScreen} />
+        <Route path='/payment' component={PaymentScreen} />
+        <Route path='/product/:id' component={ProductDetailsScreen} />
+        <Route path='/cart/:id?' component={CartScreen} />
+        <Route path='/payment/monnify' component={Monnify} exact/>
 
-          <Route path='/blog/posts' component={BlogListScreen} />
-          <Route path='/post/:id' component={BlogDetailsScreen} />
-          <Route path='/blog/categories' component={BlogHomeScreen} />
-          <Route path='/blog/category/:id' component={BlogCategoryScreen} />
-        </>
-      </main>
+        <Route path='/blog/posts' component={BlogListScreen} />
+        <Route path='/post/:id' component={BlogDetailsScreen} />
+        <Route path='/blog/categories' component={BlogHomeScreen} />
+        <Route path='/blog/category/:id' component={BlogCategoryScreen} />
+      </>
     </Router>
   );
 }

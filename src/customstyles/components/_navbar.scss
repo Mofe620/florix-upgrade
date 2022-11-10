@@ -105,7 +105,7 @@
    
 
     &__button {
-        // display: none;
+        display: none;
 
         @include respond(tab-port) {
             position: fixed;

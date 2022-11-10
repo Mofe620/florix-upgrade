@@ -44,15 +44,22 @@
     &__list {
         list-style: none;
         font-size: 1.8rem;
+        margin-left: 0em !important;
         width: 100%;
 
         &__item {
             margin-bottom: 1rem;
         }
+
+        &__item svg {
+            margin-right: 0.5em;
+        }
     }
 
-    &__logo {
-      display: none;
+    &__flolog-logo {
+        height: 30px;
+        width: 90px;
+        margin: 0.5em 0em;
     }
 
     &__link {

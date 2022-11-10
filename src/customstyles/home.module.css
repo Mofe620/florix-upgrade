@@ -342,7 +342,7 @@
         font-size: 12px;
     }
     .swiper, .swiper_slide, .swiper_slide img {
-        height: 90vh;
+        height: 110vh;
         min-height: auto;
     }
     .swiper_slide img {
@@ -350,7 +350,7 @@
         object-position: 45% 0%;
     }
     .swiper_text {
-        padding: 15em 2em 2em;
+        padding: 24em 2em 2em;
         width: 100%;
     }
     .swiper_text h1 {

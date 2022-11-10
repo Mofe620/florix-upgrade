@@ -2,6 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logout } from '../../redux/actions/authActions';
+import { FaHome, FaUsers, FaBookmark } from "react-icons/fa";
 
 const Sidebar = ({
     isAuthenticated, 
@@ -49,23 +50,25 @@ const guestLinks = () => (
         <>
             {isOpen ? <div className='sidebar__backdrop' onClick={closeSidebar}></div> : <></>}
             <nav className={`${styles}`}>
-                <ul className='sidebar__list mt-5'>
-                    <div className='sidebar__logo'>
-                        Navbar App
+                <ul className='sidebar__list'>
+                    <div className='sidebar__list__item' onClick={closeSidebar}>
+                        <NavLink className='sidebar__logo' exact to='/'>
+                            <img className='sidebar__flolog-logo'  src='/assets/images/icons/flolog-logo.png' alt="flolog-logo" />
+                        </NavLink>
                     </div>
                     <li className='sidebar__list__item' onClick={closeSidebar}>
-                        <NavLink className='sidebar__link' exact to='/'><img src="/assets/icons/Home_icon.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
-                            Home
+                        <NavLink className='sidebar__link' exact to='/'>
+                            <FaHome />Home
                         </NavLink>
                     </li>
                     <li className='sidebar__list__item' onClick={closeSidebar}>
-                        <NavLink className='sidebar__link' to='/about'><img src="/assets/icons/AboutUs_icon.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
-                            About Us
+                        <NavLink className='sidebar__link' to='/about'>
+                           <FaUsers/> About Us
                         </NavLink>
                     </li>
                     <li className='sidebar__list__item' onClick={closeSidebar}>
-                        <NavLink className='sidebar__link' to='/blog/posts'><img src="/assets/icons/Blog.png" alt="" style={{height:"25px", marginRight:"20px"}}/>
-                            Blog
+                        <NavLink className='sidebar__link' to='/blog/posts'>
+                            <FaBookmark />Blog
                         </NavLink>
                     </li>
                     {isAuthenticated ? authLinks() : guestLinks()}

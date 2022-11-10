@@ -6,7 +6,7 @@ function TeamMember({data}) {
     return (
     <div className={styles.member_card}>
         <img src={imageSrc} alt="team member" />
-        <h3>{name}</h3>
+        <h4>{name}</h4>
         <h6>{position}</h6>
     </div>
   )

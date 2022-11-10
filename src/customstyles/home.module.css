@@ -350,7 +350,7 @@
         object-position: 45% 0%;
     }
     .swiper_text {
-        padding: 24em 2em 2em;
+        padding: 30em 2em 2em;
         width: 100%;
     }
     .swiper_text h1 {
@@ -465,8 +465,10 @@
         padding: 1em;
     }
     .form_wrapper button {
-        width: auto;
+        width: 60%;
         display: block;
         margin: 0.5em auto;
+        background-color: var(--primary);
+        color: var(--neutral);
     }
 }

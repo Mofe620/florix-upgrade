@@ -1,7 +1,7 @@
 footer {
     background-color: var(--dense-primary);
     color: var(--neutral);
-    margin-top: 10em;
+    margin-top: 6em;
     padding: 4em;
 }
 .footer_links_wrapper {

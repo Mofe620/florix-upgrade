@@ -40,7 +40,7 @@ const SignInScreen = ({ isAuthenticated }) => {
     })
     return (
         <Container className="content auth-container">
-               <Helmet>
+            <Helmet>
                 <meta charSet="utf-8" />
                 <title>Sign In</title>
             </Helmet>

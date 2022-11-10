@@ -1,6 +1,5 @@
 import React from 'react'
 import {Helmet} from "react-helmet";
-import { Card, Col, Container, Image, Row } from 'react-bootstrap'
 import FloatingAction from '../../components/FloatingAction';
 import Header from '../../components/global/Header';
 import Footer from '../../components/Footer';
@@ -70,8 +69,20 @@ const About = () => {
                 <div className={styles.layer_two}>
                     <h5>OUR TEAM</h5>
                     <h2>Meet Our Team</h2>
-                    <div className="">
+                    <div className={styles.team_members}>
                         {TeamMembers}
+                    </div>
+                </div>
+                <div className={styles.newsletter_layer}>
+                    <div>
+                        <h2>Be the first to find out about new products and services.</h2>
+                        <p>Sign up for our newsletter</p>
+                    </div>
+                    <div className={styles.form_wrapper}>
+                        <form>
+                            <input type="email" placeholder="Enter your email" /> 
+                            <button>Subscribe</button>
+                        </form>
                     </div>
                 </div>
                 <FloatingAction />

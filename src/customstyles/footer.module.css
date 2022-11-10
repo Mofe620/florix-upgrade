@@ -58,4 +58,8 @@ p.copyright {
     .app_links {
         order: 5;
     }
+    .app_links img {
+        width: 75%;
+        margin: 0.5em auto;
+    }
 }

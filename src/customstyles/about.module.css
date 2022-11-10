@@ -177,11 +177,12 @@
     }
     .form_wrapper input {
         padding: 1em;
+        width: 60%;
     }
     .form_wrapper button {
         width: 60%;
         display: block;
-        margin: 0.5em auto;
+        margin: 0.25em auto;
         background-color: var(--primary);
         color: var(--neutral);
     }

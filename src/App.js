@@ -7,8 +7,6 @@ import Home from './screens/baseScreens/Home';
 import About from './screens/baseScreens/About';
 import Contact from './screens/baseScreens/Contact';
 import RegisterScreen from './screens/authScreens/register/RegisterScreen';
-import SignUpScreen from './screens/authScreens/SignUpScreen';
-import  SignInScreen  from './screens/authScreens/SignInScreen';
 import LoginScreen from './screens/authScreens/LoginScreen';
 import PasswordReset from './screens/authScreens/PasswordReset';
 import PasswordResetConfirm from './screens/authScreens/PasswordResetConfirm'
@@ -43,15 +41,13 @@ function App() {
       <Helmet>
         <title>FLO-LOG</title>
         <meta name="description" content="Providing tech driven logistics solution" />
-    </Helmet>
-    <ScrollToTop />
+      </Helmet>
+      <ScrollToTop />
         <>
           <Route path='/shop' component={Shop} />
-          <Route path='/signup' component={SignUpScreen} />
           <Route path='/test/prescription' component={PrescriptionFormSreen} />
           <Route path='/emergency/request' component={EmergencyScreen} exact />
           <Route path='/test/prescription_form/upload' component={PrescriptionForm} />
-          <Route path='/signin' component={SignInScreen} />
           <Route exact path="/reset-password" component={PasswordReset} />
           <Route exact path='/password/reset/confirm/:uid/:token' component={PasswordResetConfirm} />
           <Route exact path='/activate/:uid/:token' component={ ActivateAccount} />

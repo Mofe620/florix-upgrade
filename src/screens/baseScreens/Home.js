@@ -34,14 +34,15 @@ const Home = () => {
     <div className='home'>
         <Header />
         <div className='home__slider'>
+          {/* <ProductCarousel /> */}
             <IndexSlider />
         </div>
         <div className='home__layer-one'>
           <Row>
-            <Col sm={12} md={6} lg={6} >
+            <Col xs={12} sm={6} >
               <div>
                 <h2>Pharmacists, Physicians, other Healthcare Providers and Institutions?</h2>
-                <h3><Link to='register' className='home__layer-one__link'>Sign Up</Link></h3>
+                <h3><Link to='register'>Sign Up</Link></h3>
                 <p>Already have account? <Link to='login'>Login</Link></p>
                 <img src='/assets/iflolog/members.png' />
               </div>
@@ -60,10 +61,8 @@ const Home = () => {
         </div>
         <div className='home__layer-one__extended'>
           <Row>
-              <Col xs={12} md={4}>
-                <div className='home__layer-one__extended__file'>
-                  <img src='/assets/iflolog/symptom.png'/>
-                </div>
+              <Col sm={6}>
+                <img src='/assets/iflolog/symptom.png' fluid/>
               </Col>
               <Col>
                 <div className='home__layer-one__extended__wrapper'>
@@ -98,7 +97,7 @@ const Home = () => {
         <div className='home__layer-three'>
           <Row>
               {data.map((product)=>(
-                <Col key={product.id} className='justify-content-center mx-auto' xs={12} sm={6} md={4} lg={4} >
+                <Col key={product.id} className='d-flex justify-content-center mx-auto' xs={12} md={5} lg={4} >
                   <div className='home__layer-three__wrapper'>
                     <img src={product.img} />
                     <h3>{product.heading}</h3>

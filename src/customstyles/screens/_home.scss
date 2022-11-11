@@ -9,7 +9,7 @@
         // height: 833.74px;
 
         @include respond(phone){
-            height: 50vh;
+            height: 35vh;
         }
     }
 
@@ -130,6 +130,7 @@
             margin: 0% 10rem;
             @include respond(phone){
                 margin: 1rem auto;
+
             }
            &__file{
             display: flex;

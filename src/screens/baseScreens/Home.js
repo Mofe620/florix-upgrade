@@ -61,8 +61,10 @@ const Home = () => {
         </div>
         <div className='home__layer-one__extended'>
           <Row>
-              <Col sm={6}>
-                <img src='/assets/iflolog/symptom.png' fluid/>
+              <Col sm={4}>
+                <div className='home__layer-one__extended__file'>
+                  <img src='/assets/iflolog/symptom.png'/>
+                </div>
               </Col>
               <Col>
                 <div className='home__layer-one__extended__wrapper'>

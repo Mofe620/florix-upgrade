@@ -49,6 +49,7 @@ const Home = () => {
   return (
     <div className={styles.home}>
         <Header />
+<<<<<<< HEAD
         <div className=''>
             <IndexSlider />
         </div>
@@ -80,6 +81,50 @@ const Home = () => {
             <h2>Emergency medicines service</h2>
             <Link to='/emergency/request'><button>Click Here</button></Link>
           </div>
+=======
+        <div className='home__slider'>
+          {/* <ProductCarousel /> */}
+            <IndexSlider />
+        </div>
+        <div className='home__layer-one'>
+          <Row>
+            <Col xs={12} sm={6} >
+              <div>
+                <h2>Pharmacists, Physicians, other Healthcare Providers and Institutions?</h2>
+                <h3><Link to='register'>Sign Up</Link></h3>
+                <p>Already have account? <Link to='login'>Login</Link></p>
+                <img src='/assets/iflolog/members.png' />
+              </div>
+            </Col>
+            <Col>
+              <div  className='home__layer-one__aside'>
+                <div className='text-center'>
+                  <h2>Stay on Time</h2>
+                  <p>Make wholesale procurement with ease</p>
+                  <p>Get fast and efficient logistics</p>
+                </div>
+              </div>
+              
+            </Col>
+          </Row>
+        </div>
+        <div className='home__layer-one__extended'>
+          <Row>
+              <Col sm={4}>
+                <div className='home__layer-one__extended__file'>
+                  <img src='/assets/iflolog/symptom.png'/>
+                </div>
+              </Col>
+              <Col>
+                <div className='home__layer-one__extended__wrapper'>
+                  <h3>Patient?</h3>
+                  <p>Assess our 24-hour</p>
+                  <h2>Emergency medicines service</h2>
+                  <p><Link to='/emergency/request' className='fs-1'>Click Here</Link></p>
+                </div>
+              </Col>
+          </Row>
+>>>>>>> 02f55c13b8173b5666111fba165dc5306cfd5c7c
         </div>
         <div className={styles.layer_three}>
           <div>
@@ -98,6 +143,7 @@ const Home = () => {
         {innerWidth > 400 ?
         <div className={styles.product_grid}>
               {data.map((product)=>(
+<<<<<<< HEAD
                   <div className={styles.product}>
                     <img src={product.img} alt={product.heading} />
                     <div className={styles.product_info}>
@@ -106,6 +152,14 @@ const Home = () => {
                       <p>30-day subscription</p>
                       <Link to='#'><button>Get Now</button></Link>
                     </div>
+=======
+                <Col key={product.id} className='d-flex justify-content-center mx-auto' xs={12} md={5} lg={4} >
+                  <div className='home__layer-three__wrapper'>
+                    <img src={product.img} />
+                    <h3>{product.heading}</h3>
+                    <p>Starting from NGN 9,999 30-day subscription</p>
+                    <p className='home__layer-three__wrapper__btn'><Link to='#'>Get now</Link></p>
+>>>>>>> 02f55c13b8173b5666111fba165dc5306cfd5c7c
                   </div>
               ))}
         </div> :

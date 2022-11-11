@@ -29,15 +29,7 @@ const Shop = ({isAuthenticated, history}) =>{
                 <div className="shop__bar px-3 d-md-flex flex-row w-100">
                     <div className="">
                         <SearchProduct />
-                        {/* <Form className='shop__bar__form'>
-                            <Form.Group className="shop__bar___form__group">
-                                <Form.Control className="shop__bar__form__control" type='text' placeholder='search' />
-                            </Form.Group>
-                        </Form> */}
                     </div>
-                    {/* <div className='ms-auto mt-3'>
-                        <p className='shop__bar__button'><Link to='/test/prescription'>Upload Prescription</Link></p>
-                    </div> */}
                 </div>
                 <div className="px-3 my-3">
                 <ProductCarousel />
@@ -56,19 +48,6 @@ const Shop = ({isAuthenticated, history}) =>{
                 <div className='m-5'>
                     <Antibiotics />
                 </div>
-                {/* <div className='shop__pagedivider d-flex flex-row  justify-content-between my-5 px-5' style={{ backgroundImage: "url('/assets/banners/Logisticsbanner.png')"}}>
-                    <div > 
-                        <Image src='' className='shop__pagedivider__icon'/>
-                      
-                    </div>
-                    <div className='shop__pagedivider__text'> 
-                        <p>Get your medications delivered to you with just a click of a button</p>
-                    </div>
-                    <div className='shop__pagedivider__button text-center align-items-center justify-content-center shadow'> 
-                        <Link to="/">Learn More</Link>
-                    </div>
-                </div> */}
-            
                 <div className='shop__introline d-flex'>
                     <h2 className='shop__introline__header'>Multivitamins</h2>
                     <p className='shop__introline__allbtn ms-auto pt-md-4'><Link to="/med/therapeutic_class/multivitamins" >view all</Link></p>
@@ -76,20 +55,6 @@ const Shop = ({isAuthenticated, history}) =>{
                 <div className='px-5 py-4'>
                     <Multivitamins />
                 </div>
-                {/* <div 
-                    className='shop__pagedivider2 d-flex flex-row justify-content-between align-items-center p-5'
-                    style={{ backgroundImage: "url('/assets/images/shop/Blogbanner.png')"}}
-                    >
-                    <h2 className='shop__pagedivider2__header'></h2>
-                    <div>
-                        <p className='shop__pagedivider2__text'>We've carefully selected topics to bring answers to all of your health-related inquiries.</p>
-                        <p className='shop__pagedivider2__button shadow'><Link to='/blog/posts'>Click to Visit Blog</Link></p>
-                    </div>
-                </div>
-                <div>
-                    <TrackRecord />
-                </div> */}
-
             </div>
         <Footer />
     </>   

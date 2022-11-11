@@ -1,4 +1,97 @@
 @import "../mixins/variables";
+<<<<<<< HEAD
+=======
+.swiper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 608px;
+    @include respond(phone){
+        height: 35vh;
+        margin: 0%;
+        padding: 0%;
+    }
+    // border-radius: 15px;
+    &__slider{
+        width: 100%;
+        &__container{
+            position: relative;
+            & img{
+                width: 100%;
+                height: 608px;
+        
+                @include respond(tab-port){
+                    height: 648px;
+                }
+                @include respond(phone){
+                    height: 35vh;
+                    // height: 432px;
+                }
+            }
+            & h2, p{
+                position: absolute;
+                padding-left: 10rem;
+                width: 80%;
+                text-align: start;
+                color: $neutral;
+                margin: auto 1rem;
+                line-height: 123%;
+                letter-spacing: 0;
+                width: 712px;
+                @include respond(tab-port){
+                    padding-left: 0;
+                    left: 5rem;
+                    width: 417px;
+                }
+                @include respond(phone){
+                    padding-left: 0;
+                    left: 5rem;
+                    width: 278px;
+                }
+            }
+            & h2{
+                bottom: 18rem;
+                text-align: center;
+                font-size: 48px;
+                font-weight: bold;
+                text-align: start;
+                @include respond(tab-land){
+                    bottom: 40rem;
+                }
+                @include respond(tab-port){
+                    font-size: 36px;
+                    bottom: 21rem;
+                }
+                @include respond(phone){
+                    font-size: 24px;
+                    bottom: 12rem;
+                    margin: 0%;
+                    padding: 0%;
+                    
+                }
+            }
+            & p{
+                font-size: 20px;
+                bottom: 10rem;
+                @include respond(tab-land){
+                    bottom: 35rem;
+                }
+                @include respond(tab-port){
+                    bottom: 10rem;
+                    font-size: 18px;
+                }
+                @include respond(phone){
+                    bottom: 4rem;
+                    margin: 2px 0;
+                    font-size: 12px;
+                    
+                }
+            }
+        }
+        &__wrapper{
+            // background-color: $primary;
+        }
+>>>>>>> 02f55c13b8173b5666111fba165dc5306cfd5c7c
 
 
 .analgesics{

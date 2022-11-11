@@ -32,54 +32,57 @@ const BlogListScreen = () => {
     
     return (
         <>
-        <Header />
-       
-        <Container className="blog__overview content">
-            <meta charSet="utf-8" />
-                <Helmet>
-                <meta name="description" content="Health related blog content" />
-                <title>Blog posts</title>
-                </Helmet>
-            <Row>
-                <Col md={10}>
-                    <BlogCarousel />
-                </Col>
-                <Col md={2} sm={2} className='blog__overview__aside'>
-                    <div className=' blog__overview__categories ms-4'>
-                        <h2>Categories</h2>
-                        <p><Link to="/blog/category/diseases">Deseases</Link></p>
-                        <p><Link to="/blog/category/pharmaceuticals">Pharmaceuticals</Link></p>
-                        <p><Link to="/blog/category/medical_equipment">Medical Equipment</Link></p>
-                        <p><Link to="/blog/category/lifestyle">Lifestyle</Link></p>
-                        <p><Link to="/blog/category/health_news">Health News</Link></p>
+            <Header />
+            <Container className="blog__overview">
+                <meta charSet="utf-8" />
+                    <Helmet>
+                    <meta name="description" content="Health related blog content" />
+                    <title>Blog posts</title>
+                    </Helmet>
+                <Row>
+                    <Col md={8}>
+                        <img className='blog__overview__img' src='/assets/iflolog/thermometer-gda.jpg' />
+                    </Col>
+                    <Col md={2} sm={2} className='blog__overview__aside'>
+                        <div className='d-flex justify-content-between align-items-center'>
+                            <h3>New</h3>
+                            <h5>View all</h5>
+                            <hr />
+                        </div>
+                        <div className='mt-4'>
+                            <h4>Nov 09, 2022 </h4>
+                            <p>The myth about antibiotics</p>
+                        </div>
+                        <div className='mt-4'>
+                            <h4>Nov 09, 2022 </h4>
+                            <p>The myth about antibiotics</p>
+                        </div>
+                    </Col>
+                </Row>
+                <div className="blog__overview__body">
+                    <h3 className="m-0 p-0"><strong>Recent Posts</strong></h3>
+                        <hr />
+                    <div className="my-5">
+                        {loading ? <LoadingMain /> :
+                            error ? <Message variant='info'>{error}</Message> :
+                            (
+                                <Row>
+                                    {blogs.map(blog => (
+                                        <Col key={blog.id} sm={6} md={4} xl={3}>
+                                            <Blog blog={blog}/>
+                                        </Col>
+                                    ))}  
+                                </Row>
+                            )
+                    }               
                     </div>
-                </Col>
-            </Row>
-            
-            <div className="blog__overview__body">
-                <h3 className="m-0 p-0"><strong>Recent Posts</strong></h3>
-                    <hr />
-                <div className="my-5">
-                    {loading ? <LoadingMain /> :
-                        error ? <Message variant='info'>{error}</Message> :
-                        (
-                            <Row>
-                                {blogs.map(blog => (
-                                    <Col key={blog.id} sm={6} md={4} xl={3}>
-                                        <Blog blog={blog}/>
-                                    </Col>
-                                ))}  
-                            </Row>
-                        )
-                }               
+                    <div>
+                        <Image src='/assets/images/shop/ems-ad1.png' className='blog__overview__body__image' />
+                    </div>                
+                    
                 </div>
-                <div>
-                    <Image src='/assets/images/shop/ems-ad1.png' className='blog__overview__body__image' />
-                </div>                
-                
-            </div>
-        </Container>
-        <Footer />
+            </Container>
+            <Footer />
         </>
     )
 }

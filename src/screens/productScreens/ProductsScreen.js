@@ -48,15 +48,6 @@ function HomeScreen({history, isAuthenticated}) {
                 <meta name="description" content="Africa's Healthcare No. 1 Wholesale E-marketplace and Logistics Solution" />
                 <title>All products</title>
             </Helmet>
-            {/* <div className="product__carousel">
-                <Container className="py-4">
-                    {<ProductCarousel />}
-                </Container>
-            </div>
-            <div>
-                <h3 className="intro-caption">Africa's Premium Healthcare E-marketplace and Logisttics Solution</h3>
-            </div> */}
-
             <Container className="product" >
                 <div className='py-4'>
                     <SearchProduct />

@@ -16,7 +16,7 @@ const data = [
 
 const IndexSlider = () => {
   return (
-    <div className="swiper">
+    <div>
       <Swiper
           modules={[Navigation, Pagination, A11y, Autoplay]}
           spaceBetween={0}
@@ -30,7 +30,7 @@ const IndexSlider = () => {
               <div className={styles.swiper_slide} style={{backgroundColor: datum.color}}>
                 <img src={datum.image} alt="" />
                 <div className={styles.swiper_text}>
-                  <h1 style={{color: datum.color}}>{datum.into}</h1>
+                  <h1>{datum.into}</h1>
                   <p>{datum.value}</p>
                 </div>
               </div>

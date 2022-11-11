@@ -24,7 +24,7 @@ const data = [
 
 const PackageSlider = () => {
   return (
-    <div className="swiper">
+    <div>
       <Swiper
           modules={[Navigation, Pagination, A11y, Autoplay]}
           spaceBetween={20}

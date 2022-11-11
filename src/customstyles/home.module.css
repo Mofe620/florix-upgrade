@@ -28,8 +28,7 @@
 .swiper_text h1 {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--primary);
-    -webkit-text-stroke: 1px #000000;
+    /* -webkit-text-stroke: 1px #000000; */
 }
 .swiper_text p {
     font-size: 1.25rem;
@@ -306,7 +305,7 @@
     justify-content: center;
     align-items: center;
     width: 80%;
-    margin: 0em auto;
+    margin: 0em auto 0em;
     padding: 4em;
     background-color: var(--dense-primary);
     color: var(--neutral);
@@ -362,9 +361,16 @@
 
     .layer_one {
         flex-direction: column;
+        padding: 2em;
     }
     .layer_one > div {
         width: 100%;
+    }
+    .layer_one h2 {
+        font-size: 2rem;
+    }
+    .layer_one > div p {
+        font-size: 1.5rem;
     }
     .layer_one img {
         margin: 0em 0em 2em;
@@ -450,7 +456,7 @@
         grid-template-columns: 1fr 1fr;
     }
     .partners_swiper {
-        margin: -2em 0em 10em;
+        margin: -5em 0em 5em;
     }
 
     .newsletter_layer {
